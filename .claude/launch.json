@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "/Users/stefanbriceag/.nvm/versions/node/v20.19.6/bin/npx",
+      "runtimeArgs": ["next", "dev", "--dir", "/Users/stefanbriceag/medspa"],
+      "port": 3000
+    }
+  ]
+}
