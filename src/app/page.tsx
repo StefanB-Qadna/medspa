@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TrustBadge } from "@/components/TrustBadge";
 import { SectionHeading } from "@/components/SectionHeading";
+import { BookingForm } from "@/components/BookingForm";
 
 const trustBadges = [
   {
@@ -472,97 +473,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Consultation Booking Form */}
-      <section id="book" className="bg-cream border-t border-border-light/50">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
-          <div className="text-center mb-10">
-            <h2 className="font-serif text-2xl md:text-3xl font-normal text-warm-dark mb-3">
-              Book a complimentary consultation
-            </h2>
-            <p className="font-sans text-sm text-warm-dark/60 max-w-lg mx-auto">
-              Meet with Dr. Robledo to discuss your goals, explore treatment
-              options, and build a personalized plan.
-            </p>
-          </div>
-          <form className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block font-sans text-xs font-medium uppercase tracking-[0.12em] text-warm-dark/50 mb-1.5">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="First name"
-                  className="w-full bg-white border border-border-light rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-1 focus:ring-brass/30 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block font-sans text-xs font-medium uppercase tracking-[0.12em] text-warm-dark/50 mb-1.5">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  className="w-full bg-white border border-border-light rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-1 focus:ring-brass/30 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block font-sans text-xs font-medium uppercase tracking-[0.12em] text-warm-dark/50 mb-1.5">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  placeholder="(000) 000-0000"
-                  className="w-full bg-white border border-border-light rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-1 focus:ring-brass/30 outline-none"
-                />
-              </div>
-              <div>
-                <label className="block font-sans text-xs font-medium uppercase tracking-[0.12em] text-warm-dark/50 mb-1.5">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  placeholder="you@email.com"
-                  className="w-full bg-white border border-border-light rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-1 focus:ring-brass/30 outline-none"
-                />
-              </div>
-            </div>
-            <div className="mb-4">
-              <label className="block font-sans text-xs font-medium uppercase tracking-[0.12em] text-warm-dark/50 mb-1.5">
-                What are you interested in?
-              </label>
-              <select className="w-full bg-white border border-border-light rounded-sm px-4 py-3 font-sans text-sm text-warm-dark focus:border-brass focus:ring-1 focus:ring-brass/30 outline-none">
-                <option value="">Select a service...</option>
-                <option value="botox">Botox & Neuromodulators</option>
-                <option value="fillers">Dermal Fillers</option>
-                <option value="lip">Lip Fillers</option>
-                <option value="laser">Laser Treatments</option>
-                <option value="skin">Skin Treatments</option>
-                <option value="wellness">Wellness & IV Therapy</option>
-                <option value="other">Not sure yet</option>
-              </select>
-            </div>
-            <div className="mb-6">
-              <label className="block font-sans text-xs font-medium uppercase tracking-[0.12em] text-warm-dark/50 mb-1.5">
-                Tell us about your goals
-              </label>
-              <textarea
-                rows={4}
-                placeholder="What would you like to achieve? Any specific concerns?"
-                className="w-full bg-white border border-border-light rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-1 focus:ring-brass/30 outline-none resize-none"
-              />
-            </div>
-            <div className="text-center">
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-10 py-3.5 min-h-[48px] hover:bg-brass-dark transition-colors"
-              >
-                Request Consultation
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
+      {/* Booking Form */}
+      <BookingForm />
     </>
   );
 }
