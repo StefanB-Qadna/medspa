@@ -30,7 +30,7 @@ const treatmentOptions = [
   "Body Contouring",
   "IV Therapy",
   "Medical Weight Management",
-  "Not sure yet — I need guidance",
+  "Not sure yet, I need guidance",
 ];
 
 const timeSlots = [

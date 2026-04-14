@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { GlassBlogCard } from "@/components/ui/glass-blog-card";
 
 const categories = ["All", "Injectables", "Skin", "Botox", "Patient Education"];
 
@@ -20,54 +21,72 @@ const blogPosts = [
     category: "Injectables",
     date: "March 2026",
     excerpt: "Three different Neuromodulators, three different formulations. Which one fits your goals?",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=600&fit=crop&q=80",
+    readTime: "6 min read",
   },
   {
     title: "Do I really need a doctor for lip filler? The honest (and medical) oversight.",
     category: "Injectables",
     date: "March 2026",
     excerpt: "Let's have a real conversation about medical standards, lip filler practices, injector credentials, and how to find a provider you trust.",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop&q=80",
+    readTime: "5 min read",
   },
   {
     title: "What to expect from your first Hydrafacial, and how to get the most from it.",
     category: "Skin",
     date: "March 2026",
     excerpt: "The Hydrafacial is one of the most popular treatments we offer and let's walk through it step by step.",
+    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=600&fit=crop&q=80",
+    readTime: "4 min read",
   },
   {
     title: "5 signs a med spa isn't taking your safety seriously.",
     category: "Patient Education",
     date: "February 2026",
     excerpt: "We want you to be an informed consumer. Here are the red flags to watch for.",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop&q=80",
+    readTime: "7 min read",
   },
   {
     title: "The truth about preventative Botox. Is it real, and should you start?",
     category: "Botox",
     date: "February 2026",
     excerpt: "Preventative Botox is not marketing hype. But it's also not for everyone. Here's the science, who it helps, and when to consider it.",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop&q=80",
+    readTime: "5 min read",
   },
   {
     title: "Microneedling is here: everything you need to choose for your skin type.",
     category: "Skin",
     date: "February 2026",
     excerpt: "From classic microneedling to RF microneedling, here's how to choose the right modality for your skin.",
+    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&h=600&fit=crop&q=80",
+    readTime: "6 min read",
   },
   {
     title: "The complete guide to dermal filler types, areas, and how long they last.",
     category: "Injectables",
     date: "January 2026",
     excerpt: "From hyaluronic acid to calcium hydroxylapatite — which filler product goes where, how it works, and what to expect.",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&h=600&fit=crop&q=80",
+    readTime: "8 min read",
   },
   {
     title: "Is laser hair removal worth it? An honest cost-benefit breakdown from a physician.",
     category: "Skin",
     date: "January 2026",
     excerpt: "The upfront cost vs. a lifetime of shaving, waxing, and razor bumps. Let's do the honest math.",
+    image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&h=600&fit=crop&q=80",
+    readTime: "5 min read",
   },
   {
     title: "IV therapy: what it actually does, what the benefits are, and what to ask before booking.",
     category: "Patient Education",
     date: "January 2026",
     excerpt: "IV therapy is medically sound and medically supervised. But it's not a miracle cure. Here's a physician's take.",
+    image: "https://images.unsplash.com/photo-1583912267550-d6c2ac3196c0?w=800&h=600&fit=crop&q=80",
+    readTime: "4 min read",
   },
 ];
 
@@ -201,21 +220,17 @@ export default function BlogPage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {filteredPosts.map((post) => (
-              <article key={post.title} className="group">
-                <div className="aspect-[4/3] bg-linen rounded-md mb-4" />
-                <span className="font-sans text-xs font-medium text-brass uppercase tracking-[0.1em]">
-                  {post.category}
-                </span>
-                <h3 className="font-serif text-base md:text-lg font-medium text-warm-dark mt-1 mb-2 group-hover:text-brass transition-colors leading-snug">
-                  <Link href="#">{post.title}</Link>
-                </h3>
-                <p className="font-sans text-sm text-warm-dark/60 leading-relaxed mb-2 line-clamp-2">
-                  {post.excerpt}
-                </p>
-                <p className="font-sans text-xs text-warm-dark/40">
-                  {post.date}
-                </p>
-              </article>
+              <GlassBlogCard
+                key={post.title}
+                title={post.title}
+                excerpt={post.excerpt}
+                image={post.image}
+                author={{ name: "Dr. Robledo", avatar: "" }}
+                date={post.date}
+                readTime={post.readTime}
+                tags={[post.category]}
+                href="#"
+              />
             ))}
           </div>
           <div className="text-center mt-12">
