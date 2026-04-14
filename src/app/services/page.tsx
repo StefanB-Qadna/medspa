@@ -126,7 +126,7 @@ export default function ServicesPage() {
           </h1>
           <p className="font-sans text-base text-warm-dark/70 max-w-2xl mx-auto">
             Personalized treatments backed by surgical precision. From injectables to laser to
-            wellness — find what is right for you.
+            wellness. Find what is right for you.
           </p>
         </div>
       </section>
@@ -181,7 +181,7 @@ export default function ServicesPage() {
             plan.
           </p>
           <Link
-            href="#book"
+            href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
           >
             Book Your Consultation

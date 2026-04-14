@@ -40,7 +40,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-cormorant), serif;
   line-height: 1.2;
-  color: #3D3530;
 }
 
 /* Label style */
@@ -61,6 +60,35 @@ a, button {
 :focus-visible {
   outline: 2px solid #B08D57;
   outline-offset: 2px;
+}
+
+/* Blog article prose */
+.prose-medspa p {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(61, 53, 48, 0.75);
+  margin-bottom: 1.5rem;
+}
+
+.prose-medspa h2 {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #3D3530;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-medspa hr {
+  border: none;
+  border-top: 1px solid #D6D1CA;
+  margin: 2.5rem 0;
+}
+
+.prose-medspa .italic {
+  font-style: italic;
+  color: rgba(61, 53, 48, 0.6);
 }
 
 /* Respect reduced motion */

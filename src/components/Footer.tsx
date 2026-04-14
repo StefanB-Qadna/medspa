@@ -14,7 +14,7 @@ const quickLinks = [
   { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
-  { label: "Book Now", href: "#book" },
+  { label: "Book Now", href: "https://blvd.app/@rejuvenate-and-refine/login" },
 ];
 
 export function Footer() {

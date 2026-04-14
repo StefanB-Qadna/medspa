@@ -45,7 +45,7 @@ export const Feature73 = ({
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {features[0] && (
-            <div className="flex flex-col overflow-clip rounded-md md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8 border border-border-light">
+            <div className="flex flex-col overflow-clip rounded-md md:col-span-2 md:grid md:grid-cols-2 border border-border-light">
               <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
                 <img
                   src={features[0].image}

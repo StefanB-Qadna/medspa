@@ -5,12 +5,16 @@ import Image from "next/image";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TrustBadge } from "@/components/TrustBadge";
 import { SectionHeading } from "@/components/SectionHeading";
-import { BookingForm } from "@/components/BookingForm";
+import { Feature1 } from "@/components/ui/feature-1";
 import { ShaderBackground } from "@/components/ui/shaders-hero-section";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { Feature73 } from "@/components/ui/feature-73";
-import { GlassBlogCard } from "@/components/ui/glass-blog-card";
+import { LocationMap } from "@/components/ui/expand-map";
+import { Gallery4 } from "@/components/ui/gallery4";
+import { Feature72 } from "@/components/ui/feature-72";
+import { FAQAccordion } from "@/components/ui/faq-accordion";
+import { Sparkles, Layers, Heart } from "lucide-react";
 
 const trustBadges = [
   {
@@ -73,7 +77,7 @@ const surgeonPoints = [
   {
     num: "01",
     title: "Training in living anatomy",
-    desc: "Dr. Robledo's surgical experience means she understands how tissues actually behave — not just how they look in diagrams.",
+    desc: "Dr. Robledo's surgical experience means she understands how tissues actually behave, not just how they look in diagrams.",
   },
   {
     num: "02",
@@ -88,7 +92,7 @@ const surgeonPoints = [
   {
     num: "04",
     title: "Honest recommendations",
-    desc: "A surgeon will tell you what you don't need. If a treatment isn't right, we'll say so — your trust matters more than a sale.",
+    desc: "A surgeon will tell you what you don't need. If a treatment isn't right, we'll say so. Your trust matters more than a sale.",
   },
 ];
 
@@ -161,7 +165,9 @@ export default function HomePage() {
 
               <div className="flex items-center gap-4 flex-wrap">
                 <Link
-                  href="#book"
+                  href="https://blvd.app/@rejuvenate-and-refine/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-3 rounded-full bg-white text-black font-normal text-xs transition-all duration-200 hover:bg-white/90"
                 >
                   Book Consultation
@@ -222,48 +228,42 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What are you looking to address? */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
-          <SectionHeading
-            title="What are you looking to address?"
-            subtitle="Select a concern to see which treatments may be right for you."
-          />
-          <div className="flex flex-wrap justify-center gap-3 mt-10">
-            {concerns.map((concern) => (
-              <button
-                key={concern}
-                className="font-sans text-sm font-medium text-warm-dark px-5 py-2.5 rounded-full border border-border-light hover:border-brass hover:text-brass transition-colors"
-              >
-                {concern}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
       {/* What we offer */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
-          <SectionHeading
-            title="What we offer"
-            subtitle="From subtle refinements to transformative results — all with a surgeon's precision."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
-            {featuredServices.map((service) => (
-              <ServiceCard key={service.title} {...service} />
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center rounded-sm border-[1.5px] border-brass text-warm-dark font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass/[0.08] transition-colors"
-            >
-              View All Services
-            </Link>
-          </div>
-        </div>
+        <Feature72
+          heading="Results that go deeper than the surface."
+          description="Every treatment is physician-guided and built around your biology, not a one-size protocol."
+          imageSrc="/images/space4.jpg"
+          imageAlt="Rejuvenate and Refine treatment room"
+          linkUrl="/services"
+          linkText="View all services"
+          categories={[
+            {
+              id: "laser",
+              title: "Laser",
+              description: "Multiple technologies. One physician. Every laser treatment at R&R is selected and performed based on your skin, your concern, and what will actually work.",
+              icon: <Sparkles className="h-auto w-5" />,
+              image: "",
+              services: [],
+            },
+            {
+              id: "microneedling",
+              title: "Microneedling",
+              description: "Real collagen takes time to build. Our microneedling protocols are designed for the long result, not the quick one.",
+              icon: <Layers className="h-auto w-5" />,
+              image: "",
+              services: [],
+            },
+            {
+              id: "wellness",
+              title: "Wellness",
+              description: "True wellness goes deeper than the surface. IV therapy, hormone optimization, and medically supervised weight loss — each protocol at R&R is physician-guided and built around your lab work, not a template.",
+              icon: <Heart className="h-auto w-5" />,
+              image: "",
+              services: [],
+            },
+          ]}
+        />
       </section>
 
       {/* Dr. Robledo */}
@@ -333,7 +333,9 @@ export default function HomePage() {
           </h2>
           <div className="flex flex-wrap gap-4 justify-center mt-10">
             <Link
-              href="#book"
+              href="https://blvd.app/@rejuvenate-and-refine/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Consultation
@@ -362,7 +364,7 @@ export default function HomePage() {
                   id: 1,
                   name: "Sarah M.",
                   affiliation: "Botox Patient",
-                  quote: "Dr. Robledo took the time to really understand what I wanted. The results were so natural — my friends just think I look well-rested.",
+                  quote: "Dr. Robledo took the time to really understand what I wanted. The results were so natural, my friends just think I look well-rested.",
                   imageSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&q=80&sat=-100",
                   afterImageSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&q=80",
                   thumbnailSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=120&fit=crop&q=80",
@@ -414,8 +416,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <Feature73
             heading="A space designed for you"
-            description="Our Prosper clinic was built from the ground up to meet surgical-suite standards — while feeling like a place you actually want to spend time. Warm, modern, and meticulously clean."
-            linkUrl="#book"
+            description="Our Prosper clinic was built from the ground up to meet surgical-suite standards, while feeling like a place you actually want to spend time. Warm, modern, and meticulously clean."
+            linkUrl="https://blvd.app/@rejuvenate-and-refine/login"
             linkText="Schedule a visit"
             features={[
               {
@@ -441,68 +443,100 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* You asked. We'll answer honestly. */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <p className="label text-brass mb-3">From Our Blog</p>
-              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark">
-                You asked. We&apos;ll answer honestly.
+      {/* Find Us */}
+      <section className="bg-linen">
+        <div className="mx-auto max-w-[1200px] px-6 pb-16 md:pb-20">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <p className="label text-brass mb-3">Our Location</p>
+              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
+                Find us in Prosper
               </h2>
+              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
+                Conveniently located off Prairie Drive in Prosper, Texas. We welcome patients from Prosper, Celina, McKinney, Frisco, and the surrounding North Texas communities.
+              </p>
+              <address className="not-italic font-sans text-sm text-warm-dark/80 leading-relaxed mb-6 space-y-1">
+                <p className="font-medium text-warm-dark">2120 Prairie Dr Suite 402</p>
+                <p>Prosper, TX 75078</p>
+                <p>United States</p>
+              </address>
+              <Link
+                href="https://maps.google.com/?q=2120+Prairie+Dr+Suite+402+Prosper+TX+75078"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-sm font-medium text-brass hover:text-brass-dark"
+              >
+                Get Directions &rarr;
+              </Link>
             </div>
-            <Link
-              href="/blog"
-              className="hidden md:inline-flex font-sans text-sm font-medium text-brass hover:text-brass-dark transition-colors"
-            >
-              View All Posts &rarr;
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <GlassBlogCard
-              title="How long does Botox actually last? A surgeon's honest answer."
-              excerpt="We break down what to really expect from your Botox results — timeline, factors that affect longevity, and when to rebook."
-              image="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&h=600&fit=crop&q=80"
-              author={{ name: "Dr. Robledo", avatar: "" }}
-              date="March 15, 2026"
-              readTime="5 min read"
-              tags={["Botox"]}
-              href="/blog"
-            />
-            <GlassBlogCard
-              title="Are lip fillers right for you? What the consultation looks like."
-              excerpt="Considering lip fillers? Here's exactly what happens during your first consultation and how we determine the right approach."
-              image="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop&q=80"
-              author={{ name: "Dr. Robledo", avatar: "" }}
-              date="March 10, 2026"
-              readTime="4 min read"
-              tags={["Fillers"]}
-              href="/blog"
-            />
-            <GlassBlogCard
-              title="The truth about microneedling: what to expect and who it's for."
-              excerpt="Microneedling can transform skin texture, but it's not for everyone. A surgeon's guide to candidacy, downtime, and results."
-              image="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&h=600&fit=crop&q=80"
-              author={{ name: "Dr. Robledo", avatar: "" }}
-              date="February 15, 2026"
-              readTime="6 min read"
-              tags={["Skin Treatments"]}
-              href="/blog"
-            />
-          </div>
-          <div className="text-center mt-8 md:hidden">
-            <Link
-              href="/blog"
-              className="font-sans text-sm font-medium text-brass hover:text-brass-dark"
-            >
-              View All Posts &rarr;
-            </Link>
+            <div className="flex items-center justify-center">
+              <LocationMap
+                location="Prosper, TX"
+                coordinates="33.2362° N, 96.8011° W"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Booking Form */}
-      <BookingForm />
+      {/* You asked. We'll answer honestly. */}
+      <section className="bg-cream">
+        <Gallery4
+          title="From Our Blog"
+          description="You asked. We'll answer honestly."
+          items={[
+            {
+              id: "aging",
+              title: "Your Face Doesn't Age Evenly, and Most Treatments Miss the Point",
+              description: "Most patients focus on wrinkles. But wrinkles are the last stage of facial aging. Here is what is actually happening beneath the surface.",
+              href: "/blog/your-face-doesnt-age-evenly",
+              image: "/images/blog 1.png",
+            },
+            {
+              id: "melasma",
+              title: "Why Your Dark Spots Keep Coming Back (The Melasma Truth)",
+              description: "Melasma is one of the most mismanaged skin conditions in aesthetics. If your dark spots keep returning, this is likely why.",
+              href: "/blog/dark-spots-melasma-truth",
+              image: "/images/blog 2.png",
+            },
+            {
+              id: "body-scale",
+              title: "Why the Scale Is the Worst Way to Measure Your Body",
+              description: "Body weight tells you almost nothing about your health or how your body actually looks. Here is what actually matters.",
+              href: "/blog/scale-worst-way-measure-body",
+              image: "/images/blog 3.png",
+            },
+            {
+              id: "longevity-30s",
+              title: "What Starts Declining in Your 30s That Nobody Warns You About",
+              description: "The biology of aging starts well before most people expect it. Here is what is actually changing in your body.",
+              href: "/blog/what-starts-declining-in-your-30s",
+              image: "/images/blog 4.png",
+            },
+          ]}
+        />
+      </section>
+
+      {/* FAQ */}
+      <FAQAccordion />
+
+      {/* Booking CTA */}
+      <div id="book" className="bg-linen">
+        <Feature1
+          title="Book a complimentary consultation."
+          description="No commitment, no pressure. Dr. Robledo will personally review your goals before your visit. Pick your treatment, choose a time, and get confirmed within 24 hours."
+          imageSrc="/images/space2.jpg"
+          imageAlt="Rejuvenate and Refine clinic interior"
+          buttonPrimary={{
+            label: "Book Online",
+            href: "https://blvd.app/@rejuvenate-and-refine/login",
+          }}
+          buttonSecondary={{
+            label: "Call (469) 397-0434",
+            href: "tel:+14693970434",
+          }}
+        />
+      </div>
     </>
   );
 }
