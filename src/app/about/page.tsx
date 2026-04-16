@@ -249,7 +249,7 @@ export default function AboutPage() {
                   image: "/images/space7.jpg",
                 },
                 {
-                  title: "Lounge",
+                  title: "Reception",
                   description: "Comfortable seating for every visit.",
                   image: "/images/space8.jpg",
                 },
