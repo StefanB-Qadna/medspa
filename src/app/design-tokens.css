@@ -1,0 +1,244 @@
+/* ==========================================================================
+ *  DESIGN TOKENS — Rejuvenate & Refine
+ *  --------------------------------------------------------------------------
+ *  This is the SINGLE SOURCE OF TRUTH for the design system.
+ *  Edit tokens here; Tailwind v4 auto-generates utility classes from @theme.
+ *
+ *  Naming conventions — tokens matching these prefixes produce Tailwind
+ *  utilities automatically:
+ *
+ *     --color-*         → bg-<name>, text-<name>, border-<name>, ring-<name>, …
+ *     --font-*          → font-<name>
+ *     --text-*          → text-<name> (font-size + paired --line-height)
+ *     --font-weight-*   → font-<name>
+ *     --tracking-*      → tracking-<name>
+ *     --leading-*       → leading-<name>
+ *     --radius-*        → rounded-<name>
+ *     --shadow-*        → shadow-<name>
+ *     --ease-*          → ease-<name>
+ *     --breakpoint-*    → sm:, md:, lg:, xl:, 2xl:
+ *
+ *  Tokens NOT in a Tailwind namespace (durations, z-index) live in :root
+ *  at the bottom. Reference them via arbitrary values:
+ *     duration-[var(--duration-base)]   z-[var(--z-nav)]
+ *
+ *  Style conventions:
+ *     — Always tint neutrals toward the warm-dark brand hue.
+ *     — Never use pure #000 or pure #fff in shadow/overlay tokens.
+ *     — Fluid type uses clamp(min, preferred, max).
+ *     — Shadows carry the brand color at low alpha for warmth.
+ * ========================================================================== */
+
+@theme inline {
+  /* -------------------------------------------------------------------------
+   *  COLOR — BRAND PALETTE
+   * ------------------------------------------------------------------------- */
+  --color-cream: #FDFBF7;               /* primary light background */
+  --color-linen: #F0E6D8;               /* secondary warm background */
+  --color-warm-dark: #3D3530;           /* primary text / dark surface */
+  --color-warm-darker: #2A2420;         /* high-contrast dark (modals, deep hero) */
+  --color-brass: #B08D57;               /* primary accent / CTA */
+  --color-brass-dark: #9A7A48;          /* CTA hover */
+  --color-brass-light: #C8A876;         /* subtle brass tints */
+  --color-forest: #4E6349;              /* secondary accent (wellness) */
+
+  /* -------------------------------------------------------------------------
+   *  COLOR — NEUTRAL / BORDER
+   * ------------------------------------------------------------------------- */
+  --color-border: #D6D1CA;              /* default border (subtle) */
+  --color-border-strong: #BFB7AC;       /* inputs, dividers that must read */
+  --color-placeholder: #9A8E82;         /* disabled / placeholder text */
+  --color-white: #FFFFFF;
+
+  /* -------------------------------------------------------------------------
+   *  COLOR — STATE
+   * ------------------------------------------------------------------------- */
+  --color-error: #C44B3F;
+  --color-error-bg: #FBEEEC;
+  --color-success: #4E6349;
+  --color-success-bg: #EAEEE8;
+  --color-warning: #B08D57;
+
+  /* -------------------------------------------------------------------------
+   *  COLOR — OVERLAY / SCRIM
+   *  Used for image overlays, modal backdrops, nav scrims.
+   *  Always tinted warm-dark, never pure black.
+   * ------------------------------------------------------------------------- */
+  --color-overlay-dark: color-mix(in srgb, var(--color-warm-dark) 55%, transparent);
+  --color-overlay-darker: color-mix(in srgb, var(--color-warm-dark) 75%, transparent);
+  --color-overlay-light: color-mix(in srgb, var(--color-cream) 80%, transparent);
+  --color-scrim: color-mix(in srgb, var(--color-warm-dark) 50%, transparent);
+
+  /* -------------------------------------------------------------------------
+   *  TYPOGRAPHY — FAMILIES
+   *  next/font injects --font-cormorant and --font-jost at <html>.
+   * ------------------------------------------------------------------------- */
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-jost), "Helvetica Neue", system-ui, sans-serif;
+
+  /* -------------------------------------------------------------------------
+   *  TYPOGRAPHY — FLUID SIZE SCALE
+   *  Syntax: clamp(mobile-min, preferred-grow, desktop-max)
+   *  Each size has a paired --line-height for semantic pairing.
+   * ------------------------------------------------------------------------- */
+  --text-xs: clamp(0.70rem, 0.69rem + 0.05vw, 0.75rem);
+  --text-xs--line-height: 1.5;
+
+  --text-sm: clamp(0.82rem, 0.80rem + 0.10vw, 0.875rem);
+  --text-sm--line-height: 1.55;
+
+  --text-base: clamp(0.95rem, 0.93rem + 0.15vw, 1rem);
+  --text-base--line-height: 1.7;
+
+  --text-lg: clamp(1.05rem, 1.00rem + 0.25vw, 1.125rem);
+  --text-lg--line-height: 1.6;
+
+  --text-xl: clamp(1.20rem, 1.10rem + 0.50vw, 1.375rem);
+  --text-xl--line-height: 1.45;
+
+  --text-2xl: clamp(1.50rem, 1.30rem + 1.00vw, 1.875rem);
+  --text-2xl--line-height: 1.30;
+
+  --text-3xl: clamp(1.875rem, 1.60rem + 1.40vw, 2.375rem);
+  --text-3xl--line-height: 1.20;
+
+  --text-4xl: clamp(2.25rem, 1.80rem + 2.20vw, 3rem);
+  --text-4xl--line-height: 1.10;
+
+  --text-5xl: clamp(2.75rem, 2.00rem + 3.50vw, 4rem);
+  --text-5xl--line-height: 1.05;
+
+  --text-6xl: clamp(3.25rem, 2.20rem + 4.80vw, 5rem);
+  --text-6xl--line-height: 1.02;
+
+  --text-display: clamp(3.5rem, 2.50rem + 5.00vw, 6rem);
+  --text-display--line-height: 1.00;
+
+  /* -------------------------------------------------------------------------
+   *  TYPOGRAPHY — WEIGHT
+   * ------------------------------------------------------------------------- */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* -------------------------------------------------------------------------
+   *  TYPOGRAPHY — TRACKING (letter-spacing)
+   * ------------------------------------------------------------------------- */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.10em;
+  --tracking-widest: 0.15em;   /* eyebrow labels, CTA copy */
+  --tracking-logo: 0.12em;     /* logo wordmark */
+
+  /* -------------------------------------------------------------------------
+   *  TYPOGRAPHY — LEADING
+   * ------------------------------------------------------------------------- */
+  --leading-tight: 1.15;
+  --leading-snug: 1.30;
+  --leading-normal: 1.50;
+  --leading-relaxed: 1.70;       /* body default */
+  --leading-loose: 1.90;
+
+  /* -------------------------------------------------------------------------
+   *  SPACING — base unit drives every p-*, m-*, gap-*, size-*, etc.
+   *  Tailwind v4 default is 0.25rem (4px). Change once to resize the rhythm.
+   * ------------------------------------------------------------------------- */
+  --spacing: 0.25rem;
+
+  /* -------------------------------------------------------------------------
+   *  RADIUS
+   * ------------------------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* -------------------------------------------------------------------------
+   *  SHADOW — elevation, all tinted warm-dark for brand cohesion
+   * ------------------------------------------------------------------------- */
+  --shadow-xs:  0 1px 2px  rgba(61, 53, 48, 0.05);
+  --shadow-sm:  0 2px 6px  rgba(61, 53, 48, 0.06);
+  --shadow-md:  0 4px 12px rgba(61, 53, 48, 0.08);
+  --shadow-lg:  0 8px 24px rgba(61, 53, 48, 0.10);
+  --shadow-xl:  0 16px 40px rgba(61, 53, 48, 0.12);
+  --shadow-2xl: 0 24px 64px rgba(61, 53, 48, 0.16);
+
+  /* Brass-tinted shadows for warm emphasis (primary CTAs, active cards) */
+  --shadow-brass-sm: 0 4px 14px rgba(176, 141, 87, 0.20);
+  --shadow-brass-md: 0 8px 24px rgba(176, 141, 87, 0.25);
+
+  /* -------------------------------------------------------------------------
+   *  EASING — exponential curves for natural deceleration
+   *  Avoid bounce/elastic — they feel dated and tacky.
+   * ------------------------------------------------------------------------- */
+  --ease-linear: linear;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);          /* everyday hover/state */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);            /* entrance */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);      /* dramatic entrance */
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);             /* exit */
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);        /* symmetric */
+
+  /* -------------------------------------------------------------------------
+   *  BREAKPOINTS — drive sm:, md:, lg:, xl:, 2xl: variants
+   * ------------------------------------------------------------------------- */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ==========================================================================
+ *  NON-TAILWIND TOKENS
+ *  Tailwind v4 has no namespace for these. Consume via var() in arbitrary
+ *  values or in raw CSS.
+ * ========================================================================== */
+:root {
+  /* -------------------------------------------------------------------------
+   *  MOTION — DURATION
+   *  Use: transition-[transform] duration-[var(--duration-base)]
+   *  Or in raw CSS: transition: opacity var(--duration-base) var(--ease-standard);
+   * ------------------------------------------------------------------------- */
+  --duration-instant: 80ms;
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --duration-slowest: 1000ms;
+
+  /* -------------------------------------------------------------------------
+   *  Z-INDEX LAYERING
+   *  Use: className="z-[var(--z-nav)]"
+   * ------------------------------------------------------------------------- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-overlay: 40;
+  --z-nav: 50;
+  --z-modal-backdrop: 80;
+  --z-modal: 90;
+  --z-toast: 100;
+  --z-tooltip: 110;
+}
+
+/* ==========================================================================
+ *  REDUCED MOTION — collapse all durations for users who opt out
+ * ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+    --duration-slowest: 0ms;
+  }
+}

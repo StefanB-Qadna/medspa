@@ -62,7 +62,7 @@ export function LocationMap({
       }}
     >
       <motion.div
-        className="relative overflow-hidden rounded-2xl bg-cream border border-border"
+        className="relative overflow-hidden rounded-2xl bg-cream border border-border-light"
         style={{
           rotateX: springRotateX,
           rotateY: springRotateY,
@@ -106,7 +106,7 @@ export function LocationMap({
                   e.stopPropagation()
                   setIsExpanded(false)
                 }}
-                className="absolute top-2 right-2 z-20 w-7 h-7 rounded-full bg-cream border border-border shadow-sm flex items-center justify-center hover:bg-linen transition-colors"
+                className="absolute top-2 right-2 z-20 w-7 h-7 rounded-full bg-cream/90 backdrop-blur-sm border border-border-light flex items-center justify-center hover:bg-cream transition-colors"
                 aria-label="Close map"
               >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-warm-dark">
@@ -207,7 +207,7 @@ export function LocationMap({
               </motion.svg>
 
               <motion.div
-                className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-warm-dark/5"
+                className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-warm-dark/5 backdrop-blur-sm"
                 animate={{ scale: isHovered ? 1.05 : 1 }}
                 transition={{ duration: 0.2 }}
               >

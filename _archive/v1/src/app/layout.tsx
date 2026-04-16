@@ -4,13 +4,11 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { BoulevardWidget } from "@/components/BoulevardWidget";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -39,12 +37,10 @@ export default function RootLayout({
       className={`${cormorant.variable} ${jost.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <a href="#main" className="skip-to-content">Skip to content</a>
         <SmoothScroll />
         <Header />
-        <main id="main" className="flex-1 pt-20">{children}</main>
+        <main className="flex-1 pt-20">{children}</main>
         <Footer />
-        <BoulevardWidget />
       </body>
     </html>
   );

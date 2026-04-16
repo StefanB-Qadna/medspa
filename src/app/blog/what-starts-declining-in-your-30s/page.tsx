@@ -238,7 +238,7 @@ export default function BlogPost() {
             <h3 className="font-serif text-xl font-normal text-warm-dark mb-2">
               Want to know where you actually stand?
             </h3>
-            <p className="font-sans text-sm text-warm-dark/60 mb-6">
+            <p className="font-sans text-sm text-warm-dark/70 mb-6">
               Book a complimentary longevity consultation with Dr. Robledo.
             </p>
             <a

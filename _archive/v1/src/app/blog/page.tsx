@@ -71,7 +71,7 @@ export default function BlogPage() {
       />
 
       {/* Category Filters */}
-      <section className="bg-cream border-b border-border/50">
+      <section className="bg-cream border-b border-border-light/50">
         <div className="mx-auto max-w-[1200px] px-6 py-6">
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
@@ -81,7 +81,7 @@ export default function BlogPage() {
                 className={`font-sans text-sm font-medium px-5 py-2 rounded-full border transition-colors ${
                   activeCategory === cat
                     ? "bg-warm-dark text-cream border-warm-dark"
-                    : "text-warm-dark border-border hover:border-brass hover:text-brass"
+                    : "text-warm-dark border-border-light hover:border-brass hover:text-brass"
                 }`}
               >
                 {cat}
@@ -91,88 +91,56 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Posts — lead story + 3-up grid */}
+      {/* Posts Grid */}
       <section className="bg-cream">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {filteredPosts.map((post) => (
+              <Link key={post.href} href={post.href} className="group">
+                <div className="relative h-full min-h-[26rem] overflow-hidden rounded-md">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-warm-dark/90 via-warm-dark/30 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 md:p-8 text-cream">
+                    <span className="font-sans text-[0.65rem] font-medium uppercase tracking-[0.15em] text-brass mb-2">
+                      {post.category}
+                    </span>
+                    <h2 className="font-serif text-xl md:text-2xl font-medium mb-2 leading-snug">
+                      {post.title}
+                    </h2>
+                    <p className="line-clamp-2 font-sans text-sm text-cream/70 leading-relaxed mb-4">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between w-full">
+                      <span className="font-sans text-xs text-cream/50">
+                        {post.date} · {post.readTime}
+                      </span>
+                      <span className="flex items-center font-sans text-sm font-medium text-brass">
+                        Read more
+                        <ArrowRight className="ml-1.5 size-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
           {filteredPosts.length === 0 && (
-            <p className="text-center font-sans text-sm text-warm-dark/70 py-16">
+            <p className="text-center font-sans text-sm text-warm-dark/50 py-16">
               No posts in this category yet. Check back soon.
             </p>
           )}
-
-          {filteredPosts.length > 0 && (() => {
-            const [lead, ...rest] = filteredPosts;
-            return (
-              <>
-                {/* Lead story — editorial split */}
-                <Link href={lead.href} className="group block mb-16 md:mb-24">
-                  <article className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
-                    <div className="md:col-span-7 relative aspect-[4/3] overflow-hidden rounded-md">
-                      <img
-                        src={lead.image}
-                        alt={lead.title}
-                        className="absolute h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    </div>
-                    <div className="md:col-span-5">
-                      <p className="label text-brass mb-3">Featured · {lead.category}</p>
-                      <h2 className="font-serif text-3xl md:text-4xl font-normal text-warm-dark leading-[1.15] mb-4 group-hover:text-brass transition-colors">
-                        {lead.title}
-                      </h2>
-                      <p className="font-sans text-base text-warm-dark/75 leading-relaxed mb-6">
-                        {lead.excerpt}
-                      </p>
-                      <div className="flex items-center gap-4 font-sans text-xs text-warm-dark/60">
-                        <span>{lead.date}</span>
-                        <span aria-hidden="true">·</span>
-                        <span>{lead.readTime}</span>
-                      </div>
-                      <span className="mt-6 inline-flex items-center font-sans text-sm font-medium text-brass group-hover:text-brass-dark">
-                        Read article
-                        <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-                      </span>
-                    </div>
-                  </article>
-                </Link>
-
-                {/* Remaining posts — 3-up */}
-                {rest.length > 0 && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {rest.map((post) => (
-                      <Link key={post.href} href={post.href} className="group flex flex-col">
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-md mb-5">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="absolute h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                          />
-                        </div>
-                        <p className="label text-brass mb-2">{post.category}</p>
-                        <h3 className="font-serif text-xl md:text-2xl font-normal text-warm-dark leading-snug mb-3 group-hover:text-brass transition-colors">
-                          {post.title}
-                        </h3>
-                        <p className="line-clamp-3 font-sans text-sm text-warm-dark/70 leading-relaxed mb-4">
-                          {post.excerpt}
-                        </p>
-                        <div className="mt-auto flex items-center gap-3 font-sans text-xs text-warm-dark/60">
-                          <span>{post.date}</span>
-                          <span aria-hidden="true">·</span>
-                          <span>{post.readTime}</span>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </>
-            );
-          })()}
         </div>
       </section>
 
       {/* Newsletter CTA */}
       <section className="bg-linen">
         <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-cream rounded-md p-6 md:p-10 border border-border/50">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-cream rounded-md p-6 md:p-10 border border-border-light/50">
             <div>
               <h3 className="font-serif text-xl text-warm-dark mb-1">
                 New posts, honest answers, occasional offers.
@@ -185,7 +153,7 @@ export default function BlogPage() {
               <input
                 type="email"
                 placeholder="Your email"
-                className="flex-1 md:w-64 bg-white border border-border rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-2 focus:ring-brass/20 outline-none"
+                className="flex-1 md:w-64 bg-white border border-border-light rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-2 focus:ring-brass/20 outline-none"
               />
               <button className="shrink-0 rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-6 py-3 hover:bg-brass-dark transition-colors">
                 Subscribe
@@ -202,12 +170,14 @@ export default function BlogPage() {
             The best answers come from a direct conversation.
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#book-now"
+            <Link
+              href="https://blvd.app/@rejuvenate-and-refine/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book a Consultation
-            </a>
+            </Link>
             <Link
               href="tel:4693970434"
               className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"

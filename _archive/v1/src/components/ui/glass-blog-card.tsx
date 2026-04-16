@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { BookOpen, Clock } from "lucide-react";
 
 interface GlassBlogCardProps {
   title?: string;
@@ -68,10 +67,9 @@ export function GlassBlogCard({
               href={href}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 rounded-full bg-brass px-6 py-2.5 font-sans text-xs font-medium text-white shadow-lg shadow-brass/25"
+              className="inline-flex items-center gap-2 rounded-full bg-brass px-6 py-2.5 font-sans text-xs font-medium uppercase tracking-widest text-cream shadow-brass-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-cream focus-visible:outline-offset-2"
             >
-              <BookOpen className="h-4 w-4" />
-              Read Article
+              Read article
             </motion.a>
           </div>
         </div>
@@ -82,7 +80,7 @@ export function GlassBlogCard({
             <h3 className="font-serif text-base md:text-lg font-medium leading-snug text-warm-dark transition-colors group-hover:text-brass">
               {title}
             </h3>
-            <p className="line-clamp-2 font-sans text-sm text-warm-dark/60 leading-relaxed">
+            <p className="line-clamp-2 font-sans text-sm text-warm-dark/70 leading-relaxed">
               {excerpt}
             </p>
           </div>
@@ -103,10 +101,7 @@ export function GlassBlogCard({
               </div>
             </div>
 
-            <div className="flex items-center gap-1 font-sans text-xs text-warm-dark/50">
-              <Clock className="h-3 w-3" />
-              <span>{readTime}</span>
-            </div>
+            <span className="font-sans text-xs text-warm-dark/60">{readTime}</span>
           </div>
         </div>
       </Card>

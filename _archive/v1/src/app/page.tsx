@@ -3,15 +3,64 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ServiceCard } from "@/components/ServiceCard";
+import { TrustBadge } from "@/components/TrustBadge";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
 import { HeroSection } from "@/components/ui/hero-section-4";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { Feature73 } from "@/components/ui/feature-73";
 import { LocationMap } from "@/components/ui/expand-map";
 import { Gallery4 } from "@/components/ui/gallery4";
 import Cards from "@/components/ui/cards";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
+import { Sparkles, Layers, Heart } from "lucide-react";
+
+const trustBadges = [
+  {
+    label: "Surgeon-Led Care",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    label: "Complimentary Consultations",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Transparent Pricing, Always",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23" />
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      </svg>
+    ),
+  },
+  {
+    label: "5-Star Patient Reviews",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ),
+  },
+  {
+    label: "Clean, Modern Clinic",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+];
 
 const concerns = [
   "Fine Lines & Wrinkles",
@@ -27,23 +76,23 @@ const concerns = [
 const surgeonPoints = [
   {
     num: "01",
-    title: "Clinical depth across every service",
-    desc: "A surgeon understands how the body works systemically, not just surface level. That perspective informs every treatment plan at R&R, from injectables to wellness.",
+    title: "Training in living anatomy",
+    desc: "Dr. Robledo's surgical experience means she understands how tissues actually behave, not just how they look in diagrams.",
   },
   {
     num: "02",
-    title: "Safety is structural, not incidental",
-    desc: "Complications are managed, not panicked over. Dr. Robledo has the training, the tools, and the clinical judgment to handle anything unexpected. That changes your safety profile entirely.",
+    title: "Complication management",
+    desc: "If something unexpected happens, a surgeon knows exactly what to do. That background changes everything about your safety.",
   },
   {
     num: "03",
-    title: "Precision in every decision",
-    desc: "Knowing exactly what to do, how much, and when to stop is a surgical discipline. At R&R it applies to every treatment, every dosage, every recommendation.",
+    title: "Precision placement",
+    desc: "Surgical training builds a level of hand precision and anatomical judgment that transforms injectable outcomes.",
   },
   {
     num: "04",
-    title: "Honest guidance, always",
-    desc: "A surgeon's job is to solve the problem correctly. Dr. Robledo will tell you what will work, what won't, and what you don't need yet. No upselling, no pressure.",
+    title: "Honest recommendations",
+    desc: "A surgeon will tell you what you don't need. If a treatment isn't right, we'll say so. Your trust matters more than a sale.",
   },
 ];
 
@@ -94,7 +143,7 @@ export default function HomePage() {
         title="The most natural version of you, delivered with precision."
         subtitle="Your surgeon-led med spa where every treatment plan is personally overseen by Dr. Rosemarie Robledo."
         primaryButtonText="See What's Possible"
-        primaryButtonHref="#book-now"
+        primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
         secondaryButtonText="Explore Services"
         secondaryButtonHref="/services"
         imageUrl="/images/AEP_0084-Editcopy.jpg"
@@ -102,49 +151,46 @@ export default function HomePage() {
         overlayOpacity={45}
       />
 
-      {/* The surgeon's difference — editorial split */}
+      {/* What Sets Us Apart */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-14">
-            {/* Left: eyebrow + headline + pull quote */}
-            <div className="md:col-span-5">
-              <p className="label text-brass mb-4">What sets us apart</p>
-              <h2 className="font-serif text-3xl md:text-5xl font-light text-warm-dark leading-[1.1] mb-8">
-                The surgeon&apos;s
-                <br />
-                <span className="italic">difference.</span>
-              </h2>
-              <p className="font-serif text-lg md:text-xl italic text-warm-dark/85 leading-snug border-l-2 border-brass pl-5 max-w-sm">
-                &ldquo;In an operating room, there are no retries. We bring that standard to every injection.&rdquo;
-              </p>
-            </div>
-
-            {/* Right: numbered editorial list */}
-            <ol className="md:col-span-7 md:pt-2">
-              {surgeonPoints.map((point, i) => (
-                <li
-                  key={point.num}
-                  className={`grid grid-cols-[auto_1fr] gap-x-6 md:gap-x-10 py-7 ${
-                    i === 0 ? "" : "border-t border-border"
-                  }`}
-                >
-                  <span
-                    aria-hidden="true"
-                    className="font-serif text-2xl md:text-3xl font-light text-brass leading-none tabular-nums pt-1"
-                  >
+        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+          <p className="text-brass text-xs font-sans font-medium uppercase tracking-[0.15em] mb-3 text-center">
+            What sets us apart
+          </p>
+          <h2 className="font-serif text-2xl md:text-[2.2rem] font-light text-warm-dark text-center mb-12">
+            The surgeon&apos;s difference
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {surgeonPoints.map((point) => (
+              <SpotlightCard
+                key={point.num}
+                className="p-8 bg-cream"
+                spotlightColor="rgba(78, 99, 73, 0.25)"
+              >
+                <div className="relative z-10">
+                  <span className="font-serif text-2xl font-light text-brass/40">
                     {point.num}
                   </span>
-                  <div>
-                    <h3 className="font-serif text-xl md:text-2xl font-normal text-warm-dark mb-2 leading-snug">
-                      {point.title}
-                    </h3>
-                    <p className="font-sans text-[0.95rem] text-warm-dark/75 leading-relaxed max-w-prose">
-                      {point.desc}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+                  <h3 className="font-serif text-base font-medium text-warm-dark mt-2 mb-1.5">
+                    {point.title}
+                  </h3>
+                  <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                    {point.desc}
+                  </p>
+                </div>
+              </SpotlightCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="bg-linen">
+        <div className="mx-auto max-w-[1200px] px-6 py-8">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            {trustBadges.map((badge) => (
+              <TrustBadge key={badge.label} icon={badge.icon} label={badge.label} />
+            ))}
           </div>
         </div>
       </section>
@@ -161,18 +207,18 @@ export default function HomePage() {
             cards={[
               {
                 image: "/images/laser.jpg",
-                title: "Multiple technologies, one physician. Every laser and skin treatment selected specifically for your skin type, tone, and concern.",
-                tag: "Laser & Skin",
+                title: "Multiple technologies. One physician. Every laser treatment selected for your skin.",
+                tag: "Laser",
               },
               {
                 image: "/images/interventions.jpg",
-                title: "Precision placement guided by surgical anatomy. Botox, dermal fillers, lip fillers, PRP, and more, designed to move naturally and last.",
-                tag: "Injectables & Fillers",
+                title: "Real collagen takes time to build. Protocols designed for the long result.",
+                tag: "Microneedling",
               },
               {
                 image: "/images/IVTherapy.jpg",
-                title: "IV therapy, hormone optimization, and medically supervised weight loss. The inside matters as much as the outside.",
-                tag: "Wellness & Optimization",
+                title: "IV therapy, hormone optimization, and medically supervised weight loss.",
+                tag: "Wellness",
               },
             ]}
           />
@@ -194,21 +240,19 @@ export default function HomePage() {
               />
             </div>
             <div>
-              <p className="label text-brass mb-3">Meet your provider</p>
+              <p className="label text-brass mb-3">Meet Your Provider</p>
               <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
                 Dr. Rosemarie Robledo
               </h2>
               <blockquote className="font-serif text-lg md:text-xl text-warm-dark/80 italic leading-relaxed border-l-2 border-brass pl-5 mb-6">
-                &ldquo;I spent years in an operating room making high-stakes
-                decisions. That training never leaves you. It shapes how I
-                look at every patient, every treatment, and every outcome.&rdquo;
+                &ldquo;I believe every patient who sits in my chair deserves the same
+                precision and care they&apos;d receive in an operating room.&rdquo;
               </blockquote>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
-                Dr. Robledo started her career in trauma surgery, where
-                precision is not optional and the margin for error is zero.
-                She brought that same mindset to aesthetic medicine, not
-                because it was the easy path, but because she believed
-                patients deserved that standard.
+                As a board-certified surgeon, Dr. Robledo brings an unparalleled
+                understanding of facial anatomy to aesthetic medicine. Her
+                surgical training informs every injection, ensuring results that
+                are both beautiful and safe.
               </p>
               <div className="bg-cream rounded-md p-5 mb-6">
                 <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
@@ -247,12 +291,14 @@ export default function HomePage() {
             delivered with precision.
           </h2>
           <div className="flex flex-wrap gap-4 justify-center mt-10">
-            <a
-              href="#book-now"
+            <Link
+              href="https://blvd.app/@rejuvenate-and-refine/login"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Consultation
-            </a>
+            </Link>
             <Link
               href="/services"
               className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
@@ -329,26 +375,26 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <Feature73
             heading="A space designed for you"
-            description="Rejuvenate & Refine was designed from the ground up to meet surgical-grade standards, while feeling like a place you genuinely want to spend time. Every detail was considered, from the warmth of the lighting to the quiet of the suites. Clean, modern, and built around your comfort."
-            linkUrl="#book-now"
+            description="Our Prosper clinic was built from the ground up to meet surgical-suite standards, while feeling like a place you actually want to spend time. Warm, modern, and meticulously clean."
+            linkUrl="https://blvd.app/@rejuvenate-and-refine/login"
             linkText="Schedule a visit"
             features={[
               {
                 id: "clinic-1",
-                title: "Private Treatment Suites",
-                description: "Step in, breathe out. Warm, quiet, and completely private. Designed so the only thing you need to think about is relaxing.",
+                title: "Private treatment suites",
+                description: "Each suite is designed for comfort and privacy, with surgical-grade sterilization standards maintained throughout.",
                 image: "/images/space4.jpg",
               },
               {
                 id: "clinic-2",
-                title: "Recovery Lounge",
-                description: "A comfortable, welcoming space that is yours throughout your visit. Soft seating, complimentary refreshments, and a calm atmosphere that makes being here feel easy.",
+                title: "Comfortable recovery area",
+                description: "Relax in our warm, modern recovery space with complimentary beverages while your treatment settles in.",
                 image: "/images/space1.jpg",
               },
               {
                 id: "clinic-3",
-                title: "Consultation Rooms",
-                description: "Private, relaxed, and completely pressure-free. A space where you and Dr. Robledo can talk openly, take your time, and build a plan around exactly what you want.",
+                title: "Modern consultation rooms",
+                description: "Meet with Dr. Robledo in a calm, welcoming environment designed for open conversation about your goals.",
                 image: "/images/space 5.jpg",
               },
             ]}
@@ -363,10 +409,10 @@ export default function HomePage() {
             <div className="flex-1">
               <p className="label text-brass mb-3">Our Location</p>
               <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
-                Find us in Prosper.
+                Find us in Prosper
               </h2>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
-                Easy to reach, with plenty of parking so your visit starts stress-free.
+                Conveniently located off Prairie Drive in Prosper, Texas. We welcome patients from Prosper, Celina, McKinney, Frisco, and the surrounding North Texas communities.
               </p>
               <address className="not-italic font-sans text-sm text-warm-dark/80 leading-relaxed mb-6 space-y-1">
                 <p className="font-medium text-warm-dark">2120 Prairie Dr Suite 402</p>
@@ -395,8 +441,8 @@ export default function HomePage() {
       {/* You asked. We'll answer honestly. */}
       <section className="bg-cream">
         <Gallery4
-          title="From our blog"
-          description="The Doctor's Journal."
+          title="From Our Blog"
+          description="You asked. We'll answer honestly."
           items={[
             {
               id: "aging",
@@ -436,16 +482,16 @@ export default function HomePage() {
       {/* Booking CTA */}
       <div id="book" className="bg-linen">
         <Feature1
-          title="The best version of you is closer than you think."
-          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          title="Book a complimentary consultation."
+          description="No commitment, no pressure. Dr. Robledo will personally review your goals before your visit. Pick your treatment, choose a time, and get confirmed within 24 hours."
           imageSrc="/images/space2.jpg"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
-            label: "Start here",
-            href: "#book-now",
+            label: "Book Online",
+            href: "https://blvd.app/@rejuvenate-and-refine/login",
           }}
           buttonSecondary={{
-            label: "Call us",
+            label: "Call (469) 397-0434",
             href: "tel:+14693970434",
           }}
         />

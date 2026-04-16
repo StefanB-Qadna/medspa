@@ -188,7 +188,7 @@ export default function AboutPage() {
                 <p className="font-sans text-xs font-medium uppercase tracking-[0.1em] text-brass mt-1 mb-2">
                   {member.role}
                 </p>
-                <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                   {member.desc}
                 </p>
               </div>

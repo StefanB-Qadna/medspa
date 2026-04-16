@@ -138,16 +138,20 @@ export const ImageComparisonSlider = React.forwardRef<
           style={{ left: `calc(${sliderPosition}% - 2px)` }}
         >
           {/* Divider Line */}
-          <div className="absolute inset-y-0 w-0.5 bg-cream" />
+          <div className="absolute inset-y-0 w-0.5 bg-white/70 backdrop-blur-sm" />
 
           {/* Handle */}
           <div
             className={cn(
-              "absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-12 w-12 flex items-center justify-center rounded-full bg-cream text-brass shadow-md",
+              "absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-12 w-12 flex items-center justify-center rounded-full shadow-xl backdrop-blur-md",
               "transition-all duration-300 ease-in-out",
               "group-hover:scale-105",
-              isDragging && "scale-105 shadow-lg"
+              isDragging && "scale-105 shadow-2xl"
             )}
+            style={{
+              backgroundColor: "rgba(253, 251, 247, 0.8)",
+              color: "#B08D57",
+            }}
             role="slider"
             aria-valuenow={sliderPosition}
             aria-valuemin={0}

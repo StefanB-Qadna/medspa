@@ -36,20 +36,20 @@ function BookingModal({ onClose }: { onClose: () => void }) {
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-warm-dark/80 backdrop-blur-sm"
+        className="absolute inset-0 bg-warm-dark/80"
         onClick={onClose}
       />
 
       {/* Modal */}
       <motion.div
-        className="relative w-full max-w-[520px] bg-cream rounded-md overflow-hidden border border-border-light shadow-2xl"
+        className="relative w-full max-w-[520px] bg-cream rounded-md overflow-hidden border border-border shadow-2xl"
         initial={{ scale: 0.95, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 20 }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-border-light bg-linen">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-linen">
           <div>
             <h3 className="font-serif text-lg font-medium text-warm-dark">
               Book Your Visit
@@ -60,7 +60,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
             className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-warm-dark/5 transition-colors"
             aria-label="Close booking"
           >
-            <X size={18} className="text-warm-dark/60" />
+            <X size={18} className="text-warm-dark/70" />
           </button>
         </div>
 
@@ -73,7 +73,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
           <h4 className="font-serif text-xl font-medium text-warm-dark mb-2">
             Ready to schedule?
           </h4>
-          <p className="font-sans text-sm text-warm-dark/60 mb-8 max-w-sm mx-auto leading-relaxed">
+          <p className="font-sans text-sm text-warm-dark/70 mb-8 max-w-sm mx-auto leading-relaxed">
             Our booking system will open in a small window so you can pick your
             treatment, date, and time, while staying on this page.
           </p>
@@ -102,7 +102,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
             )}
           </div>
 
-          <div className="mt-8 pt-6 border-t border-border-light">
+          <div className="mt-8 pt-6 border-t border-border">
             <p className="font-sans text-xs text-warm-dark/40 mb-3">
               Prefer to book by phone?
             </p>

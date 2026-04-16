@@ -35,7 +35,7 @@ export default function Cards({
       <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark max-w-lg text-center text-balance">
         {heading}
       </h2>
-      <p className="font-sans text-sm text-warm-dark/60 leading-relaxed mt-3 max-w-md text-center">
+      <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mt-3 max-w-md text-center">
         {description}
       </p>
 
