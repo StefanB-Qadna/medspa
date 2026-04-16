@@ -76,23 +76,23 @@ const concerns = [
 const surgeonPoints = [
   {
     num: "01",
-    title: "Training in living anatomy",
-    desc: "Dr. Robledo's surgical experience means she understands how tissues actually behave, not just how they look in diagrams.",
+    title: "Clinical depth across every service",
+    desc: "A surgeon understands how the body works systemically, not just surface level. That perspective informs every treatment plan at R&R, from injectables to wellness.",
   },
   {
     num: "02",
-    title: "Complication management",
-    desc: "If something unexpected happens, a surgeon knows exactly what to do. That background changes everything about your safety.",
+    title: "Safety is structural, not incidental",
+    desc: "Complications are managed, not panicked over. Dr. Robledo has the training, the tools, and the clinical judgment to handle anything unexpected. That changes your safety profile entirely.",
   },
   {
     num: "03",
-    title: "Precision placement",
-    desc: "Surgical training builds a level of hand precision and anatomical judgment that transforms injectable outcomes.",
+    title: "Precision in every decision",
+    desc: "Knowing exactly what to do, how much, and when to stop is a surgical discipline. At R&R it applies to every treatment, every dosage, every recommendation.",
   },
   {
     num: "04",
-    title: "Honest recommendations",
-    desc: "A surgeon will tell you what you don't need. If a treatment isn't right, we'll say so. Your trust matters more than a sale.",
+    title: "Honest guidance, always",
+    desc: "A surgeon's job is to solve the problem correctly. Dr. Robledo will tell you what will work, what won't, and what you don't need yet. No upselling, no pressure.",
   },
 ];
 
@@ -207,18 +207,18 @@ export default function HomePage() {
             cards={[
               {
                 image: "/images/laser.jpg",
-                title: "Multiple technologies. One physician. Every laser treatment selected for your skin.",
-                tag: "Laser",
+                title: "Multiple technologies, one physician. Every laser and skin treatment selected specifically for your skin type, tone, and concern.",
+                tag: "Laser & Skin",
               },
               {
                 image: "/images/interventions.jpg",
-                title: "Real collagen takes time to build. Protocols designed for the long result.",
-                tag: "Microneedling",
+                title: "Precision placement guided by surgical anatomy. Botox, dermal fillers, lip fillers, PRP, and more, designed to move naturally and last.",
+                tag: "Injectables & Fillers",
               },
               {
                 image: "/images/IVTherapy.jpg",
-                title: "IV therapy, hormone optimization, and medically supervised weight loss.",
-                tag: "Wellness",
+                title: "IV therapy, hormone optimization, and medically supervised weight loss. The inside matters as much as the outside.",
+                tag: "Wellness & Optimization",
               },
             ]}
           />
@@ -240,19 +240,21 @@ export default function HomePage() {
               />
             </div>
             <div>
-              <p className="label text-brass mb-3">Meet Your Provider</p>
+              <p className="label text-brass mb-3">Meet your provider</p>
               <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
                 Dr. Rosemarie Robledo
               </h2>
               <blockquote className="font-serif text-lg md:text-xl text-warm-dark/80 italic leading-relaxed border-l-2 border-brass pl-5 mb-6">
-                &ldquo;I believe every patient who sits in my chair deserves the same
-                precision and care they&apos;d receive in an operating room.&rdquo;
+                &ldquo;I spent years in an operating room making high-stakes
+                decisions. That training never leaves you. It shapes how I
+                look at every patient, every treatment, and every outcome.&rdquo;
               </blockquote>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
-                As a board-certified surgeon, Dr. Robledo brings an unparalleled
-                understanding of facial anatomy to aesthetic medicine. Her
-                surgical training informs every injection, ensuring results that
-                are both beautiful and safe.
+                Dr. Robledo started her career in trauma surgery, where
+                precision is not optional and the margin for error is zero.
+                She brought that same mindset to aesthetic medicine, not
+                because it was the easy path, but because she believed
+                patients deserved that standard.
               </p>
               <div className="bg-cream rounded-md p-5 mb-6">
                 <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
@@ -375,26 +377,26 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <Feature73
             heading="A space designed for you"
-            description="Our Prosper clinic was built from the ground up to meet surgical-suite standards, while feeling like a place you actually want to spend time. Warm, modern, and meticulously clean."
+            description="Rejuvenate & Refine was designed from the ground up to meet surgical-grade standards, while feeling like a place you genuinely want to spend time. Every detail was considered, from the warmth of the lighting to the quiet of the suites. Clean, modern, and built around your comfort."
             linkUrl="https://blvd.app/@rejuvenate-and-refine/login"
             linkText="Schedule a visit"
             features={[
               {
                 id: "clinic-1",
-                title: "Private treatment suites",
-                description: "Each suite is designed for comfort and privacy, with surgical-grade sterilization standards maintained throughout.",
+                title: "Private Treatment Suites",
+                description: "Step in, breathe out. Warm, quiet, and completely private. Designed so the only thing you need to think about is relaxing.",
                 image: "/images/space4.jpg",
               },
               {
                 id: "clinic-2",
-                title: "Comfortable recovery area",
-                description: "Relax in our warm, modern recovery space with complimentary beverages while your treatment settles in.",
+                title: "Recovery Lounge",
+                description: "A comfortable, welcoming space that is yours throughout your visit. Soft seating, complimentary refreshments, and a calm atmosphere that makes being here feel easy.",
                 image: "/images/space1.jpg",
               },
               {
                 id: "clinic-3",
-                title: "Modern consultation rooms",
-                description: "Meet with Dr. Robledo in a calm, welcoming environment designed for open conversation about your goals.",
+                title: "Consultation Rooms",
+                description: "Private, relaxed, and completely pressure-free. A space where you and Dr. Robledo can talk openly, take your time, and build a plan around exactly what you want.",
                 image: "/images/space 5.jpg",
               },
             ]}
@@ -409,10 +411,10 @@ export default function HomePage() {
             <div className="flex-1">
               <p className="label text-brass mb-3">Our Location</p>
               <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
-                Find us in Prosper
+                Find us in Prosper.
               </h2>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
-                Conveniently located off Prairie Drive in Prosper, Texas. We welcome patients from Prosper, Celina, McKinney, Frisco, and the surrounding North Texas communities.
+                Easy to reach, with plenty of parking so your visit starts stress-free.
               </p>
               <address className="not-italic font-sans text-sm text-warm-dark/80 leading-relaxed mb-6 space-y-1">
                 <p className="font-medium text-warm-dark">2120 Prairie Dr Suite 402</p>
@@ -441,8 +443,8 @@ export default function HomePage() {
       {/* You asked. We'll answer honestly. */}
       <section className="bg-cream">
         <Gallery4
-          title="From Our Blog"
-          description="You asked. We'll answer honestly."
+          title="From our blog"
+          description="The Doctor's Journal."
           items={[
             {
               id: "aging",
@@ -482,16 +484,16 @@ export default function HomePage() {
       {/* Booking CTA */}
       <div id="book" className="bg-linen">
         <Feature1
-          title="Book a complimentary consultation."
-          description="No commitment, no pressure. Dr. Robledo will personally review your goals before your visit. Pick your treatment, choose a time, and get confirmed within 24 hours."
+          title="The best version of you is closer than you think."
+          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.jpg"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
-            label: "Book Online",
+            label: "Start here",
             href: "https://blvd.app/@rejuvenate-and-refine/login",
           }}
           buttonSecondary={{
-            label: "Call (469) 397-0434",
+            label: "Call us",
             href: "tel:+14693970434",
           }}
         />
