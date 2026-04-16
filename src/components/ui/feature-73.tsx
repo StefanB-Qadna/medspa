@@ -45,7 +45,7 @@ export const Feature73 = ({
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {features[0] && (
-            <div className="flex flex-col overflow-clip rounded-md md:col-span-2 md:grid md:grid-cols-2 border border-border-light">
+            <div className="flex flex-col overflow-clip rounded-md md:col-span-2 md:grid md:grid-cols-2 border border-border">
               <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
                 <img
                   src={features[0].image}
@@ -57,7 +57,7 @@ export const Feature73 = ({
                 <h3 className="font-serif text-lg font-medium text-warm-dark mb-3 md:mb-4 md:text-xl">
                   {features[0].title}
                 </h3>
-                <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                   {features[0].description}
                 </p>
               </div>
@@ -66,7 +66,7 @@ export const Feature73 = ({
           {features.slice(1).map((feature) => (
             <div
               key={feature.id}
-              className="flex flex-col overflow-clip rounded-md border border-border-light"
+              className="flex flex-col overflow-clip rounded-md border border-border"
             >
               <div>
                 <img
@@ -79,7 +79,7 @@ export const Feature73 = ({
                 <h3 className="font-serif text-lg font-medium text-warm-dark mb-3 md:mb-4 md:text-xl">
                   {feature.title}
                 </h3>
-                <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                   {feature.description}
                 </p>
               </div>

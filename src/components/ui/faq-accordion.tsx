@@ -61,7 +61,7 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
             <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
               Frequently asked questions
             </h2>
-            <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+            <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
               Have a question? We&apos;ve got honest answers. If you don&apos;t
               find what you&apos;re looking for, feel free to reach out.
             </p>
@@ -75,7 +75,7 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
               return (
                 <div
                   key={index}
-                  className="overflow-hidden rounded-md border border-border-light bg-white transition-all hover:border-brass/30"
+                  className="overflow-hidden rounded-md border border-border bg-white transition-all hover:border-brass/30"
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -102,8 +102,8 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="border-t border-border-light px-5 pb-5 pt-4">
-                          <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                        <div className="border-t border-border px-5 pb-5 pt-4">
+                          <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>

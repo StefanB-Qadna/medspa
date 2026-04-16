@@ -3,15 +3,64 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ServiceCard } from "@/components/ServiceCard";
+import { TrustBadge } from "@/components/TrustBadge";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
 import { HeroSection } from "@/components/ui/hero-section-4";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { Feature73 } from "@/components/ui/feature-73";
 import { LocationMap } from "@/components/ui/expand-map";
 import { Gallery4 } from "@/components/ui/gallery4";
 import Cards from "@/components/ui/cards";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
+import { Sparkles, Layers, Heart } from "lucide-react";
+
+const trustBadges = [
+  {
+    label: "Surgeon-Led Care",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+  },
+  {
+    label: "Complimentary Consultations",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Transparent Pricing, Always",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23" />
+        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      </svg>
+    ),
+  },
+  {
+    label: "5-Star Patient Reviews",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ),
+  },
+  {
+    label: "Clean, Modern Clinic",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+    ),
+  },
+];
 
 const concerns = [
   "Fine Lines & Wrinkles",
@@ -102,49 +151,46 @@ export default function HomePage() {
         overlayOpacity={45}
       />
 
-      {/* The surgeon's difference — editorial split */}
+      {/* What Sets Us Apart */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-14">
-            {/* Left: eyebrow + headline + pull quote */}
-            <div className="md:col-span-5">
-              <p className="label text-brass mb-4">What sets us apart</p>
-              <h2 className="font-serif text-3xl md:text-5xl font-light text-warm-dark leading-[1.1] mb-8">
-                The surgeon&apos;s
-                <br />
-                <span className="italic">difference.</span>
-              </h2>
-              <p className="font-serif text-lg md:text-xl italic text-warm-dark/85 leading-snug border-l-2 border-brass pl-5 max-w-sm">
-                &ldquo;In an operating room, there are no retries. We bring that standard to every injection.&rdquo;
-              </p>
-            </div>
-
-            {/* Right: numbered editorial list */}
-            <ol className="md:col-span-7 md:pt-2">
-              {surgeonPoints.map((point, i) => (
-                <li
-                  key={point.num}
-                  className={`grid grid-cols-[auto_1fr] gap-x-6 md:gap-x-10 py-7 ${
-                    i === 0 ? "" : "border-t border-border"
-                  }`}
-                >
-                  <span
-                    aria-hidden="true"
-                    className="font-serif text-2xl md:text-3xl font-light text-brass leading-none tabular-nums pt-1"
-                  >
+        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+          <p className="text-brass text-xs font-sans font-medium uppercase tracking-[0.15em] mb-3 text-center">
+            What sets us apart
+          </p>
+          <h2 className="font-serif text-2xl md:text-[2.2rem] font-light text-warm-dark text-center mb-12">
+            The surgeon&apos;s difference
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {surgeonPoints.map((point) => (
+              <SpotlightCard
+                key={point.num}
+                className="p-8 bg-cream"
+                spotlightColor="rgba(78, 99, 73, 0.25)"
+              >
+                <div className="relative z-10">
+                  <span className="font-serif text-2xl font-light text-brass/40">
                     {point.num}
                   </span>
-                  <div>
-                    <h3 className="font-serif text-xl md:text-2xl font-normal text-warm-dark mb-2 leading-snug">
-                      {point.title}
-                    </h3>
-                    <p className="font-sans text-[0.95rem] text-warm-dark/75 leading-relaxed max-w-prose">
-                      {point.desc}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ol>
+                  <h3 className="font-serif text-base font-medium text-warm-dark mt-2 mb-1.5">
+                    {point.title}
+                  </h3>
+                  <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                    {point.desc}
+                  </p>
+                </div>
+              </SpotlightCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="bg-linen">
+        <div className="mx-auto max-w-[1200px] px-6 py-8">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            {trustBadges.map((badge) => (
+              <TrustBadge key={badge.label} icon={badge.icon} label={badge.label} />
+            ))}
           </div>
         </div>
       </section>

@@ -123,14 +123,14 @@ export default function BotoxPage() {
           <SectionHeading title="Key Benefits" centered={false} />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
             {benefits.map((b) => (
-              <div key={b.title} className="border border-border-light rounded-md p-5">
+              <div key={b.title} className="border border-border rounded-md p-5">
                 <div className="w-10 h-10 rounded-full bg-brass/10 flex items-center justify-center mb-3 text-brass">
                   {b.icon}
                 </div>
                 <h3 className="font-sans text-sm font-semibold text-warm-dark mb-1">
                   {b.title}
                 </h3>
-                <p className="font-sans text-xs text-warm-dark/60 leading-relaxed">
+                <p className="font-sans text-xs text-warm-dark/70 leading-relaxed">
                   {b.desc}
                 </p>
               </div>
@@ -149,7 +149,7 @@ export default function BotoxPage() {
                 key={d.label}
                 className={`flex-1 min-w-[120px] text-center ${
                   i < treatmentDetails.length - 1
-                    ? "md:border-r md:border-border-light"
+                    ? "md:border-r md:border-border"
                     : ""
                 } py-4`}
               >
@@ -170,12 +170,12 @@ export default function BotoxPage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <SectionHeading title="Pricing" centered={false} />
           <div className="mt-8 max-w-lg">
-            <div className="border border-border-light rounded-md overflow-hidden">
+            <div className="border border-border rounded-md overflow-hidden">
               {pricingItems.map((item, i) => (
                 <div
                   key={item.product}
                   className={`flex items-center justify-between px-5 py-4 font-sans text-sm ${
-                    i > 0 ? "border-t border-border-light" : ""
+                    i > 0 ? "border-t border-border" : ""
                   }`}
                 >
                   <span className="text-warm-dark font-medium">{item.product}</span>
@@ -277,7 +277,7 @@ export default function BotoxPage() {
                       <p className="font-sans text-sm font-semibold text-warm-dark mb-0.5">
                         {item.title}
                       </p>
-                      <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                      <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
