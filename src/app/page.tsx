@@ -140,9 +140,9 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <HeroSection
-        title="The surgeon's standard, for your face."
-        subtitle="Board-certified surgeon Dr. Rosemarie Robledo brings surgical precision to every aesthetic treatment. Botox, fillers, laser treatments, and wellness services with a personal touch."
-        primaryButtonText="Book Consultation"
+        title="The most natural version of you, delivered with precision."
+        subtitle="Your surgeon-led med spa where every treatment plan is personally overseen by Dr. Rosemarie Robledo."
+        primaryButtonText="See What's Possible"
         primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
         secondaryButtonText="Explore Services"
         secondaryButtonHref="/services"

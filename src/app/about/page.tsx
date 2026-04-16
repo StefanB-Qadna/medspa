@@ -3,27 +3,56 @@
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { HeroSection } from "@/components/ui/hero-section-4";
+import { InteractiveSelector } from "@/components/ui/interactive-selector";
 
 const teamMembers = [
   {
     name: "Dr. Rosemarie Robledo",
     role: "Founder & Medical Director",
     desc: "Double board-certified surgeon with a passion for precision aesthetics.",
+    image: "/images/DrRobledo2.jpg",
   },
   {
-    name: "Team Member",
+    name: "LaKiesha",
     role: "Aesthetic Nurse Practitioner",
     desc: "Specialized in injectables and advanced skin treatments.",
+    image: "/images/LaKiesha.jpg",
   },
   {
-    name: "Team Member",
+    name: "Susen",
     role: "Licensed Esthetician",
     desc: "Expert in facials, peels, and personalized skincare regimens.",
+    image: "/images/susen.jpg",
   },
   {
-    name: "Team Member",
+    name: "Grace",
+    role: "Registered Nurse",
+    desc: "Clinical care and treatment support with a warm, attentive touch.",
+    image: "/images/grace.jpg",
+  },
+  {
+    name: "Abby",
     role: "Patient Coordinator",
     desc: "Your first point of contact for scheduling and treatment planning.",
+    image: "/images/abby.jpg",
+  },
+  {
+    name: "Olivia",
+    role: "Aesthetic Nurse",
+    desc: "Focused, precise injector with a gentle chairside manner.",
+    image: "/images/Olivia.jpg",
+  },
+  {
+    name: "Jenni",
+    role: "Laser Specialist",
+    desc: "Advanced laser and skin rejuvenation treatments tailored to your goals.",
+    image: "/images/Jenni.jpg",
+  },
+  {
+    name: "Darren",
+    role: "Operations Manager",
+    desc: "Keeps the practice running smoothly so your visit feels effortless.",
+    image: "/images/Darren.jpg",
   },
 ];
 
@@ -64,9 +93,8 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <HeroSection
-        title="Our Story"
-        subtitle="Founded by a double board-certified surgeon with a passion for aesthetics and a commitment to doing right by every patient."
-        imageUrl="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&auto=format&fit=crop&q=80"
+        imageUrl="/images/Team.jpg"
+        imagePosition="center 25%"
         size="medium"
         overlayOpacity={50}
       />
@@ -75,7 +103,13 @@ export default function AboutPage() {
       <section className="bg-cream">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div className="aspect-[3/4] bg-linen rounded-md" />
+            <div className="aspect-[3/4] rounded-md overflow-hidden bg-linen">
+              <img
+                src="/images/DrRobledo.jpg"
+                alt="Dr. Rosemarie Robledo"
+                className="h-full w-full object-cover"
+              />
+            </div>
             <div>
               <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-6">
                 Meet Dr. Rosemarie Robledo
@@ -138,10 +172,16 @@ export default function AboutPage() {
             subtitle="Handpicked from Dr. Robledo's hospital colleagues, each team member brings clinical expertise and a genuine commitment to your care."
             centered={false}
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-            {teamMembers.map((member, i) => (
-              <div key={i} className="text-center">
-                <div className="w-32 h-32 rounded-full bg-cream mx-auto mb-4" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mt-12">
+            {teamMembers.map((member) => (
+              <div key={member.name} className="text-center">
+                <div className="w-48 h-48 md:w-52 md:h-52 rounded-full bg-cream mx-auto mb-5 overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
                 <h3 className="font-serif text-lg font-medium text-warm-dark">
                   {member.name}
                 </h3>
@@ -190,13 +230,31 @@ export default function AboutPage() {
             subtitle="A warm, modern environment designed for your comfort, where clinical precision meets luxury care."
             centered={false}
           />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            <div className="aspect-[4/3] bg-cream rounded-md" />
-            <div className="aspect-[4/3] bg-cream rounded-md" />
-            <div className="md:col-span-2 aspect-[2/1] bg-cream rounded-md" />
-            <div className="md:col-span-2 aspect-[2/1] bg-cream rounded-md" />
-            <div className="aspect-[4/3] bg-cream rounded-md" />
-            <div className="aspect-[4/3] bg-cream rounded-md" />
+          <div className="mt-12">
+            <InteractiveSelector
+              options={[
+                {
+                  title: "Relaxing Room",
+                  description: "Unwind before or after your treatment.",
+                  image: "/images/space5.jpg",
+                },
+                {
+                  title: "Treatment Room",
+                  description: "Private, clinical-grade suite.",
+                  image: "/images/space6.jpg",
+                },
+                {
+                  title: "Lounge",
+                  description: "A calm, welcoming space.",
+                  image: "/images/space7.jpg",
+                },
+                {
+                  title: "Lounge",
+                  description: "Comfortable seating for every visit.",
+                  image: "/images/space8.jpg",
+                },
+              ]}
+            />
           </div>
         </div>
       </section>
