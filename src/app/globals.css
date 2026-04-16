@@ -1,99 +1,109 @@
 @import "tailwindcss";
+@import "./design-tokens.css";
 
-@theme inline {
-  /* Colors - Brand */
-  --color-cream: #FDFBF7;
-  --color-linen: #F0E6D8;
-  --color-warm-dark: #3D3530;
-  --color-brass: #B08D57;
-  --color-brass-dark: #9A7A48;
-  --color-forest: #4E6349;
-  --color-error: #C44B3F;
-  --color-placeholder: #9A8E82;
-  --color-border-light: #D6D1CA;
-  --color-white: #FFFFFF;
+/* ==========================================================================
+ *  Global styles
+ *  Design tokens live in ./design-tokens.css — edit tokens there, not here.
+ * ========================================================================== */
 
-  /* Fonts */
-  --font-serif: var(--font-cormorant);
-  --font-sans: var(--font-jost);
-
-  /* Border Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 12px;
-}
-
-/* Base Styles */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  /* Scroll is owned by Lenis — see src/components/SmoothScroll.tsx */
 
   body {
-    background-color: #FDFBF7;
-    color: #3D3530;
-    font-family: var(--font-jost), sans-serif;
+    background-color: var(--color-cream);
+    color: var(--color-warm-dark);
+    font-family: var(--font-sans);
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: var(--leading-relaxed);
   }
 
-  /* Typography */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-cormorant), serif;
-    line-height: 1.2;
+    font-family: var(--font-serif);
+    line-height: var(--leading-tight);
+  }
+
+  /* Accessibility: skip-to-content link, revealed on keyboard focus */
+  .skip-to-content {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: var(--color-warm-dark);
+    color: var(--color-cream);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    z-index: var(--z-tooltip);
+    transform: translateY(-150%);
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .skip-to-content:focus {
+    transform: translateY(0);
   }
 }
 
-/* Label style */
+/* ==========================================================================
+ *  Reusable component classes
+ * ========================================================================== */
+
+/* Uppercase eyebrow label */
 .label {
-  font-family: var(--font-jost), sans-serif;
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: var(--tracking-widest);
 }
 
-/* Smooth transitions */
+/* Smooth color transitions on interactive elements */
 a, button {
-  transition: all 200ms ease;
+  transition: color var(--duration-fast) var(--ease-standard),
+              background-color var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) var(--ease-standard);
 }
 
-/* Focus states for accessibility */
+/* Focus state — brass outline on all interactive elements */
 :focus-visible {
-  outline: 2px solid #B08D57;
+  outline: 2px solid var(--color-brass);
   outline-offset: 2px;
 }
 
-/* Blog article prose */
+/* ==========================================================================
+ *  Blog article prose
+ * ========================================================================== */
+
 .prose-medspa p {
-  font-family: var(--font-jost), sans-serif;
+  font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.8;
-  color: rgba(61, 53, 48, 0.75);
+  line-height: var(--leading-relaxed);
+  color: color-mix(in srgb, var(--color-warm-dark) 80%, transparent);
   margin-bottom: 1.5rem;
 }
 
 .prose-medspa h2 {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-serif);
   font-size: 1.5rem;
-  font-weight: 400;
-  color: #3D3530;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-warm-dark);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .prose-medspa hr {
   border: none;
-  border-top: 1px solid #D6D1CA;
+  border-top: 1px solid var(--color-border);
   margin: 2.5rem 0;
 }
 
 .prose-medspa .italic {
   font-style: italic;
-  color: rgba(61, 53, 48, 0.6);
+  color: color-mix(in srgb, var(--color-warm-dark) 80%, transparent);
 }
 
-/* Respect reduced motion */
+/* ==========================================================================
+ *  Respect reduced motion system preference
+ * ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

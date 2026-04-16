@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors - Brand */
+  --color-cream: #FDFBF7;
+  --color-linen: #F0E6D8;
+  --color-warm-dark: #3D3530;
+  --color-brass: #B08D57;
+  --color-brass-dark: #9A7A48;
+  --color-forest: #4E6349;
+  --color-error: #C44B3F;
+  --color-placeholder: #9A8E82;
+  --color-border-light: #D6D1CA;
+  --color-white: #FFFFFF;
+
+  /* Fonts */
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-jost);
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 12px;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FDFBF7;
+    color: #3D3530;
+    font-family: var(--font-jost), sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), serif;
+    line-height: 1.2;
+  }
+}
+
+/* Label style */
+.label {
+  font-family: var(--font-jost), sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 200ms ease;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  outline: 2px solid #B08D57;
+  outline-offset: 2px;
+}
+
+/* Blog article prose */
+.prose-medspa p {
+  font-family: var(--font-jost), sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(61, 53, 48, 0.75);
+  margin-bottom: 1.5rem;
+}
+
+.prose-medspa h2 {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #3D3530;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-medspa hr {
+  border: none;
+  border-top: 1px solid #D6D1CA;
+  margin: 2.5rem 0;
+}
+
+.prose-medspa .italic {
+  font-style: italic;
+  color: rgba(61, 53, 48, 0.6);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

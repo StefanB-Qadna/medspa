@@ -40,7 +40,7 @@ export const Feature72 = ({
           <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark max-w-lg text-balance">
             {heading}
           </h2>
-          <p className="font-sans text-sm text-warm-dark/60 leading-relaxed max-w-md">
+          <p className="font-sans text-sm text-warm-dark/70 leading-relaxed max-w-md">
             {description}
           </p>
         </div>
@@ -77,7 +77,7 @@ export const Feature72 = ({
                 <h3 className="font-serif text-lg font-medium text-warm-dark mb-2">
                   {cat.title}
                 </h3>
-                <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+                <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                   {cat.description}
                 </p>
               </div>

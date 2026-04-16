@@ -94,16 +94,10 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           aria-hidden="true"
         />
 
-        {/* Warm-dark overlay (tinted to brand neutral, not pure black) */}
+        {/* Overlay */}
         <div
           className="absolute inset-0 z-[1]"
-          style={{ backgroundColor: `rgba(61, 53, 48, ${overlayOpacity / 100})` }}
-          aria-hidden="true"
-        />
-
-        {/* Top scrim — guarantees WCAG AA contrast for fixed nav regardless of image */}
-        <div
-          className="absolute inset-x-0 top-0 z-[2] h-40 pointer-events-none bg-gradient-to-b from-warm-dark/50 to-transparent"
+          style={{ backgroundColor: `rgba(0,0,0,${overlayOpacity / 100})` }}
           aria-hidden="true"
         />
 

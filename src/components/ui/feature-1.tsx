@@ -32,7 +32,7 @@ export const Feature1 = ({
             <h2 className="font-serif text-[clamp(1.8rem,4vw,2.6rem)] font-normal text-warm-dark mb-4 text-balance">
               {title}
             </h2>
-            <p className="mb-10 max-w-xl font-sans text-sm text-warm-dark/60 leading-relaxed lg:text-base">
+            <p className="mb-10 max-w-xl font-sans text-sm text-warm-dark/70 leading-relaxed lg:text-base">
               {description}
             </p>
             <div className="flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">

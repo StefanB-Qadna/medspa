@@ -16,7 +16,7 @@ export function ServiceCard({
   consultRequired,
 }: ServiceCardProps) {
   return (
-    <div className="bg-white rounded-md border border-border-light/60 overflow-hidden group">
+    <div className="bg-white rounded-md border border-border/60 overflow-hidden group">
       {/* Image placeholder */}
       <div className="aspect-[4/3] bg-linen" />
 
