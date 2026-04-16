@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
+  title?: string;
   subtitle?: string;
   primaryButtonText?: string;
   primaryButtonHref?: string;
@@ -19,6 +19,8 @@ interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: "full" | "medium" | "compact";
   /** Overlay darkness 0-100 */
   overlayOpacity?: number;
+  /** CSS background-position value for the hero image (default "center") */
+  imagePosition?: string;
   /** Extra content rendered below the buttons */
   children?: React.ReactNode;
 }
@@ -66,6 +68,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       label,
       size = "full",
       overlayOpacity = 40,
+      imagePosition = "center",
       children,
       ...props
     },
@@ -83,8 +86,11 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       >
         {/* Background Image */}
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${imageUrl})` }}
+          className="absolute inset-0 z-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: `url(${imageUrl})`,
+            backgroundPosition: imagePosition,
+          }}
           aria-hidden="true"
         />
 
@@ -104,23 +110,25 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         >
           {label && (
             <motion.p
-              className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-white/70 mb-4"
+              className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-cream/70 mb-4"
               variants={itemVariants}
             >
               {label}
             </motion.p>
           )}
 
-          <motion.h1
-            className="font-serif text-3xl font-normal tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl text-balance"
-            variants={itemVariants}
-          >
-            {title}
-          </motion.h1>
+          {title && (
+            <motion.h1
+              className="font-serif text-3xl font-normal tracking-tight text-cream sm:text-4xl md:text-5xl lg:text-6xl text-balance"
+              variants={itemVariants}
+            >
+              {title}
+            </motion.h1>
+          )}
 
           {subtitle && (
             <motion.p
-              className="mt-5 max-w-2xl font-sans text-sm leading-relaxed text-white/80 md:text-base"
+              className="mt-5 max-w-2xl font-sans text-sm leading-relaxed text-cream/80 md:text-base"
               variants={itemVariants}
             >
               {subtitle}

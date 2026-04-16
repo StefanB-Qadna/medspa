@@ -92,7 +92,7 @@ export function Header() {
                 border: isScrolled ? "none" : "1px solid rgba(255,255,255,0.25)",
               }}
             >
-              <Link href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer">Get your tour</Link>
+              <Link href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer">Book Your Visit</Link>
             </Button>
           </div>
 

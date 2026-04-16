@@ -24,22 +24,24 @@
 }
 
 /* Base Styles */
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  background-color: #FDFBF7;
-  color: #3D3530;
-  font-family: var(--font-jost), sans-serif;
-  font-size: 1rem;
-  line-height: 1.7;
-}
+  body {
+    background-color: #FDFBF7;
+    color: #3D3530;
+    font-family: var(--font-jost), sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-cormorant), serif;
-  line-height: 1.2;
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cormorant), serif;
+    line-height: 1.2;
+  }
 }
 
 /* Label style */
