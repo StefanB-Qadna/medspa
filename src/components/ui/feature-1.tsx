@@ -38,8 +38,6 @@ export const Feature1 = ({
             <div className="flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               <a
                 href={buttonPrimary.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
               >
                 {buttonPrimary.label}

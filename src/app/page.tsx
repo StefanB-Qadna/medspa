@@ -143,7 +143,7 @@ export default function HomePage() {
         title="The most natural version of you, delivered with precision."
         subtitle="Your surgeon-led med spa where every treatment plan is personally overseen by Dr. Rosemarie Robledo."
         primaryButtonText="See What's Possible"
-        primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
+        primaryButtonHref="#book-now"
         secondaryButtonText="Explore Services"
         secondaryButtonHref="/services"
         imageUrl="/images/AEP_0084-Editcopy.jpg"
@@ -293,14 +293,12 @@ export default function HomePage() {
             delivered with precision.
           </h2>
           <div className="flex flex-wrap gap-4 justify-center mt-10">
-            <Link
-              href="https://blvd.app/@rejuvenate-and-refine/login"
-              target="_blank"
-              rel="noopener noreferrer"
+            <a
+              href="#book-now"
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Consultation
-            </Link>
+            </a>
             <Link
               href="/services"
               className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
@@ -378,7 +376,7 @@ export default function HomePage() {
           <Feature73
             heading="A space designed for you"
             description="Rejuvenate & Refine was designed from the ground up to meet surgical-grade standards, while feeling like a place you genuinely want to spend time. Every detail was considered, from the warmth of the lighting to the quiet of the suites. Clean, modern, and built around your comfort."
-            linkUrl="https://blvd.app/@rejuvenate-and-refine/login"
+            linkUrl="#book-now"
             linkText="Schedule a visit"
             features={[
               {
@@ -490,7 +488,7 @@ export default function HomePage() {
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
             label: "Start here",
-            href: "https://blvd.app/@rejuvenate-and-refine/login",
+            href: "#book-now",
           }}
           buttonSecondary={{
             label: "Call us",

@@ -270,12 +270,12 @@ export default function AboutPage() {
             Robledo with their care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer"
+            <a
+              href="#book-now"
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
-            </Link>
+            </a>
             <Link
               href="tel:4693970434"
               className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"

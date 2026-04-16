@@ -92,7 +92,7 @@ export function Header() {
                 border: isScrolled ? "none" : "1px solid rgba(255,255,255,0.25)",
               }}
             >
-              <Link href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer">Book Your Visit</Link>
+              <a href="#book-now">Book Your Visit</a>
             </Button>
           </div>
 
@@ -141,9 +141,9 @@ export function Header() {
               fontSize: "0.75rem",
             }}
           >
-            <Link href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+            <a href="#book-now" onClick={() => setIsMobileMenuOpen(false)}>
               Book Your Visit
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

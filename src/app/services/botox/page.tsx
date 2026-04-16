@@ -89,7 +89,7 @@ export default function BotoxPage() {
         subtitle="Smooth fine lines and prevent new wrinkles with precision-placed neurotoxin treatments. Results visible in 3-7 days, lasting 3-4 months."
         label="Services › Injectables"
         primaryButtonText="Book This Treatment"
-        primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
+        primaryButtonHref="#book-now"
         secondaryButtonText="See Pricing"
         secondaryButtonHref="#pricing"
         imageUrl="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1920&auto=format&fit=crop&q=80"
@@ -301,12 +301,12 @@ export default function BotoxPage() {
             Robledo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer"
+            <a
+              href="#book-now"
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
-            </Link>
+            </a>
             <Link
               href="tel:4693970434"
               className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
