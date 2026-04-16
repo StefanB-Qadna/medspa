@@ -18,6 +18,22 @@ const InstagramIcon = () => (
   </svg>
 );
 
+const TikTokIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21 8.5a6.5 6.5 0 0 1-4.5-2v9.5a6 6 0 1 1-6-6c.34 0 .67.03 1 .08v3.1a2.9 2.9 0 1 0 2 2.82V2h3a4.5 4.5 0 0 0 4.5 4.5z" />
+  </svg>
+);
+
 const FacebookIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +60,7 @@ const usefulLinks = [
 
 const socialLinks = [
   { label: "Instagram", href: "#", icon: <InstagramIcon /> },
+  { label: "TikTok", href: "#", icon: <TikTokIcon /> },
   { label: "Facebook", href: "#", icon: <FacebookIcon /> },
 ];
 
