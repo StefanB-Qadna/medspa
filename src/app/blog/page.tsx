@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 const blogPosts = [
   {
@@ -60,23 +61,18 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 text-center">
-          <p className="label text-brass mb-3">Blog</p>
-          <h1 className="font-serif text-3xl md:text-[2.8rem] font-normal text-warm-dark mb-4">
-            Honest answers from a surgeon.
-          </h1>
-          <p className="font-sans text-base text-warm-dark/70 max-w-2xl mx-auto">
-            No hype, no hidden agendas. Just clear, expert-written guidance on
-            aesthetic medicine from someone who spent years in an operating room
-            before opening a med spa.
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        title="Honest answers from a surgeon."
+        subtitle="No hype, no hidden agendas. Just clear, expert-written guidance on aesthetic medicine from someone who spent years in an operating room before opening a med spa."
+        label="Blog"
+        imageUrl="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&auto=format&fit=crop&q=80"
+        size="compact"
+        overlayOpacity={55}
+      />
 
       {/* Category Filters */}
       <section className="bg-cream border-b border-border-light/50">
-        <div className="mx-auto max-w-[1200px] px-6 pb-6">
+        <div className="mx-auto max-w-[1200px] px-6 py-6">
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
               <button
@@ -150,7 +146,7 @@ export default function BlogPage() {
                 New posts, honest answers, occasional offers.
               </h3>
               <p className="font-sans text-sm text-warm-dark/60">
-                Join our newsletter — curated by Dr. Robledo, nothing spammy.
+                Join our newsletter, curated by Dr. Robledo, nothing spammy.
               </p>
             </div>
             <div className="flex gap-3 w-full md:w-auto">

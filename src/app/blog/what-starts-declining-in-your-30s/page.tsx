@@ -1,43 +1,23 @@
-import Link from "next/link";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "What Starts Declining in Your 30s That Nobody Warns You About — Rejuvenate & Refine",
-  description:
-    "The biology of aging starts well before most people expect it. Here is what is actually changing in your body in your 30s and 40s, what symptoms it creates, and what the difference between \"normal for your age\" and \"optimized\" actually looks like.",
-};
+import Link from "next/link";
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 export default function BlogPost() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pt-16 pb-10 md:pt-24 md:pb-14">
-          <Link
-            href="/blog"
-            className="font-sans text-sm text-brass hover:text-brass-dark transition-colors"
-          >
-            &larr; Back to Blog
-          </Link>
-          <div className="mt-6">
-            <span className="font-sans text-[0.65rem] font-medium uppercase tracking-[0.15em] text-brass">
-              Longevity
-            </span>
-            <h1 className="font-serif text-3xl md:text-[2.6rem] font-normal text-warm-dark mt-3 mb-6 leading-tight">
-              What Starts Declining in Your 30s That Nobody Warns You About
-            </h1>
-            <div className="flex items-center gap-4 font-sans text-sm text-warm-dark/50">
-              <span>Dr. Rosemarie Robledo</span>
-              <span>·</span>
-              <span>13 min read</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="What Starts Declining in Your 30s That Nobody Warns You About"
+        label="Longevity · 13 min read"
+        imageUrl="/images/blog 4.png"
+        size="compact"
+        overlayOpacity={55}
+      />
 
       {/* Thumbnail */}
       <div className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pb-10">
+        <div className="mx-auto max-w-[780px] px-6 py-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
               src="/images/blog 4.png"
@@ -141,8 +121,8 @@ export default function BlogPost() {
             </p>
             <p>
               The effects of this gradual decline compound over time. By the
-              mid-30s, fine lines that were once temporary — visible only during
-              expression — begin to persist at rest. Skin texture becomes
+              mid-30s, fine lines that were once temporary, visible only during
+              expression, begin to persist at rest. Skin texture becomes
               slightly less smooth. The face begins losing the density it had in
               the 20s. By the 40s, these changes are more pronounced.
             </p>

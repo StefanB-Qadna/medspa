@@ -6,13 +6,13 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { TrustBadge } from "@/components/TrustBadge";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
-import { ShaderBackground } from "@/components/ui/shaders-hero-section";
+import { HeroSection } from "@/components/ui/hero-section-4";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { Feature73 } from "@/components/ui/feature-73";
 import { LocationMap } from "@/components/ui/expand-map";
 import { Gallery4 } from "@/components/ui/gallery4";
-import { Feature72 } from "@/components/ui/feature-72";
+import Cards from "@/components/ui/cards";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 import { Sparkles, Layers, Heart } from "lucide-react";
 
@@ -139,50 +139,17 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="-mt-20">
-        <ShaderBackground>
-          <div className="absolute bottom-8 left-8 z-20 max-w-lg">
-            <div className="text-left">
-              <div
-                className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 backdrop-blur-sm mb-4 relative"
-                style={{ filter: "url(#glass-effect)" }}
-              >
-                <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
-                <span className="text-white/90 text-xs font-light relative z-10">Prosper, TX Med Spa</span>
-              </div>
-
-              <h1 className="font-serif text-5xl md:text-6xl md:leading-16 tracking-tight font-light text-white mb-4">
-                The surgeon&apos;s{" "}
-                <span className="font-medium italic">standard,</span>
-                <br />
-                <span className="font-light tracking-tight text-white">for your face.</span>
-              </h1>
-
-              <p className="text-xs font-light text-white/70 mb-4 leading-relaxed max-w-md">
-                Board-certified surgeon Dr. Rosemarie Robledo brings surgical precision to every aesthetic treatment.
-                Botox, fillers, laser treatments, and wellness services with a personal touch.
-              </p>
-
-              <div className="flex items-center gap-4 flex-wrap">
-                <Link
-                  href="https://blvd.app/@rejuvenate-and-refine/login"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-3 rounded-full bg-white text-black font-normal text-xs transition-all duration-200 hover:bg-white/90"
-                >
-                  Book Consultation
-                </Link>
-                <Link
-                  href="/services"
-                  className="px-8 py-3 rounded-full bg-transparent border border-white/30 text-white font-normal text-xs transition-all duration-200 hover:bg-white/10 hover:border-white/50"
-                >
-                  Explore Services
-                </Link>
-              </div>
-            </div>
-          </div>
-        </ShaderBackground>
-      </section>
+      <HeroSection
+        title="The surgeon's standard, for your face."
+        subtitle="Board-certified surgeon Dr. Rosemarie Robledo brings surgical precision to every aesthetic treatment. Botox, fillers, laser treatments, and wellness services with a personal touch."
+        primaryButtonText="Book Consultation"
+        primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
+        secondaryButtonText="Explore Services"
+        secondaryButtonHref="/services"
+        imageUrl="/images/AEP_0084-Editcopy.jpg"
+        size="full"
+        overlayOpacity={45}
+      />
 
       {/* What Sets Us Apart */}
       <section className="bg-linen">
@@ -230,40 +197,32 @@ export default function HomePage() {
 
       {/* What we offer */}
       <section className="bg-cream">
-        <Feature72
-          heading="Results that go deeper than the surface."
-          description="Every treatment is physician-guided and built around your biology, not a one-size protocol."
-          imageSrc="/images/space4.jpg"
-          imageAlt="Rejuvenate and Refine treatment room"
-          linkUrl="/services"
-          linkText="View all services"
-          categories={[
-            {
-              id: "laser",
-              title: "Laser",
-              description: "Multiple technologies. One physician. Every laser treatment at R&R is selected and performed based on your skin, your concern, and what will actually work.",
-              icon: <Sparkles className="h-auto w-5" />,
-              image: "",
-              services: [],
-            },
-            {
-              id: "microneedling",
-              title: "Microneedling",
-              description: "Real collagen takes time to build. Our microneedling protocols are designed for the long result, not the quick one.",
-              icon: <Layers className="h-auto w-5" />,
-              image: "",
-              services: [],
-            },
-            {
-              id: "wellness",
-              title: "Wellness",
-              description: "True wellness goes deeper than the surface. IV therapy, hormone optimization, and medically supervised weight loss — each protocol at R&R is physician-guided and built around your lab work, not a template.",
-              icon: <Heart className="h-auto w-5" />,
-              image: "",
-              services: [],
-            },
-          ]}
-        />
+        <div className="mx-auto max-w-[1200px]">
+          <Cards
+            label="What we offer"
+            heading="Results that go deeper than the surface."
+            description="Every treatment is physician-guided and built around your biology, not a one-size protocol."
+            linkUrl="/services"
+            linkText="View all services"
+            cards={[
+              {
+                image: "/images/laser.jpg",
+                title: "Multiple technologies. One physician. Every laser treatment selected for your skin.",
+                tag: "Laser",
+              },
+              {
+                image: "/images/interventions.jpg",
+                title: "Real collagen takes time to build. Protocols designed for the long result.",
+                tag: "Microneedling",
+              },
+              {
+                image: "/images/IVTherapy.jpg",
+                title: "IV therapy, hormone optimization, and medically supervised weight loss.",
+                tag: "Wellness",
+              },
+            ]}
+          />
+        </div>
       </section>
 
       {/* Dr. Robledo */}

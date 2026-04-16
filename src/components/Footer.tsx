@@ -1,15 +1,40 @@
-import Link from "next/link";
+import { Footer as FooterUI } from "@/components/ui/footer";
 
-const serviceLinks = [
-  { label: "Botox & Neuromodulators", href: "/services/botox" },
-  { label: "Dermal Fillers", href: "/services#injectables" },
-  { label: "Lip Fillers", href: "/services#injectables" },
-  { label: "Laser Hair Removal", href: "/services#laser" },
-  { label: "Microneedling", href: "/services#laser" },
-  { label: "IV Therapy", href: "/services#wellness" },
-];
+const InstagramIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
 
-const quickLinks = [
+const FacebookIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const usefulLinks = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
@@ -17,109 +42,38 @@ const quickLinks = [
   { label: "Book Now", href: "https://blvd.app/@rejuvenate-and-refine/login" },
 ];
 
+const socialLinks = [
+  { label: "Instagram", href: "#", icon: <InstagramIcon /> },
+  { label: "Facebook", href: "#", icon: <FacebookIcon /> },
+];
+
+const hours = [
+  { day: "Mon – Fri", time: "9:00 AM – 5:00 PM" },
+  { day: "Saturday", time: "By Appointment" },
+  { day: "Sunday", time: "Closed" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Service", href: "#" },
+];
+
 export function Footer() {
   return (
-    <footer className="bg-warm-dark text-cream border-t-2 border-brass">
-      {/* Footer Links */}
-      <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
-        {/* Decorative dots */}
-        <div className="flex justify-center gap-2 mb-10">
-          <span className="w-1.5 h-1.5 rounded-full bg-brass" />
-          <span className="w-1.5 h-1.5 rounded-full bg-brass" />
-          <span className="w-1.5 h-1.5 rounded-full bg-brass" />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
-          {/* Brand */}
-          <div className="md:col-span-2">
-            <Link
-              href="/"
-              className="font-serif text-lg font-medium tracking-[0.14em] text-cream uppercase"
-            >
-              Rejuvenate <span className="font-light">&</span> Refine
-            </Link>
-            <p className="font-sans text-xs uppercase tracking-[0.15em] text-cream/50 mt-2">
-              Med Spa
-            </p>
-            <address className="font-sans text-sm text-cream/60 not-italic mt-4 leading-relaxed">
-              2120 Prairie Drive Ste 402
-              <br />
-              Prosper, TX 75078
-            </address>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-cream/50 mb-4">
-              Services
-            </h3>
-            <ul className="space-y-2">
-              {serviceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="font-sans text-sm text-cream/70 hover:text-brass transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-cream/50 mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="font-sans text-sm text-cream/70 hover:text-brass transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Hours */}
-          <div>
-            <h3 className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-cream/50 mb-4">
-              Hours
-            </h3>
-            <ul className="space-y-2 font-sans text-sm text-cream/70">
-              <li className="flex justify-between">
-                <span>Mon – Fri</span>
-                <span>9:00 AM – 5:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Saturday</span>
-                <span>By Appointment</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Sunday</span>
-                <span>Closed</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-cream/40">
-          <p>&copy; {new Date().getFullYear()} Rejuvenate & Refine Med Spa. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="#" className="hover:text-cream/70 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-cream/70 transition-colors">
-              Terms of Service
-            </Link>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <FooterUI
+      companyName="Rejuvenate & Refine"
+      companySubtitle="Med Spa"
+      address={
+        <>
+          2120 Prairie Drive Ste 402
+          <br />
+          Prosper, TX 75078
+        </>
+      }
+      usefulLinks={usefulLinks}
+      socialLinks={socialLinks}
+      hours={hours}
+      legalLinks={legalLinks}
+    />
   );
 }

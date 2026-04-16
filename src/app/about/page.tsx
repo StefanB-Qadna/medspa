@@ -1,12 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About Us | Rejuvenate & Refine Med Spa",
-  description:
-    "Meet Dr. Rosemarie Robledo and the care team at Rejuvenate & Refine Med Spa in Prosper, TX.",
-};
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 const teamMembers = [
   {
@@ -67,17 +63,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 text-center">
-          <h1 className="font-serif text-3xl md:text-[2.8rem] font-normal text-warm-dark mb-4">
-            Our Story
-          </h1>
-          <p className="font-sans text-base text-warm-dark/70 max-w-2xl mx-auto">
-            Founded by a double board-certified surgeon with a passion for aesthetics and a
-            commitment to doing right by every patient.
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        title="Our Story"
+        subtitle="Founded by a double board-certified surgeon with a passion for aesthetics and a commitment to doing right by every patient."
+        imageUrl="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&auto=format&fit=crop&q=80"
+        size="medium"
+        overlayOpacity={50}
+      />
 
       {/* Meet Dr. Robledo */}
       <section className="bg-cream">

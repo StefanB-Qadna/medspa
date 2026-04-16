@@ -1,44 +1,23 @@
-import Link from "next/link";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Why Your Dark Spots Keep Coming Back — Rejuvenate & Refine",
-  description:
-    "Melasma is one of the most common and most mismanaged skin conditions in aesthetics. If your dark spots keep returning after treatment, this is likely why.",
-};
+import Link from "next/link";
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 export default function BlogPost() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pt-16 pb-10 md:pt-24 md:pb-14">
-          <Link
-            href="/blog"
-            className="font-sans text-sm text-brass hover:text-brass-dark transition-colors"
-          >
-            &larr; Back to Blog
-          </Link>
-          <div className="mt-6">
-            <span className="font-sans text-[0.65rem] font-medium uppercase tracking-[0.15em] text-brass">
-              Skin
-            </span>
-            <h1 className="font-serif text-3xl md:text-[2.6rem] font-normal text-warm-dark mt-3 mb-6 leading-tight">
-              Why Your Dark Spots Keep Coming Back (The Melasma Truth Most
-              Patients Never Hear)
-            </h1>
-            <div className="flex items-center gap-4 font-sans text-sm text-warm-dark/50">
-              <span>Dr. Rosemarie Robledo</span>
-              <span>·</span>
-              <span>12 min read</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Why Your Dark Spots Keep Coming Back (The Melasma Truth Most Patients Never Hear)"
+        label="Skin · 12 min read"
+        imageUrl="/images/blog 2.png"
+        size="compact"
+        overlayOpacity={55}
+      />
 
       {/* Thumbnail */}
       <div className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pb-10">
+        <div className="mx-auto max-w-[780px] px-6 py-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
               src="/images/blog 2.png"
@@ -80,7 +59,7 @@ export default function BlogPost() {
               It is far more common in women than men. It disproportionately
               affects people with medium to deep skin tones. And it has a very
               strong hormonal component, which is why it is often triggered by
-              pregnancy — often called the &ldquo;mask of pregnancy&rdquo; — by
+              pregnancy, often called the &ldquo;mask of pregnancy&rdquo;, by
               hormonal birth control, or by hormone replacement therapy.
             </p>
             <p>
@@ -187,8 +166,8 @@ export default function BlogPost() {
             </p>
             <p>
               Melasma is strongly driven by estrogen. As long as hormonal
-              fluctuations continue — whether from a monthly cycle, from
-              continuing hormonal contraception, or from perimenopause — the
+              fluctuations continue, whether from a monthly cycle, from
+              continuing hormonal contraception, or from perimenopause, the
               underlying condition remains active. External treatment can
               suppress the visible pigment, but it cannot eliminate the hormonal
               signal telling the melanocytes to produce more.
@@ -208,9 +187,9 @@ export default function BlogPost() {
               working together.
             </p>
             <p>
-              Identifying the type comes first. Topical therapy — the clinical
+              Identifying the type comes first. Topical therapy, the clinical
               standard being a combination of hydroquinone, tretinoin, and a
-              low-potency anti-inflammatory — is usually the foundation of the
+              low-potency anti-inflammatory, is usually the foundation of the
               induction phase. Tranexamic acid, taken orally or applied
               topically, is increasingly well-supported by clinical research and
               is particularly useful for patients who do not respond fully to

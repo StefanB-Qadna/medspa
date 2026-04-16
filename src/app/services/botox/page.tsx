@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 const benefits = [
   {
@@ -83,45 +84,18 @@ export default function BotoxPage() {
   return (
     <>
       {/* Breadcrumb + Hero */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 pt-6 pb-16 md:pb-24">
-          <p className="font-sans text-xs text-warm-dark/50 mb-8">
-            <Link href="/services" className="hover:text-brass transition-colors">
-              Services
-            </Link>
-            {" "}
-            &rsaquo; Injectables
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="font-serif text-3xl md:text-[2.8rem] font-normal text-warm-dark leading-tight mb-4">
-                Botox & Neuromodulators
-                <br />
-                in Prosper, TX
-              </h1>
-              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6 max-w-md">
-                Smooth fine lines and prevent new wrinkles with precision-placed neurotoxin
-                treatments. Results visible in 3-7 days, lasting 3-4 months.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-                >
-                  Book This Treatment
-                </Link>
-                <Link
-                  href="#pricing"
-                  className="inline-flex items-center justify-center rounded-sm border-[1.5px] border-brass text-warm-dark font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass/[0.08] transition-colors"
-                >
-                  See Pricing
-                </Link>
-              </div>
-            </div>
-            <div className="aspect-[4/3] bg-linen rounded-md" />
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Botox & Neuromodulators in Prosper, TX"
+        subtitle="Smooth fine lines and prevent new wrinkles with precision-placed neurotoxin treatments. Results visible in 3-7 days, lasting 3-4 months."
+        label="Services › Injectables"
+        primaryButtonText="Book This Treatment"
+        primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
+        secondaryButtonText="See Pricing"
+        secondaryButtonHref="#pricing"
+        imageUrl="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1920&auto=format&fit=crop&q=80"
+        size="medium"
+        overlayOpacity={50}
+      />
 
       {/* What Are Neuromodulators */}
       <section className="bg-linen">

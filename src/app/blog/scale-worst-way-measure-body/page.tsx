@@ -1,44 +1,23 @@
-import Link from "next/link";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Why the Scale Is the Worst Way to Measure Your Body — Rejuvenate & Refine",
-  description:
-    "Body weight tells you almost nothing about your health, your metabolic function, or how your body actually looks. Here is what body composition is, why it matters more than the number on a scale, and how to actually measure progress.",
-};
+import Link from "next/link";
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 export default function BlogPost() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pt-16 pb-10 md:pt-24 md:pb-14">
-          <Link
-            href="/blog"
-            className="font-sans text-sm text-brass hover:text-brass-dark transition-colors"
-          >
-            &larr; Back to Blog
-          </Link>
-          <div className="mt-6">
-            <span className="font-sans text-[0.65rem] font-medium uppercase tracking-[0.15em] text-brass">
-              Body
-            </span>
-            <h1 className="font-serif text-3xl md:text-[2.6rem] font-normal text-warm-dark mt-3 mb-6 leading-tight">
-              Why the Scale Is the Worst Way to Measure Your Body (And What
-              Actually Matters)
-            </h1>
-            <div className="flex items-center gap-4 font-sans text-sm text-warm-dark/50">
-              <span>Dr. Rosemarie Robledo</span>
-              <span>·</span>
-              <span>11 min read</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Why the Scale Is the Worst Way to Measure Your Body (And What Actually Matters)"
+        label="Body · 11 min read"
+        imageUrl="/images/blog 3.png"
+        size="compact"
+        overlayOpacity={55}
+      />
 
       {/* Thumbnail */}
       <div className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pb-10">
+        <div className="mx-auto max-w-[780px] px-6 py-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
               src="/images/blog 3.png"
@@ -85,8 +64,8 @@ export default function BlogPost() {
               Body composition is the breakdown of what that weight is actually
               made of. The two numbers that matter most are fat mass and lean
               mass. Lean mass includes muscle, bone, organs, and water. Fat mass
-              includes both subcutaneous fat — the fat beneath the skin — and
-              visceral fat — the fat stored around the organs inside the
+              includes both subcutaneous fat, the fat beneath the skin, and
+              visceral fat, the fat stored around the organs inside the
               abdominal cavity.
             </p>
             <p>

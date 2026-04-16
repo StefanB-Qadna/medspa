@@ -1,44 +1,23 @@
-import Link from "next/link";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Your Face Doesn't Age Evenly — Rejuvenate & Refine",
-  description:
-    "Most patients focus on wrinkles. But wrinkles are the last stage of facial aging. Here is what is actually happening beneath the surface, and why treating one layer without understanding the others leads to results that fade too fast.",
-};
+import Link from "next/link";
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 export default function BlogPost() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pt-16 pb-10 md:pt-24 md:pb-14">
-          <Link
-            href="/blog"
-            className="font-sans text-sm text-brass hover:text-brass-dark transition-colors"
-          >
-            &larr; Back to Blog
-          </Link>
-          <div className="mt-6">
-            <span className="font-sans text-[0.65rem] font-medium uppercase tracking-[0.15em] text-brass">
-              Aging
-            </span>
-            <h1 className="font-serif text-3xl md:text-[2.6rem] font-normal text-warm-dark mt-3 mb-6 leading-tight">
-              Your Face Doesn&apos;t Age Evenly, and Most Treatments Miss the
-              Point
-            </h1>
-            <div className="flex items-center gap-4 font-sans text-sm text-warm-dark/50">
-              <span>Dr. Rosemarie Robledo</span>
-              <span>·</span>
-              <span>10 min read</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Your Face Doesn't Age Evenly, and Most Treatments Miss the Point"
+        label="Aging · 10 min read"
+        imageUrl="/images/blog 1.png"
+        size="compact"
+        overlayOpacity={55}
+      />
 
       {/* Thumbnail */}
       <div className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pb-10">
+        <div className="mx-auto max-w-[780px] px-6 py-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
               src="/images/blog 1.png"
@@ -78,8 +57,8 @@ export default function BlogPost() {
               that sets everything else in motion.
             </p>
             <p>
-              The skull is not a static structure. The facial bones — specifically
-              the orbital rim around the eyes, the midface, and the jaw —
+              The skull is not a static structure. The facial bones, specifically
+              the orbital rim around the eyes, the midface, and the jaw,
               gradually resorb over time. This process begins as early as your
               mid-30s and accelerates with age. As the bone recedes, the
               structural foundation underneath your soft tissue shrinks. Skin and
@@ -146,8 +125,8 @@ export default function BlogPost() {
               year-round.
             </p>
             <p>
-              Dynamic wrinkles — the lines that form when you smile, squint, or
-              raise your eyebrows — are caused by repeated muscle movement
+              Dynamic wrinkles, the lines that form when you smile, squint, or
+              raise your eyebrows, are caused by repeated muscle movement
               contracting the overlying skin. Neuromodulators like Botox work by
               relaxing those muscles, which prevents the skin from folding in the
               same place over and over. Over time, consistent treatment also
