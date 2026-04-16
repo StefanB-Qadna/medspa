@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
@@ -24,7 +24,7 @@ const cardVariants = cva(
 );
 
 export interface ServiceBlogCardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrag' | 'onDragEnd' | 'onDragStart' | 'onAnimationStart'>,
     VariantProps<typeof cardVariants> {
   tag: string;
   price?: string;
@@ -35,6 +35,16 @@ export interface ServiceBlogCardProps
   ctaText?: string;
   consultRequired?: boolean;
 }
+
+const cardHover: Variants = {
+  hover: {
+    y: -5,
+    transition: {
+      duration: 0.2,
+      ease: 'easeInOut',
+    },
+  },
+};
 
 const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
   (
@@ -53,15 +63,6 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
     },
     ref
   ) => {
-    const cardHover = {
-      hover: {
-        y: -5,
-        transition: {
-          duration: 0.2,
-          ease: 'easeInOut',
-        },
-      },
-    };
 
     const content = (
       <>

@@ -5,7 +5,17 @@ import { ServiceBlogCard } from "@/components/ui/card-18";
 import { SectionHeading } from "@/components/SectionHeading";
 import { HeroSection } from "@/components/ui/hero-section-4";
 
-const injectables = [
+type ServiceItem = {
+  title: string;
+  description: string;
+  price: string;
+  tag: string;
+  href: string;
+  imageUrl?: string;
+  consultRequired?: boolean;
+};
+
+const injectables: ServiceItem[] = [
   {
     title: "Botox & Neuromodulators",
     description:
@@ -49,7 +59,7 @@ const injectables = [
   },
 ];
 
-const laserSkin = [
+const laserSkin: ServiceItem[] = [
   {
     title: "Laser Hair Removal",
     description:
@@ -118,7 +128,7 @@ const laserSkin = [
   },
 ];
 
-const wellness = [
+const wellness: ServiceItem[] = [
   {
     title: "IV Therapy",
     description:
