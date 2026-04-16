@@ -1,12 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About Us | Rejuvenate & Refine Med Spa",
-  description:
-    "Meet Dr. Rosemarie Robledo and the care team at Rejuvenate & Refine Med Spa in Prosper, TX.",
-};
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 const teamMembers = [
   {
@@ -67,17 +63,13 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 text-center">
-          <h1 className="font-serif text-3xl md:text-[2.8rem] font-normal text-warm-dark mb-4">
-            Our Story
-          </h1>
-          <p className="font-sans text-base text-warm-dark/70 max-w-2xl mx-auto">
-            Founded by a double board-certified surgeon with a passion for aesthetics and a
-            commitment to doing right by every patient.
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        title="Our Story"
+        subtitle="Founded by a double board-certified surgeon with a passion for aesthetics and a commitment to doing right by every patient."
+        imageUrl="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&auto=format&fit=crop&q=80"
+        size="medium"
+        overlayOpacity={50}
+      />
 
       {/* Meet Dr. Robledo */}
       <section className="bg-cream">
@@ -91,7 +83,7 @@ export default function AboutPage() {
               <div className="space-y-4 font-sans text-sm text-warm-dark/70 leading-relaxed">
                 <p>
                   During a plastics rotation early in her medical training, Dr. Robledo
-                  discovered something unexpected — an eye for symmetry and proportion
+                  discovered something unexpected, an eye for symmetry and proportion
                   that went beyond the surgical. While she went on to build a career in
                   trauma surgery, saving lives in high-stakes environments, the pull toward
                   aesthetics never faded.
@@ -143,7 +135,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <SectionHeading
             title="Your Care Team"
-            subtitle="Handpicked from Dr. Robledo's hospital colleagues — each team member brings clinical expertise and a genuine commitment to your care."
+            subtitle="Handpicked from Dr. Robledo's hospital colleagues, each team member brings clinical expertise and a genuine commitment to your care."
             centered={false}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-12">
@@ -195,7 +187,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <SectionHeading
             title="Visit Our Space"
-            subtitle="A warm, modern environment designed for your comfort — where clinical precision meets luxury care."
+            subtitle="A warm, modern environment designed for your comfort, where clinical precision meets luxury care."
             centered={false}
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
@@ -221,7 +213,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="#book"
+              href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation

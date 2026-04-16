@@ -1,110 +1,152 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const navLinks = [
-  { label: "About", href: "/about" },
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-cream border-b border-border-light/50">
-      <div className="mx-auto max-w-[1200px] px-6 flex items-center justify-between h-16 md:h-20">
-        {/* Brand */}
-        <Link
-          href="/"
-          className="font-serif text-base md:text-lg font-medium tracking-[0.14em] text-warm-dark uppercase"
-        >
-          Rejuvenate <span className="font-light">&</span> Refine
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-sans text-sm font-medium text-warm-dark hover:text-brass transition-colors"
-            >
-              {link.label}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-[#FDFBF7]/95 backdrop-blur-sm shadow-sm"
+          : "bg-transparent"
+      }`}
+      style={{ fontFamily: "Jost, sans-serif" }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/">
+              <Image
+                src="/images/Weblog.png"
+                alt="Rejuvenate & Refine"
+                width={180}
+                height={40}
+                className={`h-10 w-auto transition-all duration-500 ${
+                  isScrolled ? "" : "brightness-0 invert"
+                }`}
+                priority
+              />
             </Link>
-          ))}
-          <span className="text-warm-dark/50 text-sm hidden lg:inline font-sans">
-            (469) 397-0434
-          </span>
-          <Link
-            href="#book"
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-6 py-2.5 min-h-[40px] hover:bg-brass-dark transition-colors"
-          >
-            Book Now
-          </Link>
-        </nav>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-warm-dark"
-          aria-label="Toggle menu"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            {mobileOpen ? (
-              <>
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </>
-            ) : (
-              <>
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </>
-            )}
-          </svg>
-        </button>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`relative px-1 py-2 transition-colors duration-500 text-sm font-normal tracking-wide group ${
+                  isScrolled ? "text-[#3D3530]" : "text-white/90"
+                }`}
+                style={{ fontFamily: "Jost, sans-serif", fontSize: "1rem" }}
+              >
+                <span className="group-hover:text-[#B08D57] transition-colors duration-300">
+                  {item.label}
+                </span>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#B08D57] transition-all duration-300 group-hover:w-full" />
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Button
+              asChild
+              className="uppercase tracking-[0.15em] text-xs font-medium px-6 py-2 rounded-full transition-all duration-500"
+              style={{
+                fontFamily: "Jost, sans-serif",
+                backgroundColor: isScrolled ? "#B08D57" : "rgba(255,255,255,0.15)",
+                color: "#FDFBF7",
+                fontWeight: 500,
+                fontSize: "0.75rem",
+                backdropFilter: isScrolled ? "none" : "blur(8px)",
+                border: isScrolled ? "none" : "1px solid rgba(255,255,255,0.25)",
+              }}
+            >
+              <Link href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer">Book Your Visit</Link>
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={`hover:text-[#B08D57] transition-colors duration-500 ${
+                isScrolled ? "text-[#3D3530]" : "text-white"
+              }`}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
       </div>
 
-      {/* Mobile Nav */}
-      {mobileOpen && (
-        <nav className="md:hidden bg-cream border-t border-border-light px-6 py-4 space-y-3">
-          {navLinks.map((link) => (
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        }`}
+        style={{ backgroundColor: "#FDFBF7" }}
+      >
+        <div className="px-4 pt-2 pb-6 space-y-4 border-t border-[#F0E6D8]">
+          {navItems.map((item) => (
             <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="block font-sans text-base text-warm-dark hover:text-brass py-2"
+              key={item.label}
+              href={item.href}
+              className="block text-[#3D3530] hover:text-[#B08D57] transition-colors duration-200 py-2 text-base"
+              style={{ fontFamily: "Jost, sans-serif" }}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              {link.label}
+              {item.label}
             </Link>
           ))}
-          <div className="pt-2 text-sm text-warm-dark/50 font-sans">
-            (469) 397-0434
-          </div>
-          <Link
-            href="#book"
-            onClick={() => setMobileOpen(false)}
-            className="block text-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-6 py-3 mt-3 hover:bg-brass-dark"
+          <Button
+            asChild
+            className="w-full uppercase tracking-[0.15em] text-xs font-medium py-3 rounded-full mt-4"
+            style={{
+              fontFamily: "Jost, sans-serif",
+              backgroundColor: "#B08D57",
+              color: "#FDFBF7",
+              fontWeight: 500,
+              fontSize: "0.75rem",
+            }}
           >
-            Book Now
-          </Link>
-        </nav>
-      )}
-    </header>
+            <Link href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+              Book Your Visit
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </nav>
   );
 }
