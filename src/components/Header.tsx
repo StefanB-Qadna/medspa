@@ -89,7 +89,7 @@ export function Header() {
           <div className="hidden md:block">
             <Button
               asChild
-              className={`uppercase tracking-[0.15em] text-xs font-medium px-6 py-2 rounded-full transition-all duration-500 text-cream ${
+              className={`uppercase tracking-widest text-xs font-medium px-6 py-2 rounded-full transition-all duration-500 text-cream ${
                 isScrolled
                   ? "bg-brass hover:bg-brass-dark border border-transparent"
                   : "bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25"
@@ -148,7 +148,7 @@ export function Header() {
           })}
           <Button
             asChild
-            className="w-full uppercase tracking-[0.15em] text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
+            className="w-full uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
           >
             <Link
               href="https://blvd.app/@rejuvenate-and-refine/login"

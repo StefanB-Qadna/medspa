@@ -116,7 +116,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         >
           {label && (
             <motion.p
-              className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-cream/70 mb-4"
+              className="font-sans text-xs font-medium uppercase tracking-extra text-cream/70 mb-4"
               variants={itemVariants}
             >
               {label}
@@ -147,12 +147,12 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               variants={itemVariants}
             >
               {primaryButtonText && primaryButtonHref && (
-                <Button asChild size="lg" className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-[0.1em] px-8 h-12">
+                <Button asChild size="lg" className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
                   <a href={primaryButtonHref}>{primaryButtonText}</a>
                 </Button>
               )}
               {secondaryButtonText && secondaryButtonHref && (
-                <Button asChild variant="outline" size="lg" className="rounded-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white font-sans text-xs font-medium uppercase tracking-[0.1em] px-8 h-12">
+                <Button asChild variant="outline" size="lg" className="rounded-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
                   <a href={secondaryButtonHref}>{secondaryButtonText}</a>
                 </Button>
               )}

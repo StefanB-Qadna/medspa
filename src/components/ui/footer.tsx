@@ -64,18 +64,12 @@ export const Footer: FC<FooterProps> = ({
       {...props}
     >
       <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
-        <div className="flex justify-center gap-2 mb-10">
-          <span className="w-1.5 h-1.5 rounded-full bg-brass" />
-          <span className="w-1.5 h-1.5 rounded-full bg-brass" />
-          <span className="w-1.5 h-1.5 rounded-full bg-brass" />
-        </div>
-
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div className="flex flex-col items-start gap-4">
             <Link
               href="/"
-              className="flex items-center gap-3 font-serif text-lg font-medium tracking-[0.14em] text-cream uppercase"
+              className="flex items-center gap-3 font-serif text-lg font-medium tracking-widest text-cream uppercase"
             >
               {logoSrc && (
                 <img
@@ -99,7 +93,7 @@ export const Footer: FC<FooterProps> = ({
             </Link>
 
             {companySubtitle && (
-              <p className="font-sans text-xs uppercase tracking-[0.15em] text-cream/50 -mt-2">
+              <p className="font-sans text-xs uppercase tracking-widest text-cream/50 -mt-2">
                 {companySubtitle}
               </p>
             )}
@@ -120,7 +114,7 @@ export const Footer: FC<FooterProps> = ({
           {/* Useful Links */}
           {usefulLinks.length > 0 && (
             <div>
-              <h3 className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-cream/50 mb-4">
+              <h3 className="font-sans text-xs font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {usefulLinksTitle}
               </h3>
               <ul className="space-y-2">
@@ -141,7 +135,7 @@ export const Footer: FC<FooterProps> = ({
           {/* Follow Us */}
           {socialLinks.length > 0 && (
             <div>
-              <h3 className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-cream/50 mb-4">
+              <h3 className="font-sans text-xs font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {socialTitle}
               </h3>
               <ul className="space-y-2">
@@ -168,7 +162,7 @@ export const Footer: FC<FooterProps> = ({
           {/* Opening Hours */}
           {hours.length > 0 && (
             <div>
-              <h3 className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-cream/50 mb-4">
+              <h3 className="font-sans text-xs font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {hoursTitle}
               </h3>
               <ul className="space-y-2 font-sans text-sm text-cream/70">

@@ -81,7 +81,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
           <div className="flex flex-col gap-3">
             <button
               onClick={openBooking}
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-brass text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.15em] px-8 py-4 hover:bg-brass-dark transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-brass text-cream font-sans font-medium uppercase text-[0.78rem] tracking-widest px-8 py-4 hover:bg-brass-dark transition-colors cursor-pointer"
             >
               Open Booking
               <ExternalLink size={14} />
@@ -126,7 +126,7 @@ export function BookingForm() {
     <>
       <section id="book" className="bg-warm-dark py-20 px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <p className="font-sans text-[0.68rem] font-medium uppercase tracking-[0.15em] text-brass mb-3">
+          <p className="font-sans text-[0.68rem] font-medium uppercase tracking-widest text-brass mb-3">
             Reserve Your Visit
           </p>
           <h2 className="font-serif text-[clamp(1.8rem,4vw,2.6rem)] font-normal text-cream mb-3">
@@ -156,7 +156,7 @@ export function BookingForm() {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.15em] px-12 py-4 min-h-[52px] hover:bg-brass-dark transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center rounded-sm bg-brass text-cream font-sans font-medium uppercase text-[0.78rem] tracking-widest px-12 py-4 min-h-[52px] hover:bg-brass-dark transition-colors cursor-pointer"
           >
             Book Online
           </button>

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
 import { HeroSection } from "@/components/ui/hero-section-4";
@@ -97,7 +96,7 @@ export default function HomePage() {
         primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
         secondaryButtonText="Explore Services"
         secondaryButtonHref="/services"
-        imageUrl="/images/AEP_0084-Editcopy.jpg"
+        imageUrl="/images/hero.jpg"
         size="full"
         overlayOpacity={45}
       />
@@ -211,7 +210,7 @@ export default function HomePage() {
                 patients deserved that standard.
               </p>
               <div className="bg-cream rounded-md p-5 mb-6">
-                <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
+                <p className="font-sans text-xs font-medium uppercase tracking-widest text-warm-dark/50 mb-3">
                   Credentials
                 </p>
                 <ul className="space-y-2">
@@ -251,13 +250,13 @@ export default function HomePage() {
               href="https://blvd.app/@rejuvenate-and-refine/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Consultation
             </Link>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
+              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
             >
               Explore Services
             </Link>

@@ -17,7 +17,7 @@ export function SectionHeading({
     <div className={centered ? "text-center" : ""}>
       {label && (
         <p
-          className={`font-sans text-xs font-medium uppercase tracking-[0.15em] mb-3 ${
+          className={`font-sans text-xs font-medium uppercase tracking-widest mb-3 ${
             light ? "text-cream/50" : "text-brass"
           }`}
         >
