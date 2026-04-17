@@ -57,17 +57,7 @@ const treatmentDetails = [
   { label: "Sessions", value: "1 per visit" },
 ];
 
-const pricingItems = [
-  { product: "Botox", price: "$12/unit" },
-  { product: "Letybo", price: "$10/unit" },
-  { product: "Dysport", price: "$4/unit" },
-];
-
 const faqs = [
-  {
-    q: "How much does Botox cost in Prosper, TX?",
-    a: "At Rejuvenate & Refine, Botox starts at $12 per unit. Most clients need 20-60 units depending on the treatment area. A typical forehead treatment costs $240-$360. We offer 0% APR financing through Cherry.",
-  },
   {
     q: "Does Botox hurt?",
     a: "Most clients describe it as a brief pinch. Dr. Robledo uses the finest needles available and can apply topical numbing cream for sensitive areas. The entire treatment takes 15-20 minutes.",
@@ -90,8 +80,8 @@ export default function BotoxPage() {
         label="Services › Injectables"
         primaryButtonText="Book This Treatment"
         primaryButtonHref="#book-now"
-        secondaryButtonText="See Pricing"
-        secondaryButtonHref="#pricing"
+        secondaryButtonText="Learn More"
+        secondaryButtonHref="#benefits"
         imageUrl="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1920&auto=format&fit=crop&q=80"
         size="medium"
         overlayOpacity={50}
@@ -161,40 +151,6 @@ export default function BotoxPage() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section id="pricing" className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
-          <SectionHeading title="Pricing" centered={false} />
-          <div className="mt-8 max-w-lg">
-            <div className="border border-border rounded-md overflow-hidden">
-              {pricingItems.map((item, i) => (
-                <div
-                  key={item.product}
-                  className={`flex items-center justify-between px-5 py-4 font-sans text-sm ${
-                    i > 0 ? "border-t border-border" : ""
-                  }`}
-                >
-                  <span className="text-warm-dark font-medium">{item.product}</span>
-                  <span className="text-brass font-medium">{item.price}</span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-3 flex items-center gap-2 bg-brass/10 rounded-sm px-4 py-2.5">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-brass shrink-0">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              <span className="font-sans text-xs text-warm-dark/70">
-                0% APR Financing available through Cherry
-              </span>
-            </div>
-            <p className="font-sans text-xs text-warm-dark/50 mt-3">
-              Final pricing determined during consultation based on your personalized
-              treatment plan.
-            </p>
           </div>
         </div>
       </section>

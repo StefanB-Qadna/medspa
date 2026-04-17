@@ -51,37 +51,31 @@ const featuredServices = [
   {
     title: "Botox & Neuromodulators",
     description: "Smooth fine lines and wrinkles with precision-placed neurotoxin treatments.",
-    price: "From $12/unit",
     href: "/services/botox",
   },
   {
     title: "Dermal Fillers",
     description: "Restore volume and enhance contours with expertly administered dermal fillers.",
-    price: "From $650/syringe",
     href: "/services#injectables",
   },
   {
     title: "Lip Fillers",
     description: "Achieve naturally fuller lips with our precision lip enhancement treatments.",
-    price: "From $550",
     href: "/services#injectables",
   },
   {
     title: "Laser Hair Removal",
     description: "Permanent hair reduction for face and body with advanced laser technology.",
-    price: "From $150/session",
     href: "/services#laser",
   },
   {
     title: "Microneedling",
     description: "Stimulate collagen production for improved skin texture and reduced scarring.",
-    price: "From $300",
     href: "/services#laser",
   },
   {
     title: "IV Therapy",
     description: "Customized IV vitamin infusions for energy, immunity, and recovery.",
-    price: "From $175",
     href: "/services#wellness",
   },
 ];
@@ -349,7 +343,7 @@ export default function HomePage() {
                 id: "clinic-3",
                 title: "Consultation Rooms",
                 description: "Private, relaxed, and completely pressure-free. A space where you and Dr. Robledo can talk openly, take your time, and build a plan around exactly what you want.",
-                image: "/images/space 5.jpg",
+                image: "/images/spaceDR.webp",
               },
             ]}
           />
