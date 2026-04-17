@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
@@ -132,13 +133,13 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
         whileHover="hover"
         {...props}
       >
-        <a
+        <Link
           href={href}
           className="absolute inset-0 z-10"
           aria-label={`Learn more about ${title}`}
         >
           <span className="sr-only">Learn More</span>
-        </a>
+        </Link>
         <div className="relative z-0 flex h-full w-full flex-col md:flex-row">
           {content}
         </div>

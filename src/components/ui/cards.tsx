@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface CardItem {
@@ -60,7 +61,7 @@ export default function Cards({
 
       {linkUrl && (
         <div className="mt-10 text-center">
-          <a
+          <Link
             href={linkUrl}
             className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
           >
@@ -78,7 +79,7 @@ export default function Cards({
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       )}
     </div>

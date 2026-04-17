@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface Feature {
@@ -35,13 +36,13 @@ export const Feature73 = ({
           <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
             {description}
           </p>
-          <a
+          <Link
             href={linkUrl}
             className="group inline-flex items-center font-sans text-sm font-medium text-brass hover:text-brass-dark transition-colors"
           >
             {linkText}
             <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {features[0] && (
