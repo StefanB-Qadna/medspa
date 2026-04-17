@@ -1,19 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { HeroSection } from "@/components/ui/hero-section-4";
 
 export default function BlogPost() {
   return (
     <>
-      {/* Title */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pt-12 pb-8 text-center">
-          <p className="label text-brass mb-4">Aging · 10 min read</p>
-          <h1 className="font-serif text-4xl md:text-5xl font-normal text-warm-dark leading-tight text-balance">
-            Your Face Doesn&apos;t Age Evenly, and Most Treatments Miss the Point
-          </h1>
-        </div>
-      </section>
+      {/* Hero */}
+      <HeroSection
+        title="Your Face Doesn't Age Evenly, and Most Treatments Miss the Point"
+        label="Aging · 10 min read"
+        imageUrl="/images/blog 1.png"
+        size="compact"
+        overlayOpacity={55}
+      />
 
       {/* Thumbnail */}
       <div className="bg-cream">
@@ -195,14 +195,12 @@ export default function BlogPost() {
             <p className="font-sans text-sm text-warm-dark/70 mb-6">
               Book a complimentary consultation with Dr. Robledo.
             </p>
-            <Link
-              href="https://blvd.app/@rejuvenate-and-refine/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+            <a
+              href="#book-now"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
-            </Link>
+            </a>
           </div>
         </div>
       </article>

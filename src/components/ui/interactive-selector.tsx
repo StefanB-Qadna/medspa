@@ -95,7 +95,7 @@ export function InteractiveSelector({
             {/* Label */}
             <div className="relative z-[2] flex items-end gap-3 px-4 pb-5">
               {option.icon && (
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-cream/20 bg-warm-dark text-cream">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-cream/20 bg-warm-dark/70 text-cream backdrop-blur-md">
                   {option.icon}
                 </div>
               )}

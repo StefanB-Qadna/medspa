@@ -23,7 +23,7 @@ const usefulLinks = [
   { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
-  { label: "Book Now", href: "https://blvd.app/@rejuvenate-and-refine/login" },
+  { label: "Book Now", href: "#book-now" },
 ];
 
 const socialLinks = [

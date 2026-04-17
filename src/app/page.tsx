@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
 import { HeroSection } from "@/components/ui/hero-section-4";
@@ -50,37 +51,31 @@ const featuredServices = [
   {
     title: "Botox & Neuromodulators",
     description: "Smooth fine lines and wrinkles with precision-placed neurotoxin treatments.",
-    price: "From $12/unit",
     href: "/services/botox",
   },
   {
     title: "Dermal Fillers",
     description: "Restore volume and enhance contours with expertly administered dermal fillers.",
-    price: "From $650/syringe",
     href: "/services#injectables",
   },
   {
     title: "Lip Fillers",
     description: "Achieve naturally fuller lips with our precision lip enhancement treatments.",
-    price: "From $550",
     href: "/services#injectables",
   },
   {
     title: "Laser Hair Removal",
     description: "Permanent hair reduction for face and body with advanced laser technology.",
-    price: "From $150/session",
     href: "/services#laser",
   },
   {
     title: "Microneedling",
     description: "Stimulate collagen production for improved skin texture and reduced scarring.",
-    price: "From $300",
     href: "/services#laser",
   },
   {
     title: "IV Therapy",
     description: "Customized IV vitamin infusions for energy, immunity, and recovery.",
-    price: "From $175",
     href: "/services#wellness",
   },
 ];
@@ -93,7 +88,7 @@ export default function HomePage() {
         title="The most natural version of you, delivered with precision."
         subtitle="Your surgeon-led med spa where every treatment plan is personally overseen by Dr. Rosemarie Robledo."
         primaryButtonText="See What's Possible"
-        primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
+        primaryButtonHref="#book-now"
         secondaryButtonText="Explore Services"
         secondaryButtonHref="/services"
         imageUrl="/images/hero.jpg"
@@ -210,7 +205,7 @@ export default function HomePage() {
                 patients deserved that standard.
               </p>
               <div className="bg-cream rounded-md p-5 mb-6">
-                <p className="font-sans text-xs font-medium uppercase tracking-widest text-warm-dark/50 mb-3">
+                <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
                   Credentials
                 </p>
                 <ul className="space-y-2">
@@ -246,17 +241,15 @@ export default function HomePage() {
             delivered with precision.
           </h2>
           <div className="flex flex-wrap gap-4 justify-center mt-10">
-            <Link
-              href="https://blvd.app/@rejuvenate-and-refine/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+            <a
+              href="#book-now"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Consultation
-            </Link>
+            </a>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
+              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
             >
               Explore Services
             </Link>
@@ -331,7 +324,7 @@ export default function HomePage() {
           <Feature73
             heading="A space designed for you"
             description="Rejuvenate & Refine was designed from the ground up to meet surgical-grade standards, while feeling like a place you genuinely want to spend time. Every detail was considered, from the warmth of the lighting to the quiet of the suites. Clean, modern, and built around your comfort."
-            linkUrl="https://blvd.app/@rejuvenate-and-refine/login"
+            linkUrl="#book-now"
             linkText="Schedule a visit"
             features={[
               {
@@ -350,7 +343,7 @@ export default function HomePage() {
                 id: "clinic-3",
                 title: "Consultation Rooms",
                 description: "Private, relaxed, and completely pressure-free. A space where you and Dr. Robledo can talk openly, take your time, and build a plan around exactly what you want.",
-                image: "/images/space 5.jpg",
+                image: "/images/spaceDR.webp",
               },
             ]}
           />
@@ -443,7 +436,7 @@ export default function HomePage() {
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
             label: "Start here",
-            href: "https://blvd.app/@rejuvenate-and-refine/login",
+            href: "#book-now",
           }}
           buttonSecondary={{
             label: "Call us",

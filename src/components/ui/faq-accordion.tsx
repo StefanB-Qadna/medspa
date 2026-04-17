@@ -17,32 +17,37 @@ const defaultFaqs: FAQ[] = [
   {
     question: "What should I expect at my first consultation?",
     answer:
-      "Your first visit is complimentary and completely pressure-free. Dr. Robledo will personally review your goals, assess your facial anatomy, and recommend a treatment plan tailored to you. There's no obligation to proceed. We want you to feel confident in your decision.",
+      "Dr. Robledo will personally review your goals, assess your needs, and give you an honest recommendation. You will leave with a clear plan and zero pressure to book anything.",
   },
   {
-    question: "Is Botox safe? What are the side effects?",
+    question: "Will my results look natural?",
     answer:
-      "Botox is FDA-approved and has an excellent safety profile when administered by a qualified provider. Common side effects are mild and temporary, slight bruising or redness at injection sites. As a board-certified surgeon, Dr. Robledo's deep understanding of facial anatomy minimizes risks significantly.",
+      "That is the entire point. Every treatment at Rejuvenate & Refine is designed to enhance what is already there, not change who you are. Surgical precision means knowing exactly how much is right, and when to stop.",
   },
   {
-    question: "How long do results last?",
+    question: "How do I know which treatment is right for me?",
     answer:
-      "It depends on the treatment. Botox typically lasts 3–4 months. Dermal fillers can last 6–18 months depending on the product and area treated. Laser treatments and microneedling produce progressive results over multiple sessions. We'll set clear expectations during your consultation.",
+      "You don't have to figure that out alone. That is exactly what the consultation is for. Dr. Robledo will assess your skin, your goals, and your timeline and recommend only what will actually make a difference for you.",
   },
   {
-    question: "Do you offer financing or payment plans?",
+    question: "Is Dr. Robledo personally involved in every treatment?",
     answer:
-      "Yes, we offer flexible payment options. We accept all major credit cards, HSA/FSA cards, and offer financing through third-party providers. We're happy to discuss options during your visit so cost never stands between you and the care you deserve.",
+      "Yes. Every treatment plan at Rejuvenate & Refine is personally overseen by Dr. Robledo. She is not a name on the door. She is in the room.",
   },
   {
-    question: "What makes Rejuvenate & Refine different from other med spas?",
+    question: "What is the difference between a med spa and a surgeon-led med spa?",
     answer:
-      "Dr. Robledo is a double board-certified surgeon, not a nurse practitioner or aesthetician. Her surgical training means she understands facial anatomy at the deepest level, can manage complications if they arise, and will always be honest about what you do and don't need.",
+      "Most med spas are run by aestheticians or nurses with injectable training. A surgeon-led med spa means every decision is backed by years of surgical education, anatomical knowledge, and clinical accountability. The difference shows in your results and your safety.",
   },
   {
     question: "How do I book an appointment?",
     answer:
-      "You can book online through our Boulevard booking system, call us at (469) 397-0434, or email admin@rejuvenateandrefine.com. We respond to all inquiries within 24 hours.",
+      "You can book your consultation directly through our online booking system or call us at (469) 397-0434. All new patients start with a complimentary consultation.",
+  },
+  {
+    question: "How do I prepare for my appointment?",
+    answer:
+      "Arrive with clean skin and no makeup if possible. Avoid blood thinners like aspirin or ibuprofen for 48 hours before injectable treatments. If you have specific medical conditions or are on medication, let us know when you book and we will guide you from there.",
   },
 ];
 
@@ -59,11 +64,12 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
               FAQ
             </p>
             <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
-              Frequently asked questions
+              Frequently Asked Questions
             </h2>
-            <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
-              Have a question? We&apos;ve got honest answers. If you don&apos;t
-              find what you&apos;re looking for, feel free to reach out.
+            <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+              Knowledge is part of the care. If you don&apos;t find what you
+              are looking for, reach out directly and we will make sure
+              everything is clear.
             </p>
           </div>
 

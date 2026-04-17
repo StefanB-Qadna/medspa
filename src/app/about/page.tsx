@@ -13,45 +13,46 @@ const teamMembers = [
     image: "/images/DrRobledo2.jpg",
   },
   {
+    name: "Olivia",
+    role: "RN, BSN",
+    desc: "Clinical precision meets genuine care. Brings her ER background and a passion for natural results to every treatment.",
+    image: "/images/Olivia.jpg",
+  },
+  {
+    name: "Matei",
+    role: "PA-C",
+    desc: "Years in emergency medicine and trauma surgery. Same clinical precision and calm to every aesthetic treatment.",
+    image: "/images/Matei.jpg",
+    imagePosition: "center 20%",
+  },
+  {
+    name: "Jenni",
+    role: "RN, BSN",
+    desc: "Five years in trauma care. Laser, microneedling, and a skin-first approach to natural results.",
+    image: "/images/Jenni.jpg",
+  },
+  {
+    name: "Abby",
+    role: "RN, BSN",
+    desc: "Registered nurse and medical esthetician. Brings clinical expertise and a careful eye to every skin concern she treats.",
+    image: "/images/abby.jpg",
+  },
+  {
     name: "LaKiesha",
-    role: "Aesthetic Nurse Practitioner",
-    desc: "Specialized in injectables and advanced skin treatments.",
+    role: "PA-C",
+    desc: "Physician Assistant with specialized training in aesthetic medicine. Precise, experienced, and committed to results that feel completely natural.",
     image: "/images/LaKiesha.jpg",
   },
   {
     name: "Susen",
-    role: "Licensed Esthetician",
+    role: "NP",
     desc: "Expert in facials, peels, and personalized skincare regimens.",
     image: "/images/susen.jpg",
   },
   {
-    name: "Grace",
-    role: "Registered Nurse",
-    desc: "Clinical care and treatment support with a warm, attentive touch.",
-    image: "/images/grace.jpg",
-  },
-  {
-    name: "Abby",
-    role: "Patient Coordinator",
-    desc: "Your first point of contact for scheduling and treatment planning.",
-    image: "/images/abby.jpg",
-  },
-  {
-    name: "Olivia",
-    role: "Aesthetic Nurse",
-    desc: "Focused, precise injector with a gentle chairside manner.",
-    image: "/images/Olivia.jpg",
-  },
-  {
-    name: "Jenni",
-    role: "Laser Specialist",
-    desc: "Advanced laser and skin rejuvenation treatments tailored to your goals.",
-    image: "/images/Jenni.jpg",
-  },
-  {
     name: "Darren",
-    role: "Operations Manager",
-    desc: "Keeps the practice running smoothly so your visit feels effortless.",
+    role: "RN",
+    desc: "Registered nurse with a clinical background and a sharp eye for detail. Ensures every aspect of your visit meets the standard this practice is built on.",
     image: "/images/Darren.jpg",
   },
 ];
@@ -130,7 +131,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="bg-linen rounded-md p-5 mt-6">
-                <p className="font-sans text-xs font-medium uppercase tracking-widest text-warm-dark/50 mb-3">
+                <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
                   Credentials
                 </p>
                 <ul className="space-y-2">
@@ -180,12 +181,13 @@ export default function AboutPage() {
                     src={member.image}
                     alt={member.name}
                     className="h-full w-full object-cover"
+                    style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
                   />
                 </div>
                 <h3 className="font-serif text-lg font-medium text-warm-dark">
                   {member.name}
                 </h3>
-                <p className="font-sans text-xs font-medium uppercase tracking-wider text-brass mt-1 mb-2">
+                <p className="font-sans text-xs font-medium uppercase tracking-[0.1em] text-brass mt-1 mb-2">
                   {member.role}
                 </p>
                 <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
@@ -236,22 +238,22 @@ export default function AboutPage() {
                 {
                   title: "Relaxing Room",
                   description: "Unwind before or after your treatment.",
-                  image: "/images/space5.jpg",
+                  image: "/images/space5.webp",
                 },
                 {
                   title: "Treatment Room",
                   description: "Private, clinical-grade suite.",
-                  image: "/images/space6.jpg",
+                  image: "/images/space6.webp",
                 },
                 {
                   title: "Lounge",
                   description: "A calm, welcoming space.",
-                  image: "/images/space7.jpg",
+                  image: "/images/space7.webp",
                 },
                 {
                   title: "Reception",
                   description: "Comfortable seating for every visit.",
-                  image: "/images/space8.jpg",
+                  image: "/images/space8.webp",
                 },
               ]}
             />
@@ -270,15 +272,15 @@ export default function AboutPage() {
             Robledo with their care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://blvd.app/@rejuvenate-and-refine/login" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+            <a
+              href="#book-now"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
-            </Link>
+            </a>
             <Link
               href="tel:4693970434"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
+              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
             >
               (469) 397-0434
             </Link>

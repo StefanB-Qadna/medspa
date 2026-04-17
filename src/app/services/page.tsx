@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ServiceBlogCard } from "@/components/ui/card-18";
 import { SectionHeading } from "@/components/SectionHeading";
 import { HeroSection } from "@/components/ui/hero-section-4";
@@ -8,7 +7,6 @@ import { HeroSection } from "@/components/ui/hero-section-4";
 type ServiceItem = {
   title: string;
   description: string;
-  price: string;
   tag: string;
   href: string;
   imageUrl?: string;
@@ -17,43 +15,33 @@ type ServiceItem = {
 
 const injectables: ServiceItem[] = [
   {
-    title: "Botox & Neuromodulators",
-    description:
-      "Smooth fine lines and wrinkles with precision-placed neurotoxin treatments.",
-    price: "From $12/unit",
+    title: "Neuromodulators. Botox, Letybo & Dysport",
+    description: "Precision-placed injections that smooth expression lines and prevent new ones.",
     tag: "Injectable",
     href: "/services/botox",
-    imageUrl:
-      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1200&auto=format&fit=crop",
+    imageUrl: "/images/inject2.webp",
   },
   {
     title: "Lip Fillers",
-    description:
-      "Natural-looking volume and definition, customized to your facial proportions.",
-    price: "From $550",
+    description: "Subtle shape, definition, and hydration. Never overfilled.",
     tag: "Filler",
     href: "/services/botox",
   },
   {
     title: "Cheek & Jawline Filler",
-    description: "Restore volume and create a balanced, youthful profile.",
-    price: "From $700",
+    description: "Rebuild midface structure and sharpen the jawline for a lifted, youthful look.",
     tag: "Filler",
     href: "/services/botox",
   },
   {
     title: "Dermal Fillers",
-    description:
-      "Comprehensive filler treatments to restore volume, smooth lines, and enhance features.",
-    price: "From $650",
+    description: "Targeted filler for under-eyes, temples, chin, and folds, planned as a system.",
     tag: "Filler",
     href: "/services/botox",
   },
   {
-    title: "PRP/PRF Therapy",
-    description:
-      "Harness your body's own growth factors for natural healing and rejuvenation.",
-    price: "From $800",
+    title: "PRP & PRF Therapy",
+    description: "Your own blood-derived growth factors to rebuild collagen and restore skin.",
     tag: "Regenerative",
     href: "/services/botox",
   },
@@ -62,68 +50,63 @@ const injectables: ServiceItem[] = [
 const laserSkin: ServiceItem[] = [
   {
     title: "Laser Hair Removal",
-    description:
-      "Permanent hair reduction for face, underarms, legs, bikini, and full body.",
-    price: "From $150/session",
+    description: "Permanent hair reduction on every skin type, including skin of color.",
     tag: "Laser",
     href: "/services/botox",
-    imageUrl:
-      "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1200&auto=format&fit=crop",
-  },
-  {
-    title: "Laser Tattoo Removal",
-    description:
-      "Effective removal with most clients seeing significant fading in 6-8 sessions.",
-    price: "From $200",
-    tag: "Laser",
-    href: "/services/botox",
+    imageUrl: "/images/laserhair.webp",
   },
   {
     title: "Laser Skin Rejuvenation",
-    description:
-      "Reverse sun damage, age spots, and uneven skin tone with advanced laser technology.",
-    price: "From $350",
+    description: "Sun damage, tone, and fine lines corrected with no pain, no downtime protocols.",
     tag: "Laser",
     href: "/services/botox",
   },
   {
-    title: "Sclerotherapy",
-    description:
-      "Safe, effective spider vein treatment for clearer, more even-toned legs.",
-    price: "From $300",
-    tag: "Vascular",
+    title: "Laser Tattoo Removal",
+    description: "Wavelength-specific laser technology that removes any ink color.",
+    tag: "Laser",
     href: "/services/botox",
   },
   {
-    title: "Microneedling",
-    description:
-      "Stimulate collagen production to improve texture, scars, and skin quality.",
-    price: "From $300",
+    title: "RF Microneedling",
+    description: "Deep collagen remodeling and real skin tightening in one treatment.",
     tag: "Skin",
     href: "/services/botox",
   },
   {
+    title: "Microneedling",
+    description: "Trigger your skin\u2019s natural collagen response for smoother, firmer texture.",
+    tag: "Skin",
+    href: "/services/botox",
+  },
+  {
+    title: "NightLase",
+    description: "Non-invasive laser treatment that reduces snoring and improves sleep.",
+    tag: "Laser",
+    href: "/services/botox",
+  },
+  {
+    title: "RF Body Contouring",
+    description: "Tighten skin and reduce localized fat in targeted areas, no downtime.",
+    tag: "Body",
+    href: "/services/botox",
+  },
+  {
     title: "Hydrafacial",
-    description:
-      "Deep cleanse, extract, and hydrate for instantly glowing, refreshed skin.",
-    price: "From $199",
+    description: "Medical-grade cleanse, exfoliate, extract, and hydrate in 45 minutes.",
     tag: "Facial",
     href: "/services/botox",
   },
   {
     title: "Chemical Peels",
-    description:
-      "Controlled exfoliation to reveal smoother, brighter skin with reduced imperfections.",
-    price: "From $200",
+    description: "Medical-grade peels selected for your skin and your tolerance for downtime.",
     tag: "Skin",
     href: "/services/botox",
   },
   {
-    title: "Peptide Therapy",
-    description:
-      "Targeted peptide protocols for recovery, anti-aging, and performance optimization.",
-    price: "From $300",
-    tag: "Regenerative",
+    title: "Sclerotherapy",
+    description: "Targeted injections that clear spider veins and small varicose veins.",
+    tag: "Vascular",
     href: "/services/botox",
   },
 ];
@@ -131,29 +114,34 @@ const laserSkin: ServiceItem[] = [
 const wellness: ServiceItem[] = [
   {
     title: "IV Therapy",
-    description:
-      "Custom vitamin and hydration infusions for energy, immunity, and recovery.",
-    price: "From $175",
+    description: "Targeted vitamins and hydration delivered directly into your bloodstream.",
     tag: "IV Drip",
     href: "/services/botox",
-    imageUrl:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&auto=format&fit=crop",
+    imageUrl: "/images/IVService.webp",
+  },
+  {
+    title: "Medical Weight Loss (GLP-1)",
+    description: "Physician-supervised GLP-1 program with body composition tracking, not just the scale.",
+    tag: "Weight Loss",
+    href: "/services/botox",
   },
   {
     title: "Hormone Optimization",
-    description:
-      "Restore hormonal balance for improved energy, mood, and overall wellness.",
-    price: "Consult Required",
+    description: "Bioidentical hormone therapy guided by comprehensive labs and follow-up.",
     tag: "Wellness",
     href: "/services/botox",
     consultRequired: true,
   },
   {
-    title: "Medical Weight Loss",
-    description:
-      "Physician-supervised GLP-1 programs for sustainable, healthy weight management.",
-    price: "From $499/mo",
-    tag: "Weight Loss",
+    title: "Pelvic Floor Wellness",
+    description: "Non-invasive electromagnetic treatment that restores pelvic floor strength.",
+    tag: "Wellness",
+    href: "/services/botox",
+  },
+  {
+    title: "Peptide Therapy",
+    description: "Targeted peptide protocols for recovery, sleep, cognition, and body composition.",
+    tag: "Regenerative",
     href: "/services/botox",
   },
 ];
@@ -185,10 +173,10 @@ export default function ServicesPage() {
       {/* Hero */}
       <HeroSection
         title="Our Services"
-        subtitle="Personalized treatments backed by surgical precision. From injectables to laser to wellness. Find what is right for you."
+        subtitle="Personalized treatments, physician-led from consultation to follow-up. Every plan is built around your anatomy, your goals, and what will actually move the needle."
         primaryButtonText="Book a Consultation"
-        primaryButtonHref="https://blvd.app/@rejuvenate-and-refine/login"
-        imageUrl="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&auto=format&fit=crop&q=80"
+        primaryButtonHref="#book-now"
+        imageUrl="/images/spaceDR.webp"
         size="medium"
         overlayOpacity={50}
       />
@@ -205,7 +193,6 @@ export default function ServicesPage() {
                 <ServiceBlogCard
                   variant="featured"
                   tag={featured.tag}
-                  price={featured.price}
                   title={featured.title}
                   description={featured.description}
                   imageUrl={featured.imageUrl}
@@ -222,7 +209,6 @@ export default function ServicesPage() {
                     <ServiceBlogCard
                       key={card.title}
                       tag={card.tag}
-                      price={card.price}
                       title={card.title}
                       description={card.description}
                       href={card.href}
@@ -236,6 +222,31 @@ export default function ServicesPage() {
         );
       })}
 
+      {/* Included with Every Plan */}
+      <section className="bg-linen">
+        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+          <SectionHeading title="Included with Every Plan" centered={false} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+            <div className="bg-cream rounded-md p-8">
+              <h3 className="font-serif text-lg font-medium text-warm-dark mb-2">
+                AI Facial & Body Analysis
+              </h3>
+              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
+                Technology-guided skin and body mapping included in every consultation.
+              </p>
+            </div>
+            <div className="bg-cream rounded-md p-8">
+              <h3 className="font-serif text-lg font-medium text-warm-dark mb-2">
+                Preliminary Skin Cancer Screening
+              </h3>
+              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
+                A physician&apos;s visual screening included at consultation, at no cost.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-warm-dark">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20 text-center">
@@ -243,17 +254,15 @@ export default function ServicesPage() {
             Not sure which treatment is right for you?
           </h2>
           <p className="font-sans text-sm text-cream/70 mb-8 max-w-lg mx-auto">
-            Book a complimentary consultation and discover your personalized
-            treatment plan.
+            Book a complimentary consultation and Dr. Robledo will build a plan
+            around your goals, your timeline, and your biology.
           </p>
-          <Link
-            href="https://blvd.app/@rejuvenate-and-refine/login"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+          <a
+            href="#book-now"
+            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
           >
             Book Your Consultation
-          </Link>
+          </a>
         </div>
       </section>
     </>

@@ -104,13 +104,7 @@ export function Header() {
                   : "bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25"
               }`}
             >
-              <Link
-                href="https://blvd.app/@rejuvenate-and-refine/login"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Book a consultation
-              </Link>
+              <a href="#book-now">Book Your Visit</a>
             </Button>
           </div>
 
@@ -159,14 +153,9 @@ export function Header() {
             asChild
             className="w-full uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
           >
-            <Link
-              href="https://blvd.app/@rejuvenate-and-refine/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Book a consultation
-            </Link>
+            <a href="#book-now" onClick={() => setIsMobileMenuOpen(false)}>
+              Book Your Visit
+            </a>
           </Button>
         </div>
       </div>
