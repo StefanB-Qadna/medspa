@@ -91,7 +91,7 @@ export default function HomePage() {
         primaryButtonHref="#book-now"
         secondaryButtonText="Explore Services"
         secondaryButtonHref="/services"
-        imageUrl="/images/AEP_0084-Editcopy.jpg"
+        imageUrl="/images/hero.jpg"
         size="full"
         overlayOpacity={45}
       />
