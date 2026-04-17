@@ -94,20 +94,20 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
           <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-12">
             Treatment Details
           </h2>
-          <div className="flex flex-wrap gap-6 md:gap-0">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0">
             {data.treatmentDetails.map((d, i) => (
               <div
                 key={d.label}
-                className={`flex-1 min-w-[140px] text-center py-5 ${
+                className={`text-center py-6 px-4 ${
                   i < data.treatmentDetails.length - 1
-                    ? "md:border-r md:border-forest/15"
+                    ? "lg:border-r lg:border-forest/15"
                     : ""
                 }`}
               >
-                <p className="font-sans text-sm font-medium uppercase tracking-widest text-forest/50 mb-2">
+                <p className="font-sans text-xs font-medium uppercase tracking-widest text-forest/50 mb-3">
                   {d.label}
                 </p>
-                <p className="font-serif text-2xl font-medium text-warm-dark">
+                <p className="font-serif text-xl md:text-2xl font-medium text-warm-dark leading-snug">
                   {d.value}
                 </p>
               </div>
