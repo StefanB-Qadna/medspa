@@ -49,10 +49,13 @@ export function Header() {
       setHasScrolled(window.scrollY > 20);
     };
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [needsSolidNav]);
+    const rafId = requestAnimationFrame(handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [needsSolidNav, pathname]);
 
   const isScrolled = needsSolidNav || hasScrolled;
 

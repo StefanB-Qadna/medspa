@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
@@ -88,13 +89,13 @@ export const Feature72 = ({
         {/* CTA */}
         {linkUrl && (
           <div className="mt-10 text-center">
-            <a
+            <Link
               href={linkUrl}
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               {linkText}
               <ArrowRight className="ml-2 size-4" />
-            </a>
+            </Link>
           </div>
         )}
       </div>

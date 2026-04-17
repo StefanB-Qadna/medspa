@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -101,7 +102,7 @@ const Gallery4 = ({
                 key={item.id}
                 className="basis-[280px] pl-4 md:basis-[320px]"
               >
-                <a href={item.href} className="group block">
+                <Link href={item.href} className="group block">
                   <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md">
                     <img
                       src={item.image}
@@ -119,7 +120,7 @@ const Gallery4 = ({
                       </span>
                     </div>
                   </div>
-                </a>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
