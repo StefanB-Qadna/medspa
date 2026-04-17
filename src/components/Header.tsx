@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -41,27 +41,37 @@ export function Header() {
   const needsSolidNav = pathname ? pathname.startsWith("/blog/") && pathname !== "/blog" : false;
 
   const [hasScrolled, setHasScrolled] = useState(false);
+  const scrolledRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
+
+  const handleScroll = useCallback(() => {
+    if (rafRef.current !== null) return;
+    rafRef.current = requestAnimationFrame(() => {
+      const scrolled = window.scrollY > 20;
+      if (scrolled !== scrolledRef.current) {
+        scrolledRef.current = scrolled;
+        setHasScrolled(scrolled);
+      }
+      rafRef.current = null;
+    });
+  }, []);
 
   useEffect(() => {
     if (needsSolidNav) return;
 
-    const handleScroll = () => {
-      setHasScrolled(window.scrollY > 20);
-    };
-
-    const rafId = requestAnimationFrame(handleScroll);
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", handleScroll);
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
-  }, [needsSolidNav, pathname]);
+  }, [needsSolidNav, handleScroll]);
 
   const isScrolled = needsSolidNav || hasScrolled;
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 will-change-[background-color,box-shadow] transition-[background-color,box-shadow,backdrop-filter] duration-300 ease-out ${
         isScrolled
           ? "bg-cream/95 backdrop-blur-sm shadow-sm"
           : "bg-transparent"

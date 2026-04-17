@@ -193,16 +193,16 @@ export default function HomePage() {
                 Dr. Rosemarie Robledo
               </h2>
               <blockquote className="font-serif text-lg md:text-xl text-warm-dark/80 italic leading-relaxed border-l-2 border-brass pl-5 mb-6">
-                &ldquo;I spent years in an operating room making high-stakes
-                decisions. That training never leaves you. It shapes how I
-                look at every patient, every treatment, and every outcome.&rdquo;
+                &ldquo;In trauma surgery, there are no retries. Every decision
+                is final. That training doesn&apos;t leave you, it becomes the
+                baseline for every kind of medicine you practice after.&rdquo;
               </blockquote>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
-                Dr. Robledo started her career in trauma surgery, where
-                precision is not optional and the margin for error is zero.
-                She brought that same mindset to aesthetic medicine, not
-                because it was the easy path, but because she believed
-                patients deserved that standard.
+                Dr. Robledo is a double board-certified trauma surgeon and
+                Trauma Medical Director at a busy Level II trauma center. She
+                brought that same standard of precision to aesthetic medicine,
+                and personally developed the laser and RF microneedling
+                techniques used at Rejuvenate & Refine.
               </p>
               <div className="bg-linen rounded-md p-5 mb-6">
                 <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
@@ -211,8 +211,9 @@ export default function HomePage() {
                 <ul className="space-y-2">
                   {[
                     "Double Board-Certified Trauma Surgeon",
+                    "Trauma Medical Director, Level II Trauma Center",
                     "Fellowship-Trained in Aesthetic Medicine",
-                    "Member, American Society of Plastic Surgeons",
+                    "Developer of Proprietary Laser & RF Microneedling Protocols",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-warm-dark/80">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brass shrink-0">
@@ -402,7 +403,7 @@ export default function HomePage() {
       <FAQAccordion />
 
       {/* Booking CTA */}
-      <div id="book" className="bg-linen">
+      <div id="book" className="bg-linen pt-16 md:pt-20">
         <Feature1
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."

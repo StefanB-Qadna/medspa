@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { HeroSection } from "@/components/ui/hero-section-4";
 import { InteractiveSelector } from "@/components/ui/interactive-selector";
+import { Feature1 } from "@/components/ui/feature-1";
 
 const teamMembers = [
   {
@@ -117,17 +118,17 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 font-sans text-sm text-warm-dark/70 leading-relaxed">
                 <p>
-                  During a plastics rotation early in her medical training, Dr. Robledo
-                  discovered something unexpected, an eye for symmetry and proportion
-                  that went beyond the surgical. While she went on to build a career in
-                  trauma surgery, saving lives in high-stakes environments, the pull toward
-                  aesthetics never faded.
+                  Dr. Robledo&apos;s path to aesthetic medicine started long before medical
+                  school. As a child, she struggled with skin issues that no one could fix,
+                  an experience that sparked a lifelong interest in what skin actually needs
+                  to heal, rooted in empathy, precision, and results that last.
                 </p>
                 <p>
-                  After years in the OR, she made a bold choice: bring the precision and
-                  accountability of surgical medicine to the world of aesthetic medicine.
-                  Rejuvenate & Refine was born from the belief that every patient deserves the
-                  same standard of care, whether in an operating room or a treatment suite.
+                  Today, as a double board-certified trauma surgeon and Trauma Medical
+                  Director at a busy Level II trauma center, she brings the same life-saving
+                  precision to aesthetics. She has personally developed the laser and RF
+                  microneedling techniques used at Rejuvenate & Refine, and hand-selected
+                  every member of her clinical team from her own trauma staff.
                 </p>
               </div>
               <div className="bg-linen rounded-md p-5 mt-6">
@@ -137,8 +138,9 @@ export default function AboutPage() {
                 <ul className="space-y-2">
                   {[
                     "Double Board-Certified Trauma Surgeon",
+                    "Trauma Medical Director, Level II Trauma Center",
                     "Fellowship-Trained in Aesthetic Medicine",
-                    "Member, American Society of Plastic Surgeons",
+                    "Developer of Proprietary Laser & RF Microneedling Protocols",
                   ].map((item) => (
                     <li
                       key={item}
@@ -261,32 +263,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-warm-dark">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20 text-center">
-          <h2 className="font-serif text-2xl md:text-3xl font-light text-cream mb-3">
-            Experience the Difference
-          </h2>
-          <p className="font-sans text-sm text-cream/70 mb-8 max-w-lg mx-auto">
-            Book a complimentary consultation and discover why patients trust Dr.
-            Robledo with their care.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#book-now"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-            >
-              Book Your Consultation
-            </a>
-            <Link
-              href="tel:4693970434"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
-            >
-              (469) 397-0434
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Booking CTA */}
+      <div className="bg-linen pt-16 md:pt-20">
+        <Feature1
+          title="The best version of you is closer than you think."
+          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          imageSrc="/images/space2.jpg"
+          imageAlt="Rejuvenate and Refine clinic interior"
+          buttonPrimary={{
+            label: "Start here",
+            href: "#book-now",
+          }}
+          buttonSecondary={{
+            label: "Call us",
+            href: "tel:+14693970434",
+          }}
+        />
+      </div>
     </>
   );
 }
