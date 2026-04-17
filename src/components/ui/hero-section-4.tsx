@@ -134,7 +134,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {subtitle && (
             <motion.p
-              className="mt-5 max-w-2xl font-sans text-sm leading-relaxed text-cream/80 md:text-base"
+              className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-cream/80 md:text-xl"
               variants={itemVariants}
             >
               {subtitle}

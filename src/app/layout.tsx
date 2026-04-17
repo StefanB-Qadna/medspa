@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { SmoothScroll } from "@/components/SmoothScroll";
+import { SmoothScrollProvider } from "@/components/SmoothScroll";
 import { BoulevardWidget } from "@/components/BoulevardWidget";
 
 const cormorant = Cormorant_Garamond({
@@ -39,12 +39,13 @@ export default function RootLayout({
       className={`${cormorant.variable} ${jost.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <a href="#main" className="skip-to-content">Skip to content</a>
-        <SmoothScroll />
-        <Header />
-        <main id="main" className="flex-1 pt-20">{children}</main>
-        <Footer />
-        <BoulevardWidget />
+        <SmoothScrollProvider>
+          <a href="#main" className="skip-to-content">Skip to content</a>
+          <Header />
+          <main id="main" className="flex-1 pt-20">{children}</main>
+          <Footer />
+          <BoulevardWidget />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

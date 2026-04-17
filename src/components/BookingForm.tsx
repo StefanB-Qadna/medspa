@@ -1,13 +1,20 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CalendarDays, Clock, Phone, X, ExternalLink } from "lucide-react";
+import { useLenis } from "@/components/SmoothScroll";
 
 const BOULEVARD_URL = "https://blvd.app/@rejuvenate-and-refine/login";
 
 function BookingModal({ onClose }: { onClose: () => void }) {
+  const lenis = useLenis();
   const [popupBlocked, setPopupBlocked] = useState(false);
+
+  useEffect(() => {
+    lenis?.stop();
+    return () => { lenis?.start(); };
+  }, [lenis]);
 
   const openBooking = useCallback(() => {
     const width = 500;

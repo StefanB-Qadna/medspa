@@ -59,7 +59,7 @@ export const ImageComparisonSlider = React.forwardRef<
     React.useEffect(() => {
       if (isDragging) {
         document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("touchmove", handleTouchMove);
+        document.addEventListener("touchmove", handleTouchMove, { passive: true });
         document.addEventListener("mouseup", handleInteractionEnd);
         document.addEventListener("touchend", handleInteractionEnd);
         document.body.style.cursor = "ew-resize";
