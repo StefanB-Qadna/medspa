@@ -25,18 +25,27 @@ function isActive(pathname: string, href: string) {
 }
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Pages without a dark hero image need the nav to always be in "solid" mode
+  const needsSolidNav = pathname ? pathname.startsWith("/blog/") && pathname !== "/blog" : false;
+
+  const [hasScrolled, setHasScrolled] = useState(false);
+
   useEffect(() => {
+    if (needsSolidNav) return;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setHasScrolled(window.scrollY > 20);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [needsSolidNav]);
+
+  const isScrolled = needsSolidNav || hasScrolled;
 
   return (
     <nav

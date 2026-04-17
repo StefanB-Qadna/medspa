@@ -1,19 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { HeroSection } from "@/components/ui/hero-section-4";
 
 export default function BlogPost() {
   return (
     <>
-      {/* Hero */}
-      <HeroSection
-        title="Your Face Doesn't Age Evenly, and Most Treatments Miss the Point"
-        label="Aging · 10 min read"
-        imageUrl="/images/blog 1.png"
-        size="compact"
-        overlayOpacity={55}
-      />
+      {/* Title */}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-[780px] px-6 pt-12 pb-8 text-center">
+          <p className="label text-brass mb-4">Aging · 10 min read</p>
+          <h1 className="font-serif text-4xl md:text-5xl font-normal text-warm-dark leading-tight text-balance">
+            Your Face Doesn&apos;t Age Evenly, and Most Treatments Miss the Point
+          </h1>
+        </div>
+      </section>
 
       {/* Thumbnail */}
       <div className="bg-cream">
