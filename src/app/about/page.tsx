@@ -238,22 +238,22 @@ export default function AboutPage() {
                 {
                   title: "Relaxing Room",
                   description: "Unwind before or after your treatment.",
-                  image: "/images/space5.jpg",
+                  image: "/images/space5.webp",
                 },
                 {
                   title: "Treatment Room",
                   description: "Private, clinical-grade suite.",
-                  image: "/images/space6.jpg",
+                  image: "/images/space6.webp",
                 },
                 {
                   title: "Lounge",
                   description: "A calm, welcoming space.",
-                  image: "/images/space7.jpg",
+                  image: "/images/space7.webp",
                 },
                 {
                   title: "Reception",
                   description: "Comfortable seating for every visit.",
-                  image: "/images/space8.jpg",
+                  image: "/images/space8.webp",
                 },
               ]}
             />
