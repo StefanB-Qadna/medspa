@@ -102,7 +102,7 @@ a, button {
 
 .prose-medspa p {
   font-family: var(--font-sans);
-  font-size: 1rem;
+  font-size: var(--text-lg);
   line-height: var(--leading-relaxed);
   color: color-mix(in srgb, var(--color-warm-dark) 80%, transparent);
   margin-bottom: 1.5rem;
@@ -110,7 +110,7 @@ a, button {
 
 .prose-medspa h2 {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: var(--text-3xl);
   font-weight: var(--font-weight-normal);
   color: var(--color-warm-dark);
   margin-top: 2.5rem;

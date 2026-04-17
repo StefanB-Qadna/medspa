@@ -174,10 +174,10 @@ export default function HomePage() {
       </section>
 
       {/* Dr. Robledo */}
-      <section className="bg-linen">
+      <section className="bg-cream">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[3/4] bg-cream rounded-md overflow-hidden relative">
+            <div className="aspect-[3/4] bg-linen rounded-md overflow-hidden relative">
               <Image
                 src="/images/DrRobledo.jpg"
                 alt="Dr. Rosemarie Robledo"
@@ -204,7 +204,7 @@ export default function HomePage() {
                 and personally developed the laser and RF microneedling
                 techniques used at Rejuvenate & Refine.
               </p>
-              <div className="bg-cream rounded-md p-5 mb-6">
+              <div className="bg-linen rounded-md p-5 mb-6">
                 <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
                   Credentials
                 </p>
@@ -228,32 +228,6 @@ export default function HomePage() {
                 Read Full Bio &rarr;
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Brand Statement */}
-      <section className="bg-warm-dark">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 text-center">
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-light text-cream max-w-xl mx-auto leading-snug">
-            The feeling of being{" "}
-            <span className="italic">exactly yourself,</span>
-            <br />
-            delivered with precision.
-          </h2>
-          <div className="flex flex-wrap gap-4 justify-center mt-10">
-            <a
-              href="#book-now"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-            >
-              Book Consultation
-            </a>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
-            >
-              Explore Services
-            </Link>
           </div>
         </div>
       </section>

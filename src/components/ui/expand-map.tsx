@@ -2,8 +2,9 @@
 
 import type React from "react"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion"
+import { useLenis } from "@/components/SmoothScroll"
 
 interface LocationMapProps {
   location?: string
@@ -18,9 +19,17 @@ export function LocationMap({
   address = "2120 Prairie Dr Suite 402, Prosper, TX 75078",
   className,
 }: LocationMapProps) {
+  const lenis = useLenis()
   const [isHovered, setIsHovered] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (isExpanded) {
+      lenis?.stop();
+      return () => { lenis?.start(); };
+    }
+  }, [isExpanded, lenis]);
 
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)

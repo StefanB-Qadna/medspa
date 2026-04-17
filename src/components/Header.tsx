@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/Logo";
+import { useLenis } from "@/components/SmoothScroll";
 
 interface NavItem {
   label: string;
@@ -25,8 +26,16 @@ function isActive(pathname: string, href: string) {
 }
 
 export function Header() {
+  const lenis = useLenis();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      lenis?.stop();
+      return () => { lenis?.start(); };
+    }
+  }, [isMobileMenuOpen, lenis]);
 
   // Pages without a dark hero image need the nav to always be in "solid" mode
   const needsSolidNav = pathname ? pathname.startsWith("/blog/") && pathname !== "/blog" : false;
@@ -69,12 +78,12 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex lg:grid lg:grid-cols-3 items-center justify-between h-20">
           {/* Logo — inline SVG, color inherits via currentColor */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 lg:justify-self-start">
             <Link href="/" aria-label="Rejuvenate & Refine — Home">
               <Logo
-                className={`h-10 w-auto transition-colors duration-500 ${
+                className={`h-7 w-auto transition-colors duration-500 ${
                   isScrolled ? "text-warm-dark" : "text-cream"
                 }`}
               />
@@ -82,7 +91,7 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8 lg:justify-self-center">
             {navItems.map((item) => {
               const active = isActive(pathname ?? "/", item.href);
               return (
@@ -108,7 +117,7 @@ export function Header() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block lg:justify-self-end">
             <Button
               asChild
               className={`uppercase tracking-widest text-xs font-medium px-6 py-2 rounded-full transition-all duration-500 text-cream ${
@@ -122,7 +131,7 @@ export function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-sm transition-colors duration-500 hover:text-brass ${
@@ -141,7 +150,7 @@ export function Header() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden overflow-hidden bg-cream transition-all duration-300 ease-in-out ${
+        className={`lg:hidden overflow-hidden bg-cream transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >

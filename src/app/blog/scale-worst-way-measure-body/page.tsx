@@ -1,23 +1,23 @@
 "use client";
 
-import Link from "next/link";
-import { HeroSection } from "@/components/ui/hero-section-4";
-
 export default function BlogPost() {
   return (
     <>
-      {/* Hero */}
-      <HeroSection
-        title="Why the Scale Is the Worst Way to Measure Your Body (And What Actually Matters)"
-        label="Body · 11 min read"
-        imageUrl="/images/blog 3.png"
-        size="compact"
-        overlayOpacity={55}
-      />
+      {/* Header */}
+      <div className="bg-cream">
+        <div className="mx-auto max-w-4xl px-6 pt-16 pb-10 text-center">
+          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass mb-4">
+            Body · 11 min read
+          </p>
+          <h1 className="font-serif text-3xl font-normal tracking-tight text-warm-dark sm:text-4xl md:text-5xl text-balance">
+            Why the Scale Is the Worst Way to Measure Your Body (And What Actually Matters)
+          </h1>
+        </div>
+      </div>
 
       {/* Thumbnail */}
       <div className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 py-10">
+        <div className="mx-auto max-w-[780px] px-6 pb-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
               src="/images/blog 3.png"
@@ -222,7 +222,7 @@ export default function BlogPost() {
             </p>
             <a
               href="#book-now"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-cream font-sans font-medium uppercase text-xs tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
             </a>
