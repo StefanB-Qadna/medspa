@@ -14,16 +14,12 @@ export function SmoothScrollProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [lenis, setLenis] = useState<Lenis | null>(null);
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) return;
-
-    const instance = new Lenis({
+  const [lenis] = useState<Lenis | null>(() => {
+    if (typeof window === "undefined") return null;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return null;
+    }
+    return new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
@@ -31,21 +27,23 @@ export function SmoothScrollProvider({
       touchMultiplier: 1.5,
       lerp: 0.12,
     });
+  });
 
-    setLenis(instance);
+  useEffect(() => {
+    if (!lenis) return;
 
     let rafId: number;
     const raf = (time: number) => {
-      instance.raf(time);
+      lenis.raf(time);
       rafId = requestAnimationFrame(raf);
     };
     rafId = requestAnimationFrame(raf);
 
     return () => {
       cancelAnimationFrame(rafId);
-      instance.destroy();
+      lenis.destroy();
     };
-  }, []);
+  }, [lenis]);
 
   return (
     <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>
