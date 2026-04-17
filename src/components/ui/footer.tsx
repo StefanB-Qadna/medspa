@@ -19,6 +19,7 @@ export interface FooterSocialLink extends FooterLink {
 
 export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
   logoSrc?: string;
+  wordmarkSrc?: string;
   companyName?: string;
   companySubtitle?: string;
   address?: ReactNode;
@@ -35,6 +36,7 @@ export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
 
 export const Footer: FC<FooterProps> = ({
   logoSrc,
+  wordmarkSrc,
   companyName = "Rejuvenate & Refine",
   companySubtitle = "Med Spa",
   address,
@@ -67,29 +69,47 @@ export const Footer: FC<FooterProps> = ({
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div className="flex flex-col items-start gap-4">
-            <Link
-              href="/"
-              className="flex items-center gap-3 font-serif text-lg font-medium tracking-widest text-cream uppercase"
-            >
-              {logoSrc && (
-                <img
-                  src={logoSrc}
-                  alt={`${companyName} Logo`}
-                  className="h-10 w-10 rounded-full object-cover"
+            <Link href="/" aria-label={companyName}>
+              {wordmarkSrc ? (
+                <div
+                  className="h-12 w-[240px] text-cream"
+                  style={{
+                    backgroundColor: "currentColor",
+                    maskImage: `url(${wordmarkSrc})`,
+                    maskSize: "contain",
+                    maskRepeat: "no-repeat",
+                    maskPosition: "left center",
+                    WebkitMaskImage: `url(${wordmarkSrc})`,
+                    WebkitMaskSize: "contain",
+                    WebkitMaskRepeat: "no-repeat",
+                    WebkitMaskPosition: "left center",
+                  }}
+                  role="img"
+                  aria-label={companyName}
                 />
+              ) : (
+                <span className="flex items-center gap-3 font-serif text-lg font-medium tracking-widest text-cream uppercase">
+                  {logoSrc && (
+                    <img
+                      src={logoSrc}
+                      alt={`${companyName} Logo`}
+                      className="h-10 w-10 rounded-full object-cover"
+                    />
+                  )}
+                  <span>
+                    {companyName.split("&").map((part, i, arr) =>
+                      i < arr.length - 1 ? (
+                        <span key={i}>
+                          {part}
+                          <span className="font-light">&</span>
+                        </span>
+                      ) : (
+                        <span key={i}>{part}</span>
+                      )
+                    )}
+                  </span>
+                </span>
               )}
-              <span>
-                {companyName.split("&").map((part, i, arr) =>
-                  i < arr.length - 1 ? (
-                    <span key={i}>
-                      {part}
-                      <span className="font-light">&</span>
-                    </span>
-                  ) : (
-                    <span key={i}>{part}</span>
-                  )
-                )}
-              </span>
             </Link>
 
             {companySubtitle && (
