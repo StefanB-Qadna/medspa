@@ -3,6 +3,7 @@
 import { ServiceBlogCard } from "@/components/ui/card-18";
 import { SectionHeading } from "@/components/SectionHeading";
 import { HeroSection } from "@/components/ui/hero-section-4";
+import { Feature1 } from "@/components/ui/feature-1";
 
 type ServiceItem = {
   title: string;
@@ -247,24 +248,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-warm-dark">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20 text-center">
-          <h2 className="font-serif text-2xl md:text-3xl font-light text-cream mb-3">
-            Not sure which treatment is right for you?
-          </h2>
-          <p className="font-sans text-sm text-cream/70 mb-8 max-w-lg mx-auto">
-            Book a complimentary consultation and Dr. Robledo will build a plan
-            around your goals, your timeline, and your biology.
-          </p>
-          <a
-            href="#book-now"
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-          >
-            Book Your Consultation
-          </a>
-        </div>
-      </section>
+      {/* Booking CTA */}
+      <div className="bg-linen pt-16 md:pt-20">
+        <Feature1
+          title="The best version of you is closer than you think."
+          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          imageSrc="/images/space2.jpg"
+          imageAlt="Rejuvenate and Refine clinic interior"
+          buttonPrimary={{
+            label: "Start here",
+            href: "#book-now",
+          }}
+          buttonSecondary={{
+            label: "Call us",
+            href: "tel:+14693970434",
+          }}
+        />
+      </div>
     </>
   );
 }

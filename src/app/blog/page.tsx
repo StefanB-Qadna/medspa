@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/ui/hero-section-4";
+import { Feature1 } from "@/components/ui/feature-1";
 
 const blogPosts = [
   {
@@ -169,54 +170,23 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-cream rounded-md p-6 md:p-10 border border-border/50">
-            <div>
-              <h3 className="font-serif text-xl text-warm-dark mb-1">
-                New posts, honest answers, occasional offers.
-              </h3>
-              <p className="font-sans text-sm text-warm-dark/70">
-                Join our newsletter, curated by Dr. Robledo, nothing spammy.
-              </p>
-            </div>
-            <div className="flex gap-3 w-full md:w-auto">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 md:w-64 bg-white border border-border rounded-sm px-4 py-3 font-sans text-sm text-warm-dark placeholder:text-placeholder focus:border-brass focus:ring-2 focus:ring-brass/20 outline-none"
-              />
-              <button className="shrink-0 rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-6 py-3 hover:bg-brass-dark transition-colors">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="bg-warm-dark">
-        <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16 text-center">
-          <h2 className="font-serif text-xl md:text-2xl font-light text-cream mb-6">
-            The best answers come from a direct conversation.
-          </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#book-now"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-            >
-              Book a Consultation
-            </a>
-            <Link
-              href="tel:4693970434"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-white/5 transition-colors"
-            >
-              Call Us
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Booking CTA */}
+      <div className="bg-linen pt-16 md:pt-20">
+        <Feature1
+          title="The best version of you is closer than you think."
+          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          imageSrc="/images/space2.jpg"
+          imageAlt="Rejuvenate and Refine clinic interior"
+          buttonPrimary={{
+            label: "Start here",
+            href: "#book-now",
+          }}
+          buttonSecondary={{
+            label: "Call us",
+            href: "tel:+14693970434",
+          }}
+        />
+      </div>
     </>
   );
 }
