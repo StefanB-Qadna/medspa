@@ -21,26 +21,53 @@
     font-family: var(--font-serif);
     line-height: var(--leading-tight);
   }
+}
 
-  /* Accessibility: skip-to-content link, revealed on keyboard focus */
-  .skip-to-content {
-    position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    background: var(--color-warm-dark);
-    color: var(--color-cream);
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-sans);
-    font-size: 0.875rem;
-    z-index: var(--z-tooltip);
-    transform: translateY(-150%);
-    transition: transform var(--duration-fast) var(--ease-standard);
-  }
+/* ==========================================================================
+ *  Non-@theme tokens (durations, z-index)
+ *  Tailwind v4 only processes @theme from imported files — :root blocks in
+ *  @import'd files are dropped. These must live here in the entry CSS.
+ * ========================================================================== */
+:root {
+  --duration-instant: 80ms;
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
+  --duration-slowest: 1000ms;
 
-  .skip-to-content:focus {
-    transform: translateY(0);
-  }
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 20;
+  --z-sticky: 30;
+  --z-overlay: 40;
+  --z-nav: 50;
+  --z-modal-backdrop: 80;
+  --z-modal: 90;
+  --z-toast: 100;
+  --z-tooltip: 110;
+}
+
+/* Accessibility: skip-to-content link, revealed on keyboard Tab.
+ * Must be OUTSIDE @layer base — Tailwind v4 purges custom classes
+ * inside managed layers. */
+.skip-to-content {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: var(--color-warm-dark);
+  color: var(--color-cream);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  z-index: var(--z-tooltip);
+  transform: translateY(-150%);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
 }
 
 /* ==========================================================================

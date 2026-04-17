@@ -124,12 +124,16 @@
 
   /* -------------------------------------------------------------------------
    *  TYPOGRAPHY — TRACKING (letter-spacing)
+   *  ⚠️ EXCEPTION: tracking uses em, not rem. This is intentional.
+   *  em makes letter-spacing proportional to font-size (correct typographic
+   *  behavior). rem would make it a fixed px value at every size (wrong).
    * ------------------------------------------------------------------------- */
   --tracking-tight: -0.02em;
   --tracking-normal: 0;
   --tracking-wide: 0.05em;
-  --tracking-wider: 0.10em;
-  --tracking-widest: 0.15em;   /* eyebrow labels, CTA copy */
+  --tracking-wider: 0.10em;    /* CTA buttons */
+  --tracking-widest: 0.15em;   /* eyebrow labels */
+  --tracking-extra: 0.20em;    /* hero labels, extra-airy */
   --tracking-logo: 0.12em;     /* logo wordmark */
 
   /* -------------------------------------------------------------------------
@@ -196,49 +200,9 @@
 }
 
 /* ==========================================================================
- *  NON-TAILWIND TOKENS
- *  Tailwind v4 has no namespace for these. Consume via var() in arbitrary
- *  values or in raw CSS.
+ *  NON-TAILWIND TOKENS (durations, z-index)
+ *  ⚠️ These live in globals.css, NOT here.
+ *  Tailwind v4 only processes @theme blocks from @import'd files —
+ *  :root blocks are silently dropped. See globals.css for the canonical
+ *  definitions of --duration-* and --z-* tokens.
  * ========================================================================== */
-:root {
-  /* -------------------------------------------------------------------------
-   *  MOTION — DURATION
-   *  Use: transition-[transform] duration-[var(--duration-base)]
-   *  Or in raw CSS: transition: opacity var(--duration-base) var(--ease-standard);
-   * ------------------------------------------------------------------------- */
-  --duration-instant: 80ms;
-  --duration-fast: 150ms;
-  --duration-base: 250ms;
-  --duration-slow: 400ms;
-  --duration-slower: 600ms;
-  --duration-slowest: 1000ms;
-
-  /* -------------------------------------------------------------------------
-   *  Z-INDEX LAYERING
-   *  Use: className="z-[var(--z-nav)]"
-   * ------------------------------------------------------------------------- */
-  --z-base: 0;
-  --z-raised: 10;
-  --z-dropdown: 20;
-  --z-sticky: 30;
-  --z-overlay: 40;
-  --z-nav: 50;
-  --z-modal-backdrop: 80;
-  --z-modal: 90;
-  --z-toast: 100;
-  --z-tooltip: 110;
-}
-
-/* ==========================================================================
- *  REDUCED MOTION — collapse all durations for users who opt out
- * ========================================================================== */
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --duration-instant: 0ms;
-    --duration-fast: 0ms;
-    --duration-base: 0ms;
-    --duration-slow: 0ms;
-    --duration-slower: 0ms;
-    --duration-slowest: 0ms;
-  }
-}

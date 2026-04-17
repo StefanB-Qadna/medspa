@@ -34,7 +34,7 @@ export const Feature72 = ({
       <div className="mx-auto max-w-[1200px] px-6 overflow-hidden">
         {/* Header */}
         <div className="mb-12 md:mb-16 flex flex-col items-center gap-3 text-center">
-          <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-brass">
+          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass">
             What we offer
           </p>
           <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark max-w-lg text-balance">
@@ -90,7 +90,7 @@ export const Feature72 = ({
           <div className="mt-10 text-center">
             <a
               href={linkUrl}
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               {linkText}
               <ArrowRight className="ml-2 size-4" />

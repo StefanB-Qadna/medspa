@@ -105,7 +105,7 @@ export const TestimonialSlider = ({
               {String(reviews.length).padStart(2, "0")}
             </span>
             {/* Vertical "Reviews" Text */}
-            <h2 className="tracking-[0.15em] uppercase text-warm-dark/50 [writing-mode:vertical-rl] md:rotate-180 hidden md:block" style={{ fontFamily: "Jost, sans-serif", fontWeight: 400, fontSize: "0.875rem" }}>
+            <h2 className="tracking-widest uppercase text-warm-dark/50 [writing-mode:vertical-rl] md:rotate-180 hidden md:block" style={{ fontFamily: "Jost, sans-serif", fontWeight: 400, fontSize: "0.875rem" }}>
               Reviews
             </h2>
           </div>
@@ -174,7 +174,7 @@ export const TestimonialSlider = ({
                 exit="exit"
                 transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
               >
-                <p className="font-sans text-xs font-medium uppercase tracking-[0.1em] text-brass">
+                <p className="font-sans text-xs font-medium uppercase tracking-wider text-brass">
                   {activeReview.affiliation}
                 </p>
                 <h3 className="font-serif text-xl font-medium text-warm-dark mt-1">

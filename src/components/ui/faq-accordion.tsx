@@ -60,7 +60,7 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
           {/* Left - sticky heading */}
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-brass mb-3">
+            <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass mb-3">
               FAQ
             </p>
             <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">

@@ -59,7 +59,7 @@ const Gallery4 = ({
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-2">
-            <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-brass">
+            <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass">
               {title}
             </p>
             <h2 className="font-serif text-2xl font-normal md:text-[2rem] text-warm-dark">

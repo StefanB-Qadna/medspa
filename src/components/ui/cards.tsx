@@ -28,7 +28,7 @@ export default function Cards({
   return (
     <div className="flex flex-col items-center w-full py-16 md:py-20 px-6">
       {label && (
-        <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-brass mb-3">
+        <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass mb-3">
           {label}
         </p>
       )}
@@ -62,7 +62,7 @@ export default function Cards({
         <div className="mt-10 text-center">
           <a
             href={linkUrl}
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
           >
             {linkText}
             <svg
