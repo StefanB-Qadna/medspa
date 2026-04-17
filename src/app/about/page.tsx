@@ -117,17 +117,17 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 font-sans text-sm text-warm-dark/70 leading-relaxed">
                 <p>
-                  During a plastics rotation early in her medical training, Dr. Robledo
-                  discovered something unexpected, an eye for symmetry and proportion
-                  that went beyond the surgical. While she went on to build a career in
-                  trauma surgery, saving lives in high-stakes environments, the pull toward
-                  aesthetics never faded.
+                  Dr. Robledo&apos;s path to aesthetic medicine started long before medical
+                  school. As a child, she struggled with skin issues that no one could fix,
+                  an experience that sparked a lifelong interest in what skin actually needs
+                  to heal, rooted in empathy, precision, and results that last.
                 </p>
                 <p>
-                  After years in the OR, she made a bold choice: bring the precision and
-                  accountability of surgical medicine to the world of aesthetic medicine.
-                  Rejuvenate & Refine was born from the belief that every patient deserves the
-                  same standard of care, whether in an operating room or a treatment suite.
+                  Today, as a double board-certified trauma surgeon and Trauma Medical
+                  Director at a busy Level II trauma center, she brings the same life-saving
+                  precision to aesthetics. She has personally developed the laser and RF
+                  microneedling techniques used at Rejuvenate & Refine, and hand-selected
+                  every member of her clinical team from her own trauma staff.
                 </p>
               </div>
               <div className="bg-linen rounded-md p-5 mt-6">
@@ -137,8 +137,9 @@ export default function AboutPage() {
                 <ul className="space-y-2">
                   {[
                     "Double Board-Certified Trauma Surgeon",
+                    "Trauma Medical Director, Level II Trauma Center",
                     "Fellowship-Trained in Aesthetic Medicine",
-                    "Member, American Society of Plastic Surgeons",
+                    "Developer of Proprietary Laser & RF Microneedling Protocols",
                   ].map((item) => (
                     <li
                       key={item}
