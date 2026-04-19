@@ -1,0 +1,81 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  deployments: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  deploy:
+    name: ${{ github.event_name == 'pull_request' && 'Preview' || 'Production' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.event_name == 'pull_request' && 'Preview' || 'Production' }}
+      url: ${{ steps.extract-url.outputs.url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npx opennextjs-cloudflare build
+
+      - name: Deploy to production
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        id: deploy-prod
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+
+      - name: Deploy preview
+        if: github.event_name == 'pull_request'
+        id: deploy-preview
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: versions upload
+
+      - name: Extract deployment URL
+        id: extract-url
+        shell: bash
+        env:
+          PROD_OUTPUT: ${{ steps.deploy-prod.outputs.command-output }}
+          PREVIEW_OUTPUT: ${{ steps.deploy-preview.outputs.command-output }}
+        run: |
+          COMBINED="$PROD_OUTPUT$PREVIEW_OUTPUT"
+          URL=$(printf '%s' "$COMBINED" | grep -oE 'https://[a-z0-9.-]+\.workers\.dev' | head -n1)
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "Extracted deployment URL: $URL"
+
+      - name: Comment preview URL on PR
+        if: github.event_name == 'pull_request' && steps.extract-url.outputs.url != ''
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: cloudflare-preview
+          message: |
+            🚀 **Preview deployment ready**
+
+            | | |
+            |---|---|
+            | **Preview URL** | ${{ steps.extract-url.outputs.url }} |
+            | **Commit** | `${{ github.event.pull_request.head.sha }}` |
+            | **Workflow** | [Run #${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) |
+
+            <sub>This comment updates with each push to the PR.</sub>
