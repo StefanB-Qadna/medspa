@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface Feature1Props {
@@ -70,9 +71,12 @@ export const Feature1 = ({
               )}
             </div>
           </div>
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt}
+            width={1200}
+            height={800}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="max-h-96 w-full rounded-md object-cover"
           />
         </div>
