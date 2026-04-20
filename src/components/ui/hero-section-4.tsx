@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,8 @@ interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   secondaryButtonText?: string;
   secondaryButtonHref?: string;
   imageUrl: string;
+  /** Descriptive alt text. When omitted, image is treated as decorative. */
+  imageAlt?: string;
   /** Label shown above the title (e.g. "Prosper, TX Med Spa") */
   label?: string;
   /** Height variant */
@@ -66,6 +69,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       secondaryButtonText,
       secondaryButtonHref,
       imageUrl,
+      imageAlt,
       label,
       size = "full",
       overlayOpacity = 40,
@@ -86,13 +90,15 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
         {...props}
       >
         {/* Background Image */}
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            backgroundPosition: imagePosition,
-          }}
-          aria-hidden="true"
+        <Image
+          src={imageUrl}
+          alt={imageAlt ?? ""}
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 z-0 object-cover"
+          style={{ objectPosition: imagePosition }}
+          aria-hidden={imageAlt ? undefined : true}
         />
 
         {/* Warm-dark overlay (tinted to brand neutral, not pure black) */}
