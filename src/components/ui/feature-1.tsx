@@ -38,18 +38,36 @@ export const Feature1 = ({
               {description}
             </p>
             <div className="flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-              <Link
-                href={buttonPrimary.href}
-                className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-              >
-                {buttonPrimary.label}
-              </Link>
-              <Link
-                href={buttonSecondary.href}
-                className="inline-flex items-center justify-center rounded-sm border border-warm-dark/30 text-warm-dark font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-warm-dark/5 transition-colors"
-              >
-                {buttonSecondary.label}
-              </Link>
+              {buttonPrimary.href.startsWith("#") ? (
+                <a
+                  href={buttonPrimary.href}
+                  className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+                >
+                  {buttonPrimary.label}
+                </a>
+              ) : (
+                <Link
+                  href={buttonPrimary.href}
+                  className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+                >
+                  {buttonPrimary.label}
+                </Link>
+              )}
+              {buttonSecondary.href.startsWith("#") || buttonSecondary.href.startsWith("tel:") || buttonSecondary.href.startsWith("mailto:") ? (
+                <a
+                  href={buttonSecondary.href}
+                  className="inline-flex items-center justify-center rounded-sm border border-warm-dark/30 text-warm-dark font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-warm-dark/5 transition-colors"
+                >
+                  {buttonSecondary.label}
+                </a>
+              ) : (
+                <Link
+                  href={buttonSecondary.href}
+                  className="inline-flex items-center justify-center rounded-sm border border-warm-dark/30 text-warm-dark font-sans font-medium uppercase text-[0.78rem] tracking-[0.1em] px-8 py-3 min-h-[44px] hover:bg-warm-dark/5 transition-colors"
+                >
+                  {buttonSecondary.label}
+                </Link>
+              )}
             </div>
           </div>
           <img
