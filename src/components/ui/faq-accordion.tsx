@@ -60,13 +60,13 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
           {/* Left - sticky heading */}
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass mb-3">
+            <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass mb-3">
               FAQ
             </p>
-            <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
+            <h2 className="font-serif text-section font-normal text-warm-dark mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
+            <p className="font-sans text-body text-warm-dark/60 leading-relaxed">
               Knowledge is part of the care. If you don&apos;t find what you
               are looking for, reach out directly and we will make sure
               everything is clear.

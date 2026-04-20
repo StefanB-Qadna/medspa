@@ -103,7 +103,7 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
               </span>
             </h3>
 
-            <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
+            <p className="font-sans text-base text-warm-dark/70 leading-relaxed">
               {description}
             </p>
           </div>

@@ -17,7 +17,7 @@ export function SectionHeading({
     <div className={centered ? "text-center" : ""}>
       {label && (
         <p
-          className={`font-sans text-xs font-medium uppercase tracking-widest mb-3 ${
+          className={`font-sans text-eyebrow font-medium uppercase tracking-widest mb-3 ${
             light ? "text-cream/50" : "text-brass"
           }`}
         >
@@ -25,7 +25,7 @@ export function SectionHeading({
         </p>
       )}
       <h2
-        className={`font-serif text-2xl md:text-[2rem] font-normal ${
+        className={`font-serif text-section font-normal ${
           light ? "text-cream" : "text-warm-dark"
         }`}
       >
@@ -33,7 +33,7 @@ export function SectionHeading({
       </h2>
       {subtitle && (
         <p
-          className={`font-sans text-sm md:text-base mt-3 max-w-2xl ${
+          className={`font-sans text-lead mt-3 max-w-2xl ${
             centered ? "mx-auto" : ""
           } ${light ? "text-cream/70" : "text-warm-dark/70"}`}
         >
