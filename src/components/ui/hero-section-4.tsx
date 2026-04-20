@@ -149,12 +149,20 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             >
               {primaryButtonText && primaryButtonHref && (
                 <Button asChild size="lg" className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
-                  <Link href={primaryButtonHref}>{primaryButtonText}</Link>
+                  {primaryButtonHref.startsWith("#") ? (
+                    <a href={primaryButtonHref}>{primaryButtonText}</a>
+                  ) : (
+                    <Link href={primaryButtonHref}>{primaryButtonText}</Link>
+                  )}
                 </Button>
               )}
               {secondaryButtonText && secondaryButtonHref && (
                 <Button asChild variant="outline" size="lg" className="rounded-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
-                  <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>
+                  {secondaryButtonHref.startsWith("#") ? (
+                    <a href={secondaryButtonHref}>{secondaryButtonText}</a>
+                  ) : (
+                    <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>
+                  )}
                 </Button>
               )}
             </motion.div>
