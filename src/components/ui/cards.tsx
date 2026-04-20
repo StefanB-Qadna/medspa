@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface CardItem {
   image: string;
@@ -43,11 +44,15 @@ export default function Cards({
             key={index}
             className="max-w-72 w-full hover:-translate-y-0.5 transition duration-300"
           >
-            <img
-              className="rounded-xl aspect-[3/2] w-full object-cover"
-              src={card.image}
-              alt={card.title}
-            />
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 288px"
+                className="object-cover"
+              />
+            </div>
             <h3 className="font-serif text-base text-warm-dark font-medium mt-3">
               {card.title}
             </h3>
