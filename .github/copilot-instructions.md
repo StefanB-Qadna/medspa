@@ -1,0 +1,46 @@
+## Design Context
+
+### Users
+
+Adults (primarily women, 30–60) in and around Prosper, TX considering cosmetic or wellness treatments — Botox, fillers, laser, and related medical aesthetics. They arrive cautious. They've seen the other sites. They are evaluating whether this practice is *serious medicine* or *aesthetic theater*, and they want to feel they can trust the clinician before they trust the marketing. The job-to-be-done is: *help me decide, without being sold to, whether I should book a consultation here.*
+
+### Brand Personality
+
+**Refined. Warm. Trustworthy.**
+
+The voice is that of an expert clinician who respects the reader's intelligence — never clinical and sterile, never a sales pitch, never a lifestyle brand. Tone is plainspoken and substantive. Copy earns attention by being specific (board-certified, surgeon-led, actual procedures, honest expectations) rather than evocative. Emotional goal at first impression: **confidence in expertise** — the reader should feel they are in capable hands before they feel anything else.
+
+### Aesthetic Direction
+
+**Visual tone:** Editorial, warm, quiet. Generous whitespace. Considered typography (Cormorant Garamond paired with Jost). Warm neutrals tinted toward the brand's `warm-dark` hue — never pure black, never pure white. Brass is the single accent; it should feel earned, not sprinkled. Photography, when used, carries the weight — decorative UI should not.
+
+**Reference:** [swissclinics.ro](https://swissclinics.ro/) — the calm, editorial, medically-serious-but-human feel.
+
+**Anti-references — this should NOT feel like:**
+- **Clinical / hospital** — no sterile blue, no stock-photo scrubs, no "technology" framing.
+- **SaaS** — no feature-grid landing page, no gradient-mesh hero, no glassmorphic cards used for their own sake, no "icon + heading + one-liner" trust rows, no generic Lucide icons as decoration.
+- **Instagram influencer** — no bold saturated colors, no giant sans-serif wordmarks, no filtered selfie aesthetic, no "vibes" photography.
+- **Chain spa** — no lavender-and-stone calligraphy, no stock "wellness" imagery (hands pouring water, flat-lay stones), no spa-menu price lists as the primary content.
+- **Luxury hotel bland** — no anonymous beige, no generic serif-on-marble, no placeholder elegance without point of view.
+
+**Copy posture — explicitly forbidden:**
+- SaaS/startup jargon ("seamless", "empower", "unlock", "best-in-class", "journey").
+- Sales language ("transform your look", "the you you've always wanted", urgency nudges, countdowns).
+- Generic wellness platitudes ("relax, renew, restore").
+- Phrases that would read identically on any other med spa's homepage.
+
+**Theme:** Light mode only.
+
+**Accessibility:** WCAG 2.1 AA minimum across color contrast, focus states, keyboard navigation, and motion preferences. Overlays must reach AA on text without relying on image content. Respect `prefers-reduced-motion`.
+
+### Design Principles
+
+1. **Medicine first, aesthetic second.** Every design decision should reinforce that this is a medical practice run by a board-certified surgeon. The refinement is the frame; the expertise is the subject.
+
+2. **Warmth over polish.** The palette is tinted warm-dark for a reason: to feel human. Never use pure black or pure white. "Clean" is not the goal — *considered* is.
+
+3. **Earn every element.** No decorative icons, no filler cards, no gradient-overlays-by-default, no glassmorphism as texture. If a component is not doing specific work for the reader, remove it.
+
+4. **Type and space do the heavy lifting.** Hierarchy comes from the Cormorant/Jost pairing, the fluid size scale, and generous whitespace — not from shadows, borders, or backgrounds.
+
+5. **Marketing, but in a clinician's voice.** This is a marketing site — copy has to convert and give a reason to book. The principle is *how* it sells, not *whether* it sells. Lead with specifics (credentials, what a treatment actually does, honest expectations); let those do the persuading. Avoid SaaS verbs, manufactured urgency, and wellness poetry. If a sentence could appear on a competitor's site unchanged, rewrite it.
