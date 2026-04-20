@@ -38,10 +38,10 @@ export const Feature72 = ({
           <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass">
             What we offer
           </p>
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark max-w-lg text-balance">
+          <h2 className="font-serif text-section font-normal text-warm-dark max-w-lg text-balance">
             {heading}
           </h2>
-          <p className="font-sans text-sm text-warm-dark/70 leading-relaxed max-w-md">
+          <p className="font-sans text-body text-warm-dark/70 leading-relaxed max-w-md">
             {description}
           </p>
         </div>
@@ -91,7 +91,7 @@ export const Feature72 = ({
           <div className="mt-10 text-center">
             <Link
               href={linkUrl}
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
               {linkText}
               <ArrowRight className="ml-2 size-4" />

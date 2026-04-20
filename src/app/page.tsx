@@ -103,12 +103,12 @@ export default function HomePage() {
             {/* Left: eyebrow + headline + pull quote */}
             <div className="md:col-span-5">
               <p className="label text-brass mb-4">What sets us apart</p>
-              <h2 className="font-serif text-3xl md:text-5xl font-light text-warm-dark leading-[1.1] mb-8">
+              <h2 className="font-serif text-statement font-normal text-warm-dark mb-8">
                 The surgeon&apos;s
                 <br />
-                <span className="italic">difference.</span>
+                difference.
               </h2>
-              <p className="font-serif text-lg md:text-xl italic text-warm-dark/85 leading-snug border-l-2 border-brass pl-5 max-w-sm">
+              <p className="font-serif text-lead font-normal italic text-warm-dark/85 border-l-2 border-brass pl-5 max-w-sm">
                 &ldquo;In an operating room, there are no retries. We bring that standard to every injection.&rdquo;
               </p>
             </div>
@@ -124,15 +124,15 @@ export default function HomePage() {
                 >
                   <span
                     aria-hidden="true"
-                    className="font-serif text-2xl md:text-3xl font-light text-brass leading-none tabular-nums pt-1"
+                    className="font-serif text-3xl font-normal text-brass leading-none tabular-nums pt-1"
                   >
                     {point.num}
                   </span>
                   <div>
-                    <h3 className="font-serif text-xl md:text-2xl font-normal text-warm-dark mb-2 leading-snug">
+                    <h3 className="font-serif text-2xl font-normal text-warm-dark mb-2 leading-snug">
                       {point.title}
                     </h3>
-                    <p className="font-sans text-[0.95rem] text-warm-dark/75 leading-relaxed max-w-prose">
+                    <p className="font-sans text-body text-warm-dark/75 leading-relaxed max-w-prose">
                       {point.desc}
                     </p>
                   </div>
@@ -189,15 +189,15 @@ export default function HomePage() {
             </div>
             <div>
               <p className="label text-brass mb-3">Meet your provider</p>
-              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
+              <h2 className="font-serif text-section font-normal text-warm-dark mb-4">
                 Dr. Rosemarie Robledo
               </h2>
-              <blockquote className="font-serif text-lg md:text-xl text-warm-dark/80 italic leading-relaxed border-l-2 border-brass pl-5 mb-6">
+              <blockquote className="font-serif text-lead font-normal italic text-warm-dark/80 border-l-2 border-brass pl-5 mb-6">
                 &ldquo;In trauma surgery, there are no retries. Every decision
                 is final. That training doesn&apos;t leave you, it becomes the
                 baseline for every kind of medicine you practice after.&rdquo;
               </blockquote>
-              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
+              <p className="font-sans text-base text-warm-dark/70 leading-relaxed mb-6">
                 Dr. Robledo is a double board-certified trauma surgeon and
                 Trauma Medical Director at a busy Level II trauma center. She
                 brought that same standard of precision to aesthetic medicine,
@@ -205,7 +205,7 @@ export default function HomePage() {
                 techniques used at Rejuvenate & Refine.
               </p>
               <div className="bg-linen rounded-md p-5 mb-6">
-                <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
+                <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-warm-dark/50 mb-3">
                   Credentials
                 </p>
                 <ul className="space-y-2">
@@ -215,7 +215,7 @@ export default function HomePage() {
                     "Fellowship-Trained in Aesthetic Medicine",
                     "Developer of Proprietary Laser & RF Microneedling Protocols",
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-warm-dark/80">
+                    <li key={item} className="flex items-center gap-2.5 font-sans text-base text-warm-dark/80">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brass shrink-0">
                         <polyline points="20 6 9 17 4 12" />
                       </svg>
@@ -331,13 +331,13 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
               <p className="label text-brass mb-3">Our Location</p>
-              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
+              <h2 className="font-serif text-section font-normal text-warm-dark mb-4">
                 Find us in Prosper.
               </h2>
-              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
+              <p className="font-sans text-body text-warm-dark/70 leading-relaxed mb-6">
                 Easy to reach, with plenty of parking so your visit starts stress-free.
               </p>
-              <address className="not-italic font-sans text-sm text-warm-dark/80 leading-relaxed mb-6 space-y-1">
+              <address className="not-italic font-sans text-body text-warm-dark/80 leading-relaxed mb-6 space-y-1">
                 <p className="font-medium text-warm-dark">2120 Prairie Dr Suite 402</p>
                 <p>Prosper, TX 75078</p>
                 <p>United States</p>

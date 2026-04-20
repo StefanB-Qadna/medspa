@@ -22,10 +22,10 @@ export function ServiceCard({
 
       {/* Content */}
       <div className="p-5 md:p-6">
-        <h3 className="font-serif text-lg md:text-xl font-medium text-warm-dark mb-2">
+        <h3 className="font-serif text-xl font-normal text-warm-dark mb-2">
           {title}
         </h3>
-        <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-4">
+        <p className="font-sans text-body text-warm-dark/70 leading-relaxed mb-4">
           {description}
         </p>
         <div className="flex items-center justify-between">

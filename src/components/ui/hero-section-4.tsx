@@ -126,7 +126,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {title && (
             <motion.h1
-              className="font-serif text-3xl font-normal tracking-tight text-cream sm:text-4xl md:text-5xl lg:text-6xl text-balance"
+              className="font-serif text-display font-normal tracking-tight text-cream text-balance"
               variants={itemVariants}
             >
               {title}
@@ -135,7 +135,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {subtitle && (
             <motion.p
-              className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-cream/80 md:text-xl"
+              className="mt-5 font-sans text-base md:text-xl leading-relaxed text-cream/80"
               variants={itemVariants}
             >
               {subtitle}

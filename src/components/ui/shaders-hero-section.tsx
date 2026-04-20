@@ -138,8 +138,7 @@ export function HeroContent() {
     <main className="flex items-center justify-center h-full px-6 relative z-20">
       <div className="text-center max-w-3xl">
         <motion.h1
-          className="font-serif text-white mb-6 leading-[1.1] text-[2.2rem] md:text-[3.2rem]"
-          style={{ fontWeight: 300 }}
+          className="font-serif font-light text-white mb-6 text-statement"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -154,8 +153,7 @@ export function HeroContent() {
         </motion.h1>
 
         <motion.p
-          className="font-serif text-white/70 mb-10 text-[1.8rem] md:text-[2.4rem]"
-          style={{ fontWeight: 400 }}
+          className="font-serif font-normal text-white/70 mb-10 text-section"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
