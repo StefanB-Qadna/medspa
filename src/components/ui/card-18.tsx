@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
@@ -68,11 +69,13 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
     const content = (
       <>
         {variant === 'featured' && imageUrl && (
-          <div className="relative w-full overflow-hidden md:w-1/2 lg:w-3/5">
-            <img
+          <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-auto md:w-1/2 lg:w-3/5">
+            <Image
               src={imageUrl}
               alt={title}
-              className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+              fill
+              sizes="(max-width: 768px) 100vw, 60vw"
+              className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
             />
           </div>
         )}

@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface CardItem {
   image: string;
@@ -46,11 +44,15 @@ export default function Cards({
             key={index}
             className="max-w-72 w-full hover:-translate-y-0.5 transition duration-300"
           >
-            <img
-              className="rounded-xl aspect-[3/2] w-full object-cover"
-              src={card.image}
-              alt={card.title}
-            />
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 288px"
+                className="object-cover"
+              />
+            </div>
             <h3 className="font-serif text-base text-warm-dark font-medium mt-3">
               {card.title}
             </h3>
@@ -61,25 +63,47 @@ export default function Cards({
 
       {linkUrl && (
         <div className="mt-10 text-center">
-          <Link
-            href={linkUrl}
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-          >
-            {linkText}
-            <svg
-              className="ml-2 size-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          {linkUrl.startsWith("#") ? (
+            <a
+              href={linkUrl}
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
             >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
+              {linkText}
+              <svg
+                className="ml-2 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+          ) : (
+            <Link
+              href={linkUrl}
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+            >
+              {linkText}
+              <svg
+                className="ml-2 size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
+          )}
         </div>
       )}
     </div>

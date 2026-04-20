@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -47,11 +48,13 @@ export const Feature73 = ({
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {features[0] && (
             <div className="flex flex-col overflow-clip rounded-md md:col-span-2 md:grid md:grid-cols-2 border border-border">
-              <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
-                <img
+              <div className="relative aspect-[16/9] w-full overflow-hidden md:aspect-auto md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
+                <Image
                   src={features[0].image}
                   alt={features[0].title}
-                  className="aspect-[16/9] h-full w-full object-cover object-center"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="flex flex-col justify-center px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 bg-cream">
@@ -69,11 +72,13 @@ export const Feature73 = ({
               key={feature.id}
               className="flex flex-col overflow-clip rounded-md border border-border"
             >
-              <div>
-                <img
+              <div className="relative aspect-[16/9] w-full overflow-hidden">
+                <Image
                   src={feature.image}
                   alt={feature.title}
-                  className="aspect-[16/9] h-full w-full object-cover object-center"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 bg-cream">
