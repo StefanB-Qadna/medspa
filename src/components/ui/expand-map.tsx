@@ -78,7 +78,7 @@ export function LocationMap({
           transformStyle: "preserve-3d",
         }}
         animate={{
-          width: isExpanded ? 520 : 340,
+          width: isExpanded ? "min(520px, calc(100vw - 2rem))" : "min(340px, calc(100vw - 2rem))",
           height: isExpanded ? 400 : 200,
         }}
         transition={{
@@ -115,7 +115,7 @@ export function LocationMap({
                   e.stopPropagation()
                   setIsExpanded(false)
                 }}
-                className="absolute top-2 right-2 z-20 w-7 h-7 rounded-full bg-cream border border-border shadow-sm flex items-center justify-center hover:bg-linen transition-colors"
+                className="absolute top-2 right-2 z-20 w-10 h-10 rounded-full bg-cream border border-border shadow-sm flex items-center justify-center hover:bg-linen transition-colors"
                 aria-label="Close map"
               >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-warm-dark">
@@ -257,6 +257,19 @@ export function LocationMap({
       >
         Click to expand map
       </motion.p>
+
+      {/* Mobile: direct link to Google Maps (visible only on small screens when collapsed) */}
+      {!isExpanded && (
+        <a
+          href={`https://maps.google.com/?q=${encodeURIComponent(address)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-flex items-center gap-1.5 font-sans text-sm font-medium text-brass-label hover:text-brass-dark transition-colors md:hidden"
+          aria-label="Get directions on Google Maps"
+        >
+          Get Directions →
+        </a>
+      )}
     </motion.div>
   )
 }

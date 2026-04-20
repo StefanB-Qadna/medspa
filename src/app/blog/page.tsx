@@ -116,7 +116,7 @@ export default function BlogPage() {
                       />
                     </div>
                     <div className="md:col-span-5">
-                      <p className="label text-brass mb-3">Featured · {lead.category}</p>
+                      <p className="label mb-3">Featured · {lead.category}</p>
                       <h2 className="font-serif text-3xl md:text-4xl font-normal text-warm-dark leading-[1.15] mb-4 group-hover:text-brass transition-colors">
                         {lead.title}
                       </h2>
@@ -148,7 +148,7 @@ export default function BlogPage() {
                             className="absolute h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                           />
                         </div>
-                        <p className="label text-brass mb-2">{post.category}</p>
+                        <p className="label mb-2">{post.category}</p>
                         <h3 className="font-serif text-xl md:text-2xl font-normal text-warm-dark leading-snug mb-3 group-hover:text-brass transition-colors">
                           {post.title}
                         </h3>

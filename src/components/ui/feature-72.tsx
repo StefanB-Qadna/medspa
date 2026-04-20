@@ -35,7 +35,7 @@ export const Feature72 = ({
       <div className="mx-auto max-w-[1200px] px-6 overflow-hidden">
         {/* Header */}
         <div className="mb-12 md:mb-16 flex flex-col items-center gap-3 text-center">
-          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass">
+          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label">
             What we offer
           </p>
           <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark max-w-lg text-balance">

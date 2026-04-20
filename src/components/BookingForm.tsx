@@ -133,7 +133,7 @@ export function BookingForm() {
     <>
       <section id="book" className="bg-warm-dark py-20 px-6">
         <div className="mx-auto max-w-[800px] text-center">
-          <p className="font-sans text-[0.68rem] font-medium uppercase tracking-widest text-brass mb-3">
+          <p className="font-sans text-[0.68rem] font-medium uppercase tracking-widest text-brass-label mb-3">
             Reserve Your Visit
           </p>
           <h2 className="font-serif text-[clamp(1.8rem,4vw,2.6rem)] font-normal text-cream mb-3">

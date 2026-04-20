@@ -11,6 +11,7 @@ import { Feature73 } from "@/components/ui/feature-73";
 import { LocationMap } from "@/components/ui/expand-map";
 import { Gallery4 } from "@/components/ui/gallery4";
 import Cards from "@/components/ui/cards";
+import TeamMemberCard from "@/components/ui/team-member-card";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 
 const concerns = [
@@ -85,13 +86,14 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <HeroSection
-        title="The most natural version of you, delivered with precision."
+        title="The most natural version of you"
         subtitle="Your surgeon-led med spa where every treatment plan is personally overseen by Dr. Rosemarie Robledo."
         primaryButtonText="See What's Possible"
         primaryButtonHref="#book-now"
         secondaryButtonText="Explore Services"
         secondaryButtonHref="/services"
         imageUrl="/images/hero.jpg"
+        imagePosition="60% center"
         size="full"
         overlayOpacity={45}
       />
@@ -102,7 +104,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-14">
             {/* Left: eyebrow + headline + pull quote */}
             <div className="md:col-span-5">
-              <p className="label text-brass mb-4">What sets us apart</p>
+              <p className="label mb-4">What sets us apart</p>
               <h2 className="font-serif text-3xl md:text-5xl font-light text-warm-dark leading-[1.1] mb-8">
                 The surgeon&apos;s
                 <br />
@@ -173,62 +175,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Dr. Robledo */}
+      {/* Dr. Robledo — editorial card */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[3/4] bg-linen rounded-md overflow-hidden relative">
-              <Image
-                src="/images/DrRobledo.jpg"
-                alt="Dr. Rosemarie Robledo"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
-            </div>
-            <div>
-              <p className="label text-brass mb-3">Meet your provider</p>
-              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
-                Dr. Rosemarie Robledo
-              </h2>
-              <blockquote className="font-serif text-lg md:text-xl text-warm-dark/80 italic leading-relaxed border-l-2 border-brass pl-5 mb-6">
-                &ldquo;In trauma surgery, there are no retries. Every decision
-                is final. That training doesn&apos;t leave you, it becomes the
-                baseline for every kind of medicine you practice after.&rdquo;
-              </blockquote>
-              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
-                Dr. Robledo is a double board-certified trauma surgeon and
-                Trauma Medical Director at a busy Level II trauma center. She
-                brought that same standard of precision to aesthetic medicine,
-                and personally developed the laser and RF microneedling
-                techniques used at Rejuvenate & Refine.
-              </p>
-              <div className="bg-linen rounded-md p-5 mb-6">
-                <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
-                  Credentials
-                </p>
-                <ul className="space-y-2">
-                  {[
-                    "Double Board-Certified Trauma Surgeon",
-                    "Trauma Medical Director, Level II Trauma Center",
-                    "Fellowship-Trained in Aesthetic Medicine",
-                    "Developer of Proprietary Laser & RF Microneedling Protocols",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-warm-dark/80">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brass shrink-0">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Link href="/about" className="font-sans text-sm font-medium text-brass hover:text-brass-dark">
-                Read Full Bio &rarr;
-              </Link>
-            </div>
-          </div>
+        <div className="mx-auto max-w-[960px] px-6 py-16 md:py-20">
+          <TeamMemberCard
+            position="left"
+            jobPosition="Meet your provider"
+            firstName="Dr. Rosemarie"
+            lastName="Robledo"
+            imageUrl="/images/DrRobledo.jpg"
+            description="Double board-certified trauma surgeon turned aesthetic medicine specialist. Dr. Robledo personally developed the laser and RF microneedling techniques used at Rejuvenate & Refine, and oversees every treatment plan."
+            href="/about"
+          />
         </div>
       </section>
 
@@ -244,48 +202,30 @@ export default function HomePage() {
               reviews={[
                 {
                   id: 1,
-                  name: "Sarah M.",
-                  affiliation: "Botox Patient",
-                  quote: "Dr. Robledo took the time to really understand what I wanted. The results were so natural, my friends just think I look well-rested.",
-                  imageSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=120&fit=crop&q=80",
+                  name: "Verified Patient",
+                  affiliation: "Melasma Patient",
+                  quote: "The dark patches I tried to cover for years have faded, and my skin finally looks even and clear in natural light. I feel comfortable going without makeup for the first time in ages.",
+                  imageSrc: "/images/Ariel one tx melasma side profile 2.webp",
+                  afterImageSrc: "/images/Ariel one tx melasma side profile.webp",
+                  thumbnailSrc: "/images/Ariel one tx melasma side profile.webp",
                 },
                 {
                   id: 2,
-                  name: "Jennifer L.",
-                  affiliation: "Dermal Fillers Patient",
-                  quote: "I've been to other med spas, but having a surgeon do my filler made all the difference. I felt so much safer and the results show.",
-                  imageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=120&fit=crop&q=80",
+                  name: "Verified Patient",
+                  affiliation: "Redness & Contouring Patient",
+                  quote: "The redness I used to cover every day has settled, and my face looks more defined while still feeling like me. The team always takes the time to explain everything.",
+                  imageSrc: "/images/Emily vector no arrow 2.webp",
+                  afterImageSrc: "/images/Emily vector no arrow.webp",
+                  thumbnailSrc: "/images/Emily vector no arrow.webp",
                 },
                 {
                   id: 3,
-                  name: "Amanda K.",
-                  affiliation: "Lip Fillers Patient",
-                  quote: "The clinic is beautiful and the entire experience felt premium. I wouldn't go anywhere else for my treatments.",
-                  imageSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=120&fit=crop&q=80",
-                },
-                {
-                  id: 4,
-                  name: "Michelle R.",
-                  affiliation: "Microneedling Patient",
-                  quote: "The level of care and attention to detail is unlike anything I've experienced. Dr. Robledo truly listens and delivers exactly what you're looking for.",
-                  imageSrc: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=120&fit=crop&q=80",
-                },
-                {
-                  id: 5,
-                  name: "Rachel T.",
-                  affiliation: "IV Therapy Patient",
-                  quote: "From the moment I walked in, I felt at ease. The space is stunning and the results speak for themselves. I'm a patient for life.",
-                  imageSrc: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=100&h=120&fit=crop&q=80",
+                  name: "Verified Patient",
+                  affiliation: "Redness & Wellness Patient",
+                  quote: "The redness I used to hide has calmed completely, and paired with my health journey I finally feel like I look how I feel on the inside. The team made me feel supported the whole way.",
+                  imageSrc: "/images/Kayla front view 2.webp",
+                  afterImageSrc: "/images/Kayla front view.webp",
+                  thumbnailSrc: "/images/Kayla front view.webp",
                 },
               ]}
             />
@@ -330,7 +270,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1200px] px-6 pb-16 md:pb-20">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
-              <p className="label text-brass mb-3">Our Location</p>
+              <p className="label mb-3">Our Location</p>
               <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
                 Find us in Prosper.
               </h2>

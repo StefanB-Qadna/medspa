@@ -60,7 +60,7 @@ const Gallery4 = ({
       <div className="mx-auto max-w-[1200px] px-6">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-2">
-            <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass">
+            <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label">
               {title}
             </p>
             <h2 className="font-serif text-2xl font-normal md:text-[2rem] text-warm-dark">
@@ -100,7 +100,7 @@ const Gallery4 = ({
             {items.map((item) => (
               <CarouselItem
                 key={item.id}
-                className="basis-[280px] pl-4 md:basis-[320px]"
+                className="basis-[75%] pl-4 md:basis-[320px]"
               >
                 <Link href={item.href} className="group block">
                   <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md">
@@ -129,7 +129,7 @@ const Gallery4 = ({
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
+              className={`relative h-2.5 w-2.5 rounded-full transition-colors before:absolute before:-inset-2.5 before:content-[''] ${
                 currentSlide === index ? "bg-brass" : "bg-brass/20"
               }`}
               onClick={() => carouselApi?.scrollTo(index)}

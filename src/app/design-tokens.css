@@ -40,6 +40,7 @@
   --color-brass: #B08D57;               /* primary accent / CTA */
   --color-brass-dark: #9A7A48;          /* CTA hover */
   --color-brass-light: #C8A876;         /* subtle brass tints */
+  --color-brass-label: #8C6937;         /* darkened brass for labels on cream — passes WCAG AA */
   --color-forest: #4E6349;              /* secondary accent (wellness) */
 
   /* -------------------------------------------------------------------------

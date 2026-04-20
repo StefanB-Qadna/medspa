@@ -27,7 +27,7 @@ export const Feature73 = ({
     <section>
       <div className="flex flex-col gap-16">
         <div className="lg:max-w-sm">
-          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass mb-3">
+          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label mb-3">
             Our Clinic
           </p>
           <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">

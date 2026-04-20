@@ -131,7 +131,12 @@ export default function AboutPage() {
                   every member of her clinical team from her own trauma staff.
                 </p>
               </div>
-              <div className="bg-linen rounded-md p-5 mt-6">
+              <blockquote className="font-serif text-lg md:text-xl text-warm-dark/80 italic leading-relaxed border-l-2 border-brass pl-5 mt-6 mb-6">
+                &ldquo;In trauma surgery, there are no retries. Every decision
+                is final. That training doesn&apos;t leave you, it becomes the
+                baseline for every kind of medicine you practice after.&rdquo;
+              </blockquote>
+              <div className="bg-linen rounded-md p-5">
                 <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
                   Credentials
                 </p>

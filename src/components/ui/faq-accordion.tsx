@@ -60,7 +60,7 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
           {/* Left - sticky heading */}
           <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass mb-3">
+            <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label mb-3">
               FAQ
             </p>
             <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
@@ -85,9 +85,9 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between p-5 text-left cursor-pointer"
+                    className="flex w-full items-center justify-between p-5 min-h-[3.5rem] text-left cursor-pointer"
                   >
-                    <span className="pr-4 font-sans text-sm font-medium text-warm-dark md:text-base">
+                    <span className="pr-4 font-sans text-sm font-medium text-warm-dark md:text-base leading-snug">
                       {faq.question}
                     </span>
                     <motion.div

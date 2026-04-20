@@ -9,6 +9,14 @@
 @layer base {
   /* Scroll is owned by Lenis — see src/components/SmoothScroll.tsx */
 
+  html, body {
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-padding-top: 5rem; /* offset for the fixed 80px header */
+  }
+
   body {
     background-color: var(--color-cream);
     color: var(--color-warm-dark);
@@ -78,9 +86,10 @@
 .label {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-medium);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: var(--tracking-widest);
+  color: var(--color-brass-label);
 }
 
 /* Smooth color transitions on interactive elements */
@@ -126,6 +135,94 @@ a, button {
 .prose-medspa .italic {
   font-style: italic;
   color: color-mix(in srgb, var(--color-warm-dark) 80%, transparent);
+}
+
+/* ==========================================================================
+ *  Editorial Reveal Hero — entrance animations
+ * ========================================================================== */
+
+/* Word-by-word mask rise */
+.ed-word {
+  transform: translateY(110%);
+  opacity: 0;
+  animation: ed-rise 1100ms cubic-bezier(.2,.7,.2,1) forwards;
+}
+.ed-wd1 { animation-delay: 480ms; }
+.ed-wd2 { animation-delay: 600ms; }
+.ed-wd3 { animation-delay: 720ms; }
+.ed-wd4 { animation-delay: 840ms; }
+.ed-wd5 { animation-delay: 960ms; }
+.ed-wd6 { animation-delay: 1080ms; }
+.ed-wd7 { animation-delay: 1200ms; }
+
+/* Generic rise (eyebrow, subtitle) */
+.ed-rise {
+  transform: translateY(110%);
+  opacity: 0;
+  animation: ed-rise 900ms cubic-bezier(.2,.7,.2,1) forwards;
+}
+.ed-d1 { animation-delay: 200ms; }
+.ed-d-sub { animation-delay: 1500ms; }
+
+/* Fade-up (actions, meta, scroll) */
+.ed-fade-up {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: ed-rise 900ms cubic-bezier(.2,.7,.2,1) forwards;
+}
+.ed-d-actions { animation-delay: 1900ms; }
+.ed-d-meta { animation-delay: 2100ms; }
+.ed-d-scroll { animation-delay: 2400ms; }
+
+/* Gold underline draw */
+.ed-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0.08em;
+  height: 1px;
+  background: var(--color-brass);
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: ed-draw 900ms cubic-bezier(.6,.05,.2,1) 1650ms forwards;
+}
+
+/* Tile mask-wipe reveal */
+.ed-tile::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--color-cream);
+  transform-origin: top;
+  transform: scaleY(0);
+  animation: ed-wipe 1600ms cubic-bezier(.6,.05,.2,1) both;
+  z-index: 5;
+}
+.ed-tile-1::after { animation-delay: 500ms; }
+.ed-tile-2::after { animation-delay: 800ms; }
+.ed-tile-3::after { animation-delay: 1100ms; }
+
+/* Scroll indicator drop */
+.ed-scroll-line::after {
+  content: "";
+  position: absolute; left: 0; top: -48px;
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--color-brass));
+  animation: ed-scroll-drop 2600ms ease-in-out infinite;
+}
+
+@keyframes ed-rise {
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes ed-draw {
+  to { transform: scaleX(1); }
+}
+@keyframes ed-wipe {
+  0%   { transform: scaleY(1); }
+  100% { transform: scaleY(0); }
+}
+@keyframes ed-scroll-drop {
+  0%   { top: -48px; }
+  60%  { top: 48px; }
+  100% { top: 48px; }
 }
 
 /* ==========================================================================

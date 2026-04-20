@@ -6,7 +6,7 @@ export default function BlogPost() {
       {/* Header */}
       <div className="bg-cream">
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-10 text-center">
-          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass mb-4">
+          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label mb-4">
             Aging · 10 min read
           </p>
           <h1 className="font-serif text-3xl font-normal tracking-tight text-warm-dark sm:text-4xl md:text-5xl text-balance">

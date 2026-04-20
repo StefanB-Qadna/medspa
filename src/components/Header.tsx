@@ -81,7 +81,7 @@ export function Header() {
         <div className="flex lg:grid lg:grid-cols-3 items-center justify-between h-20">
           {/* Logo — inline SVG, color inherits via currentColor */}
           <div className="flex-shrink-0 lg:justify-self-start">
-            <Link href="/" aria-label="Rejuvenate & Refine — Home">
+            <Link href="/" aria-label="Rejuvenate & Refine — Home" className="inline-flex items-center py-2">
               <Logo
                 className={`h-7 w-auto transition-colors duration-500 ${
                   isScrolled ? "text-warm-dark" : "text-cream"
@@ -147,15 +147,22 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — full-screen overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="lg:hidden fixed inset-0 top-20 z-40 bg-warm-dark/30 backdrop-blur-sm"
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
       <div
         id="mobile-menu"
-        className={`lg:hidden overflow-hidden bg-cream transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden fixed inset-x-0 top-20 z-50 bg-cream transition-all duration-300 ease-in-out overflow-hidden ${
+          isMobileMenuOpen ? "max-h-[calc(100dvh-5rem)] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-4 pt-2 pb-6 space-y-2 border-t border-linen">
-          {navItems.map((item) => {
+        <div className="px-6 pt-4 pb-8 space-y-1 border-t border-linen">
+          {[...navItems, { label: "Contact", href: "/contact" }].map((item) => {
             const active = isActive(pathname ?? "/", item.href);
             return (
               <Link
@@ -163,7 +170,7 @@ export function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={`block min-h-[44px] py-3 text-base transition-colors duration-200 ${
-                  active ? "text-brass" : "text-warm-dark hover:text-brass"
+                  active ? "text-brass-label font-medium" : "text-warm-dark hover:text-brass-label"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
