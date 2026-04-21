@@ -5,7 +5,7 @@ import {
   ClipboardList, ShieldCheck,
   Moon, Heart, PersonStanding, FlaskConical,
   Droplet, Target, HeartPulse, Flower2,
-  Brain, Layers, Combine
+  Brain, Combine
 } from "lucide-react";
 import type { ServiceData } from "@/lib/service-types";
 
@@ -80,12 +80,12 @@ export const medicalWeightLoss: ServiceData = {
   breadcrumb: "Services > Wellness",
   h1: "Medical Weight Loss in Prosper, TX",
   subtitle: "Physician-supervised GLP-1 program with body composition tracking, not just the scale, and a plan for lasting results.",
-  heroImage: "/images/space2.jpg",
+  heroImage: "/images/space2.webp",
 
   whatHeading: "GLP-1 done medically, not just prescribed",
   whatParagraphs: [
     "Medical weight loss uses GLP-1 medications like semaglutide and tirzepatide alongside nutrition guidance and body composition tracking to support sustainable fat loss and metabolic health. These medications regulate appetite, slow gastric emptying, and improve insulin sensitivity, which is why they work so effectively for so many patients.",
-    "Our program is physician-supervised from start to finish. That matters because GLP-1s have real clinical considerations, including side effect management, dose titration, lab monitoring, and eventual off-ramping that a basic prescription does not address. Patients typically see 15 to 20 percent body weight reduction over 6 to 12 months when the program is followed consistently. We also track muscle mass and body composition, not just the scale, because losing weight the wrong way creates new problems.",
+    "Our program is physician-supervised from start to finish. That matters because GLP-1s have real clinical considerations, including side effect management, dose titration, lab monitoring, and eventual off-ramping that a basic prescription does not address. Patients typically see meaningful, sustained body weight reduction over 6 to 12 months when the program is followed consistently. We also track muscle mass and body composition, not just the scale, because losing weight the wrong way creates new problems.",
   ],
 
   treatsHeading: "What it addresses",
@@ -273,20 +273,20 @@ export const pelvicFloorWellness: ServiceData = {
   ctaSub: "Book your consultation and start a conversation most clinics do not have.",
 };
 
-export const peptideTherapy: ServiceData = {
-  slug: "peptide-therapy",
+export const wellnessSupplementation: ServiceData = {
+  slug: "wellness-supplementation",
   breadcrumb: "Services > Wellness",
-  h1: "Peptide Therapy in Prosper, TX",
-  subtitle: "Targeted peptide protocols for recovery, sleep, cognition, and body composition, always guided by your labs.",
+  h1: "Wellness Supplementation in Prosper, TX",
+  subtitle: "Targeted, physician-guided supplementation protocols for recovery, sleep, cognition, and body composition. Always informed by your labs.",
   heroImage: "/images/space6.webp",
 
-  whatHeading: "What peptides are and why they work",
+  whatHeading: "Supplementation done with medical oversight",
   whatParagraphs: [
-    "Peptides are short chains of amino acids that signal specific biological functions in the body. Your body produces hundreds of peptides naturally, each performing a specific role. Therapeutic peptides, prescribed and dosed correctly, can support tissue repair, immune function, sleep quality, cognitive performance, and body composition.",
-    "We use peptides as part of targeted protocols, not generic supplements, and only after reviewing your labs, goals, and medical history. Common applications include recovery support, sleep and cognitive optimization, and adjunct therapy alongside hormone or weight loss programs. This is medicine, not an over-the-counter workout stack.",
+    "Most supplementation in the wellness space is generic, sold by influencers, and disconnected from any actual measurement of what your body needs. Our approach is the opposite. We start with comprehensive labs to understand where your levels actually sit, then build a targeted supplementation plan around those results.",
+    "Protocols are reviewed and adjusted at follow-up so the plan evolves with your biology. The goal is not to load you up on every trending supplement. The goal is to address specific gaps and goals with the smallest, most effective protocol that will actually move your numbers.",
   ],
 
-  treatsHeading: "What peptides support",
+  treatsHeading: "What supplementation supports",
   treats: [
     { icon: <Activity size={32} strokeWidth={1.5} />, label: "Recovery", micro: "Tissue repair after training or injury" },
     { icon: <Moon size={32} strokeWidth={1.5} />, label: "Sleep", micro: "Deeper, more restorative sleep cycles" },
@@ -296,9 +296,9 @@ export const peptideTherapy: ServiceData = {
   ],
 
   benefits: [
-    { icon: <Target size={24} strokeWidth={1.5} />, title: "Targeted signaling", body: "Each peptide triggers a specific biological function." },
+    { icon: <Target size={24} strokeWidth={1.5} />, title: "Targeted protocols", body: "Each protocol addresses a specific biological function." },
     { icon: <FlaskConical size={24} strokeWidth={1.5} />, title: "Labs-guided", body: "Protocols based on your baseline, not a template." },
-    { icon: <Stethoscope size={24} strokeWidth={1.5} />, title: "Physician-prescribed", body: "Pharmaceutical-grade, not supplement-quality." },
+    { icon: <Stethoscope size={24} strokeWidth={1.5} />, title: "Physician-prescribed", body: "Medical-grade, not supplement-store quality." },
     { icon: <Combine size={24} strokeWidth={1.5} />, title: "Pairs with other programs", body: "Often combined with hormone or weight loss therapy." },
   ],
 
@@ -314,7 +314,7 @@ export const peptideTherapy: ServiceData = {
     "Active patients with recovery or performance goals",
     "Patients with sleep or cognitive concerns",
     "Patients already in hormone or weight loss programs",
-    "Patients who want medically guided performance support",
+    "Patients who want medically guided wellness support",
   ],
   notFor: [
     "You are pregnant or breastfeeding",
@@ -323,18 +323,18 @@ export const peptideTherapy: ServiceData = {
   ],
 
   faqs: [
-    { q: "Are peptides safe?", a: "Pharmaceutical-grade peptides prescribed by a physician, with proper labs and monitoring, have a well-established safety profile. Peptides purchased online without medical supervision are a different story." },
-    { q: "How are peptides administered?", a: "Most peptides are subcutaneous injections (similar to insulin pens) taken at home on a specific schedule. Some are oral or topical. We teach you everything and provide detailed protocols." },
-    { q: "How quickly will I see results?", a: "Sleep and recovery-focused peptides can show effect within 1 to 2 weeks. Body composition and cognitive effects typically build over 4 to 12 weeks." },
-    { q: "How are peptides different from hormones?", a: "Hormones regulate major systems. Peptides are more targeted signals, triggering specific biological functions. They can complement hormone therapy but address different things." },
+    { q: "Are these supplements safe?", a: "Medical-grade supplementation prescribed by a physician, with proper labs and monitoring, has a well-established safety profile. Supplements purchased online without medical supervision are a different story." },
+    { q: "How are supplements administered?", a: "Most are oral protocols taken at home on a specific schedule. Some may be injectable. We teach you everything and provide detailed protocols." },
+    { q: "How quickly will I see results?", a: "Sleep and recovery-focused protocols can show effect within 1 to 2 weeks. Body composition and cognitive effects typically build over 4 to 12 weeks." },
+    { q: "How is this different from what I can buy at a supplement store?", a: "We start with labs. We know what your body actually needs. Then we prescribe medical-grade products at specific doses, not consumer-grade supplements at generic amounts." },
   ],
 
-  whyChooseHeading: "Why patients choose Rejuvenate & Refine for peptide therapy",
+  whyChooseHeading: "Why patients choose Rejuvenate & Refine for wellness supplementation",
   whyChoose: [
-    { title: "Labs and goals first.", description: "We do not prescribe peptides without a clear picture of your biology and what you are trying to achieve." },
-    { title: "Pharmaceutical-grade only.", description: "Compounded by licensed pharmacies, not gray-market sources." },
-    { title: "Integrated with your full program.", description: "Peptides work best as part of a larger plan, not a standalone solution." },
+    { title: "Labs and goals first.", description: "We do not prescribe supplements without a clear picture of your biology and what you are trying to achieve." },
+    { title: "Medical-grade only.", description: "Sourced from licensed suppliers, not gray-market sources." },
+    { title: "Integrated with your full program.", description: "Supplementation works best as part of a larger plan, not a standalone solution." },
   ],
 
-  ctaSub: "Book your consultation and see how peptides fit into your wellness plan.",
+  ctaSub: "Book your consultation and see how a guided supplementation plan can fit your goals.",
 };

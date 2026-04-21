@@ -38,7 +38,9 @@ export function Header() {
   }, [isMobileMenuOpen, lenis]);
 
   // Pages without a dark hero image need the nav to always be in "solid" mode
-  const needsSolidNav = pathname ? pathname.startsWith("/blog/") && pathname !== "/blog" : false;
+  const needsSolidNav = pathname
+    ? pathname === "/" || (pathname.startsWith("/blog/") && pathname !== "/blog")
+    : false;
 
   const [hasScrolled, setHasScrolled] = useState(false);
   const scrolledRef = useRef(false);

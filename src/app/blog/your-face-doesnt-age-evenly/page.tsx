@@ -20,7 +20,7 @@ export default function BlogPost() {
         <div className="mx-auto max-w-[780px] px-6 pb-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
-              src="/images/blog 1.png"
+              src="/images/blog 1.webp"
               alt="Your Face Doesn't Age Evenly"
               className="h-full w-full object-cover"
             />

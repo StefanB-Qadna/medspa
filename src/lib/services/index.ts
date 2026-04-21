@@ -1,33 +1,30 @@
-export { neuromodulators, lipFillers, cheekJawlineFiller, dermalFillers, prpPrfTherapy } from "./injectables";
-export { laserHairRemoval, laserSkinRejuvenation, laserTattooRemoval, rfMicroneedling, microneedling, nightlase, rfBodyContouring, hydrafacial, chemicalPeels, sclerotherapy } from "./laser-skin";
-export { ivTherapy, medicalWeightLoss, hormoneOptimization, pelvicFloorWellness, peptideTherapy } from "./wellness";
+export { neuromodulators, dermalFillers, prpPrfTherapy } from "./injectables";
+export { laserHairRemoval, laserSkinRejuvenation, laserVeinTreatment, laserTattooRemoval, rfMicroneedling, microneedling, nightlase, rfBodyContouring, glaceeHydrodermabrasion } from "./laser-skin";
+export { ivTherapy, medicalWeightLoss, hormoneOptimization, pelvicFloorWellness, wellnessSupplementation } from "./wellness";
 
 import type { ServiceData } from "@/lib/service-types";
-import { neuromodulators, lipFillers, cheekJawlineFiller, dermalFillers, prpPrfTherapy } from "./injectables";
-import { laserHairRemoval, laserSkinRejuvenation, laserTattooRemoval, rfMicroneedling, microneedling, nightlase, rfBodyContouring, hydrafacial, chemicalPeels, sclerotherapy } from "./laser-skin";
-import { ivTherapy, medicalWeightLoss, hormoneOptimization, pelvicFloorWellness, peptideTherapy } from "./wellness";
+import { neuromodulators, dermalFillers, prpPrfTherapy } from "./injectables";
+import { laserHairRemoval, laserSkinRejuvenation, laserVeinTreatment, laserTattooRemoval, rfMicroneedling, microneedling, nightlase, rfBodyContouring, glaceeHydrodermabrasion } from "./laser-skin";
+import { ivTherapy, medicalWeightLoss, hormoneOptimization, pelvicFloorWellness, wellnessSupplementation } from "./wellness";
 
 export const allServices: ServiceData[] = [
   neuromodulators,
-  lipFillers,
-  cheekJawlineFiller,
   dermalFillers,
   prpPrfTherapy,
   laserHairRemoval,
   laserSkinRejuvenation,
+  laserVeinTreatment,
   laserTattooRemoval,
   rfMicroneedling,
   microneedling,
   nightlase,
   rfBodyContouring,
-  hydrafacial,
-  chemicalPeels,
-  sclerotherapy,
+  glaceeHydrodermabrasion,
   ivTherapy,
   medicalWeightLoss,
   hormoneOptimization,
   pelvicFloorWellness,
-  peptideTherapy,
+  wellnessSupplementation,
 ];
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {

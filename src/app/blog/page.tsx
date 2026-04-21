@@ -13,7 +13,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "Most patients focus on wrinkles. But wrinkles are the last stage of facial aging. Here is what is actually happening beneath the surface, and why treating one layer without understanding the others leads to results that fade too fast.",
-    image: "/images/blog 1.png",
+    image: "/images/blog 1.webp",
     readTime: "10 min read",
     href: "/blog/your-face-doesnt-age-evenly",
   },
@@ -23,7 +23,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "Melasma is one of the most common and most mismanaged skin conditions in aesthetics. If your dark spots keep returning after treatment, this is likely why.",
-    image: "/images/blog 2.png",
+    image: "/images/blog 2.webp",
     readTime: "12 min read",
     href: "/blog/dark-spots-melasma-truth",
   },
@@ -33,7 +33,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "Body weight tells you almost nothing about your health, your metabolic function, or how your body actually looks. Here is what body composition is and how to actually measure progress.",
-    image: "/images/blog 3.png",
+    image: "/images/blog 3.webp",
     readTime: "11 min read",
     href: "/blog/scale-worst-way-measure-body",
   },
@@ -43,7 +43,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "The biology of aging starts well before most people expect it. Here is what is actually changing in your body in your 30s and 40s, and what the difference between \u201cnormal\u201d and \u201coptimized\u201d actually looks like.",
-    image: "/images/blog 4.png",
+    image: "/images/blog 4.webp",
     readTime: "13 min read",
     href: "/blog/what-starts-declining-in-your-30s",
   },
@@ -175,7 +175,7 @@ export default function BlogPage() {
         <Feature1
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
-          imageSrc="/images/space2.jpg"
+          imageSrc="/images/space2.webp"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
             label: "Start here",

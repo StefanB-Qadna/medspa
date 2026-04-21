@@ -85,7 +85,7 @@ const Gallery4 = ({
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <Carousel
           setApi={setCarouselApi}
           opts={{
@@ -96,7 +96,7 @@ const Gallery4 = ({
             },
           }}
         >
-          <CarouselContent className="ml-[max(1.5rem,calc(50vw-580px))]">
+          <CarouselContent className="ml-4 md:ml-[max(1.5rem,calc(50vw-580px))]">
             {items.map((item) => (
               <CarouselItem
                 key={item.id}

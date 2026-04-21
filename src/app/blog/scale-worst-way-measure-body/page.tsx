@@ -20,7 +20,7 @@ export default function BlogPost() {
         <div className="mx-auto max-w-[780px] px-6 pb-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
-              src="/images/blog 3.png"
+              src="/images/blog 3.webp"
               alt="Why the Scale Is the Worst Way to Measure Your Body"
               className="h-full w-full object-cover"
             />

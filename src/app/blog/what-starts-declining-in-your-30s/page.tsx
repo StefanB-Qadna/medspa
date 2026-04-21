@@ -20,7 +20,7 @@ export default function BlogPost() {
         <div className="mx-auto max-w-[780px] px-6 pb-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
-              src="/images/blog 4.png"
+              src="/images/blog 4.webp"
               alt="What Starts Declining in Your 30s"
               className="h-full w-full object-cover"
             />

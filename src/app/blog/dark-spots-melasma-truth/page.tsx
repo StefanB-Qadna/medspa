@@ -20,7 +20,7 @@ export default function BlogPost() {
         <div className="mx-auto max-w-[780px] px-6 pb-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
-              src="/images/blog 2.png"
+              src="/images/blog 2.webp"
               alt="Why Your Dark Spots Keep Coming Back"
               className="h-full w-full object-cover"
             />
