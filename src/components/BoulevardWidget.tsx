@@ -4,13 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 
-declare global {
-  interface Window {
-    blvd?: {
-      init: (config: { businessId: string }) => void;
-    };
-  }
-}
+// window.blvd type is declared in src/lib/book-now.ts
 
 const BUSINESS_ID = "c3aaf6e4-695f-4fff-a8a8-27beb534724a";
 

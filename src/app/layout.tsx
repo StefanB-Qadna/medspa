@@ -40,7 +40,12 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SmoothScrollProvider>
-          <a href="#main" className="skip-to-content">Skip to content</a>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[110] focus:rounded-sm focus:bg-warm-dark focus:px-5 focus:py-3 focus:text-sm focus:text-cream"
+          >
+            Skip to content
+          </a>
           <Header />
           <main id="main" className="flex-1 pt-20">{children}</main>
           <Footer />

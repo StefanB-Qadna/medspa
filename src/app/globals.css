@@ -48,28 +48,6 @@
   --z-tooltip: 110;
 }
 
-/* Accessibility: skip-to-content link, revealed on keyboard Tab.
- * Must be OUTSIDE @layer base — Tailwind v4 purges custom classes
- * inside managed layers. */
-.skip-to-content {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  background: var(--color-warm-dark);
-  color: var(--color-cream);
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-sm);
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  z-index: var(--z-tooltip);
-  transform: translateY(-150%);
-  transition: transform var(--duration-fast) var(--ease-standard);
-}
-
-.skip-to-content:focus {
-  transform: translateY(0);
-}
-
 /* ==========================================================================
  *  Reusable component classes
  * ========================================================================== */

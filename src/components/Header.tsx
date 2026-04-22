@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/Logo";
 import { useLenis } from "@/components/SmoothScroll";
+import { openBookNow } from "@/lib/book-now";
 
 interface NavItem {
   label: string;
@@ -119,14 +120,15 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:block lg:justify-self-end">
             <Button
-              asChild
-              className={`uppercase tracking-widest text-xs font-medium px-6 py-2 rounded-full transition-all duration-500 text-cream ${
+              type="button"
+              onClick={openBookNow}
+              className={`uppercase tracking-widest text-xs font-medium px-6 py-2 rounded-full transition-all duration-500 text-cream cursor-pointer ${
                 isScrolled
                   ? "bg-brass hover:bg-brass-dark border border-transparent"
                   : "bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25"
               }`}
             >
-              <a href="#book-now">Book Your Visit</a>
+              Book Your Visit
             </Button>
           </div>
 
@@ -172,12 +174,14 @@ export function Header() {
             );
           })}
           <Button
-            asChild
-            className="w-full uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
+            type="button"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              openBookNow(e);
+            }}
+            className="w-full uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream cursor-pointer"
           >
-            <a href="#book-now" onClick={() => setIsMobileMenuOpen(false)}>
-              Book Your Visit
-            </a>
+            Book Your Visit
           </Button>
         </div>
       </div>

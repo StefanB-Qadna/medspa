@@ -9,6 +9,7 @@ import { ArrowRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { openBookNow } from '@/lib/book-now';
 
 const cardVariants = cva(
   'group relative flex flex-col overflow-hidden rounded-lg bg-cream text-card-foreground shadow-[0_2px_8px_rgba(61,53,48,0.08),0_8px_24px_rgba(61,53,48,0.06)] transition-all duration-300 ease-in-out hover:shadow-[0_4px_12px_rgba(61,53,48,0.12),0_16px_40px_rgba(61,53,48,0.10)]',
@@ -112,15 +113,14 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
           </div>
 
           {variant === 'featured' && (
-            <div className="mt-8">
+            <div className="relative z-20 mt-8">
               <Button
-                asChild
-                className="group/button bg-brass hover:bg-brass-dark text-white"
+                type="button"
+                onClick={openBookNow}
+                className="group/button bg-brass hover:bg-brass-dark text-white cursor-pointer"
               >
-                <span>
-                  {ctaText}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/button:translate-x-1" />
-                </span>
+                {ctaText}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/button:translate-x-1" />
               </Button>
             </div>
           )}
