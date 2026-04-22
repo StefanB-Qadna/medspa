@@ -148,22 +148,14 @@ export const ImageComparisonSlider = React.forwardRef<
 
         {/* Before / After labels */}
         <div
-          className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-eyebrow font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300"
-          style={{
-            backgroundColor: "rgba(61, 53, 48, 0.7)",
-            color: "#FDFBF7",
-            opacity: sliderPosition > 10 ? 1 : 0,
-          }}
+          className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-eyebrow font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300 bg-warm-dark/70 text-cream"
+          style={{ opacity: sliderPosition > 10 ? 1 : 0 }}
         >
           Before
         </div>
         <div
-          className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-eyebrow font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300"
-          style={{
-            backgroundColor: "rgba(61, 53, 48, 0.7)",
-            color: "#FDFBF7",
-            opacity: sliderPosition < 90 ? 1 : 0,
-          }}
+          className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-eyebrow font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300 bg-warm-dark/70 text-cream"
+          style={{ opacity: sliderPosition < 90 ? 1 : 0 }}
         >
           After
         </div>
@@ -171,7 +163,7 @@ export const ImageComparisonSlider = React.forwardRef<
         {/* Slider Handle and Divider */}
         <div
           className="absolute top-0 h-full w-1 cursor-ew-resize"
-          style={{ left: `calc(${sliderPosition}% - 2px)` }}
+          style={{ left: `calc(${sliderPosition}% - 0.125rem)` }}
         >
           {/* Divider Line */}
           <div className="absolute inset-y-0 w-0.5 bg-cream" />

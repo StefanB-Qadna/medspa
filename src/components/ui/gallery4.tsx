@@ -57,7 +57,7 @@ const Gallery4 = ({
 
   return (
     <section className="py-16 md:py-20">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[75rem] px-6">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-2">
             <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass-label">
@@ -100,7 +100,7 @@ const Gallery4 = ({
             {items.map((item) => (
               <CarouselItem
                 key={item.id}
-                className="basis-[75%] pl-4 md:basis-[320px]"
+                className="basis-[75%] pl-4 md:basis-[20rem]"
               >
                 <Link href={item.href} className="group block">
                   <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md">

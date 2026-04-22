@@ -49,7 +49,7 @@ function BookingModal({ onClose }: { onClose: () => void }) {
 
       {/* Modal */}
       <motion.div
-        className="relative w-full max-w-[520px] bg-cream rounded-md overflow-hidden border border-border shadow-2xl"
+        className="relative w-full max-w-[32.5rem] bg-cream rounded-md overflow-hidden border border-border shadow-2xl"
         initial={{ scale: 0.95, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.95, y: 20 }}
@@ -132,7 +132,7 @@ export function BookingForm() {
   return (
     <>
       <section id="book" className="bg-warm-dark py-20 px-6">
-        <div className="mx-auto max-w-[800px] text-center">
+        <div className="mx-auto max-w-[50rem] text-center">
           <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass-label mb-3">
             Reserve Your Visit
           </p>
@@ -163,7 +163,7 @@ export function BookingForm() {
 
           <button
             onClick={() => setIsModalOpen(true)}
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-cream font-sans font-medium uppercase text-sm tracking-widest px-12 py-4 min-h-[52px] hover:bg-brass-dark transition-colors cursor-pointer"
+            className="inline-flex items-center justify-center rounded-sm bg-brass text-cream font-sans font-medium uppercase text-sm tracking-widest px-12 py-4 min-h-[3.25rem] hover:bg-brass-dark transition-colors cursor-pointer"
           >
             Book Online
           </button>

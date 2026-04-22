@@ -15,7 +15,7 @@ export default function ContactPage() {
       />
 
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact info */}
             <div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
             </div>
 
             {/* Map */}
-            <div className="rounded-md overflow-hidden bg-linen aspect-[4/3] md:aspect-auto md:min-h-[400px]">
+            <div className="rounded-md overflow-hidden bg-linen aspect-[4/3] md:aspect-auto md:min-h-[25rem]">
               <iframe
                 title="Rejuvenate and Refine location"
                 src="https://www.google.com/maps?q=2120+Prairie+Dr+Suite+402+Prosper+TX+75078&output=embed"

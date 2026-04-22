@@ -135,13 +135,8 @@ a, button {
 
 .prose-medspa hr {
   border: none;
-  border-top: 1px solid var(--color-border);
+  border-top: 0.0625rem solid var(--color-border);
   margin: 2.5rem 0;
-}
-
-.prose-medspa .italic {
-  font-style: italic;
-  color: color-mix(in srgb, var(--color-warm-dark) 80%, transparent);
 }
 
 /* ==========================================================================
@@ -174,7 +169,7 @@ a, button {
 /* Fade-up (actions, meta, scroll) */
 .ed-fade-up {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(0.5rem);
   animation: ed-rise 900ms cubic-bezier(.2,.7,.2,1) forwards;
 }
 .ed-d-actions { animation-delay: 1900ms; }
@@ -185,8 +180,8 @@ a, button {
 .ed-underline::after {
   content: "";
   position: absolute;
-  left: 0; right: 0; bottom: 0.08em;
-  height: 1px;
+  left: 0; right: 0; bottom: 0.0625rem;
+  height: 0.0625rem;
   background: var(--color-brass);
   transform-origin: left center;
   transform: scaleX(0);
@@ -210,8 +205,8 @@ a, button {
 /* Scroll indicator drop */
 .ed-scroll-line::after {
   content: "";
-  position: absolute; left: 0; top: -48px;
-  width: 1px; height: 48px;
+  position: absolute; left: 0; top: -3rem;
+  width: 0.0625rem; height: 3rem;
   background: linear-gradient(to bottom, transparent, var(--color-brass));
   animation: ed-scroll-drop 2600ms ease-in-out infinite;
 }
@@ -227,9 +222,9 @@ a, button {
   100% { transform: scaleY(0); }
 }
 @keyframes ed-scroll-drop {
-  0%   { top: -48px; }
-  60%  { top: 48px; }
-  100% { top: 48px; }
+  0%   { top: -3rem; }
+  60%  { top: 3rem; }
+  100% { top: 3rem; }
 }
 
 /* ==========================================================================

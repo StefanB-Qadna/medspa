@@ -50,9 +50,9 @@ const itemVariants: Variants = {
 };
 
 const sizeClasses = {
-  full: "min-h-[85svh] md:h-screen md:min-h-[700px]",
-  medium: "min-h-[500px] md:min-h-[60vh]",
-  compact: "min-h-[380px] md:min-h-[45vh]",
+  full: "min-h-[85svh] md:h-screen md:min-h-[43.75rem]",
+  medium: "min-h-[31.25rem] md:min-h-[60vh]",
+  compact: "min-h-[23.75rem] md:min-h-[45vh]",
 };
 
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(

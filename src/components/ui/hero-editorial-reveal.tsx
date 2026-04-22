@@ -63,7 +63,7 @@ export function HeroEditorialReveal({
       />
 
       {/* Content grid */}
-      <div className="relative z-10 mx-auto grid min-h-[calc(100svh-5rem)] max-w-[1400px] grid-cols-1 items-center gap-11 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:gap-[4.5rem] md:px-[clamp(2rem,8vw,7.5rem)] md:py-24">
+      <div className="relative z-10 mx-auto grid min-h-[calc(100svh-5rem)] max-w-[87.5rem] grid-cols-1 items-center gap-11 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:gap-[4.5rem] md:px-[clamp(2rem,8vw,7.5rem)] md:py-24">
         {/* === Left: Copy === */}
         <div className="editorial-copy relative z-10 order-2 md:order-1">
           {/* Eyebrow */}
@@ -76,17 +76,17 @@ export function HeroEditorialReveal({
 
           {/* Headline */}
           <h1 className="mt-7 font-serif text-display font-normal tracking-tight text-warm-dark">
-            <span className="block overflow-hidden pb-[0.02em]">
+            <span className="block overflow-hidden pb-[0.125rem]">
               {headlineLine1.map((word, i) => (
                 <span
                   key={`l1-${i}`}
-                  className={`ed-word ed-wd${i + 1} mr-[0.34em] inline-block last:mr-0`}
+                  className={`ed-word ed-wd${i + 1} mr-6 inline-block last:mr-0`}
                 >
                   {word}
                 </span>
               ))}
             </span>
-            <span className="block overflow-hidden pb-[0.02em]">
+            <span className="block overflow-hidden pb-[0.125rem]">
               {headlineLine2.map((word, i) => {
                 const globalIdx = headlineLine1.length + i;
                 const isUnderline = i === underlineWordIndex;
@@ -101,7 +101,7 @@ export function HeroEditorialReveal({
                 return (
                   <span
                     key={`l2-${i}`}
-                    className={`ed-word ed-wd${globalIdx + 1} mr-[0.34em] inline-block last:mr-0`}
+                    className={`ed-word ed-wd${globalIdx + 1} mr-6 inline-block last:mr-0`}
                   >
                     {inner}
                   </span>
@@ -125,7 +125,7 @@ export function HeroEditorialReveal({
             >
               {ctaText}
               <span className="relative inline-block h-px w-[1.125rem] bg-cream transition-[width] duration-300 group-hover:w-[1.625rem]">
-                <span className="absolute right-0 top-[-3px] h-[7px] w-[7px] rotate-45 border-r border-t border-cream" />
+                <span className="absolute right-0 top-[-0.1875rem] h-[0.4375rem] w-[0.4375rem] rotate-45 border-r border-t border-cream" />
               </span>
             </a>
             {meta && (
@@ -138,7 +138,7 @@ export function HeroEditorialReveal({
 
         {/* === Right: Editorial tile grid === */}
         <div
-          className="relative z-10 order-1 grid aspect-[5/4] max-h-[72vh] w-full max-w-[480px] grid-cols-[1.2fr_0.8fr] grid-rows-[1.2fr_0.8fr] gap-4 justify-self-center md:order-2 md:aspect-auto md:h-[560px] md:justify-self-end"
+          className="relative z-10 order-1 grid aspect-[5/4] max-h-[72vh] w-full max-w-[30rem] grid-cols-[1.2fr_0.8fr] grid-rows-[1.2fr_0.8fr] gap-4 justify-self-center md:order-2 md:aspect-auto md:h-[35rem] md:justify-self-end"
           aria-hidden="true"
         >
           {/* Tile 1 — tall left */}

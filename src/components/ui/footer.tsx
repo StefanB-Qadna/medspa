@@ -65,14 +65,14 @@ export const Footer: FC<FooterProps> = ({
       )}
       {...props}
     >
-      <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
+      <div className="mx-auto max-w-[75rem] px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div className="flex flex-col items-start gap-4">
             <Link href="/" aria-label={companyName}>
               {wordmarkSrc ? (
                 <div
-                  className="h-12 w-[240px] text-cream"
+                  className="h-12 w-[15rem] text-cream"
                   style={{
                     backgroundColor: "currentColor",
                     maskImage: `url(${wordmarkSrc})`,

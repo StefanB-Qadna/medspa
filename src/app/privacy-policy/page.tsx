@@ -1,7 +1,7 @@
 export default function PrivacyPolicyPage() {
   return (
     <section className="bg-cream">
-      <div className="mx-auto max-w-[800px] px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-[50rem] px-6 py-16 md:py-20">
         <p className="label mb-3">Legal</p>
         <h1 className="font-serif text-3xl md:text-4xl font-normal text-warm-dark mb-8">
           Privacy Policy

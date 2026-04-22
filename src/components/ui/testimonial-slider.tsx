@@ -91,7 +91,7 @@ export const TestimonialSlider = ({
   return (
     <div
       className={cn(
-        "relative w-full min-h-[650px] md:min-h-[600px] overflow-hidden bg-background text-foreground p-8 md:p-12",
+        "relative w-full min-h-[40.625rem] md:min-h-[37.5rem] overflow-hidden bg-background text-foreground p-8 md:p-12",
         className
       )}
     >
@@ -136,7 +136,7 @@ export const TestimonialSlider = ({
         </div>
 
         {/* === Center Column: Before/After Comparison === */}
-        <div className="relative -mx-4 md:mx-0 md:col-span-4 min-h-[420px] md:min-h-[500px] order-1 md:order-2">
+        <div className="relative -mx-4 md:mx-0 md:col-span-4 min-h-[26.25rem] md:min-h-[31.25rem] order-1 md:order-2">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentIndex}
@@ -187,7 +187,7 @@ export const TestimonialSlider = ({
         {/* === Right Column: Text and Navigation === */}
         <div className="md:col-span-5 flex flex-col justify-between md:pl-8 order-3 md:order-3">
           {/* Text Content */}
-          <div className="relative overflow-hidden pt-4 md:pt-24 min-h-[200px]">
+          <div className="relative overflow-hidden pt-4 md:pt-24 min-h-[12.5rem]">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}

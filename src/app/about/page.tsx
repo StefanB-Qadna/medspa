@@ -103,7 +103,7 @@ export default function AboutPage() {
 
       {/* Meet Dr. Robledo */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="aspect-[3/4] rounded-md overflow-hidden bg-linen">
               <img
@@ -175,7 +175,7 @@ export default function AboutPage() {
 
       {/* Care Team */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading
             title="Your Care Team"
             subtitle="Handpicked from Dr. Robledo's hospital colleagues, each team member brings clinical expertise and a genuine commitment to your care."
@@ -209,7 +209,7 @@ export default function AboutPage() {
 
       {/* How We Are Different */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading title="How We Are Different" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {differentiators.map((item) => (
@@ -234,7 +234,7 @@ export default function AboutPage() {
 
       {/* Visit Our Space */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading
             title="Visit Our Space"
             subtitle="A warm, modern environment designed for your comfort, where clinical precision meets luxury care."

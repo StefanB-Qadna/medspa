@@ -73,7 +73,7 @@ export default function BlogPage() {
 
       {/* Category Filters */}
       <section className="bg-cream border-b border-border/50">
-        <div className="mx-auto max-w-[1200px] px-6 py-6">
+        <div className="mx-auto max-w-[75rem] px-6 py-6">
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
               <button
@@ -94,7 +94,7 @@ export default function BlogPage() {
 
       {/* Posts — lead story + 3-up grid */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           {filteredPosts.length === 0 && (
             <p className="text-center font-sans text-sm text-warm-dark/70 py-16">
               No posts in this category yet. Check back soon.

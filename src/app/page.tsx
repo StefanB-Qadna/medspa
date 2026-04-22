@@ -103,7 +103,7 @@ export default function HomePage() {
 
       {/* The surgeon's difference — editorial split */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-[75rem] px-6 py-20 md:py-28">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-14">
             {/* Left: eyebrow + headline + pull quote */}
             <div className="md:col-span-5">
@@ -150,7 +150,7 @@ export default function HomePage() {
 
       {/* What we offer */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px]">
+        <div className="mx-auto max-w-[75rem]">
           <Cards
             label="What we offer"
             heading="Results that go deeper than the surface."
@@ -180,7 +180,7 @@ export default function HomePage() {
 
       {/* Dr. Robledo — editorial card */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[960px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[60rem] px-6 py-16 md:py-20">
           <TeamMemberCard
             position="left"
             jobPosition="Meet your provider"
@@ -195,7 +195,7 @@ export default function HomePage() {
 
       {/* What our patients say */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading
             title="What our patients say"
           />
@@ -238,7 +238,7 @@ export default function HomePage() {
 
       {/* A space designed for you */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <Feature73
             heading="A space designed for you"
             description="Rejuvenate & Refine was designed from the ground up to meet surgical-grade standards, while feeling like a place you genuinely want to spend time. Every detail was considered, from the warmth of the lighting to the quiet of the suites. Clean, modern, and built around your comfort."
@@ -270,7 +270,7 @@ export default function HomePage() {
 
       {/* Find Us */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 pb-16 md:pb-20">
+        <div className="mx-auto max-w-[75rem] px-6 pb-16 md:pb-20">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
               <p className="label mb-3">Our Location</p>

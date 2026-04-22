@@ -25,7 +25,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
 
       {/* 2. What It Does */}
       <section id="what-it-does" className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24">
           <h2 className="font-serif text-section font-normal text-warm-dark mb-8">
             {data.whatHeading}
           </h2>
@@ -39,7 +39,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
 
       {/* 3. What It Treats */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24">
           <h2 className="font-serif text-section font-normal text-warm-dark mb-12 text-center">
             {data.treatsHeading}
           </h2>
@@ -47,7 +47,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
             {data.treats.map((item) => (
               <div
                 key={item.label}
-                className="bg-linen rounded-lg p-7 text-center w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1rem)] min-w-[160px]"
+                className="bg-linen rounded-lg p-7 text-center w-[calc(50%-0.75rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1rem)] min-w-[10rem]"
               >
                 <div className="w-14 h-14 rounded-full bg-cream border border-forest/20 flex items-center justify-center mx-auto mb-4 text-forest">
                   {item.icon}
@@ -66,7 +66,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
 
       {/* 4. Key Benefits */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24">
           <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             Key Benefits
           </h2>
@@ -90,7 +90,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
 
       {/* 5. Treatment Details */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24">
           <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             Treatment Details
           </h2>
@@ -118,7 +118,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
 
       {/* 6. Best For / Not For */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24">
           <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             Is this right for you?
           </h2>
@@ -158,7 +158,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
 
       {/* 8. Why Choose R&R */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24">
           <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             {data.whyChooseHeading}
           </h2>
@@ -182,7 +182,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
 
       {/* 9. CTA Banner */}
       <section className="bg-warm-dark">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 text-center">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24 text-center">
           <h2 className="font-serif text-section font-normal text-cream mb-4">
             Ready to get started?
           </h2>
@@ -192,13 +192,13 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#book-now"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[48px] hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[3rem] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
             </a>
             <a
               href="tel:+14693970434"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[48px] hover:bg-white/5 transition-colors"
+              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[3rem] hover:bg-white/5 transition-colors"
             >
               (469) 397-0434
             </a>
@@ -214,7 +214,7 @@ function FaqSection({ faqs }: { faqs: { q: string; a: string }[] }) {
 
   return (
     <section className="bg-cream">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
+      <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24">
         <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
           Frequently Asked Questions
         </h2>

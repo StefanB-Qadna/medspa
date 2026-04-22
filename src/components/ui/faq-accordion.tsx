@@ -56,7 +56,7 @@ export function FAQAccordion({ faqs = defaultFaqs }: FAQAccordionProps) {
 
   return (
     <section className="bg-cream py-16 md:py-20 px-6">
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[75rem]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16">
           {/* Left - sticky heading */}
           <div className="lg:sticky lg:top-28 lg:self-start">

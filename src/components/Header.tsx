@@ -117,7 +117,7 @@ export function Header() {
                     {item.label}
                   </span>
                   <span
-                    className={`absolute bottom-0 left-0 h-[2px] bg-brass transition-all duration-300 ${
+                    className={`absolute bottom-0 left-0 h-[0.125rem] bg-brass transition-all duration-300 ${
                       active ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
@@ -144,7 +144,7 @@ export function Header() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-sm transition-colors duration-500 hover:text-brass ${
+              className={`inline-flex items-center justify-center min-h-[2.75rem] min-w-[2.75rem] p-2 rounded-sm transition-colors duration-500 hover:text-brass ${
                 isScrolled ? "text-warm-dark" : transparentTextClass
               }`}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -179,7 +179,7 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`block min-h-[44px] py-3 text-base transition-colors duration-200 ${
+                className={`block min-h-[2.75rem] py-3 text-base transition-colors duration-200 ${
                   active ? "text-brass-label font-medium" : "text-warm-dark hover:text-brass-label"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}

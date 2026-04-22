@@ -168,7 +168,7 @@ export default function ServicesPage() {
         const [featured, ...rest] = section.cards;
         return (
           <section key={section.id} id={section.id} className={section.bg}>
-            <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+            <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
               <SectionHeading title={section.title} centered={false} />
 
               {/* Featured card */}
@@ -207,7 +207,7 @@ export default function ServicesPage() {
 
       {/* Included with Every Plan */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading title="Included with Every Plan" centered={false} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <div className="bg-cream rounded-md p-8">

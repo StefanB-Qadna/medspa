@@ -4,6 +4,7 @@ import { PulsingBorder, MeshGradient } from "@paper-design/shaders-react"
 import { motion } from "framer-motion"
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
+import { BRAND } from "@/lib/brand-colors"
 
 interface ShaderBackgroundProps {
   children: React.ReactNode
@@ -64,13 +65,13 @@ export function ShaderBackground({ children }: ShaderBackgroundProps) {
       {/* Background Shaders */}
       <MeshGradient
         className="absolute inset-0 w-full h-full"
-        colors={["#3D3530", "#B08D57", "#FDFBF7", "#4E6349", "#F0E6D8"]}
+        colors={[BRAND.warmDark, BRAND.brass, BRAND.cream, BRAND.forest, BRAND.linen]}
         speed={0.25}
-        style={{ backgroundColor: "#3D3530" }}
+        style={{ backgroundColor: BRAND.warmDark }}
       />
       <MeshGradient
         className="absolute inset-0 w-full h-full opacity-40"
-        colors={["#3D3530", "#F0E6D8", "#B08D57", "#4E6349"]}
+        colors={[BRAND.warmDark, BRAND.linen, BRAND.brass, BRAND.forest]}
         speed={0.15}
       />
 
@@ -85,7 +86,7 @@ export function PulsingCircle() {
       <div className="relative w-20 h-20 flex items-center justify-center">
         {/* Pulsing Border Circle */}
         <PulsingBorder
-          colors={["#B08D57", "#FDFBF7", "#F0E6D8", "#4E6349", "#9A7A48", "#3D3530", "#B08D57"]}
+          colors={[BRAND.brass, BRAND.cream, BRAND.linen, BRAND.forest, BRAND.brassDark, BRAND.warmDark, BRAND.brass]}
           colorBack="#00000000"
           speed={1.5}
           roundness={1}

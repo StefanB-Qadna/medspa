@@ -19,7 +19,7 @@ export default function BlogPost() {
 
       {/* Thumbnail */}
       <div className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pb-10">
+        <div className="mx-auto max-w-[48.75rem] px-6 pb-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
               src="/images/blog 3.webp"
@@ -32,7 +32,7 @@ export default function BlogPost() {
 
       {/* Article */}
       <article className="bg-cream">
-        <div className="mx-auto max-w-[680px] px-6 pb-20">
+        <div className="mx-auto max-w-[42.5rem] px-6 pb-20">
           <div className="prose-medspa">
             <p>
               Two people can weigh exactly the same amount and look completely
@@ -205,7 +205,7 @@ export default function BlogPost() {
 
             <hr />
 
-            <p className="italic">
+            <p className="text-warm-dark/70">
               At Rejuvenate &amp; Refine in Prosper, TX, our approach to body
               wellness includes GLP-1 support, body contouring, and a clinical
               perspective that goes beyond the scale. If you want to understand
