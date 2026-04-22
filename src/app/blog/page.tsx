@@ -117,7 +117,7 @@ export default function BlogPage() {
                     </div>
                     <div className="md:col-span-5">
                       <p className="label mb-3">Featured · {lead.category}</p>
-                      <h2 className="font-serif text-3xl md:text-4xl font-normal text-warm-dark leading-[1.15] mb-4 group-hover:text-brass transition-colors">
+                      <h2 className="font-serif text-section font-normal text-warm-dark leading-tight mb-4 group-hover:text-brass transition-colors">
                         {lead.title}
                       </h2>
                       <p className="font-sans text-base text-warm-dark/75 leading-relaxed mb-6">

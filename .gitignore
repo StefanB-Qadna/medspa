@@ -36,12 +36,17 @@ yarn-error.log*
 # vercel
 .vercel
 
+# cloudflare / opennext
+.open-next
+.wrangler
+cloudflare-env.d.ts
+
 # playwright
 .playwright-mcp
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-.worktrees/hero-c/
-.worktrees/hero-b/
-.worktrees/hero-a/
+
+# git worktrees
+/.worktrees

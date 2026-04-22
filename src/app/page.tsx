@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -109,12 +108,12 @@ export default function HomePage() {
             {/* Left: eyebrow + headline + pull quote */}
             <div className="md:col-span-5">
               <p className="label mb-4">What sets us apart</p>
-              <h2 className="font-serif text-3xl md:text-5xl font-light text-warm-dark leading-[1.1] mb-8">
+              <h2 className="font-serif text-statement font-normal text-warm-dark mb-8">
                 The surgeon&apos;s
                 <br />
-                <span className="italic">difference.</span>
+                difference.
               </h2>
-              <p className="font-serif text-lg md:text-xl italic text-warm-dark/85 leading-snug border-l-2 border-brass pl-5 max-w-sm">
+              <p className="font-serif text-lead font-normal italic text-warm-dark/85 border-l-2 border-brass pl-5 max-w-sm">
                 &ldquo;In an operating room, there are no retries. We bring that standard to every injection.&rdquo;
               </p>
             </div>
@@ -130,15 +129,15 @@ export default function HomePage() {
                 >
                   <span
                     aria-hidden="true"
-                    className="font-serif text-2xl md:text-3xl font-light text-brass leading-none tabular-nums pt-1"
+                    className="font-serif text-3xl font-normal text-brass leading-none tabular-nums pt-1"
                   >
                     {point.num}
                   </span>
                   <div>
-                    <h3 className="font-serif text-xl md:text-2xl font-normal text-warm-dark mb-2 leading-snug">
+                    <h3 className="font-serif text-2xl font-normal text-warm-dark mb-2 leading-snug">
                       {point.title}
                     </h3>
-                    <p className="font-sans text-[0.95rem] text-warm-dark/75 leading-relaxed max-w-prose">
+                    <p className="font-sans text-body text-warm-dark/75 leading-relaxed max-w-prose">
                       {point.desc}
                     </p>
                   </div>
@@ -187,7 +186,7 @@ export default function HomePage() {
             jobPosition="Meet your provider"
             firstName="Dr. Rosemarie"
             lastName="Robledo"
-            imageUrl="/images/DrRobledo.jpg"
+            imageUrl="/images/DrRobledo.webp"
             description="Double board-certified trauma surgeon turned aesthetic medicine specialist. Dr. Robledo personally developed the laser and RF microneedling techniques used at Rejuvenate & Refine, and oversees every treatment plan."
             href="/about"
           />
@@ -275,13 +274,13 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
               <p className="label mb-3">Our Location</p>
-              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
+              <h2 className="font-serif text-section font-normal text-warm-dark mb-4">
                 Find us in Prosper.
               </h2>
-              <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
+              <p className="font-sans text-body text-warm-dark/70 leading-relaxed mb-6">
                 Easy to reach, with plenty of parking so your visit starts stress-free.
               </p>
-              <address className="not-italic font-sans text-sm text-warm-dark/80 leading-relaxed mb-6 space-y-1">
+              <address className="not-italic font-sans text-body text-warm-dark/80 leading-relaxed mb-6 space-y-1">
                 <p className="font-medium text-warm-dark">2120 Prairie Dr Suite 402</p>
                 <p>Prosper, TX 75078</p>
                 <p>United States</p>
@@ -406,7 +405,7 @@ function CinematicHero() {
 
         <ContainerScale className="relative z-10 px-6 text-center">
           <p className="label mb-4">Rejuvenate &amp; Refine</p>
-          <h1 className="mx-auto max-w-3xl font-serif text-5xl md:text-6xl font-light leading-[1] tracking-normal text-warm-dark">
+          <h1 className="mx-auto max-w-3xl font-serif text-display font-normal text-warm-dark">
             The most natural version of you.
           </h1>
           <p className="mx-auto my-6 max-w-xl font-sans text-base md:text-lg text-warm-dark/75 leading-relaxed">

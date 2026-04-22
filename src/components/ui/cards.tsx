@@ -29,14 +29,14 @@ export default function Cards({
   return (
     <div className="flex flex-col items-center w-full py-16 md:py-20 px-6">
       {label && (
-        <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label mb-3">
+        <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass-label mb-3">
           {label}
         </p>
       )}
-      <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark max-w-lg text-center text-balance">
+      <h2 className="font-serif text-section font-normal text-warm-dark max-w-lg text-center text-balance">
         {heading}
       </h2>
-      <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mt-3 max-w-md text-center">
+      <p className="font-sans text-body text-warm-dark/70 leading-relaxed mt-3 max-w-md text-center">
         {description}
       </p>
 
@@ -51,10 +51,10 @@ export default function Cards({
               src={card.image}
               alt={card.title}
             />
-            <h3 className="font-serif text-base text-warm-dark font-medium mt-3">
+            <h3 className="font-serif text-xl text-warm-dark font-normal mt-4 leading-snug">
               {card.title}
             </h3>
-            <p className="text-xs text-brass font-medium mt-1">{card.tag}</p>
+            <p className="font-sans text-sm text-brass font-medium mt-2">{card.tag}</p>
           </div>
         ))}
       </div>
@@ -63,7 +63,7 @@ export default function Cards({
         <div className="mt-10 text-center">
           <Link
             href={linkUrl}
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-[0.78rem] tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
           >
             {linkText}
             <svg

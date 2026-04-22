@@ -23,8 +23,8 @@
     background-color: var(--color-cream);
     color: var(--color-warm-dark);
     font-family: var(--font-sans);
-    font-size: 1rem;
-    line-height: var(--leading-relaxed);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -111,17 +111,22 @@ a, button {
  *  Blog article prose
  * ========================================================================== */
 
+.prose-medspa {
+  max-width: 65ch;
+}
+
 .prose-medspa p {
   font-family: var(--font-sans);
-  font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
+  font-size: var(--text-prose);
+  line-height: var(--text-prose--line-height);
   color: color-mix(in srgb, var(--color-warm-dark) 80%, transparent);
   margin-bottom: 1.5rem;
 }
 
 .prose-medspa h2 {
   font-family: var(--font-serif);
-  font-size: var(--text-3xl);
+  font-size: var(--text-section);
+  line-height: var(--text-section--line-height);
   font-weight: var(--font-weight-normal);
   color: var(--color-warm-dark);
   margin-top: 2.5rem;

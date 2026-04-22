@@ -26,14 +26,14 @@ export const Feature73 = ({
   return (
     <section>
       <div className="flex flex-col gap-16">
-        <div className="lg:max-w-sm">
-          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label mb-3">
+        <div className="max-w-3xl">
+          <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass-label mb-3">
             Our Clinic
           </p>
-          <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-4">
+          <h2 className="font-serif text-section font-normal text-warm-dark mb-4">
             {heading}
           </h2>
-          <p className="font-sans text-sm text-warm-dark/70 leading-relaxed mb-6">
+          <p className="font-sans text-body text-warm-dark/70 leading-relaxed mb-6">
             {description}
           </p>
           <Link
@@ -47,18 +47,18 @@ export const Feature73 = ({
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           {features[0] && (
             <div className="flex flex-col overflow-clip rounded-md md:col-span-2 md:grid md:grid-cols-2 border border-border">
-              <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
+              <div>
                 <img
                   src={features[0].image}
                   alt={features[0].title}
-                  className="aspect-[16/9] h-full w-full object-cover object-center"
+                  className="aspect-[4/3] md:aspect-auto md:h-full w-full object-cover object-center"
                 />
               </div>
               <div className="flex flex-col justify-center px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 bg-cream">
-                <h3 className="font-serif text-lg font-medium text-warm-dark mb-3 md:mb-4 md:text-xl">
+                <h3 className="font-serif text-2xl font-normal text-warm-dark mb-3 md:mb-4 leading-snug">
                   {features[0].title}
                 </h3>
-                <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
+                <p className="font-sans text-base text-warm-dark/70 leading-relaxed">
                   {features[0].description}
                 </p>
               </div>
@@ -73,14 +73,14 @@ export const Feature73 = ({
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="aspect-[16/9] h-full w-full object-cover object-center"
+                  className="aspect-[4/3] w-full object-cover object-center"
                 />
               </div>
               <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12 bg-cream">
-                <h3 className="font-serif text-lg font-medium text-warm-dark mb-3 md:mb-4 md:text-xl">
+                <h3 className="font-serif text-2xl font-normal text-warm-dark mb-3 md:mb-4 leading-snug">
                   {feature.title}
                 </h3>
-                <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
+                <p className="font-sans text-base text-warm-dark/70 leading-relaxed">
                   {feature.description}
                 </p>
               </div>

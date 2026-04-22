@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Home, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -79,15 +80,15 @@ export function NotFoundPage() {
         <EmptyContent>
           <div className="flex gap-3">
             <Button asChild className="bg-warm-dark text-cream hover:bg-warm-darker rounded-sm px-6 py-2.5 font-sans text-xs font-medium uppercase tracking-wider">
-              <a href="/">
+              <Link href="/">
                 <Home className="mr-2 h-4 w-4" /> Go Home
-              </a>
+              </Link>
             </Button>
 
             <Button asChild variant="outline" className="border-border text-warm-dark hover:bg-linen rounded-sm px-6 py-2.5 font-sans text-xs font-medium uppercase tracking-wider">
-              <a href="/services">
+              <Link href="/services">
                 <Stethoscope className="mr-2 h-4 w-4" /> Services
-              </a>
+              </Link>
             </Button>
           </div>
         </EmptyContent>

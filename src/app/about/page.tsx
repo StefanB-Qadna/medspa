@@ -10,7 +10,7 @@ const teamMembers = [
   {
     name: "Dr. Rosemarie Robledo",
     role: "Founder & Medical Director",
-    desc: "Double board-certified surgeon with a passion for precision aesthetics.",
+    desc: "Double board-certified trauma surgeon and founder. Developed the laser and RF protocols used at R&R, and personally oversees every plan.",
     image: "/images/DrRobledo2.webp",
   },
   {
@@ -113,10 +113,11 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-6">
-                Meet Dr. Rosemarie Robledo
+              <p className="label text-brass mb-3">Meet your provider</p>
+              <h2 className="font-serif text-section font-normal text-warm-dark mb-6">
+                Dr. Rosemarie Robledo
               </h2>
-              <div className="space-y-4 font-sans text-sm text-warm-dark/70 leading-relaxed">
+              <div className="space-y-4 font-sans text-base text-warm-dark/70 leading-relaxed">
                 <p>
                   Dr. Robledo&apos;s path to aesthetic medicine started long before medical
                   school. As a child, she struggled with skin issues that no one could fix,
@@ -131,13 +132,13 @@ export default function AboutPage() {
                   every member of her clinical team from her own trauma staff.
                 </p>
               </div>
-              <blockquote className="font-serif text-lg md:text-xl text-warm-dark/80 italic leading-relaxed border-l-2 border-brass pl-5 mt-6 mb-6">
+              <blockquote className="font-serif text-lead font-normal italic text-warm-dark/80 border-l-2 border-brass pl-5 mt-6 mb-6">
                 &ldquo;In trauma surgery, there are no retries. Every decision
                 is final. That training doesn&apos;t leave you, it becomes the
                 baseline for every kind of medicine you practice after.&rdquo;
               </blockquote>
               <div className="bg-linen rounded-md p-5">
-                <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-warm-dark/50 mb-3">
+                <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-warm-dark/50 mb-3">
                   Credentials
                 </p>
                 <ul className="space-y-2">
@@ -149,7 +150,7 @@ export default function AboutPage() {
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-2.5 font-sans text-sm text-warm-dark/80"
+                      className="flex items-center gap-2.5 font-sans text-base text-warm-dark/80"
                     >
                       <svg
                         width="16"
@@ -191,13 +192,13 @@ export default function AboutPage() {
                     style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
                   />
                 </div>
-                <h3 className="font-serif text-lg font-medium text-warm-dark">
+                <h3 className="font-serif text-xl font-normal text-warm-dark">
                   {member.name}
                 </h3>
-                <p className="font-sans text-xs font-medium uppercase tracking-[0.1em] text-brass mt-1 mb-2">
+                <p className="font-sans text-eyebrow font-medium uppercase tracking-wider text-brass mt-1 mb-2">
                   {member.role}
                 </p>
-                <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
+                <p className="font-sans text-base text-warm-dark/70 leading-relaxed">
                   {member.desc}
                 </p>
               </div>

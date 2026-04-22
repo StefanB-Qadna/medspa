@@ -1,15 +1,17 @@
 "use client";
 
+import { Feature1 } from "@/components/ui/feature-1";
+
 export default function BlogPost() {
   return (
     <>
       {/* Header */}
       <div className="bg-cream">
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-10 text-center">
-          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label mb-4">
+          <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass-label mb-4">
             Longevity · 13 min read
           </p>
-          <h1 className="font-serif text-3xl font-normal tracking-tight text-warm-dark sm:text-4xl md:text-5xl text-balance">
+          <h1 className="font-serif text-statement font-normal tracking-tight text-warm-dark text-balance">
             What Starts Declining in Your 30s That Nobody Warns You About
           </h1>
         </div>
@@ -233,23 +235,26 @@ export default function BlogPost() {
             </p>
           </div>
 
-          {/* CTA */}
-          <div className="mt-16 bg-linen rounded-md p-8 md:p-10 text-center">
-            <h3 className="font-serif text-xl font-normal text-warm-dark mb-2">
-              Want to know where you actually stand?
-            </h3>
-            <p className="font-sans text-sm text-warm-dark/70 mb-6">
-              Book a complimentary longevity consultation with Dr. Robledo.
-            </p>
-            <a
-              href="#book-now"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-cream font-sans font-medium uppercase text-xs tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
-            >
-              Book Your Consultation
-            </a>
-          </div>
         </div>
       </article>
+
+      {/* Booking CTA */}
+      <div className="bg-linen pt-16 md:pt-20">
+        <Feature1
+          title="The best version of you is closer than you think."
+          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          imageSrc="/images/space2.jpg"
+          imageAlt="Rejuvenate and Refine clinic interior"
+          buttonPrimary={{
+            label: "Start here",
+            href: "#book-now",
+          }}
+          buttonSecondary={{
+            label: "Call us",
+            href: "tel:+14693970434",
+          }}
+        />
+      </div>
     </>
   );
 }

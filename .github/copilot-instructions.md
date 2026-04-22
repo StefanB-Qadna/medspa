@@ -31,16 +31,16 @@ The voice is that of an expert clinician who respects the reader's intelligence 
 
 **Theme:** Light mode only.
 
-**Accessibility:** WCAG 2.1 AA minimum across color contrast, focus states, keyboard navigation, and motion preferences. Overlays must reach AA on text without relying on image content. Respect `prefers-reduced-motion`. (AAA is not a target; it's acceptable to exceed AA where natural, but AA is the contract.)
+**Accessibility:** WCAG 2.1 AA minimum across color contrast, focus states, keyboard navigation, and motion preferences. Overlays must reach AA on text without relying on image content. Respect `prefers-reduced-motion`.
 
 ### Design Principles
 
-1. **Medicine first, aesthetic second.** Every design decision should reinforce that this is a medical practice run by a board-certified surgeon. The refinement is the frame; the expertise is the subject. If a choice makes the site feel more like a brand and less like a practice, reject it.
+1. **Medicine first, aesthetic second.** Every design decision should reinforce that this is a medical practice run by a board-certified surgeon. The refinement is the frame; the expertise is the subject.
 
-2. **Warmth over polish.** The palette is tinted warm-dark for a reason: to feel human. Never use pure black or pure white. Shadows carry a touch of the brand hue. "Clean" is not the goal — *considered* is.
+2. **Warmth over polish.** The palette is tinted warm-dark for a reason: to feel human. Never use pure black or pure white. "Clean" is not the goal — *considered* is.
 
-3. **Earn every element.** No decorative icons, no filler cards, no gradient-overlays-by-default, no glassmorphism as texture. If a component is not doing specific work for the reader, remove it. Three strong sections beat six weak ones.
+3. **Earn every element.** No decorative icons, no filler cards, no gradient-overlays-by-default, no glassmorphism as texture. If a component is not doing specific work for the reader, remove it.
 
-4. **Type and space do the heavy lifting.** Hierarchy comes from the Cormorant/Jost pairing, the fluid size scale, and generous whitespace — not from shadows, borders, or backgrounds. When a layout feels weak, fix the typography and rhythm before reaching for UI chrome.
+4. **Type and space do the heavy lifting.** Hierarchy comes from the Cormorant/Jost pairing, the fluid size scale, and generous whitespace — not from shadows, borders, or backgrounds.
 
-5. **Marketing, but in a clinician's voice.** This is a marketing site — copy has to convert, surface services, and give a reason to book. The principle is *how* it sells, not *whether* it sells. Lead with specifics (credentials, what a treatment actually does, honest expectations); let those do the persuading. Avoid SaaS verbs, manufactured urgency, and wellness poetry. If a sentence could appear on a competitor's site unchanged, rewrite it.
+5. **Marketing, but in a clinician's voice.** This is a marketing site — copy has to convert and give a reason to book. The principle is *how* it sells, not *whether* it sells. Lead with specifics (credentials, what a treatment actually does, honest expectations); let those do the persuading. Avoid SaaS verbs, manufactured urgency, and wellness poetry. If a sentence could appear on a competitor's site unchanged, rewrite it.
