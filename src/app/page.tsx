@@ -374,7 +374,7 @@ function CinematicHero() {
     offset: ["start start", "end end"],
   });
 
-  const blurPx = useTransform(scrollYProgress, [0, 0.6], [20, 0]);
+  const blurPx = useTransform(scrollYProgress, [0, 0.6], [8, 0]);
   const gridFilter = useTransform(blurPx, (b) => `blur(${b}px)`);
 
   return (
@@ -406,8 +406,8 @@ function CinematicHero() {
 
         <ContainerScale className="relative z-10 px-6 text-center">
           <p className="label mb-4">Rejuvenate &amp; Refine</p>
-          <h1 className="mx-auto max-w-3xl font-serif text-5xl md:text-6xl font-light leading-[1.05] tracking-tight text-warm-dark">
-            The most natural <span className="italic">version</span> of you.
+          <h1 className="mx-auto max-w-3xl font-serif text-5xl md:text-6xl font-light leading-[1] tracking-normal text-warm-dark">
+            The most natural version of you.
           </h1>
           <p className="mx-auto my-6 max-w-xl font-sans text-base md:text-lg text-warm-dark/75 leading-relaxed">
             A surgeon-led med spa where every treatment plan is personally

@@ -39,7 +39,7 @@ export function Header() {
 
   // Pages without a dark hero image need the nav to always be in "solid" mode
   const needsSolidNav = pathname
-    ? pathname === "/" || (pathname.startsWith("/blog/") && pathname !== "/blog")
+    ? pathname.startsWith("/blog/") && pathname !== "/blog"
     : false;
 
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -71,6 +71,14 @@ export function Header() {
 
   const isScrolled = needsSolidNav || hasScrolled;
 
+  // Home has a light/blurred hero — when transparent, show warm-dark text
+  // and the solid brass CTA instead of the dark-hero cream/glass treatment.
+  const isLightHero = pathname === "/";
+  const transparentTextClass = isLightHero ? "text-warm-dark" : "text-cream";
+  const transparentCtaClass = isLightHero
+    ? "bg-brass hover:bg-brass-dark border border-transparent"
+    : "bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25";
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 will-change-[background-color,box-shadow] transition-[background-color,box-shadow,backdrop-filter] duration-300 ease-out ${
@@ -86,7 +94,7 @@ export function Header() {
             <Link href="/" aria-label="Rejuvenate & Refine — Home" className="inline-flex items-center py-2">
               <Logo
                 className={`h-7 w-auto transition-colors duration-500 ${
-                  isScrolled ? "text-warm-dark" : "text-cream"
+                  isScrolled ? "text-warm-dark" : transparentTextClass
                 }`}
               />
             </Link>
@@ -102,7 +110,7 @@ export function Header() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={`relative px-1 py-2 text-base font-normal tracking-wide transition-colors duration-500 group ${
-                    isScrolled ? "text-warm-dark" : "text-cream"
+                    isScrolled ? "text-warm-dark" : transparentTextClass
                   }`}
                 >
                   <span className="group-hover:text-brass transition-colors duration-300">
@@ -125,7 +133,7 @@ export function Header() {
               className={`uppercase tracking-widest text-xs font-medium px-6 py-2 rounded-full transition-all duration-500 text-cream ${
                 isScrolled
                   ? "bg-brass hover:bg-brass-dark border border-transparent"
-                  : "bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25"
+                  : transparentCtaClass
               }`}
             >
               <a href="#book-now">Book Your Visit</a>
@@ -137,7 +145,7 @@ export function Header() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-sm transition-colors duration-500 hover:text-brass ${
-                isScrolled ? "text-warm-dark" : "text-cream"
+                isScrolled ? "text-warm-dark" : transparentTextClass
               }`}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
