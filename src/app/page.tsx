@@ -5,7 +5,12 @@ import Image from "next/image";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
-import { HeroSection } from "@/components/ui/hero-section-4";
+import {
+  BentoCell,
+  BentoGrid,
+  ContainerScale,
+  ContainerScroll,
+} from "@/components/ui/hero-gallery-scroll-animation";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { Feature73 } from "@/components/ui/feature-73";
 import { LocationMap } from "@/components/ui/expand-map";
@@ -48,6 +53,14 @@ const surgeonPoints = [
   },
 ];
 
+const heroImages = [
+  "/images/hero.webp",
+  "/images/space1.webp",
+  "/images/space4.webp",
+  "/images/laser.webp",
+  "/images/Injectables.webp",
+];
+
 const featuredServices = [
   {
     title: "Botox & Neuromodulators",
@@ -84,19 +97,48 @@ const featuredServices = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <HeroSection
-        title="The most natural version of you"
-        subtitle="Your surgeon-led med spa where every treatment plan is personally overseen by Dr. Rosemarie Robledo."
-        primaryButtonText="See What's Possible"
-        primaryButtonHref="#book-now"
-        secondaryButtonText="Explore Services"
-        secondaryButtonHref="/services"
-        imageUrl="/images/hero.jpg"
-        imagePosition="60% center"
-        size="full"
-        overlayOpacity={45}
-      />
+      {/* Hero — scroll-triggered gallery, R&R styled */}
+      <ContainerScroll className="h-[350vh] bg-cream">
+        <BentoGrid className="sticky left-0 top-0 z-0 h-[calc(100vh-5rem)] w-full p-4">
+          {heroImages.map((imageUrl, index) => (
+            <BentoCell
+              key={index}
+              className="overflow-hidden rounded-lg shadow-xl"
+            >
+              <img
+                className="size-full object-cover object-center"
+                src={imageUrl}
+                alt=""
+              />
+            </BentoCell>
+          ))}
+        </BentoGrid>
+
+        <ContainerScale className="relative z-10 px-6 text-center">
+          <p className="label mb-4">Rejuvenate &amp; Refine</p>
+          <h1 className="mx-auto max-w-3xl font-serif text-5xl md:text-6xl font-light leading-[1.05] tracking-tight text-warm-dark">
+            The most natural <span className="italic">version</span> of you.
+          </h1>
+          <p className="mx-auto my-6 max-w-xl font-sans text-base md:text-lg text-warm-dark/75 leading-relaxed">
+            A surgeon-led med spa where every treatment plan is personally
+            overseen by Dr. Rosemarie Robledo.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="#book-now"
+              className="inline-flex items-center justify-center rounded-full bg-brass px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-cream hover:bg-brass-dark transition-colors"
+            >
+              See What&apos;s Possible
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full border border-warm-dark/25 px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-warm-dark hover:bg-warm-dark/5 transition-colors"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </ContainerScale>
+      </ContainerScroll>
 
       {/* The surgeon's difference — editorial split */}
       <section className="bg-linen">

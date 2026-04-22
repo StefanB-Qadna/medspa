@@ -10,7 +10,9 @@
   /* Scroll is owned by Lenis — see src/components/SmoothScroll.tsx */
 
   html, body {
-    overflow-x: hidden;
+    /* `clip` (not `hidden`) — `hidden` establishes a scroll container and
+       breaks `position: sticky` on descendants (e.g. the scroll-gallery hero). */
+    overflow-x: clip;
   }
 
   html {
