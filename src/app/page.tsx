@@ -1,7 +1,9 @@
 "use client"
 
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "motion/react";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
@@ -97,48 +99,8 @@ const featuredServices = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — scroll-triggered gallery, R&R styled */}
-      <ContainerScroll className="h-[350vh] bg-cream">
-        <BentoGrid className="sticky left-0 top-0 z-0 h-[calc(100vh-5rem)] w-full p-4">
-          {heroImages.map((imageUrl, index) => (
-            <BentoCell
-              key={index}
-              className="overflow-hidden rounded-lg shadow-xl"
-            >
-              <img
-                className="size-full object-cover object-center"
-                src={imageUrl}
-                alt=""
-              />
-            </BentoCell>
-          ))}
-        </BentoGrid>
+      <CinematicHero />
 
-        <ContainerScale className="relative z-10 px-6 text-center">
-          <p className="label mb-4">Rejuvenate &amp; Refine</p>
-          <h1 className="mx-auto max-w-3xl font-serif text-5xl md:text-6xl font-light leading-[1.05] tracking-tight text-warm-dark">
-            The most natural <span className="italic">version</span> of you.
-          </h1>
-          <p className="mx-auto my-6 max-w-xl font-sans text-base md:text-lg text-warm-dark/75 leading-relaxed">
-            A surgeon-led med spa where every treatment plan is personally
-            overseen by Dr. Rosemarie Robledo.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="#book-now"
-              className="inline-flex items-center justify-center rounded-full bg-brass px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-cream hover:bg-brass-dark transition-colors"
-            >
-              See What&apos;s Possible
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-warm-dark/25 px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-warm-dark hover:bg-warm-dark/5 transition-colors"
-            >
-              Explore Services
-            </Link>
-          </div>
-        </ContainerScale>
-      </ContainerScroll>
 
       {/* The surgeon's difference — editorial split */}
       <section className="bg-linen">
@@ -402,5 +364,71 @@ export default function HomePage() {
         />
       </div>
     </>
+  );
+}
+
+function CinematicHero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  const blurPx = useTransform(scrollYProgress, [0, 0.6], [20, 0]);
+  const gridFilter = useTransform(blurPx, (b) => `blur(${b}px)`);
+
+  return (
+    <section
+      ref={ref}
+      className="relative -mt-20 bg-cream"
+      aria-label="Rejuvenate and Refine hero"
+    >
+      <ContainerScroll className="h-[350vh]">
+        <motion.div
+          style={{ filter: gridFilter, willChange: "filter" }}
+          className="sticky left-0 top-0 z-0 h-screen w-full p-4"
+        >
+          <BentoGrid className="h-full w-full">
+            {heroImages.map((imageUrl, index) => (
+              <BentoCell
+                key={index}
+                className="overflow-hidden rounded-lg shadow-xl"
+              >
+                <img
+                  className="size-full object-cover object-center"
+                  src={imageUrl}
+                  alt=""
+                />
+              </BentoCell>
+            ))}
+          </BentoGrid>
+        </motion.div>
+
+        <ContainerScale className="relative z-10 px-6 text-center">
+          <p className="label mb-4">Rejuvenate &amp; Refine</p>
+          <h1 className="mx-auto max-w-3xl font-serif text-5xl md:text-6xl font-light leading-[1.05] tracking-tight text-warm-dark">
+            The most natural <span className="italic">version</span> of you.
+          </h1>
+          <p className="mx-auto my-6 max-w-xl font-sans text-base md:text-lg text-warm-dark/75 leading-relaxed">
+            A surgeon-led med spa where every treatment plan is personally
+            overseen by Dr. Rosemarie Robledo.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="#book-now"
+              className="inline-flex items-center justify-center rounded-full bg-brass px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-cream hover:bg-brass-dark transition-colors"
+            >
+              See What&apos;s Possible
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full border border-warm-dark/25 bg-cream/70 px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-warm-dark backdrop-blur-sm hover:bg-warm-dark/5 transition-colors"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </ContainerScale>
+      </ContainerScroll>
+    </section>
   );
 }
