@@ -42,3 +42,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.worktrees/hero-c/
+.worktrees/hero-b/
+.worktrees/hero-a/
