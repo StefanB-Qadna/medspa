@@ -11,50 +11,50 @@ const teamMembers = [
     name: "Dr. Rosemarie Robledo",
     role: "Founder & Medical Director",
     desc: "Double board-certified trauma surgeon and founder. Developed the laser and RF protocols used at R&R, and personally oversees every plan.",
-    image: "/images/DrRobledo2.jpg",
+    image: "/images/DrRobledo2.webp",
   },
   {
     name: "Olivia",
     role: "RN, BSN",
     desc: "Clinical precision meets genuine care. Brings her ER background and a passion for natural results to every treatment.",
-    image: "/images/Olivia.jpg",
+    image: "/images/Olivia.webp",
   },
   {
     name: "Matei",
     role: "PA-C",
     desc: "Years in emergency medicine and trauma surgery. Same clinical precision and calm to every aesthetic treatment.",
-    image: "/images/Matei.jpg",
+    image: "/images/Matei.webp",
     imagePosition: "center 20%",
   },
   {
     name: "Jenni",
     role: "RN, BSN",
     desc: "Five years in trauma care. Laser, microneedling, and a skin-first approach to natural results.",
-    image: "/images/Jenni.jpg",
+    image: "/images/Jenni.webp",
   },
   {
     name: "Abby",
     role: "RN, BSN",
     desc: "Registered nurse and medical esthetician. Brings clinical expertise and a careful eye to every skin concern she treats.",
-    image: "/images/abby.jpg",
+    image: "/images/abby.webp",
   },
   {
     name: "LaKiesha",
     role: "PA-C",
     desc: "Physician Assistant with specialized training in aesthetic medicine. Precise, experienced, and committed to results that feel completely natural.",
-    image: "/images/LaKiesha.jpg",
+    image: "/images/LaKiesha.webp",
   },
   {
     name: "Susen",
     role: "NP",
     desc: "Expert in facials, peels, and personalized skincare regimens.",
-    image: "/images/susen.jpg",
+    image: "/images/susen.webp",
   },
   {
     name: "Darren",
     role: "RN",
     desc: "Registered nurse with a clinical background and a sharp eye for detail. Ensures every aspect of your visit meets the standard this practice is built on.",
-    image: "/images/Darren.jpg",
+    image: "/images/Darren.webp",
   },
 ];
 
@@ -95,7 +95,7 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <HeroSection
-        imageUrl="/images/Team.jpg"
+        imageUrl="/images/Team.webp"
         imagePosition="center 25%"
         size="medium"
         overlayOpacity={50}
@@ -103,11 +103,11 @@ export default function AboutPage() {
 
       {/* Meet Dr. Robledo */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="aspect-[3/4] rounded-md overflow-hidden bg-linen">
               <img
-                src="/images/DrRobledo.jpg"
+                src="/images/DrRobledo.webp"
                 alt="Dr. Rosemarie Robledo"
                 className="h-full w-full object-cover"
               />
@@ -132,7 +132,12 @@ export default function AboutPage() {
                   every member of her clinical team from her own trauma staff.
                 </p>
               </div>
-              <div className="bg-linen rounded-md p-5 mt-6">
+              <blockquote className="font-serif text-lead font-normal italic text-warm-dark/80 border-l-2 border-brass pl-5 mt-6 mb-6">
+                &ldquo;In trauma surgery, there are no retries. Every decision
+                is final. That training doesn&apos;t leave you, it becomes the
+                baseline for every kind of medicine you practice after.&rdquo;
+              </blockquote>
+              <div className="bg-linen rounded-md p-5">
                 <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-warm-dark/50 mb-3">
                   Credentials
                 </p>
@@ -170,7 +175,7 @@ export default function AboutPage() {
 
       {/* Care Team */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading
             title="Your Care Team"
             subtitle="Handpicked from Dr. Robledo's hospital colleagues, each team member brings clinical expertise and a genuine commitment to your care."
@@ -204,7 +209,7 @@ export default function AboutPage() {
 
       {/* How We Are Different */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading title="How We Are Different" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {differentiators.map((item) => (
@@ -215,7 +220,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 rounded-full bg-brass/10 flex items-center justify-center mx-auto mb-4 text-brass">
                   {item.icon}
                 </div>
-                <h3 className="font-sans text-base font-semibold text-warm-dark mb-2">
+                <h3 className="font-sans text-base font-medium text-warm-dark mb-2">
                   {item.title}
                 </h3>
                 <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
@@ -229,7 +234,7 @@ export default function AboutPage() {
 
       {/* Visit Our Space */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading
             title="Visit Our Space"
             subtitle="A warm, modern environment designed for your comfort, where clinical precision meets luxury care."
@@ -269,7 +274,7 @@ export default function AboutPage() {
         <Feature1
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
-          imageSrc="/images/space2.jpg"
+          imageSrc="/images/space2.webp"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
             label: "Start here",

@@ -50,9 +50,9 @@ const itemVariants: Variants = {
 };
 
 const sizeClasses = {
-  full: "h-screen min-h-[700px]",
-  medium: "min-h-[500px] md:min-h-[60vh]",
-  compact: "min-h-[380px] md:min-h-[45vh]",
+  full: "min-h-[85svh] md:h-screen md:min-h-[43.75rem]",
+  medium: "min-h-[31.25rem] md:min-h-[60vh]",
+  compact: "min-h-[23.75rem] md:min-h-[45vh]",
 };
 
 const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
@@ -79,7 +79,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       <section
         ref={ref}
         className={cn(
-          "relative flex w-full items-center justify-center overflow-hidden -mt-20 pt-20",
+          "relative flex w-full items-center justify-start overflow-hidden -mt-20 pt-20",
           sizeClasses[size],
           className
         )}
@@ -110,7 +110,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
         {/* Content */}
         <motion.div
-          className="relative z-10 flex max-w-4xl flex-col items-center justify-center px-6 text-center"
+          className="absolute bottom-12 left-6 md:left-16 z-10 flex max-w-2xl flex-col items-start text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -144,7 +144,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {(primaryButtonText || secondaryButtonText) && (
             <motion.div
-              className="mt-8 flex flex-wrap items-center justify-center gap-4"
+              className="mt-8 flex flex-wrap items-center justify-start gap-4"
               variants={itemVariants}
             >
               {primaryButtonText && primaryButtonHref && (
@@ -153,7 +153,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 </Button>
               )}
               {secondaryButtonText && secondaryButtonHref && (
-                <Button asChild variant="outline" size="lg" className="rounded-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
+                <Button asChild variant="outline" size="lg" className="rounded-full border-white/80 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:text-white font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
                   <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>
                 </Button>
               )}

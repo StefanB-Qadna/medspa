@@ -55,7 +55,7 @@ export const Footer: FC<FooterProps> = ({
   const year = new Date().getFullYear();
   const copyright =
     copyrightText ??
-    `© ${year} ${companyName} ${companySubtitle}. All rights reserved.`;
+    `© ${year} ${companyName}${companySubtitle ? ` ${companySubtitle}` : ""}. All rights reserved.`;
 
   return (
     <footer
@@ -65,14 +65,14 @@ export const Footer: FC<FooterProps> = ({
       )}
       {...props}
     >
-      <div className="mx-auto max-w-[1200px] px-6 py-12 md:py-16">
+      <div className="mx-auto max-w-[75rem] px-6 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Brand */}
           <div className="flex flex-col items-start gap-4">
             <Link href="/" aria-label={companyName}>
               {wordmarkSrc ? (
                 <div
-                  className="h-12 w-[240px] text-cream"
+                  className="h-12 w-[15rem] text-cream"
                   style={{
                     backgroundColor: "currentColor",
                     maskImage: `url(${wordmarkSrc})`,
@@ -134,15 +134,15 @@ export const Footer: FC<FooterProps> = ({
           {/* Useful Links */}
           {usefulLinks.length > 0 && (
             <div>
-              <h3 className="font-sans text-xs font-medium uppercase tracking-widest text-cream/50 mb-4">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {usefulLinksTitle}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {usefulLinks.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="font-sans text-sm text-cream/70 hover:text-brass transition-colors"
+                      className="block py-1.5 font-sans text-sm text-cream/70 hover:text-brass transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -155,10 +155,10 @@ export const Footer: FC<FooterProps> = ({
           {/* Follow Us */}
           {socialLinks.length > 0 && (
             <div>
-              <h3 className="font-sans text-xs font-medium uppercase tracking-widest text-cream/50 mb-4">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {socialTitle}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {socialLinks.map((link) => (
                   <li key={link.label}>
                     <a
@@ -166,7 +166,7 @@ export const Footer: FC<FooterProps> = ({
                       aria-label={link.label}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 font-sans text-sm text-cream/70 hover:text-brass transition-colors"
+                      className="inline-flex items-center gap-2 py-1.5 font-sans text-sm text-cream/70 hover:text-brass transition-colors"
                     >
                       <span className="text-cream/70 group-hover:text-brass">
                         {link.icon}
@@ -182,7 +182,7 @@ export const Footer: FC<FooterProps> = ({
           {/* Opening Hours */}
           {hours.length > 0 && (
             <div>
-              <h3 className="font-sans text-xs font-medium uppercase tracking-widest text-cream/50 mb-4">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {hoursTitle}
               </h3>
               <ul className="space-y-2 font-sans text-sm text-cream/70">
@@ -198,7 +198,7 @@ export const Footer: FC<FooterProps> = ({
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-cream/40">
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-cream/40">
           <p>{copyright}</p>
           {legalLinks.length > 0 && (
             <div className="flex gap-6">
@@ -206,7 +206,7 @@ export const Footer: FC<FooterProps> = ({
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="hover:text-cream/70 transition-colors"
+                  className="py-2 hover:text-cream/70 transition-colors"
                 >
                   {link.label}
                 </Link>

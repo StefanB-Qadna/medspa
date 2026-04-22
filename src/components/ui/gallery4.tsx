@@ -57,10 +57,10 @@ const Gallery4 = ({
 
   return (
     <section className="py-16 md:py-20">
-      <div className="mx-auto max-w-[1200px] px-6">
+      <div className="mx-auto max-w-[75rem] px-6">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
           <div className="flex flex-col gap-2">
-            <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass">
+            <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass-label">
               {title}
             </p>
             <h2 className="font-serif text-section font-normal text-warm-dark">
@@ -85,7 +85,7 @@ const Gallery4 = ({
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <Carousel
           setApi={setCarouselApi}
           opts={{
@@ -96,11 +96,11 @@ const Gallery4 = ({
             },
           }}
         >
-          <CarouselContent className="ml-[max(1.5rem,calc(50vw-580px))]">
+          <CarouselContent className="ml-4 md:ml-[max(1.5rem,calc(50vw-580px))]">
             {items.map((item) => (
               <CarouselItem
                 key={item.id}
-                className="basis-[280px] pl-4 md:basis-[320px]"
+                className="basis-[75%] pl-4 md:basis-[20rem]"
               >
                 <Link href={item.href} className="group block">
                   <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md">
@@ -129,7 +129,7 @@ const Gallery4 = ({
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${
+              className={`relative h-2.5 w-2.5 rounded-full transition-colors before:absolute before:-inset-2.5 before:content-[''] ${
                 currentSlide === index ? "bg-brass" : "bg-brass/20"
               }`}
               onClick={() => carouselApi?.scrollTo(index)}

@@ -8,7 +8,7 @@ export default function BlogPost() {
       {/* Header */}
       <div className="bg-cream">
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-10 text-center">
-          <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass mb-4">
+          <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-brass-label mb-4">
             Aging · 10 min read
           </p>
           <h1 className="font-serif text-statement font-normal tracking-tight text-warm-dark text-balance">
@@ -19,10 +19,10 @@ export default function BlogPost() {
 
       {/* Thumbnail */}
       <div className="bg-cream">
-        <div className="mx-auto max-w-[780px] px-6 pb-10">
+        <div className="mx-auto max-w-[48.75rem] px-6 pb-10">
           <div className="aspect-[16/9] overflow-hidden rounded-md">
             <img
-              src="/images/blog 1.png"
+              src="/images/blog 1.webp"
               alt="Your Face Doesn't Age Evenly"
               className="h-full w-full object-cover"
             />
@@ -32,7 +32,7 @@ export default function BlogPost() {
 
       {/* Article */}
       <article className="bg-cream">
-        <div className="mx-auto max-w-[680px] px-6 pb-20">
+        <div className="mx-auto max-w-[42.5rem] px-6 pb-20">
           <div className="prose-medspa">
             <p>
               When most people think about facial aging, they think about
@@ -181,7 +181,7 @@ export default function BlogPost() {
 
             <hr />
 
-            <p className="italic">
+            <p className="text-warm-dark/70">
               At Rejuvenate &amp; Refine in Prosper, TX, Dr. Robledo approaches
               every consultation with a full structural assessment of the face.
               If you have questions about what is actually contributing to your

@@ -23,20 +23,8 @@ const injectables: ServiceItem[] = [
     imageUrl: "/images/inject2.webp",
   },
   {
-    title: "Lip Fillers",
-    description: "Subtle shape, definition, and hydration. Never overfilled.",
-    tag: "Filler",
-    href: "/services/lip-fillers",
-  },
-  {
-    title: "Cheek & Jawline Filler",
-    description: "Rebuild midface structure and sharpen the jawline for a lifted, youthful look.",
-    tag: "Filler",
-    href: "/services/cheek-jawline-filler",
-  },
-  {
     title: "Dermal Fillers",
-    description: "Targeted filler for under-eyes, temples, chin, and folds, planned as a system.",
+    description: "Lip, cheek, jawline, under-eye, temples, and folds. Used selectively, never as a default.",
     tag: "Filler",
     href: "/services/dermal-fillers",
   },
@@ -51,7 +39,7 @@ const injectables: ServiceItem[] = [
 const laserSkin: ServiceItem[] = [
   {
     title: "Laser Hair Removal",
-    description: "Permanent hair reduction on every skin type, including skin of color.",
+    description: "Long-term hair reduction on every skin type, including skin of color.",
     tag: "Laser",
     href: "/services/laser-hair-removal",
     imageUrl: "/images/laserhair.webp",
@@ -61,6 +49,12 @@ const laserSkin: ServiceItem[] = [
     description: "Sun damage, tone, and fine lines corrected with no pain, no downtime protocols.",
     tag: "Laser",
     href: "/services/laser-skin-rejuvenation",
+  },
+  {
+    title: "Laser Vein Treatment",
+    description: "Spider veins and small surface veins cleared with targeted laser energy. No needles, no compression stockings.",
+    tag: "Laser",
+    href: "/services/laser-vein-treatment",
   },
   {
     title: "Laser Tattoo Removal",
@@ -93,22 +87,10 @@ const laserSkin: ServiceItem[] = [
     href: "/services/rf-body-contouring",
   },
   {
-    title: "Hydrafacial",
-    description: "Medical-grade cleanse, exfoliate, extract, and hydrate in 45 minutes.",
+    title: "Glacee Hydrodermabrasion",
+    description: "Medical-grade cleanse, exfoliate, extract, and hydrate. Not a Hydrafacial.",
     tag: "Facial",
-    href: "/services/hydrafacial",
-  },
-  {
-    title: "Chemical Peels",
-    description: "Medical-grade peels selected for your skin and your tolerance for downtime.",
-    tag: "Skin",
-    href: "/services/chemical-peels",
-  },
-  {
-    title: "Sclerotherapy",
-    description: "Targeted injections that clear spider veins and small varicose veins.",
-    tag: "Vascular",
-    href: "/services/sclerotherapy",
+    href: "/services/glacee-hydrodermabrasion",
   },
 ];
 
@@ -140,25 +122,25 @@ const wellness: ServiceItem[] = [
     href: "/services/pelvic-floor-wellness",
   },
   {
-    title: "Peptide Therapy",
-    description: "Targeted peptide protocols for recovery, sleep, cognition, and body composition.",
-    tag: "Regenerative",
-    href: "/services/peptide-therapy",
+    title: "Wellness Supplementation",
+    description: "Targeted, physician-guided supplementation protocols for recovery, sleep, cognition, and body composition.",
+    tag: "Wellness",
+    href: "/services/wellness-supplementation",
   },
 ];
 
 const sections = [
   {
-    id: "injectables",
-    title: "Injectables & Fillers",
-    bg: "bg-cream",
-    cards: injectables,
-  },
-  {
     id: "laser",
     title: "Laser & Skin",
-    bg: "bg-linen",
+    bg: "bg-cream",
     cards: laserSkin,
+  },
+  {
+    id: "injectables",
+    title: "Injectables",
+    bg: "bg-linen",
+    cards: injectables,
   },
   {
     id: "wellness",
@@ -174,7 +156,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <HeroSection
         title="Our Services"
-        subtitle="Personalized treatments, physician-led from consultation to follow-up. Every plan is built around your anatomy, your goals, and what will actually move the needle."
+        subtitle="Personalized treatments, physician-led from consultation to follow-up. Every plan is built around your anatomy, your goals, and what will actually move the needle, not what is trending."
         primaryButtonText="Book a Consultation"
         primaryButtonHref="#book-now"
         imageUrl="/images/spaceDR.webp"
@@ -186,7 +168,7 @@ export default function ServicesPage() {
         const [featured, ...rest] = section.cards;
         return (
           <section key={section.id} id={section.id} className={section.bg}>
-            <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+            <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
               <SectionHeading title={section.title} centered={false} />
 
               {/* Featured card */}
@@ -225,7 +207,7 @@ export default function ServicesPage() {
 
       {/* Included with Every Plan */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading title="Included with Every Plan" centered={false} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             <div className="bg-cream rounded-md p-8">
@@ -253,7 +235,7 @@ export default function ServicesPage() {
         <Feature1
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
-          imageSrc="/images/space2.jpg"
+          imageSrc="/images/space2.webp"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
             label: "Start here",

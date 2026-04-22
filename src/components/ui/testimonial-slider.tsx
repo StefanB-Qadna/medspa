@@ -91,7 +91,7 @@ export const TestimonialSlider = ({
   return (
     <div
       className={cn(
-        "relative w-full min-h-[650px] md:min-h-[600px] overflow-hidden bg-background text-foreground p-8 md:p-12",
+        "relative w-full min-h-[40.625rem] md:min-h-[37.5rem] overflow-hidden bg-background text-foreground p-8 md:p-12",
         className
       )}
     >
@@ -100,12 +100,12 @@ export const TestimonialSlider = ({
         <div className="md:col-span-3 flex flex-col justify-between order-2 md:order-1">
           <div className="flex flex-row md:flex-col justify-between md:justify-start space-x-4 md:space-x-0 md:space-y-4">
             {/* Pagination */}
-            <span className="text-warm-dark/50" style={{ fontFamily: "Jost, sans-serif", fontWeight: 400, fontSize: "0.875rem" }}>
+            <span className="font-sans text-sm font-normal text-warm-dark/50">
               {String(currentIndex + 1).padStart(2, "0")} /{" "}
               {String(reviews.length).padStart(2, "0")}
             </span>
             {/* Vertical "Reviews" Text */}
-            <h2 className="tracking-widest uppercase text-warm-dark/50 [writing-mode:vertical-rl] md:rotate-180 hidden md:block" style={{ fontFamily: "Jost, sans-serif", fontWeight: 400, fontSize: "0.875rem" }}>
+            <h2 className="font-sans text-sm font-normal tracking-widest uppercase text-warm-dark/50 [writing-mode:vertical-rl] md:rotate-180 hidden md:block">
               Reviews
             </h2>
           </div>
@@ -136,7 +136,7 @@ export const TestimonialSlider = ({
         </div>
 
         {/* === Center Column: Before/After Comparison === */}
-        <div className="md:col-span-4 relative h-80 min-h-[400px] md:min-h-[500px] order-1 md:order-2">
+        <div className="relative -mx-4 md:mx-0 md:col-span-4 min-h-[26.25rem] md:min-h-[31.25rem] order-1 md:order-2">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentIndex}
@@ -158,12 +158,36 @@ export const TestimonialSlider = ({
               />
             </motion.div>
           </AnimatePresence>
+
+          {/* Mobile prev/next — overlaid on image */}
+          <div className="absolute inset-y-0 left-2 z-10 flex items-center md:hidden">
+            <Button
+              variant="outline"
+              size="icon"
+              className="rounded-full w-10 h-10 border-cream/40 bg-warm-dark/30 backdrop-blur-sm text-cream hover:bg-warm-dark/50"
+              onClick={handlePrev}
+              aria-label="Previous review"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+          </div>
+          <div className="absolute inset-y-0 right-2 z-10 flex items-center md:hidden">
+            <Button
+              variant="outline"
+              size="icon"
+              className="rounded-full w-10 h-10 border-cream/40 bg-warm-dark/30 backdrop-blur-sm text-cream hover:bg-warm-dark/50"
+              onClick={handleNext}
+              aria-label="Next review"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
 
         {/* === Right Column: Text and Navigation === */}
         <div className="md:col-span-5 flex flex-col justify-between md:pl-8 order-3 md:order-3">
           {/* Text Content */}
-          <div className="relative overflow-hidden pt-4 md:pt-24 min-h-[200px]">
+          <div className="relative overflow-hidden pt-4 md:pt-24 min-h-[12.5rem]">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
@@ -174,7 +198,7 @@ export const TestimonialSlider = ({
                 exit="exit"
                 transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
               >
-                <p className="font-sans text-xs font-medium uppercase tracking-wider text-brass">
+                <p className="font-sans text-xs font-medium uppercase tracking-wider text-brass-label">
                   {activeReview.affiliation}
                 </p>
                 <h3 className="font-serif text-xl font-medium text-warm-dark mt-1">
@@ -187,8 +211,8 @@ export const TestimonialSlider = ({
             </AnimatePresence>
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex items-center space-x-2 mt-8 md:mt-0">
+          {/* Navigation Buttons — desktop only */}
+          <div className="hidden md:flex items-center space-x-2">
             <Button
               variant="outline"
               size="icon"

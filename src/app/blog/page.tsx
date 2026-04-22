@@ -13,7 +13,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "Most patients focus on wrinkles. But wrinkles are the last stage of facial aging. Here is what is actually happening beneath the surface, and why treating one layer without understanding the others leads to results that fade too fast.",
-    image: "/images/blog 1.png",
+    image: "/images/blog 1.webp",
     readTime: "10 min read",
     href: "/blog/your-face-doesnt-age-evenly",
   },
@@ -23,7 +23,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "Melasma is one of the most common and most mismanaged skin conditions in aesthetics. If your dark spots keep returning after treatment, this is likely why.",
-    image: "/images/blog 2.png",
+    image: "/images/blog 2.webp",
     readTime: "12 min read",
     href: "/blog/dark-spots-melasma-truth",
   },
@@ -33,7 +33,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "Body weight tells you almost nothing about your health, your metabolic function, or how your body actually looks. Here is what body composition is and how to actually measure progress.",
-    image: "/images/blog 3.png",
+    image: "/images/blog 3.webp",
     readTime: "11 min read",
     href: "/blog/scale-worst-way-measure-body",
   },
@@ -43,7 +43,7 @@ const blogPosts = [
     date: "April 2026",
     excerpt:
       "The biology of aging starts well before most people expect it. Here is what is actually changing in your body in your 30s and 40s, and what the difference between \u201cnormal\u201d and \u201coptimized\u201d actually looks like.",
-    image: "/images/blog 4.png",
+    image: "/images/blog 4.webp",
     readTime: "13 min read",
     href: "/blog/what-starts-declining-in-your-30s",
   },
@@ -73,7 +73,7 @@ export default function BlogPage() {
 
       {/* Category Filters */}
       <section className="bg-cream border-b border-border/50">
-        <div className="mx-auto max-w-[1200px] px-6 py-6">
+        <div className="mx-auto max-w-[75rem] px-6 py-6">
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
               <button
@@ -94,7 +94,7 @@ export default function BlogPage() {
 
       {/* Posts — lead story + 3-up grid */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           {filteredPosts.length === 0 && (
             <p className="text-center font-sans text-sm text-warm-dark/70 py-16">
               No posts in this category yet. Check back soon.
@@ -116,7 +116,7 @@ export default function BlogPage() {
                       />
                     </div>
                     <div className="md:col-span-5">
-                      <p className="label text-brass mb-3">Featured · {lead.category}</p>
+                      <p className="label mb-3">Featured · {lead.category}</p>
                       <h2 className="font-serif text-section font-normal text-warm-dark leading-tight mb-4 group-hover:text-brass transition-colors">
                         {lead.title}
                       </h2>
@@ -148,7 +148,7 @@ export default function BlogPage() {
                             className="absolute h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                           />
                         </div>
-                        <p className="label text-brass mb-2">{post.category}</p>
+                        <p className="label mb-2">{post.category}</p>
                         <h3 className="font-serif text-xl md:text-2xl font-normal text-warm-dark leading-snug mb-3 group-hover:text-brass transition-colors">
                           {post.title}
                         </h3>
@@ -175,7 +175,7 @@ export default function BlogPage() {
         <Feature1
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
-          imageSrc="/images/space2.jpg"
+          imageSrc="/images/space2.webp"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
             label: "Start here",

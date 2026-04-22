@@ -32,10 +32,10 @@ export const Feature72 = ({
 }: Feature72Props) => {
   return (
     <section className="py-16 md:py-20">
-      <div className="mx-auto max-w-[1200px] px-6 overflow-hidden">
+      <div className="mx-auto max-w-[75rem] px-6 overflow-hidden">
         {/* Header */}
         <div className="mb-12 md:mb-16 flex flex-col items-center gap-3 text-center">
-          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass">
+          <p className="font-sans text-xs font-medium uppercase tracking-widest text-brass-label">
             What we offer
           </p>
           <h2 className="font-serif text-section font-normal text-warm-dark max-w-lg text-balance">
@@ -52,7 +52,7 @@ export const Feature72 = ({
             <img
               src={imageSrc}
               alt={imageAlt}
-              className="aspect-video max-h-[480px] w-full rounded-md object-cover"
+              className="aspect-video max-h-[30rem] w-full rounded-md object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
           </div>
@@ -91,7 +91,7 @@ export const Feature72 = ({
           <div className="mt-10 text-center">
             <Link
               href={linkUrl}
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[44px] hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[2.75rem] hover:bg-brass-dark transition-colors"
             >
               {linkText}
               <ArrowRight className="ml-2 size-4" />

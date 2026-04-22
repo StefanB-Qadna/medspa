@@ -22,7 +22,7 @@ interface InteractiveSelectorProps {
 export function InteractiveSelector({
   options,
   className,
-  height = "h-[420px] md:h-[500px]",
+  height = "h-[26.25rem] md:h-[31.25rem]",
   initialIndex = 0,
 }: InteractiveSelectorProps) {
   const [activeIndex, setActiveIndex] = useState(initialIndex);
@@ -59,7 +59,7 @@ export function InteractiveSelector({
             onClick={() => setActiveIndex(index)}
             aria-label={option.title}
             aria-pressed={isActive}
-            className="relative flex min-w-[60px] flex-col justify-end overflow-hidden rounded-md bg-warm-dark text-left transition-[flex,box-shadow,background-size] duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
+            className="relative flex min-w-[3.75rem] flex-col justify-end overflow-hidden rounded-md bg-warm-dark text-left transition-[flex,box-shadow,background-size] duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
             style={{
               backgroundImage: `url('${option.image}')`,
               backgroundSize: isActive ? "auto 100%" : "auto 120%",

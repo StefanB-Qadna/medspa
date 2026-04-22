@@ -1,16 +1,23 @@
 "use client"
 
+import { useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { motion, useScroll, useTransform } from "motion/react";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
-import { HeroSection } from "@/components/ui/hero-section-4";
+import {
+  BentoCell,
+  BentoGrid,
+  ContainerScale,
+  ContainerScroll,
+} from "@/components/ui/hero-gallery-scroll-animation";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
 import { Feature73 } from "@/components/ui/feature-73";
 import { LocationMap } from "@/components/ui/expand-map";
 import { Gallery4 } from "@/components/ui/gallery4";
 import Cards from "@/components/ui/cards";
+import TeamMemberCard from "@/components/ui/team-member-card";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 
 const concerns = [
@@ -45,6 +52,14 @@ const surgeonPoints = [
     title: "Honest guidance, always",
     desc: "A surgeon's job is to solve the problem correctly. Dr. Robledo will tell you what will work, what won't, and what you don't need yet. No upselling, no pressure.",
   },
+];
+
+const heroImages = [
+  "/images/hero.webp",
+  "/images/space1.webp",
+  "/images/space4.webp",
+  "/images/laser.webp",
+  "/images/Injectables.webp",
 ];
 
 const featuredServices = [
@@ -83,26 +98,16 @@ const featuredServices = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <HeroSection
-        title="The most natural version of you, delivered with precision."
-        subtitle="Your surgeon-led med spa where every treatment plan is personally overseen by Dr. Rosemarie Robledo."
-        primaryButtonText="See What's Possible"
-        primaryButtonHref="#book-now"
-        secondaryButtonText="Explore Services"
-        secondaryButtonHref="/services"
-        imageUrl="/images/hero.jpg"
-        size="full"
-        overlayOpacity={45}
-      />
+      <CinematicHero />
+
 
       {/* The surgeon's difference — editorial split */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-[75rem] px-6 py-20 md:py-28">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-14">
             {/* Left: eyebrow + headline + pull quote */}
             <div className="md:col-span-5">
-              <p className="label text-brass mb-4">What sets us apart</p>
+              <p className="label mb-4">What sets us apart</p>
               <h2 className="font-serif text-statement font-normal text-warm-dark mb-8">
                 The surgeon&apos;s
                 <br />
@@ -145,7 +150,7 @@ export default function HomePage() {
 
       {/* What we offer */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px]">
+        <div className="mx-auto max-w-[75rem]">
           <Cards
             label="What we offer"
             heading="Results that go deeper than the surface."
@@ -173,68 +178,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Dr. Robledo */}
+      {/* Dr. Robledo — editorial card */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[3/4] bg-linen rounded-md overflow-hidden relative">
-              <Image
-                src="/images/DrRobledo.jpg"
-                alt="Dr. Rosemarie Robledo"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-              />
-            </div>
-            <div>
-              <p className="label text-brass mb-3">Meet your provider</p>
-              <h2 className="font-serif text-section font-normal text-warm-dark mb-4">
-                Dr. Rosemarie Robledo
-              </h2>
-              <blockquote className="font-serif text-lead font-normal italic text-warm-dark/80 border-l-2 border-brass pl-5 mb-6">
-                &ldquo;In trauma surgery, there are no retries. Every decision
-                is final. That training doesn&apos;t leave you, it becomes the
-                baseline for every kind of medicine you practice after.&rdquo;
-              </blockquote>
-              <p className="font-sans text-base text-warm-dark/70 leading-relaxed mb-6">
-                Dr. Robledo is a double board-certified trauma surgeon and
-                Trauma Medical Director at a busy Level II trauma center. She
-                brought that same standard of precision to aesthetic medicine,
-                and personally developed the laser and RF microneedling
-                techniques used at Rejuvenate & Refine.
-              </p>
-              <div className="bg-linen rounded-md p-5 mb-6">
-                <p className="font-sans text-eyebrow font-medium uppercase tracking-widest text-warm-dark/50 mb-3">
-                  Credentials
-                </p>
-                <ul className="space-y-2">
-                  {[
-                    "Double Board-Certified Trauma Surgeon",
-                    "Trauma Medical Director, Level II Trauma Center",
-                    "Fellowship-Trained in Aesthetic Medicine",
-                    "Developer of Proprietary Laser & RF Microneedling Protocols",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5 font-sans text-base text-warm-dark/80">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-brass shrink-0">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <Link href="/about" className="font-sans text-sm font-medium text-brass hover:text-brass-dark">
-                Read Full Bio &rarr;
-              </Link>
-            </div>
-          </div>
+        <div className="mx-auto max-w-[60rem] px-6 py-16 md:py-20">
+          <TeamMemberCard
+            position="left"
+            jobPosition="Meet your provider"
+            firstName="Dr. Rosemarie"
+            lastName="Robledo"
+            imageUrl="/images/DrRobledo.webp"
+            description="Double board-certified trauma surgeon turned aesthetic medicine specialist. Dr. Robledo personally developed the laser and RF microneedling techniques used at Rejuvenate & Refine, and oversees every treatment plan."
+            href="/about"
+          />
         </div>
       </section>
 
       {/* What our patients say */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading
             title="What our patients say"
           />
@@ -244,48 +205,30 @@ export default function HomePage() {
               reviews={[
                 {
                   id: 1,
-                  name: "Sarah M.",
-                  affiliation: "Botox Patient",
-                  quote: "Dr. Robledo took the time to really understand what I wanted. The results were so natural, my friends just think I look well-rested.",
-                  imageSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=120&fit=crop&q=80",
+                  name: "Verified Patient",
+                  affiliation: "Melasma Patient",
+                  quote: "The dark patches I tried to cover for years have faded, and my skin finally looks even and clear in natural light. I feel comfortable going without makeup for the first time in ages.",
+                  imageSrc: "/images/Ariel one tx melasma side profile 2.webp",
+                  afterImageSrc: "/images/Ariel one tx melasma side profile.webp",
+                  thumbnailSrc: "/images/Ariel one tx melasma side profile.webp",
                 },
                 {
                   id: 2,
-                  name: "Jennifer L.",
-                  affiliation: "Dermal Fillers Patient",
-                  quote: "I've been to other med spas, but having a surgeon do my filler made all the difference. I felt so much safer and the results show.",
-                  imageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=120&fit=crop&q=80",
+                  name: "Verified Patient",
+                  affiliation: "Redness & Contouring Patient",
+                  quote: "The redness I used to cover every day has settled, and my face looks more defined while still feeling like me. The team always takes the time to explain everything.",
+                  imageSrc: "/images/Emily vector no arrow 2.webp",
+                  afterImageSrc: "/images/Emily vector no arrow.webp",
+                  thumbnailSrc: "/images/Emily vector no arrow.webp",
                 },
                 {
                   id: 3,
-                  name: "Amanda K.",
-                  affiliation: "Lip Fillers Patient",
-                  quote: "The clinic is beautiful and the entire experience felt premium. I wouldn't go anywhere else for my treatments.",
-                  imageSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=120&fit=crop&q=80",
-                },
-                {
-                  id: 4,
-                  name: "Michelle R.",
-                  affiliation: "Microneedling Patient",
-                  quote: "The level of care and attention to detail is unlike anything I've experienced. Dr. Robledo truly listens and delivers exactly what you're looking for.",
-                  imageSrc: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=120&fit=crop&q=80",
-                },
-                {
-                  id: 5,
-                  name: "Rachel T.",
-                  affiliation: "IV Therapy Patient",
-                  quote: "From the moment I walked in, I felt at ease. The space is stunning and the results speak for themselves. I'm a patient for life.",
-                  imageSrc: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=600&fit=crop&q=80&sat=-100",
-                  afterImageSrc: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=600&fit=crop&q=80",
-                  thumbnailSrc: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=100&h=120&fit=crop&q=80",
+                  name: "Verified Patient",
+                  affiliation: "Redness & Wellness Patient",
+                  quote: "The redness I used to hide has calmed completely, and paired with my health journey I finally feel like I look how I feel on the inside. The team made me feel supported the whole way.",
+                  imageSrc: "/images/Kayla front view 2.webp",
+                  afterImageSrc: "/images/Kayla front view.webp",
+                  thumbnailSrc: "/images/Kayla front view.webp",
                 },
               ]}
             />
@@ -295,7 +238,7 @@ export default function HomePage() {
 
       {/* A space designed for you */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <Feature73
             heading="A space designed for you"
             description="Rejuvenate & Refine was designed from the ground up to meet surgical-grade standards, while feeling like a place you genuinely want to spend time. Every detail was considered, from the warmth of the lighting to the quiet of the suites. Clean, modern, and built around your comfort."
@@ -327,10 +270,10 @@ export default function HomePage() {
 
       {/* Find Us */}
       <section className="bg-linen">
-        <div className="mx-auto max-w-[1200px] px-6 pb-16 md:pb-20">
+        <div className="mx-auto max-w-[75rem] px-6 pb-16 md:pb-20">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
-              <p className="label text-brass mb-3">Our Location</p>
+              <p className="label mb-3">Our Location</p>
               <h2 className="font-serif text-section font-normal text-warm-dark mb-4">
                 Find us in Prosper.
               </h2>
@@ -420,5 +363,71 @@ export default function HomePage() {
         />
       </div>
     </>
+  );
+}
+
+function CinematicHero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  const blurPx = useTransform(scrollYProgress, [0, 0.6], [8, 0]);
+  const gridFilter = useTransform(blurPx, (b) => `blur(${b}px)`);
+
+  return (
+    <section
+      ref={ref}
+      className="relative -mt-20 bg-cream"
+      aria-label="Rejuvenate and Refine hero"
+    >
+      <ContainerScroll className="h-[350vh]">
+        <motion.div
+          style={{ filter: gridFilter, willChange: "filter" }}
+          className="sticky left-0 top-0 z-0 h-screen w-full p-4"
+        >
+          <BentoGrid className="h-full w-full">
+            {heroImages.map((imageUrl, index) => (
+              <BentoCell
+                key={index}
+                className="overflow-hidden rounded-lg shadow-xl"
+              >
+                <img
+                  className="size-full object-cover object-center"
+                  src={imageUrl}
+                  alt=""
+                />
+              </BentoCell>
+            ))}
+          </BentoGrid>
+        </motion.div>
+
+        <ContainerScale className="relative z-10 px-6 text-center">
+          <p className="label mb-4">Rejuvenate &amp; Refine</p>
+          <h1 className="mx-auto max-w-3xl font-serif text-display font-normal text-warm-dark">
+            The most natural version of you.
+          </h1>
+          <p className="mx-auto my-6 max-w-xl font-sans text-base md:text-lg text-warm-dark/75 leading-relaxed">
+            A surgeon-led med spa where every treatment plan is personally
+            overseen by Dr. Rosemarie Robledo.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href="#book-now"
+              className="inline-flex items-center justify-center rounded-full bg-brass px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-cream hover:bg-brass-dark transition-colors"
+            >
+              See What&apos;s Possible
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full border border-warm-dark/25 bg-cream/70 px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-warm-dark backdrop-blur-sm hover:bg-warm-dark/5 transition-colors"
+            >
+              Explore Services
+            </Link>
+          </div>
+        </ContainerScale>
+      </ContainerScroll>
+    </section>
   );
 }

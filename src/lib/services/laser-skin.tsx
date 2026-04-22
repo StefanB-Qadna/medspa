@@ -8,7 +8,7 @@ import {
   VolumeX, Moon, BatteryLow, ArrowDown, Calendar,
   Target, Ellipsis, ArrowLeftRight, Columns2, ChevronDown,
   CircleOff, Droplet, Minus as MinusIcon,
-  FlaskConical, GitBranch, Stethoscope
+  GitBranch, Stethoscope
 } from "lucide-react";
 import type { ServiceData } from "@/lib/service-types";
 
@@ -16,13 +16,13 @@ export const laserHairRemoval: ServiceData = {
   slug: "laser-hair-removal",
   breadcrumb: "Services > Laser & Skin",
   h1: "Laser Hair Removal in Prosper, TX",
-  subtitle: "Permanent hair reduction on every skin type, including skin of color, using the right wavelength at the right settings.",
+  subtitle: "Long-term hair reduction on every skin type, including skin of color, using the right wavelength at the right settings.",
   heroImage: "/images/laserhair.webp",
 
-  whatHeading: "How permanent hair reduction actually works",
+  whatHeading: "How long-term hair reduction actually works",
   whatParagraphs: [
     "Laser hair removal works by targeting the pigment in the hair follicle with a specific wavelength of light. The light is absorbed by melanin, converts to heat, and damages the follicle enough that it stops producing hair. It is one of the most predictable treatments in aesthetic medicine when done on the right device, at the right settings, for the right skin type.",
-    "The key word is \"right.\" Laser hair removal on the wrong device or at the wrong settings can cause burns, hyperpigmentation, or no results at all, particularly in darker skin tones. We treat every skin type, including skin of color, using wavelengths specifically suited to your biology. Most areas need 6 to 8 sessions spaced 4 to 8 weeks apart to capture hair across its growth cycle.",
+    "The key word is \"right.\" Laser hair removal on the wrong device or at the wrong settings can cause burns, hyperpigmentation, or no results at all, particularly in darker skin tones. We treat every skin type, including skin of color, using wavelengths specifically suited to your biology. Most areas need 6 to 8 sessions spaced 4 to 8 weeks apart to capture hair across its growth cycle. Periodic maintenance sessions are typical to keep results steady over time.",
   ],
 
   treatsHeading: "What it treats",
@@ -30,7 +30,7 @@ export const laserHairRemoval: ServiceData = {
     { icon: <UserRound size={32} strokeWidth={1.5} />, label: "Face", micro: "Upper lip, chin, sideburns, neck" },
     { icon: <PersonStanding size={32} strokeWidth={1.5} />, label: "Underarms", micro: "Fast, highly effective area" },
     { icon: <Footprints size={32} strokeWidth={1.5} />, label: "Legs", micro: "Full leg or lower leg treatment" },
-    { icon: <Shield size={32} strokeWidth={1.5} />, label: "Bikini & Brazilian", micro: "Bikini line, extended bikini, or full Brazilian" },
+    { icon: <Shield size={32} strokeWidth={1.5} />, label: "Intimate hair removal", micro: "Bikini line, extended bikini, or full intimate area" },
     { icon: <SquareUserRound size={32} strokeWidth={1.5} />, label: "Body areas", micro: "Back, chest, arms, and more" },
   ],
 
@@ -38,15 +38,15 @@ export const laserHairRemoval: ServiceData = {
     { icon: <Infinity size={24} strokeWidth={1.5} />, title: "Permanent reduction", body: "80 to 95 percent permanent hair reduction in treated areas." },
     { icon: <Palette size={24} strokeWidth={1.5} />, title: "Every skin type", body: "Safe and effective for all skin tones, including deeper skin of color." },
     { icon: <Clock size={24} strokeWidth={1.5} />, title: "Quick sessions", body: "Small areas treated in under 10 minutes." },
-    { icon: <Sparkles size={24} strokeWidth={1.5} />, title: "No more ingrown hairs", body: "Eliminates ingrown hairs and razor irritation for good." },
+    { icon: <Sparkles size={24} strokeWidth={1.5} />, title: "Major reduction in ingrown hairs", body: "Significantly reduces ingrown hairs and razor irritation over the course of treatment." },
   ],
 
   treatmentDetails: [
     { label: "Treatment Time", value: "10 to 45 min" },
     { label: "Downtime", value: "None" },
     { label: "Results In", value: "After 2 to 3 sessions" },
-    { label: "Lasts", value: "Permanent reduction" },
-    { label: "Sessions", value: "6 to 8 sessions" },
+    { label: "Lasts", value: "Long-term reduction with periodic maintenance" },
+    { label: "Sessions", value: "6 to 8 sessions, plus maintenance" },
   ],
 
   bestFor: [
@@ -72,7 +72,7 @@ export const laserHairRemoval: ServiceData = {
   whyChoose: [
     { title: "Safe on every skin tone.", description: "We have devices and settings for skin type I through VI. No guessing, no generic protocols." },
     { title: "Medical oversight.", description: "Physician-supervised treatment means any unusual response is caught and managed, not ignored." },
-    { title: "Complete series plans.", description: "We set realistic expectations up front, including how many sessions your specific area needs." },
+    { title: "Honest expectations.", description: "We set realistic timelines up front, including maintenance, so you know what long-term results actually look like." },
   ],
 
   ctaSub: "Book your consultation and make shaving something you used to do.",
@@ -83,7 +83,7 @@ export const laserSkinRejuvenation: ServiceData = {
   breadcrumb: "Services > Laser & Skin",
   h1: "Laser Skin Rejuvenation in Prosper, TX",
   subtitle: "Sun damage, uneven tone, and fine lines corrected with no-pain, no-downtime laser protocols developed by Dr. Robledo.",
-  heroImage: "/images/laser.jpg",
+  heroImage: "/images/laser.webp",
 
   whatHeading: "Laser rejuvenation without the week of recovery",
   whatParagraphs: [
@@ -142,6 +142,71 @@ export const laserSkinRejuvenation: ServiceData = {
   ],
 
   ctaSub: "Book your consultation and see what laser rejuvenation can actually do without the recovery.",
+};
+
+export const laserVeinTreatment: ServiceData = {
+  slug: "laser-vein-treatment",
+  breadcrumb: "Services > Laser & Skin",
+  h1: "Laser Vein Treatment in Prosper, TX",
+  subtitle: "Spider veins and small surface veins on the face and legs cleared with targeted laser energy. No needles, no compression stockings.",
+  heroImage: "/images/space6.webp",
+
+  whatHeading: "Why we treat veins with lasers",
+  whatParagraphs: [
+    "Spider veins and small surface veins are caused by weakened or damaged vein walls just below the skin. There are a few ways to treat them, but at R&R we do the majority of our vein work with lasers because the precision is better, the recovery is easier, and the results are excellent for the kind of small surface veins most patients want addressed.",
+    "The laser delivers a wavelength of light that is absorbed by hemoglobin in the vein. The vein heats, collapses, and is gradually reabsorbed by your body over the following weeks. There are no needles, no injections, and no compression stockings to wear afterward. Most patients see noticeable clearing within 4 to 8 weeks of a session.",
+  ],
+
+  treatsHeading: "What it treats",
+  treats: [
+    { icon: <GitBranch size={32} strokeWidth={1.5} />, label: "Facial spider veins", micro: "Small visible veins around the nose, cheeks, and chin" },
+    { icon: <Footprints size={32} strokeWidth={1.5} />, label: "Leg spider veins", micro: "Fine red and purple veins on the thighs, calves, and ankles" },
+    { icon: <Waves size={32} strokeWidth={1.5} />, label: "Small reticular veins", micro: "Slightly larger surface veins still appropriate for laser" },
+    { icon: <Sun size={32} strokeWidth={1.5} />, label: "Broken capillaries", micro: "Thread-like vessels from sun damage or rosacea" },
+  ],
+
+  benefits: [
+    { icon: <ShieldCheck size={24} strokeWidth={1.5} />, title: "Laser precision", body: "No needles, no compression stockings, no waiting weeks to see results." },
+    { icon: <Palette size={24} strokeWidth={1.5} />, title: "Multiple wavelengths", body: "The right laser for facial veins is different from the right laser for leg veins. We have both." },
+    { icon: <Stethoscope size={24} strokeWidth={1.5} />, title: "Physician-supervised", body: "Vein work is medical work. Dr. Robledo evaluates every patient before treatment." },
+    { icon: <TrendingDown size={24} strokeWidth={1.5} />, title: "Progressive clearance", body: "Treated veins fade and are reabsorbed over 4 to 8 weeks." },
+  ],
+
+  treatmentDetails: [
+    { label: "Treatment Time", value: "15 to 45 min" },
+    { label: "Downtime", value: "None to minimal" },
+    { label: "Results In", value: "4 to 8 weeks" },
+    { label: "Lasts", value: "Treated veins do not return" },
+    { label: "Sessions", value: "1 to 3 sessions" },
+  ],
+
+  bestFor: [
+    "Visible spider veins on the face or legs",
+    "Broken capillaries from sun damage or rosacea",
+    "Small surface veins that have not responded to other treatments",
+    "Patients who want to avoid needle-based vein treatment",
+  ],
+  notFor: [
+    "You have larger varicose veins (we will refer you for vascular evaluation)",
+    "You are pregnant or breastfeeding",
+    "You have a tan or recent sun exposure in the treatment area",
+  ],
+
+  faqs: [
+    { q: "Does it hurt?", a: "Most patients describe a warm snapping sensation. No numbing is typically needed for facial veins. Leg veins may benefit from topical numbing for comfort." },
+    { q: "Will the veins come back?", a: "Treated veins do not return. However, new veins can form over time, especially with genetic predisposition. Maintenance sessions address those." },
+    { q: "How many sessions do I need?", a: "Most areas clear in 1 to 3 sessions spaced 4 to 6 weeks apart." },
+    { q: "Is this the same as sclerotherapy?", a: "No. Sclerotherapy uses injections. Our laser approach requires no needles and no compression stockings afterward." },
+  ],
+
+  whyChooseHeading: "Why patients choose Rejuvenate & Refine for vein treatment",
+  whyChoose: [
+    { title: "Laser precision.", description: "No needles, no compression stockings, no waiting weeks to see results." },
+    { title: "Multiple wavelengths.", description: "The right laser for facial veins is different from the right laser for leg veins. We have both." },
+    { title: "Physician-supervised.", description: "Vein work is medical work. Dr. Robledo evaluates every patient before treatment." },
+  ],
+
+  ctaSub: "Book your consultation and see what laser vein treatment can do.",
 };
 
 export const laserTattooRemoval: ServiceData = {
@@ -214,7 +279,7 @@ export const rfMicroneedling: ServiceData = {
   breadcrumb: "Services > Laser & Skin",
   h1: "RF Microneedling in Prosper, TX",
   subtitle: "Deep collagen remodeling and real skin tightening in one treatment, using protocols developed by Dr. Robledo.",
-  heroImage: "/images/space1.jpg",
+  heroImage: "/images/space1.webp",
 
   whatHeading: "Microneedling and radiofrequency, combined",
   whatParagraphs: [
@@ -280,7 +345,7 @@ export const microneedling: ServiceData = {
   breadcrumb: "Services > Laser & Skin",
   h1: "Microneedling in Prosper, TX",
   subtitle: "Trigger your skin's natural collagen and elastin response to refine texture, fine lines, and scarring.",
-  heroImage: "/images/space4.jpg",
+  heroImage: "/images/space4.webp",
 
   whatHeading: "How microneedling stimulates your skin's own renewal",
   whatParagraphs: [
@@ -411,7 +476,7 @@ export const rfBodyContouring: ServiceData = {
   breadcrumb: "Services > Laser & Skin",
   h1: "RF Body Contouring in Prosper, TX",
   subtitle: "Tighten skin, reduce localized fat, and smooth cellulite in targeted areas, no cutting, no downtime.",
-  heroImage: "/images/space2.jpg",
+  heroImage: "/images/space2.webp",
 
   whatHeading: "Targeted body refinement without surgery",
   whatParagraphs: [
@@ -472,17 +537,17 @@ export const rfBodyContouring: ServiceData = {
   ctaSub: "Book your consultation and design a plan for the specific areas you want refined.",
 };
 
-export const hydrafacial: ServiceData = {
-  slug: "hydrafacial",
+export const glaceeHydrodermabrasion: ServiceData = {
+  slug: "glacee-hydrodermabrasion",
   breadcrumb: "Services > Laser & Skin",
-  h1: "Hydrafacial in Prosper, TX",
-  subtitle: "Medical-grade cleanse, exfoliate, extract, and hydrate in 45 minutes with zero downtime.",
+  h1: "Glacee Hydrodermabrasion in Prosper, TX",
+  subtitle: "Medical-grade cleanse, exfoliate, extract, and hydrate using the Glacee system. A different device, a different result. Not a Hydrafacial.",
   heroImage: "/images/space7.webp",
 
-  whatHeading: "What makes Hydrafacial different from a regular facial",
+  whatHeading: "What makes Glacee different",
   whatParagraphs: [
-    "Hydrafacial is a multi-step medical-grade treatment performed with a proprietary device that cleanses the skin, exfoliates dead surface cells, extracts debris from pores, and infuses targeted serums, all in one 45-minute session. The process is gentle enough for sensitive skin, deep enough to produce immediate visible results, and controlled enough to be done monthly.",
-    "Every Hydrafacial can be customized with targeted boosters for your specific concern: brightening for dullness, clarifying for congestion, hydrating for dry skin, or anti-aging for fine lines. Many patients use Hydrafacial as monthly maintenance alongside deeper treatments or as prep before injectable appointments and special events.",
+    "Glacee is our hydrodermabrasion treatment, and it is genuinely a different category of facial from what most people associate with the brand-name Hydrafacial. The Glacee system uses its own technology for exfoliation, extraction, and infusion of skin-specific serums, with a focus on skin quality, tone, and surface texture.",
+    "A single Glacee session leaves skin visibly cleaner, smoother, and more hydrated, with no downtime. Many patients book it as a regular monthly treatment to maintain skin quality between deeper laser or microneedling sessions. It is one of the few treatments where patients walk out and immediately see the difference.",
   ],
 
   treatsHeading: "What it treats",
@@ -528,143 +593,13 @@ export const hydrafacial: ServiceData = {
     { q: "Can I do one before an event?", a: "Yes. Hydrafacial is ideal for pre-event glow because there is no downtime and results are immediate. We recommend booking 1 to 3 days before the event." },
   ],
 
-  whyChooseHeading: "Why patients choose Rejuvenate & Refine for Hydrafacial",
+  whyChooseHeading: "Why patients choose Rejuvenate & Refine for Glacee",
   whyChoose: [
-    { title: "Genuine medical-grade device.", description: "Not a spa knockoff. Authentic Hydrafacial technology with all certified boosters." },
-    { title: "Physician-led customization.", description: "The booster selection and technique are guided by clinical assessment." },
+    { title: "Genuine medical-grade device.", description: "Not a spa knockoff. Authentic Glacee technology with certified serums." },
+    { title: "Physician-led customization.", description: "The serum selection and technique are guided by clinical assessment." },
     { title: "Pairs with other treatments.", description: "Often recommended before injectable appointments or alongside laser treatments." },
   ],
 
-  ctaSub: "Book your Hydrafacial and walk out with visibly refreshed skin.",
+  ctaSub: "Book your Glacee and walk out with visibly refreshed skin.",
 };
 
-export const chemicalPeels: ServiceData = {
-  slug: "chemical-peels",
-  breadcrumb: "Services > Laser & Skin",
-  h1: "Chemical Peels in Prosper, TX",
-  subtitle: "Medical-grade peels selected for your skin and your tolerance for downtime.",
-  heroImage: "/images/space8.webp",
-
-  whatHeading: "The right peel for your skin, not a generic protocol",
-  whatParagraphs: [
-    "Chemical peels use medical-grade acids to remove damaged outer layers of skin and stimulate renewal underneath. Depth and ingredient choice depend entirely on your skin type, your goals, and your tolerance for downtime. Light peels improve tone and glow with no real recovery. Medium peels address pigmentation, texture, and fine lines with 3 to 7 days of visible peeling.",
-    "The difference between a good result and irritation is selecting the right acid, at the right strength, for the right skin. Running every patient through the same peel is exactly how skin barriers get damaged. Dr. Robledo and the clinical team select the peel for your skin, not the other way around.",
-  ],
-
-  treatsHeading: "What it treats",
-  treats: [
-    { icon: <Sun size={32} strokeWidth={1.5} />, label: "Sun damage", micro: "Age spots and surface pigmentation" },
-    { icon: <Palette size={32} strokeWidth={1.5} />, label: "Uneven tone", micro: "Dullness and surface discoloration" },
-    { icon: <Waves size={32} strokeWidth={1.5} />, label: "Texture", micro: "Rough, bumpy, or congested skin" },
-    { icon: <Minus size={32} strokeWidth={1.5} />, label: "Fine lines", micro: "Surface lines and crepey skin" },
-    { icon: <Sparkles size={32} strokeWidth={1.5} />, label: "Acne & scarring", micro: "Post-acne marks and mild scarring" },
-  ],
-
-  benefits: [
-    { icon: <Layers size={24} strokeWidth={1.5} />, title: "Multiple depths available", body: "Light, medium, or deeper peels matched to your concern." },
-    { icon: <Sparkles size={24} strokeWidth={1.5} />, title: "Skin renewal", body: "Reveals fresh, healthier skin underneath." },
-    { icon: <Clock size={24} strokeWidth={1.5} />, title: "Flexible downtime", body: "No-downtime options or deeper options, you choose." },
-    { icon: <FlaskConical size={24} strokeWidth={1.5} />, title: "Customized every time", body: "Acid, strength, and layering chosen per visit." },
-  ],
-
-  treatmentDetails: [
-    { label: "Treatment Time", value: "30 to 45 min" },
-    { label: "Downtime", value: "None to 7 days" },
-    { label: "Results In", value: "1 to 2 weeks" },
-    { label: "Lasts", value: "2 to 6 months" },
-    { label: "Sessions", value: "3 to 6 in a series" },
-  ],
-
-  bestFor: [
-    "Sun damage, age spots, and pigmentation",
-    "Dullness and tired-looking skin",
-    "Mild texture and tone concerns",
-    "Patients who want flexible downtime options",
-  ],
-  notFor: [
-    "You have active acne breakouts at the time of treatment",
-    "You have recent sun exposure or tanning",
-    "You are pregnant or breastfeeding (certain peels are restricted)",
-  ],
-
-  faqs: [
-    { q: "Which peel is right for me?", a: "Depends on your skin type, concern, and whether you can afford downtime. Light peels have minimal recovery. Medium peels address deeper concerns but peel for several days. We evaluate during consultation." },
-    { q: "Will I actually peel?", a: "Light peels often produce no visible peeling, just glow. Medium peels produce 3 to 7 days of visible peeling as the old skin sheds." },
-    { q: "How many peels do I need?", a: "A series of 3 to 6 spaced 3 to 6 weeks apart is typical." },
-    { q: "Can I do a peel if I have melasma?", a: "Sometimes, with very specific ingredients. Melasma is tricky and many peels make it worse. We handle this carefully." },
-  ],
-
-  whyChooseHeading: "Why patients choose Rejuvenate & Refine for chemical peels",
-  whyChoose: [
-    { title: "Medical-grade formulations only.", description: "Professional-strength acids, not spa-level kits." },
-    { title: "Peel matched to skin.", description: "Every patient gets a peel chosen for their skin, concern, and tolerance." },
-    { title: "Post-care guidance.", description: "We set you up with exactly what to use at home to protect and amplify the result." },
-  ],
-
-  ctaSub: "Book your consultation and find the peel that actually fits your skin.",
-};
-
-export const sclerotherapy: ServiceData = {
-  slug: "sclerotherapy",
-  breadcrumb: "Services > Laser & Skin",
-  h1: "Sclerotherapy in Prosper, TX",
-  subtitle: "Targeted injections that clear spider veins and small varicose veins on the legs.",
-  heroImage: "/images/space6.webp",
-
-  whatHeading: "How sclerotherapy clears unwanted veins",
-  whatParagraphs: [
-    "Sclerotherapy treats spider veins and small varicose veins on the legs through a series of targeted injections that collapse the unwanted vessel. The body reabsorbs the treated vein over 4 to 8 weeks, and blood reroutes through healthier, deeper veins. It is one of the most established vascular treatments in medicine, with decades of safety data behind it.",
-    "Most patients need 1 to 3 sessions to clear a treated area. Compression stockings are worn for several days after treatment to support healing. This is a vascular treatment, not a cosmetic one, and the surgical training behind every injection matters. Improper technique can cause hyperpigmentation or ulceration that is harder to fix than the original veins.",
-  ],
-
-  treatsHeading: "What it treats",
-  treats: [
-    { icon: <GitBranch size={32} strokeWidth={1.5} />, label: "Spider veins", micro: "Small red, blue, or purple leg veins" },
-    { icon: <Waves size={32} strokeWidth={1.5} />, label: "Small varicose veins", micro: "Slightly raised surface veins" },
-    { icon: <Footprints size={32} strokeWidth={1.5} />, label: "Leg cosmetics", micro: "Overall leg vein appearance" },
-    { icon: <Target size={32} strokeWidth={1.5} />, label: "Targeted clearance", micro: "Specific problem veins treated one at a time" },
-  ],
-
-  benefits: [
-    { icon: <Target size={24} strokeWidth={1.5} />, title: "Precise treatment", body: "Each vein addressed individually for clean results." },
-    { icon: <ShieldCheck size={24} strokeWidth={1.5} />, title: "Non-surgical", body: "No incisions and no general anesthesia required." },
-    { icon: <TrendingDown size={24} strokeWidth={1.5} />, title: "Progressive clearance", body: "Veins fade over 4 to 8 weeks as your body reabsorbs them." },
-    { icon: <Stethoscope size={24} strokeWidth={1.5} />, title: "Medical oversight", body: "Surgeon-led treatment reduces complications significantly." },
-  ],
-
-  treatmentDetails: [
-    { label: "Treatment Time", value: "30 to 45 min" },
-    { label: "Downtime", value: "Light activity 24h" },
-    { label: "Results In", value: "4 to 8 weeks" },
-    { label: "Lasts", value: "Permanent" },
-    { label: "Sessions", value: "1 to 3 sessions" },
-  ],
-
-  bestFor: [
-    "Visible spider veins on the legs",
-    "Small surface varicose veins",
-    "Patients bothered by vein appearance",
-    "Patients medically cleared for the procedure",
-  ],
-  notFor: [
-    "You are pregnant or breastfeeding",
-    "You have a history of blood clots or certain vascular conditions",
-    "You have very large varicose veins (may need vascular surgery instead)",
-  ],
-
-  faqs: [
-    { q: "Does it hurt?", a: "Most patients describe it as small pinches. No numbing is needed for most sessions." },
-    { q: "Will I need to wear compression stockings?", a: "Yes, typically for several days after treatment. Compression supports healing and improves results." },
-    { q: "Will the veins come back?", a: "Treated veins are permanently gone. However, new spider veins can form over time, especially with genetic predisposition." },
-    { q: "How many sessions do I need?", a: "Most areas clear in 1 to 3 sessions spaced 4 to 6 weeks apart." },
-  ],
-
-  whyChooseHeading: "Why patients choose Rejuvenate & Refine for sclerotherapy",
-  whyChoose: [
-    { title: "Surgical vascular expertise.", description: "This is a vascular treatment. Physician-level training matters for both safety and results." },
-    { title: "Proper pre-screening.", description: "We evaluate whether sclerotherapy is right for you, or whether you need a vascular specialist." },
-    { title: "Conservative, staged approach.", description: "We treat areas thoughtfully over sessions rather than trying to clear everything at once." },
-  ],
-
-  ctaSub: "Book your consultation and see what sclerotherapy can do for your legs.",
-};
