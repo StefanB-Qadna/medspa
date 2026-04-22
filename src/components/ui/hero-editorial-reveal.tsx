@@ -68,14 +68,14 @@ export function HeroEditorialReveal({
         <div className="editorial-copy relative z-10 order-2 md:order-1">
           {/* Eyebrow */}
           <div className="overflow-hidden">
-            <span className="ed-rise ed-d1 inline-flex items-center gap-3.5 font-sans text-[0.8125rem] font-normal uppercase tracking-[0.22em] text-warm-dark">
+            <span className="ed-rise ed-d1 inline-flex items-center gap-3.5 font-sans text-eyebrow font-normal uppercase tracking-extra text-warm-dark">
               <span className="inline-block h-px w-7 bg-brass" aria-hidden="true" />
               {eyebrow}
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="mt-7 font-serif text-[clamp(2.75rem,5.6vw,5.25rem)] font-light leading-[1.05] tracking-[-0.012em] text-warm-dark">
+          <h1 className="mt-7 font-serif text-display font-normal tracking-tight text-warm-dark">
             <span className="block overflow-hidden pb-[0.02em]">
               {headlineLine1.map((word, i) => (
                 <span
@@ -92,7 +92,7 @@ export function HeroEditorialReveal({
                 const isUnderline = i === underlineWordIndex;
                 const isItalic = i === italicWordIndex;
                 const inner = isUnderline ? (
-                  <em className="ed-underline relative inline-block not-italic font-light italic">
+                  <em className="ed-underline relative inline-block not-italic font-normal">
                     {word}
                   </em>
                 ) : (
@@ -112,7 +112,7 @@ export function HeroEditorialReveal({
 
           {/* Subtitle */}
           <div className="mt-8 max-w-[44ch] overflow-hidden">
-            <p className="ed-rise ed-d-sub font-sans text-base font-light leading-relaxed text-warm-dark/70">
+            <p className="ed-rise ed-d-sub font-sans text-base font-normal leading-relaxed text-warm-dark/70">
               {subtitle}
             </p>
           </div>
@@ -121,7 +121,7 @@ export function HeroEditorialReveal({
           <div className="ed-fade-up ed-d-actions mt-11 flex flex-wrap items-center gap-8">
             <a
               href={ctaHref}
-              className="group inline-flex items-center gap-3.5 bg-warm-dark px-7 py-[1.125rem] font-sans text-[0.8125rem] font-normal uppercase tracking-[0.22em] text-cream transition-colors duration-300 hover:bg-warm-darker"
+              className="group inline-flex items-center gap-3.5 bg-warm-dark px-7 py-[1.125rem] font-sans text-eyebrow font-normal uppercase tracking-extra text-cream transition-colors duration-300 hover:bg-warm-darker"
             >
               {ctaText}
               <span className="relative inline-block h-px w-[1.125rem] bg-cream transition-[width] duration-300 group-hover:w-[1.625rem]">
@@ -129,7 +129,7 @@ export function HeroEditorialReveal({
               </span>
             </a>
             {meta && (
-              <span className="ed-fade-up ed-d-meta font-sans text-xs font-normal uppercase tracking-[0.2em] text-warm-dark/70">
+              <span className="ed-fade-up ed-d-meta font-sans text-xs font-normal uppercase tracking-extra text-warm-dark/70">
                 {meta}
               </span>
             )}
@@ -149,7 +149,7 @@ export function HeroEditorialReveal({
               <EditorialPlaceholder kind="skin" label="Skin, natural light" />
             )}
             {/* Caption overlay */}
-            <span className="ed-fade-up ed-d-meta absolute left-4 top-4 z-10 font-sans text-[0.65625rem] font-normal uppercase tracking-[0.26em] text-cream/90">
+            <span className="ed-fade-up ed-d-meta absolute left-4 top-4 z-10 font-sans text-xs font-normal uppercase tracking-extra text-cream/90">
               <span className="mr-2.5 inline-block h-1 w-1 rounded-full bg-brass align-middle" />
               Plate I &middot; Texture study
             </span>
@@ -177,7 +177,7 @@ export function HeroEditorialReveal({
 
       {/* Scroll indicator */}
       <div className="ed-fade-up ed-d-scroll absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3.5">
-        <span className="font-sans text-[0.6875rem] uppercase tracking-[0.3em] text-warm-dark/70">
+        <span className="font-sans text-xs uppercase tracking-extra text-warm-dark/70">
           Scroll
         </span>
         <span className="ed-scroll-line relative h-12 w-px overflow-hidden bg-gradient-to-b from-warm-dark/70 to-transparent" />
@@ -198,7 +198,7 @@ function EditorialPlaceholder({ kind, label }: { kind: string; label: string }) 
 
   return (
     <div className="absolute inset-0" style={{ background: bgMap[kind] || bgMap.skin }}>
-      <span className="absolute bottom-3 left-3.5 font-sans text-[0.59375rem] uppercase tracking-[0.25em] text-cream/80 mix-blend-difference">
+      <span className="absolute bottom-3 left-3.5 font-sans text-xs uppercase tracking-extra text-cream/80 mix-blend-difference">
         {label}
       </span>
     </div>

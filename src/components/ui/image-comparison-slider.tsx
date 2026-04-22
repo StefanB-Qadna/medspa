@@ -148,7 +148,7 @@ export const ImageComparisonSlider = React.forwardRef<
 
         {/* Before / After labels */}
         <div
-          className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-[0.8125rem] font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300"
+          className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-eyebrow font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300"
           style={{
             backgroundColor: "rgba(61, 53, 48, 0.7)",
             color: "#FDFBF7",
@@ -158,7 +158,7 @@ export const ImageComparisonSlider = React.forwardRef<
           Before
         </div>
         <div
-          className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-[0.8125rem] font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300"
+          className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-eyebrow font-sans font-medium uppercase tracking-wider pointer-events-none transition-opacity duration-300"
           style={{
             backgroundColor: "rgba(61, 53, 48, 0.7)",
             color: "#FDFBF7",

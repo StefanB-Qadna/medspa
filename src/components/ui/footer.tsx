@@ -134,7 +134,7 @@ export const Footer: FC<FooterProps> = ({
           {/* Useful Links */}
           {usefulLinks.length > 0 && (
             <div>
-              <h3 className="font-sans text-[0.8125rem] font-medium uppercase tracking-widest text-cream/50 mb-4">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {usefulLinksTitle}
               </h3>
               <ul className="space-y-1">
@@ -155,7 +155,7 @@ export const Footer: FC<FooterProps> = ({
           {/* Follow Us */}
           {socialLinks.length > 0 && (
             <div>
-              <h3 className="font-sans text-[0.8125rem] font-medium uppercase tracking-widest text-cream/50 mb-4">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {socialTitle}
               </h3>
               <ul className="space-y-1">
@@ -182,7 +182,7 @@ export const Footer: FC<FooterProps> = ({
           {/* Opening Hours */}
           {hours.length > 0 && (
             <div>
-              <h3 className="font-sans text-[0.8125rem] font-medium uppercase tracking-widest text-cream/50 mb-4">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-cream/50 mb-4">
                 {hoursTitle}
               </h3>
               <ul className="space-y-2 font-sans text-sm text-cream/70">

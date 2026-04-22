@@ -220,7 +220,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 rounded-full bg-brass/10 flex items-center justify-center mx-auto mb-4 text-brass">
                   {item.icon}
                 </div>
-                <h3 className="font-sans text-base font-semibold text-warm-dark mb-2">
+                <h3 className="font-sans text-base font-medium text-warm-dark mb-2">
                   {item.title}
                 </h3>
                 <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">

@@ -97,7 +97,7 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
               )}
             </div>
 
-            <h3 className="mb-3 font-serif text-xl font-bold leading-tight text-warm-dark lg:text-2xl">
+            <h3 className="mb-3 font-serif text-xl font-normal leading-tight text-warm-dark lg:text-2xl">
               <span className="bg-gradient-to-r from-forest to-forest bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 group-hover:bg-[length:100%_2px]">
                 {title}
               </span>

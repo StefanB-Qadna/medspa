@@ -100,12 +100,12 @@ export const TestimonialSlider = ({
         <div className="md:col-span-3 flex flex-col justify-between order-2 md:order-1">
           <div className="flex flex-row md:flex-col justify-between md:justify-start space-x-4 md:space-x-0 md:space-y-4">
             {/* Pagination */}
-            <span className="text-warm-dark/50" style={{ fontFamily: "Jost, sans-serif", fontWeight: 400, fontSize: "0.875rem" }}>
+            <span className="font-sans text-sm font-normal text-warm-dark/50">
               {String(currentIndex + 1).padStart(2, "0")} /{" "}
               {String(reviews.length).padStart(2, "0")}
             </span>
             {/* Vertical "Reviews" Text */}
-            <h2 className="tracking-widest uppercase text-warm-dark/50 [writing-mode:vertical-rl] md:rotate-180 hidden md:block" style={{ fontFamily: "Jost, sans-serif", fontWeight: 400, fontSize: "0.875rem" }}>
+            <h2 className="font-sans text-sm font-normal tracking-widest uppercase text-warm-dark/50 [writing-mode:vertical-rl] md:rotate-180 hidden md:block">
               Reviews
             </h2>
           </div>

@@ -20,7 +20,7 @@ export default function ContactPage() {
             {/* Contact info */}
             <div>
               <p className="label mb-3">Contact</p>
-              <h2 className="font-serif text-2xl md:text-[2rem] font-normal text-warm-dark mb-8">
+              <h2 className="font-serif text-section font-normal text-warm-dark mb-8">
                 Rejuvenate & Refine
               </h2>
 

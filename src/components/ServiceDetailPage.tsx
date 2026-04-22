@@ -26,7 +26,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
       {/* 2. What It Does */}
       <section id="what-it-does" className="bg-linen">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-8">
+          <h2 className="font-serif text-section font-normal text-warm-dark mb-8">
             {data.whatHeading}
           </h2>
           <div className="font-sans text-base md:text-lg text-warm-dark/70 leading-relaxed max-w-3xl space-y-5">
@@ -40,7 +40,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
       {/* 3. What It Treats */}
       <section className="bg-cream">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-12 text-center">
+          <h2 className="font-serif text-section font-normal text-warm-dark mb-12 text-center">
             {data.treatsHeading}
           </h2>
           <div className="flex flex-wrap justify-center gap-5">
@@ -52,7 +52,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
                 <div className="w-14 h-14 rounded-full bg-cream border border-forest/20 flex items-center justify-center mx-auto mb-4 text-forest">
                   {item.icon}
                 </div>
-                <h3 className="font-sans text-base font-semibold text-warm-dark mb-2">
+                <h3 className="font-sans text-base font-medium text-warm-dark mb-2">
                   {item.label}
                 </h3>
                 <p className="font-sans text-sm text-warm-dark/60 leading-relaxed">
@@ -67,7 +67,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
       {/* 4. Key Benefits */}
       <section className="bg-linen">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-12">
+          <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             Key Benefits
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
@@ -76,7 +76,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
                 <div className="w-12 h-12 rounded-full bg-forest/10 flex items-center justify-center mb-4 text-forest">
                   {b.icon}
                 </div>
-                <h3 className="font-sans text-base font-semibold text-warm-dark mb-2">
+                <h3 className="font-sans text-base font-medium text-warm-dark mb-2">
                   {b.title}
                 </h3>
                 <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
@@ -91,7 +91,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
       {/* 5. Treatment Details */}
       <section className="bg-cream">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-12">
+          <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             Treatment Details
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-0">
@@ -119,12 +119,12 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
       {/* 6. Best For / Not For */}
       <section className="bg-linen">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-12">
+          <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             Is this right for you?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-cream rounded-lg p-10">
-              <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-forest mb-6">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-forest mb-6">
                 Best For
               </h3>
               <ul className="space-y-4">
@@ -137,7 +137,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
               </ul>
             </div>
             <div className="bg-cream rounded-lg p-10">
-              <h3 className="font-sans text-sm font-semibold uppercase tracking-widest text-warm-dark/50 mb-6">
+              <h3 className="font-sans text-eyebrow font-medium uppercase tracking-widest text-warm-dark/50 mb-6">
                 Not The Right Fit If
               </h3>
               <ul className="space-y-4">
@@ -159,7 +159,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
       {/* 8. Why Choose R&R */}
       <section className="bg-linen">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-          <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-12">
+          <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
             {data.whyChooseHeading}
           </h2>
           <div className="max-w-2xl space-y-8">
@@ -167,7 +167,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
               <div key={item.title} className="flex items-start gap-4">
                 <Check size={22} className="text-forest shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-sans text-base font-semibold text-warm-dark mb-1">
+                  <h3 className="font-sans text-base font-medium text-warm-dark mb-1">
                     {item.title}
                   </h3>
                   <p className="font-sans text-base text-warm-dark/70 leading-relaxed">
@@ -183,7 +183,7 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
       {/* 9. CTA Banner */}
       <section className="bg-warm-dark">
         <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-light text-cream mb-4">
+          <h2 className="font-serif text-section font-normal text-cream mb-4">
             Ready to get started?
           </h2>
           <p className="font-sans text-base text-cream/70 mb-10 max-w-lg mx-auto">
@@ -192,13 +192,13 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#book-now"
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-[0.1em] px-10 py-4 min-h-[48px] hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[48px] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
             </a>
             <a
               href="tel:+14693970434"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-sm tracking-[0.1em] px-10 py-4 min-h-[48px] hover:bg-white/5 transition-colors"
+              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[48px] hover:bg-white/5 transition-colors"
             >
               (469) 397-0434
             </a>
@@ -215,7 +215,7 @@ function FaqSection({ faqs }: { faqs: { q: string; a: string }[] }) {
   return (
     <section className="bg-cream">
       <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24">
-        <h2 className="font-serif text-2xl md:text-[2.2rem] font-normal text-warm-dark mb-12">
+        <h2 className="font-serif text-section font-normal text-warm-dark mb-12">
           Frequently Asked Questions
         </h2>
         <div className="max-w-3xl space-y-4">

@@ -88,7 +88,7 @@ export default function TeamMemberCard({
         >
           {/* Display name */}
           <div>
-            <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] font-light tracking-tight text-brass">
+            <h2 className="font-serif text-statement font-normal tracking-tight text-brass">
               {firstName}
               <br />
               <span className="font-normal">{lastName}</span>
