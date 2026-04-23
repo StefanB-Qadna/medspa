@@ -71,7 +71,7 @@ export function Header() {
     };
   }, [needsSolidNav, handleScroll]);
 
-  const isScrolled = needsSolidNav || hasScrolled;
+  const isScrolled = needsSolidNav || hasScrolled || isMobileMenuOpen;
 
   // Home has a light/blurred hero — when transparent, show warm-dark text
   // and the solid brass CTA instead of the dark-hero cream/glass treatment.
