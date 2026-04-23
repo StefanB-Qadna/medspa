@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 interface TeamMemberCardProps {
@@ -98,24 +99,28 @@ export default function TeamMemberCard({
           {/* Details row */}
           <div className={cn('flex flex-col-reverse md:flex-row gap-6 md:gap-8', isPositionRight && 'md:justify-end')}>
             {/* Circular CTA */}
-            <motion.a
+            <Link
               href={href || '#'}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              aria-label={`Learn more about ${firstName} ${lastName}`}
               className={cn(
                 'group flex h-16 w-16 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full border border-border transition-colors duration-300 hover:border-brass hover:bg-warm-dark',
                 isPositionRight && 'md:order-1'
               )}
-              aria-label={`Learn more about ${firstName} ${lastName}`}
             >
-              <ArrowRight
-                size={22}
-                className={cn(
-                  'text-warm-dark transition-all duration-300 group-hover:-rotate-45 group-hover:text-cream',
-                  isPositionRight && 'rotate-180 group-hover:rotate-[225deg]'
-                )}
-              />
-            </motion.a>
+              <motion.span
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center"
+              >
+                <ArrowRight
+                  size={22}
+                  className={cn(
+                    'text-warm-dark transition-all duration-300 group-hover:-rotate-45 group-hover:text-cream',
+                    isPositionRight && 'rotate-180 group-hover:rotate-[225deg]'
+                  )}
+                />
+              </motion.span>
+            </Link>
 
             {/* Bio copy */}
             <div className="md:w-[50%]">

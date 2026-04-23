@@ -1,8 +1,9 @@
 "use client"
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
+import { HERO_REMOUNT_EVENT } from "@/components/BoulevardWidget";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
@@ -368,6 +369,7 @@ export default function HomePage() {
 
 function CinematicHero() {
   const ref = useRef<HTMLElement>(null);
+  const [remountKey, setRemountKey] = useState(0);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -376,13 +378,24 @@ function CinematicHero() {
   const blurPx = useTransform(scrollYProgress, [0, 0.6], [8, 0]);
   const gridFilter = useTransform(blurPx, (b) => `blur(${b}px)`);
 
+  // The Boulevard booking widget leaves framer-motion's useScroll in a stale
+  // state after it closes, which glues the hero overlay to the viewport.
+  // BoulevardWidget dispatches HERO_REMOUNT_EVENT when the widget overlay is
+  // removed from the DOM; remounting the inner ContainerScroll re-initialises
+  // useScroll with fresh measurements.
+  useEffect(() => {
+    const onRemount = () => setRemountKey((k) => k + 1);
+    window.addEventListener(HERO_REMOUNT_EVENT, onRemount);
+    return () => window.removeEventListener(HERO_REMOUNT_EVENT, onRemount);
+  }, []);
+
   return (
     <section
       ref={ref}
       className="relative -mt-20 bg-cream"
       aria-label="Rejuvenate and Refine hero"
     >
-      <ContainerScroll className="h-[350vh]">
+      <ContainerScroll key={remountKey} className="h-[350vh]">
         <motion.div
           style={{ filter: gridFilter, willChange: "filter" }}
           className="sticky left-0 top-0 z-0 h-screen w-full p-4"
