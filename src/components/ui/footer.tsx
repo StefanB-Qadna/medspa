@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import type { FC, ReactNode } from "react";
 
@@ -140,12 +142,22 @@ export const Footer: FC<FooterProps> = ({
               <ul className="space-y-1">
                 {usefulLinks.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="block py-1.5 font-sans text-sm text-cream/70 hover:text-brass transition-colors"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.href === "#book-now" ? (
+                      <button
+                        type="button"
+                        onClick={() => (window as any).blvd?.openBookingWidget()}
+                        className="block py-1.5 font-sans text-sm text-cream/70 hover:text-brass transition-colors text-left"
+                      >
+                        {link.label}
+                      </button>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="block py-1.5 font-sans text-sm text-cream/70 hover:text-brass transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

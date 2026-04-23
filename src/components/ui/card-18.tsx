@@ -108,19 +108,6 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
             </p>
           </div>
 
-          {variant === 'featured' && (
-            <div className="mt-8">
-              <Button
-                asChild
-                className="group/button bg-brass hover:bg-brass-dark text-white"
-              >
-                <span>
-                  {ctaText}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/button:translate-x-1" />
-                </span>
-              </Button>
-            </div>
-          )}
         </div>
       </>
     );

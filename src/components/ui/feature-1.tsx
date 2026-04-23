@@ -1,4 +1,4 @@
-import Link from "next/link";
+"use client";
 
 interface Feature1Props {
   title: string;
@@ -23,6 +23,13 @@ export const Feature1 = ({
   buttonPrimary,
   buttonSecondary,
 }: Feature1Props) => {
+  const handlePrimaryClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (buttonPrimary.href === "#book-now") {
+      e.preventDefault();
+      window.blvd?.openBookingWidget();
+    }
+  };
+
   return (
     <section className="py-20 px-6">
       <div className="mx-auto max-w-[75rem]">
@@ -38,18 +45,19 @@ export const Feature1 = ({
               {description}
             </p>
             <div className="flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-              <Link
+              <a
                 href={buttonPrimary.href}
+                onClick={handlePrimaryClick}
                 className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[2.75rem] hover:bg-brass-dark transition-colors"
               >
                 {buttonPrimary.label}
-              </Link>
-              <Link
+              </a>
+              <a
                 href={buttonSecondary.href}
                 className="inline-flex items-center justify-center rounded-sm border border-warm-dark/30 text-warm-dark font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[2.75rem] hover:bg-warm-dark/5 transition-colors"
               >
                 {buttonSecondary.label}
-              </Link>
+              </a>
             </div>
           </div>
           <img

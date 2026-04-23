@@ -190,12 +190,13 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
             {data.ctaSub}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#book-now"
+            <button
+              type="button"
+              onClick={() => window.blvd?.openBookingWidget()}
               className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[3rem] hover:bg-brass-dark transition-colors"
             >
               Book Your Consultation
-            </a>
+            </button>
             <a
               href="tel:+14693970434"
               className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[3rem] hover:bg-white/5 transition-colors"
