@@ -148,9 +148,19 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               variants={itemVariants}
             >
               {primaryButtonText && primaryButtonHref && (
-                <Button asChild size="lg" className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
-                  <Link href={primaryButtonHref}>{primaryButtonText}</Link>
-                </Button>
+                primaryButtonHref === "#book-now" ? (
+                  <Button
+                    size="lg"
+                    className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-wider px-8 h-12"
+                    onClick={() => window.blvd?.openBookingWidget()}
+                  >
+                    {primaryButtonText}
+                  </Button>
+                ) : (
+                  <Button asChild size="lg" className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
+                    <Link href={primaryButtonHref}>{primaryButtonText}</Link>
+                  </Button>
+                )
               )}
               {secondaryButtonText && secondaryButtonHref && (
                 <Button asChild variant="outline" size="lg" className="rounded-full border-white/80 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:text-white font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">

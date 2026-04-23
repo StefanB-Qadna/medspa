@@ -346,7 +346,7 @@ export default function HomePage() {
       <FAQAccordion />
 
       {/* Booking CTA */}
-      <div id="book" className="bg-linen pt-16 md:pt-20">
+      <div id="book-now" className="bg-linen pt-16 md:pt-20">
         <Feature1
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
@@ -413,12 +413,13 @@ function CinematicHero() {
             overseen by Dr. Rosemarie Robledo.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="#book-now"
+            <button
+              type="button"
+              onClick={() => window.blvd?.openBookingWidget()}
               className="inline-flex items-center justify-center rounded-full bg-brass px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-cream hover:bg-brass-dark transition-colors"
             >
               See What&apos;s Possible
-            </Link>
+            </button>
             <Link
               href="/services"
               className="inline-flex items-center justify-center rounded-full border border-warm-dark/25 bg-cream/70 px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-warm-dark backdrop-blur-sm hover:bg-warm-dark/5 transition-colors"

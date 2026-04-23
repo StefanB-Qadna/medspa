@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
+import { usePathname } from "next/navigation";
 
 const LenisContext = createContext<Lenis | null>(null);
 
@@ -15,6 +16,8 @@ export function SmoothScrollProvider({
   children: React.ReactNode;
 }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
+  const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -32,6 +35,7 @@ export function SmoothScrollProvider({
       lerp: 0.1,
     });
 
+    lenisRef.current = instance;
     setLenis(instance);
 
     let rafId: number;
@@ -44,8 +48,20 @@ export function SmoothScrollProvider({
     return () => {
       cancelAnimationFrame(rafId);
       instance.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  // Reset scroll position to top on every route change.
+  // Lenis intercepts window.scrollTo, so Next.js's built-in scroll reset
+  // never actually moves the page — we must tell Lenis explicitly.
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   return (
     <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>

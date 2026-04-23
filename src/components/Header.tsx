@@ -39,7 +39,9 @@ export function Header() {
 
   // Pages without a dark hero image need the nav to always be in "solid" mode
   const needsSolidNav = pathname
-    ? pathname.startsWith("/blog/") && pathname !== "/blog"
+    ? (pathname.startsWith("/blog/") && pathname !== "/blog") ||
+      pathname === "/privacy-policy" ||
+      pathname === "/terms-of-service"
     : false;
 
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -136,7 +138,7 @@ export function Header() {
                   : transparentCtaClass
               }`}
             >
-              <a href="#book-now">Book Your Visit</a>
+              <button type="button" onClick={() => window.blvd?.openBookingWidget()}>Book Your Visit</button>
             </Button>
           </div>
 
@@ -192,9 +194,9 @@ export function Header() {
             asChild
             className="w-full uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
           >
-            <a href="#book-now" onClick={() => setIsMobileMenuOpen(false)}>
+            <button type="button" onClick={() => { window.blvd?.openBookingWidget(); setIsMobileMenuOpen(false); }}>
               Book Your Visit
-            </a>
+            </button>
           </Button>
         </div>
       </div>

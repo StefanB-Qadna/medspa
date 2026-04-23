@@ -8,6 +8,7 @@ declare global {
   interface Window {
     blvd?: {
       init: (config: { businessId: string }) => void;
+      openBookingWidget: () => void;
     };
   }
 }

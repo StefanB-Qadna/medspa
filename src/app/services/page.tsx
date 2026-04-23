@@ -180,7 +180,6 @@ export default function ServicesPage() {
                   description={featured.description}
                   imageUrl={featured.imageUrl}
                   href={featured.href}
-                  ctaText="Book Now"
                   consultRequired={featured.consultRequired}
                 />
               </div>
