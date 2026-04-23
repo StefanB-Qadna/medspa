@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/ui/hero-section-4";
 import { Feature1 } from "@/components/ui/feature-1";
+import { Button } from "@/components/ui/button";
 
 const blogPosts = [
   {
@@ -75,19 +76,25 @@ export default function BlogPage() {
       <section className="bg-cream border-b border-border/50">
         <div className="mx-auto max-w-[75rem] px-6 py-6">
           <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`font-sans text-sm font-medium px-5 py-2 rounded-full border transition-colors ${
-                  activeCategory === cat
-                    ? "bg-warm-dark text-cream border-warm-dark"
-                    : "text-warm-dark border-border hover:border-brass hover:text-brass"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat;
+              return (
+                <Button
+                  key={cat}
+                  size="xl"
+                  variant={isActive ? "default" : "outline"}
+                  aria-pressed={isActive}
+                  onClick={() => setActiveCategory(cat)}
+                  className={
+                    isActive
+                      ? "border-warm-dark bg-warm-dark text-cream hover:bg-warm-dark/90 active:bg-warm-dark/90"
+                      : "bg-transparent text-warm-dark hover:border-brass hover:bg-transparent hover:text-brass active:bg-transparent"
+                  }
+                >
+                  {cat}
+                </Button>
+              );
+            })}
           </div>
         </div>
       </section>

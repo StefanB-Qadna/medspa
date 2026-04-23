@@ -158,8 +158,6 @@ export default function ServicesPage() {
         label="Services"
         title="Treatments built around your anatomy, not a trend."
         subtitle="Physician-led from consultation to follow-up."
-        primaryButtonText="Book a consultation"
-        primaryButtonHref="#book-now"
         imageUrl="/images/spaceDR.webp"
         size="medium"
         overlayOpacity={55}

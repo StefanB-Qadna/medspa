@@ -78,8 +78,8 @@ export function Header() {
   const isLightHero = pathname === "/";
   const transparentTextClass = isLightHero ? "text-warm-dark" : "text-cream";
   const transparentCtaClass = isLightHero
-    ? "bg-brass hover:bg-brass-dark border border-transparent"
-    : "bg-white/15 hover:bg-white/25 backdrop-blur-md border border-white/25";
+    ? "border-brass bg-brass hover:bg-brass-dark active:bg-brass-dark"
+    : "border-white/25 bg-white/15 hover:bg-white/25 active:bg-white/25 backdrop-blur-md";
 
   return (
     <nav
@@ -132,9 +132,10 @@ export function Header() {
           <div className="hidden lg:block lg:justify-self-end">
             <Button
               asChild
-              className={`uppercase tracking-widest text-xs font-medium px-6 py-2 rounded-full transition-all duration-500 text-cream ${
+              size="xl"
+              className={`px-6 transition-colors duration-500 text-cream ${
                 isScrolled
-                  ? "bg-brass hover:bg-brass-dark border border-transparent"
+                  ? "border-brass bg-brass hover:bg-brass-dark active:bg-brass-dark"
                   : transparentCtaClass
               }`}
             >
@@ -192,7 +193,8 @@ export function Header() {
           })}
           <Button
             asChild
-            className="w-full min-h-[2.75rem] uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
+            size="xl"
+            className="w-full mt-4 border-brass bg-brass hover:bg-brass-dark active:bg-brass-dark text-cream"
           >
             <button type="button" onClick={() => { window.blvd?.openBookingWidget(); setIsMobileMenuOpen(false); }}>
               Book Your Visit
