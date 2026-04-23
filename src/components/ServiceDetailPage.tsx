@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Check, X } from "lucide-react";
 import { HeroSection } from "@/components/ui/hero-section-4";
+import { Feature1 } from "@/components/ui/feature-1";
 import type { ServiceData } from "@/lib/service-types";
 
 export function ServiceDetailPage({ data }: { data: ServiceData }) {
@@ -180,32 +181,23 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
         </div>
       </section>
 
-      {/* 9. CTA Banner */}
-      <section className="bg-warm-dark">
-        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-24 text-center">
-          <h2 className="font-serif text-section font-normal text-cream mb-4">
-            Ready to get started?
-          </h2>
-          <p className="font-sans text-base text-cream/70 mb-10 max-w-lg mx-auto">
-            {data.ctaSub}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              type="button"
-              onClick={() => window.blvd?.openBookingWidget()}
-              className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[3rem] hover:bg-brass-dark transition-colors"
-            >
-              Book Your Consultation
-            </button>
-            <a
-              href="tel:+14693970434"
-              className="inline-flex items-center justify-center rounded-sm border border-cream/30 text-cream font-sans font-medium uppercase text-sm tracking-wider px-10 py-4 min-h-[3rem] hover:bg-white/5 transition-colors"
-            >
-              (469) 397-0434
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* 9. Booking CTA */}
+      <div id="book-now" className="bg-linen pt-16 md:pt-20">
+        <Feature1
+          title="The best version of you is closer than you think."
+          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          imageSrc="/images/space2.webp"
+          imageAlt="Rejuvenate and Refine clinic interior"
+          buttonPrimary={{
+            label: "Start here",
+            href: "#book-now",
+          }}
+          buttonSecondary={{
+            label: "Call us",
+            href: "tel:+14693970434",
+          }}
+        />
+      </div>
     </>
   );
 }
