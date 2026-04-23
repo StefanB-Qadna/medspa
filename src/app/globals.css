@@ -38,6 +38,13 @@
  *  Tailwind v4 only processes @theme from imported files — :root blocks in
  *  @import'd files are dropped. These must live here in the entry CSS.
  * ========================================================================== */
+/* Lenis uses document.documentElement as its scroll wrapper by default and
+   requires a non-static position to compute scroll offsets correctly.
+   Placed at top level (not @layer base) so Tailwind v4 does not purge it. */
+html {
+  position: relative;
+}
+
 :root {
   --duration-instant: 80ms;
   --duration-fast: 150ms;

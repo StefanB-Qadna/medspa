@@ -63,10 +63,10 @@ export default function BlogPage() {
     <>
       {/* Hero */}
       <HeroSection
-        title="Honest answers from a surgeon."
-        subtitle="No hype, no hidden agendas. Just clear, expert-written guidance on aesthetic medicine from someone who spent years in an operating room before opening a med spa."
         label="Blog"
-        imageUrl="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1920&auto=format&fit=crop&q=80"
+        title="Honest answers from a surgeon."
+        subtitle="No hype. No hidden agendas. Just medicine."
+        imageUrl="/images/spaceDR.webp"
         size="compact"
         overlayOpacity={55}
       />

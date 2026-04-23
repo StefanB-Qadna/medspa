@@ -79,7 +79,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       <section
         ref={ref}
         className={cn(
-          "relative flex w-full items-center justify-start overflow-hidden -mt-20 pt-20",
+          "relative flex w-full items-center justify-center overflow-hidden -mt-20 pt-20",
           sizeClasses[size],
           className
         )}
@@ -110,14 +110,14 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
         {/* Content */}
         <motion.div
-          className="absolute bottom-12 left-6 md:left-16 z-10 flex max-w-2xl flex-col items-start text-left"
+          className="relative z-10 mx-auto flex w-full max-w-[56rem] flex-col items-center px-6 text-center md:px-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {label && (
             <motion.p
-              className="font-sans text-xs font-medium uppercase tracking-extra text-cream/70 mb-4"
+              className="font-sans text-[0.6875rem] md:text-xs font-medium uppercase tracking-extra text-cream/70 mb-5 md:mb-6"
               variants={itemVariants}
             >
               {label}
@@ -126,7 +126,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {title && (
             <motion.h1
-              className="font-serif text-display font-normal tracking-tight text-cream text-balance"
+              className="max-w-[48rem] font-serif text-display font-normal tracking-tight text-cream text-balance leading-[1.06]"
               variants={itemVariants}
             >
               {title}
@@ -135,7 +135,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {subtitle && (
             <motion.p
-              className="mt-5 font-sans text-base md:text-xl leading-relaxed text-cream/80"
+              className="mt-6 md:mt-7 max-w-[32rem] font-sans text-lead leading-[1.55] text-cream/80 text-pretty"
               variants={itemVariants}
             >
               {subtitle}
@@ -144,26 +144,26 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {(primaryButtonText || secondaryButtonText) && (
             <motion.div
-              className="mt-8 flex flex-wrap items-center justify-start gap-4"
+              className="mt-10 md:mt-12 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-4"
               variants={itemVariants}
             >
               {primaryButtonText && primaryButtonHref && (
                 primaryButtonHref === "#book-now" ? (
                   <Button
                     size="lg"
-                    className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-wider px-8 h-12"
+                    className="rounded-full bg-cream text-warm-dark hover:bg-cream/90 font-sans text-xs font-medium uppercase tracking-wider px-9 min-h-[2.75rem]"
                     onClick={() => window.blvd?.openBookingWidget()}
                   >
                     {primaryButtonText}
                   </Button>
                 ) : (
-                  <Button asChild size="lg" className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
+                  <Button asChild size="lg" className="rounded-full bg-cream text-warm-dark hover:bg-cream/90 font-sans text-xs font-medium uppercase tracking-wider px-9 min-h-[2.75rem]">
                     <Link href={primaryButtonHref}>{primaryButtonText}</Link>
                   </Button>
                 )
               )}
               {secondaryButtonText && secondaryButtonHref && (
-                <Button asChild variant="outline" size="lg" className="rounded-full border-white/80 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:text-white font-sans text-xs font-medium uppercase tracking-wider px-8 h-12">
+                <Button asChild variant="outline" size="lg" className="rounded-full border-cream/60 bg-transparent text-cream hover:bg-cream/10 hover:text-cream font-sans text-xs font-medium uppercase tracking-wider px-9 min-h-[2.75rem]">
                   <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>
                 </Button>
               )}

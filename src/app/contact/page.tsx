@@ -1,17 +1,21 @@
 import { HeroSection } from "@/components/ui/hero-section-4";
+import { Feature1 } from "@/components/ui/feature-1";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
     <>
       <HeroSection
-        title="Get in Touch"
-        subtitle="We would love to hear from you. Book a consultation, ask a question, or just say hello."
-        primaryButtonText="Call Us Now"
-        primaryButtonHref="tel:+14693970434"
+        label="Contact"
+        title="Come see us."
+        subtitle="Consultation, questions, or just hello."
+        primaryButtonText="Book a consultation"
+        primaryButtonHref="#book-now"
+        secondaryButtonText="Call us"
+        secondaryButtonHref="tel:+14693970434"
         imageUrl="/images/space2.webp"
         size="compact"
-        overlayOpacity={50}
+        overlayOpacity={55}
       />
 
       <section className="bg-cream">
@@ -97,6 +101,24 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Booking CTA */}
+      <div id="book-now" className="bg-linen pt-16 md:pt-20">
+        <Feature1
+          title="The best version of you is closer than you think."
+          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          imageSrc="/images/space2.webp"
+          imageAlt="Rejuvenate and Refine clinic interior"
+          buttonPrimary={{
+            label: "Start here",
+            href: "#book-now",
+          }}
+          buttonSecondary={{
+            label: "Call us",
+            href: "tel:+14693970434",
+          }}
+        />
+      </div>
     </>
   );
 }

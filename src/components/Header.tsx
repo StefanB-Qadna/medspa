@@ -192,7 +192,7 @@ export function Header() {
           })}
           <Button
             asChild
-            className="w-full uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
+            className="w-full min-h-[2.75rem] uppercase tracking-widest text-xs font-medium py-3 rounded-full mt-4 bg-brass hover:bg-brass-dark text-cream"
           >
             <button type="button" onClick={() => { window.blvd?.openBookingWidget(); setIsMobileMenuOpen(false); }}>
               Book Your Visit

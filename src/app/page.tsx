@@ -56,10 +56,10 @@ const surgeonPoints = [
 
 const heroImages = [
   "/images/hero.webp",
-  "/images/space1.webp",
+  "/images/space7.webp",
   "/images/space4.webp",
   "/images/laser.webp",
-  "/images/Injectables.webp",
+  "/images/space5.webp",
 ];
 
 const featuredServices = [
