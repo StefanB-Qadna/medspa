@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface CardItem {
   image: string;
@@ -61,25 +62,16 @@ export default function Cards({
 
       {linkUrl && (
         <div className="mt-10 text-center">
-          <Link
-            href={linkUrl}
-            className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[2.75rem] hover:bg-brass-dark transition-colors"
+          <Button
+            asChild
+            size="xl"
+            className="px-6 border-brass bg-brass text-cream hover:bg-brass-dark active:bg-brass-dark"
           >
-            {linkText}
-            <svg
-              className="ml-2 size-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
+            <Link href={linkUrl}>
+              {linkText}
+              <ArrowRight />
+            </Link>
+          </Button>
         </div>
       )}
     </div>

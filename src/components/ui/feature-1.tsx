@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+
 interface Feature1Props {
   title: string;
   description?: string;
@@ -45,19 +47,23 @@ export const Feature1 = ({
               {description}
             </p>
             <div className="flex w-full flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-              <a
-                href={buttonPrimary.href}
-                onClick={handlePrimaryClick}
-                className="inline-flex items-center justify-center rounded-sm bg-brass text-white font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[2.75rem] hover:bg-brass-dark transition-colors"
+              <Button
+                asChild
+                size="xl"
+                className="px-6 border-brass bg-brass text-cream hover:bg-brass-dark active:bg-brass-dark"
               >
-                {buttonPrimary.label}
-              </a>
-              <a
-                href={buttonSecondary.href}
-                className="inline-flex items-center justify-center rounded-sm border border-warm-dark/30 text-warm-dark font-sans font-medium uppercase text-sm tracking-wider px-8 py-3 min-h-[2.75rem] hover:bg-warm-dark/5 transition-colors"
+                <a href={buttonPrimary.href} onClick={handlePrimaryClick}>
+                  {buttonPrimary.label}
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="xl"
+                className="px-6 border-warm-dark/30 bg-transparent text-warm-dark hover:bg-warm-dark/5 active:bg-warm-dark/5"
               >
-                {buttonSecondary.label}
-              </a>
+                <a href={buttonSecondary.href}>{buttonSecondary.label}</a>
+              </Button>
             </div>
           </div>
           <img
