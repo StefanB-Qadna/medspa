@@ -6,13 +6,16 @@ export default function ContactPage() {
   return (
     <>
       <HeroSection
-        title="Get in Touch"
-        subtitle="We would love to hear from you. Book a consultation, ask a question, or just say hello."
-        primaryButtonText="Call Us Now"
-        primaryButtonHref="tel:+14693970434"
+        label="Contact"
+        title="Come see us."
+        subtitle="Consultation, questions, or just hello."
+        primaryButtonText="Book a consultation"
+        primaryButtonHref="#book-now"
+        secondaryButtonText="Call us"
+        secondaryButtonHref="tel:+14693970434"
         imageUrl="/images/space2.webp"
         size="compact"
-        overlayOpacity={50}
+        overlayOpacity={55}
       />
 
       <section className="bg-cream">

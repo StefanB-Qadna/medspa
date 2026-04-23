@@ -155,13 +155,14 @@ export default function ServicesPage() {
     <>
       {/* Hero */}
       <HeroSection
-        title="Our Services"
-        subtitle="Personalized treatments, physician-led from consultation to follow-up. Every plan is built around your anatomy, your goals, and what will actually move the needle, not what is trending."
-        primaryButtonText="Book a Consultation"
+        label="Services"
+        title="Treatments built around your anatomy, not a trend."
+        subtitle="Physician-led from consultation to follow-up."
+        primaryButtonText="Book a consultation"
         primaryButtonHref="#book-now"
         imageUrl="/images/spaceDR.webp"
         size="medium"
-        overlayOpacity={50}
+        overlayOpacity={55}
       />
 
       {sections.map((section) => {

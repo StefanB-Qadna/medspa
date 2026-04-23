@@ -15,10 +15,8 @@ export function ServiceDetailPage({ data }: { data: ServiceData }) {
         title={data.h1}
         subtitle={data.subtitle}
         label={data.breadcrumb}
-        primaryButtonText="Book This Treatment"
+        primaryButtonText="Book this treatment"
         primaryButtonHref="#book-now"
-        secondaryButtonText="Learn More"
-        secondaryButtonHref="#what-it-does"
         imageUrl="/images/spaceDR.webp"
         size="medium"
         overlayOpacity={55}
