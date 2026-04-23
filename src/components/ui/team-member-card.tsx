@@ -82,7 +82,7 @@ export default function TeamMemberCard({
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative z-[2] -mt-16 flex w-full max-w-full box-border flex-col gap-10 bg-cream/80 backdrop-blur-sm p-6 md:-mt-0 md:bg-transparent md:backdrop-blur-none md:p-0 md:ml-8 md:w-[calc(100%-22.5rem)] md:max-w-none',
+            'relative z-[2] mt-6 flex w-full max-w-full box-border flex-col gap-8 md:mt-0 md:gap-10 md:ml-8 md:w-[calc(100%-22.5rem)] md:max-w-none',
             isPositionRight && 'md:ml-0 md:-mr-8 md:items-end'
           )}
         >

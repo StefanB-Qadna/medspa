@@ -27,6 +27,7 @@ export function InteractiveSelector({
 }: InteractiveSelectorProps) {
   const [activeIndex, setActiveIndex] = useState(initialIndex);
   const [animatedIndexes, setAnimatedIndexes] = useState<number[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -39,6 +40,14 @@ export function InteractiveSelector({
     });
     return () => timers.forEach(clearTimeout);
   }, [options]);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 48rem)");
+    const update = () => setIsMobile(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
 
   return (
     <div
@@ -59,7 +68,7 @@ export function InteractiveSelector({
             onClick={() => setActiveIndex(index)}
             aria-label={option.title}
             aria-pressed={isActive}
-            className="relative flex min-w-[3.75rem] flex-col justify-end overflow-hidden rounded-md bg-warm-dark text-left transition-[flex,box-shadow,background-size] duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
+            className="relative flex min-w-[1.75rem] md:min-w-[3.75rem] flex-col justify-end overflow-hidden rounded-md bg-warm-dark text-left transition-[flex,box-shadow,background-size] duration-700 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-linen"
             style={{
               backgroundImage: `url('${option.image}')`,
               backgroundSize: isActive ? "auto 100%" : "auto 120%",
@@ -76,7 +85,7 @@ export function InteractiveSelector({
               boxShadow: isActive
                 ? "0 18px 32px -18px rgba(61,53,48,0.45)"
                 : "0 10px 20px -14px rgba(61,53,48,0.25)",
-              flex: isActive ? "7 1 0%" : "1 1 0%",
+              flex: isActive ? `${isMobile ? 28 : 7} 1 0%` : "1 1 0%",
               zIndex: isActive ? 10 : 1,
               willChange: "flex-grow, box-shadow, background-size",
             }}
