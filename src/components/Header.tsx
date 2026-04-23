@@ -93,7 +93,12 @@ export function Header() {
         <div className="flex lg:grid lg:grid-cols-3 items-center justify-between h-20">
           {/* Logo — inline SVG, color inherits via currentColor */}
           <div className="flex-shrink-0 lg:justify-self-start">
-            <Link href="/" aria-label="Rejuvenate & Refine — Home" className="inline-flex items-center py-2">
+            <Link
+              href="/"
+              aria-label="Rejuvenate & Refine — Home"
+              className="inline-flex items-center py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               <Logo
                 className={`h-7 w-auto transition-colors duration-500 ${
                   isScrolled ? "text-warm-dark" : transparentTextClass
