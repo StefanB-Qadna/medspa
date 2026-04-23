@@ -110,7 +110,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
         {/* Content */}
         <motion.div
-          className="relative z-10 mx-auto flex w-full max-w-[56rem] flex-col items-center px-6 text-center md:px-10"
+          className="relative z-10 mx-auto flex w-full max-w-[56rem] flex-col items-center px-4 text-center md:px-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -126,7 +126,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {title && (
             <motion.h1
-              className="max-w-[48rem] font-serif text-display font-normal tracking-tight text-cream text-balance leading-[1.06]"
+              className="max-w-[48rem] font-serif text-[2rem] sm:text-display font-normal tracking-tight text-cream text-balance leading-[1.1] sm:leading-[1.06]"
               variants={itemVariants}
             >
               {title}
@@ -135,7 +135,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {subtitle && (
             <motion.p
-              className="mt-6 md:mt-7 max-w-[32rem] font-sans text-lead leading-[1.55] text-cream/80 text-pretty"
+              className="mt-6 md:mt-7 max-w-[32rem] font-sans text-base sm:text-lead leading-[1.55] text-cream/80 text-pretty"
               variants={itemVariants}
             >
               {subtitle}
@@ -151,7 +151,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 primaryButtonHref === "#book-now" ? (
                   <Button
                     size="xl"
-                    className="px-6 border-cream bg-cream text-warm-dark hover:bg-cream/90 active:bg-cream/90"
+                    className="max-sm:h-10 max-sm:px-3.5 max-sm:text-base px-6 border-cream bg-cream text-warm-dark hover:bg-cream/90 active:bg-cream/90"
                     onClick={() => window.blvd?.openBookingWidget()}
                   >
                     {primaryButtonText}
@@ -160,7 +160,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                   <Button
                     asChild
                     size="xl"
-                    className="px-6 border-cream bg-cream text-warm-dark hover:bg-cream/90 active:bg-cream/90"
+                    className="max-sm:h-10 max-sm:px-3.5 max-sm:text-base px-6 border-cream bg-cream text-warm-dark hover:bg-cream/90 active:bg-cream/90"
                   >
                     <Link href={primaryButtonHref}>{primaryButtonText}</Link>
                   </Button>
@@ -171,7 +171,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                   asChild
                   variant="outline"
                   size="xl"
-                  className="px-6 border-cream/60 bg-transparent text-cream hover:bg-cream/10 hover:text-cream active:bg-cream/10"
+                  className="max-sm:h-10 max-sm:px-3.5 max-sm:text-base px-6 border-cream/60 bg-transparent text-cream hover:bg-cream/10 hover:text-cream active:bg-cream/10"
                 >
                   <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>
                 </Button>
