@@ -112,7 +112,7 @@
   --text-6xl: clamp(3.25rem, 2.20rem + 4.80vw, 5rem);
   --text-6xl--line-height: 1.02;
 
-  --text-display: clamp(3.5rem, 2.50rem + 5.00vw, 6rem);
+  --text-display: clamp(2.5rem, 2.50rem + 5.00vw, 6rem);
   --text-display--line-height: 1.00;
 
   /* -------------------------------------------------------------------------
