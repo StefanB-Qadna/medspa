@@ -205,20 +205,20 @@ export default function ServicesPage() {
       })}
 
       {/* Included with Every Plan */}
-      <section className="bg-linen">
-        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
+      <section className="bg-cream">
+        <div className="mx-auto max-w-[75rem] px-6 py-20 md:py-16">
           <SectionHeading title="Included with Every Plan" centered={false} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-            <div className="bg-cream rounded-md p-8">
-              <h3 className="font-serif text-lg font-medium text-warm-dark mb-2">
+            <div className="bg-linen rounded-md p-8">
+              <h3 className="font-serif text-lg font-medium text-warm-dark mb-4">
                 AI Facial & Body Analysis
               </h3>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                 Technology-guided skin and body mapping included in every consultation.
               </p>
             </div>
-            <div className="bg-cream rounded-md p-8">
-              <h3 className="font-serif text-lg font-medium text-warm-dark mb-2">
+            <div className="bg-linen rounded-md p-8">
+              <h3 className="font-serif text-lg font-medium text-warm-dark mb-4">
                 Preliminary Skin Cancer Screening
               </h3>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
