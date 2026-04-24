@@ -4,10 +4,9 @@ import * as React from 'react';
 import Link from 'next/link';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { motion, type Variants } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+
 
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 
 const cardVariants = cva(
   'group relative flex flex-col overflow-hidden rounded-lg bg-cream text-card-foreground shadow-[0_2px_8px_rgba(61,53,48,0.08),0_8px_24px_rgba(61,53,48,0.06)] transition-all duration-300 ease-in-out hover:shadow-[0_4px_12px_rgba(61,53,48,0.12),0_16px_40px_rgba(61,53,48,0.10)]',
@@ -77,7 +76,7 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
           </div>
         )}
 
-        <div className="flex flex-1 flex-col justify-between p-6 md:p-8">
+        <div className="flex flex-1 flex-col justify-center p-6 md:p-8">
           <div>
             <div className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase">
               <span className="rounded-full bg-forest/10 px-3 py-1 text-forest">
