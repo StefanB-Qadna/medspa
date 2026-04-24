@@ -156,7 +156,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <HeroSection
         label="Services"
-        title="Treatments built around your anatomy, not a trend."
+        title="Treatments built around your goals."
         subtitle="Physician-led from consultation to follow-up."
         imageUrl="/images/spaceDR.webp"
         size="medium"

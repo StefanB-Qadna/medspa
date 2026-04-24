@@ -21,6 +21,8 @@ export const buttonVariants = cva(
         "icon-sm": "size-8 sm:size-7",
         "icon-xl":
           "size-11 sm:size-10 [&_svg:not([class*='size-'])]:size-5 sm:[&_svg:not([class*='size-'])]:size-4.5",
+        "icon-2xl":
+          "size-16 sm:size-14 [&_svg:not([class*='size-'])]:size-6 sm:[&_svg:not([class*='size-'])]:size-5",
         "icon-xs":
           "size-7 rounded-md sm:size-6 [&_svg:not([class*='size-'])]:size-4 sm:[&_svg:not([class*='size-'])]:size-3.5",
         lg: "h-10 px-3.5 sm:h-9",

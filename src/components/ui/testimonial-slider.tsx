@@ -164,7 +164,7 @@ export const TestimonialSlider = ({
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full w-10 h-10 border-cream/40 bg-warm-dark/30 backdrop-blur-sm text-cream hover:bg-warm-dark/50"
+              className="rounded-full w-10 h-10 border-cream/40 bg-warm-dark/60 text-cream hover:bg-warm-dark/80"
               onClick={handlePrev}
               aria-label="Previous review"
             >
@@ -175,7 +175,7 @@ export const TestimonialSlider = ({
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full w-10 h-10 border-cream/40 bg-warm-dark/30 backdrop-blur-sm text-cream hover:bg-warm-dark/50"
+              className="rounded-full w-10 h-10 border-cream/40 bg-warm-dark/60 text-cream hover:bg-warm-dark/80"
               onClick={handleNext}
               aria-label="Next review"
             >
@@ -212,24 +212,24 @@ export const TestimonialSlider = ({
           </div>
 
           {/* Navigation Buttons — desktop only */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-3">
             <Button
               variant="outline"
-              size="icon"
-              className="rounded-full w-12 h-12 border-brass/30 text-warm-dark hover:bg-brass/[0.08] hover:border-brass"
+              size="icon-xl"
+              className="rounded-full border-brass/30 text-warm-dark hover:bg-brass/10 hover:border-brass"
               onClick={handlePrev}
               aria-label="Previous review"
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft />
             </Button>
             <Button
               variant="default"
-              size="icon"
-              className="rounded-full w-12 h-12 bg-brass text-white hover:bg-brass-dark"
+              size="icon-xl"
+              className="rounded-full bg-brass text-cream hover:bg-brass-dark"
               onClick={handleNext}
               aria-label="Next review"
             >
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight />
             </Button>
           </div>
         </div>

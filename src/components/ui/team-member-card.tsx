@@ -67,8 +67,6 @@ export default function TeamMemberCard({
             isPositionRight && 'md:order-1'
           )}
         >
-          {/* Subtle gradient overlay */}
-          <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-warm-dark/20 via-transparent to-transparent" />
           <img
             src={imageUrl}
             alt={fullName}
@@ -83,21 +81,12 @@ export default function TeamMemberCard({
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative z-[2] mt-6 flex w-full max-w-full box-border flex-col gap-8 md:mt-0 md:gap-10 md:ml-8 md:w-[calc(100%-22.5rem)] md:max-w-none',
-            isPositionRight && 'md:ml-0 md:-mr-8 md:items-end'
+            'relative z-[2] mt-6 flex w-full max-w-full box-border flex-col gap-6 md:mt-0 md:gap-8 md:ml-6 md:w-[calc(100%-22.5rem)] md:max-w-none',
+            isPositionRight && 'md:ml-0 md:-mr-6 md:items-end'
           )}
         >
-          {/* Display name */}
-          <div>
-            <h2 className="font-serif text-statement font-normal tracking-tight text-brass">
-              {firstName}
-              <br />
-              <span className="font-normal">{lastName}</span>
-            </h2>
-          </div>
-
-          {/* Details row */}
-          <div className={cn('flex flex-col-reverse md:flex-row gap-6 md:gap-8', isPositionRight && 'md:justify-end')}>
+          {/* Details row — arrow vertically centered to grouped name + bio */}
+          <div className={cn('flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-8', isPositionRight && 'md:justify-end')}>
             {/* Circular CTA */}
             <Link
               href={href || '#'}
@@ -122,8 +111,13 @@ export default function TeamMemberCard({
               </motion.span>
             </Link>
 
-            {/* Bio copy */}
-            <div className="md:w-[50%]">
+            {/* Name + bio grouped */}
+            <div className={cn('flex flex-col gap-4 md:w-[70%]', isPositionRight && 'md:items-end')}>
+              <h2 className="font-serif text-statement tracking-normal text-brass">
+                {firstName}
+                <br />
+                <span className="font-normal">{lastName}</span>
+              </h2>
               <p
                 className={cn(
                   'font-sans text-sm leading-relaxed text-warm-dark/70',
