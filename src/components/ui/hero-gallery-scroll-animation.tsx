@@ -135,6 +135,17 @@ const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
     const position = useTransform(scrollYProgress, (pos) =>
       pos >= 0.8 ? "absolute" : "fixed"
     )
+
+    // useScroll initializes scrollYProgress at 0 and only measures the real
+    // value after layout. On a reload at a non-zero scroll position that
+    // causes a one-frame flash where the hero renders fully visible before
+    // the motion values catch up. Hide until the first frame after mount.
+    const [measured, setMeasured] = React.useState(false)
+    React.useEffect(() => {
+      const id = requestAnimationFrame(() => setMeasured(true))
+      return () => cancelAnimationFrame(id)
+    }, [])
+
     return (
       <motion.div
         ref={ref}
@@ -144,6 +155,7 @@ const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
           scale,
           position,
           opacity,
+          visibility: measured ? undefined : "hidden",
           display: isInView ? undefined : "none",
           ...style,
         }}
