@@ -45,6 +45,7 @@ const bentoGridVariants = cva(
 
 interface ContainerScrollContextValue {
   scrollYProgress: MotionValue<number>
+  isInView: boolean
 }
 const ContainerScrollContext = React.createContext<
   ContainerScrollContextValue | undefined
@@ -67,8 +68,21 @@ const ContainerScroll = ({
   const { scrollYProgress } = useScroll({
     target: scrollRef,
   })
+  const [isInView, setIsInView] = React.useState(true)
+
+  React.useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <ContainerScrollContext.Provider value={{ scrollYProgress }}>
+    <ContainerScrollContext.Provider value={{ scrollYProgress, isInView }}>
       <div
         ref={scrollRef}
         className={cn("relative min-h-screen w-full", className)}
@@ -114,7 +128,7 @@ BentoCell.displayName = "BentoCell"
 
 const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   ({ className, style, ...props }, ref) => {
-    const { scrollYProgress } = useContainerScrollContext()
+    const { scrollYProgress, isInView } = useContainerScrollContext()
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
     const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
@@ -130,6 +144,7 @@ const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
           scale,
           position,
           opacity,
+          display: isInView ? undefined : "none",
           ...style,
         }}
         {...props}

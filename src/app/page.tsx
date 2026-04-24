@@ -1,8 +1,9 @@
 "use client"
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
+import { HERO_REMOUNT_EVENT } from "@/components/BoulevardWidget";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
@@ -56,10 +57,10 @@ const surgeonPoints = [
 
 const heroImages = [
   "/images/hero.webp",
-  "/images/space1.webp",
+  "/images/space7.webp",
   "/images/space4.webp",
   "/images/laser.webp",
-  "/images/Injectables.webp",
+  "/images/space5.webp",
 ];
 
 const featuredServices = [
@@ -368,6 +369,7 @@ export default function HomePage() {
 
 function CinematicHero() {
   const ref = useRef<HTMLElement>(null);
+  const [remountKey, setRemountKey] = useState(0);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
@@ -376,13 +378,24 @@ function CinematicHero() {
   const blurPx = useTransform(scrollYProgress, [0, 0.6], [8, 0]);
   const gridFilter = useTransform(blurPx, (b) => `blur(${b}px)`);
 
+  // The Boulevard booking widget leaves framer-motion's useScroll in a stale
+  // state after it closes, which glues the hero overlay to the viewport.
+  // BoulevardWidget dispatches HERO_REMOUNT_EVENT when the widget overlay is
+  // removed from the DOM; remounting the inner ContainerScroll re-initialises
+  // useScroll with fresh measurements.
+  useEffect(() => {
+    const onRemount = () => setRemountKey((k) => k + 1);
+    window.addEventListener(HERO_REMOUNT_EVENT, onRemount);
+    return () => window.removeEventListener(HERO_REMOUNT_EVENT, onRemount);
+  }, []);
+
   return (
     <section
       ref={ref}
       className="relative -mt-20 bg-cream"
       aria-label="Rejuvenate and Refine hero"
     >
-      <ContainerScroll className="h-[350vh]">
+      <ContainerScroll key={remountKey} className="h-[350vh]">
         <motion.div
           style={{ filter: gridFilter, willChange: "filter" }}
           className="sticky left-0 top-0 z-0 h-screen w-full p-4"
@@ -403,26 +416,29 @@ function CinematicHero() {
           </BentoGrid>
         </motion.div>
 
-        <ContainerScale className="relative z-10 px-6 text-center">
+        <ContainerScale
+          className="relative z-10 max-w-[56rem] px-4 text-center md:px-6"
+          style={{ width: "100%" }}
+        >
           <p className="label mb-4">Rejuvenate &amp; Refine</p>
-          <h1 className="mx-auto max-w-3xl font-serif text-display font-normal text-warm-dark">
+          <h1 className="mx-auto max-w-[48rem] font-serif text-[clamp(1.5rem,5.5vw+0.25rem,2.5rem)] sm:text-display font-normal text-warm-dark leading-[1.15] sm:leading-none text-balance">
             The most natural version of you.
           </h1>
-          <p className="mx-auto my-6 max-w-xl font-sans text-base md:text-lg text-warm-dark/75 leading-relaxed">
+          <p className="mx-auto my-5 md:my-6 max-w-xl font-sans text-[clamp(0.875rem,2.5vw+0.375rem,1.125rem)] text-warm-dark/75 leading-relaxed">
             A surgeon-led med spa where every treatment plan is personally
             overseen by Dr. Rosemarie Robledo.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
             <button
               type="button"
               onClick={() => window.blvd?.openBookingWidget()}
-              className="inline-flex items-center justify-center rounded-full bg-brass px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-cream hover:bg-brass-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-brass px-5 py-3 sm:px-7 font-sans text-[clamp(0.75rem,2vw+0.375rem,0.875rem)] font-medium tracking-wider uppercase text-cream hover:bg-brass-dark transition-colors"
             >
               See What&apos;s Possible
             </button>
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-warm-dark/25 bg-cream/70 px-7 py-3 font-sans text-sm font-medium tracking-wider uppercase text-warm-dark backdrop-blur-sm hover:bg-warm-dark/5 transition-colors"
+              className="inline-flex items-center justify-center rounded-full border border-warm-dark/25 bg-cream/70 px-5 py-3 sm:px-7 font-sans text-[clamp(0.75rem,2vw+0.375rem,0.875rem)] font-medium tracking-wider uppercase text-warm-dark backdrop-blur-sm hover:bg-warm-dark/5 transition-colors"
             >
               Explore Services
             </Link>

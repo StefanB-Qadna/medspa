@@ -22,14 +22,14 @@ const teamMembers = [
   {
     name: "Matei",
     role: "PA-C",
-    desc: "Years in emergency medicine and trauma surgery. Same clinical precision and calm to every aesthetic treatment.",
+    desc: "Years at the bedside of critically ill and injured patients. Brings the same clinical precision and calm to every aesthetic treatment.",
     image: "/images/Matei.webp",
     imagePosition: "center 20%",
   },
   {
     name: "Jenni",
     role: "RN, BSN",
-    desc: "Five years in trauma care. Laser, microneedling, and a skin-first approach to natural results.",
+    desc: "Five years caring for critically ill and injured patients in-hospital. Laser, microneedling, and a skin-first approach to natural results.",
     image: "/images/Jenni.webp",
   },
   {
@@ -95,10 +95,13 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <HeroSection
+        label="About"
+        title="The practice behind the work."
+        subtitle="Board-certified surgeon. Aesthetic medicine specialist. Every plan is hers."
         imageUrl="/images/Team.webp"
         imagePosition="center 25%"
         size="medium"
-        overlayOpacity={50}
+        overlayOpacity={55}
       />
 
       {/* Meet Dr. Robledo */}
@@ -119,17 +122,18 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 font-sans text-base text-warm-dark/70 leading-relaxed">
                 <p>
-                  Dr. Robledo&apos;s path to aesthetic medicine started long before medical
-                  school. As a child, she struggled with skin issues that no one could fix,
-                  an experience that sparked a lifelong interest in what skin actually needs
-                  to heal, rooted in empathy, precision, and results that last.
+                  Rejuvenate &amp; Refine exists because too much of aesthetic
+                  medicine is sold instead of practiced. Dr. Robledo built this
+                  practice the way she practices surgery: no retakes, no upsells,
+                  only the patient in front of you and the decision you have to
+                  get right.
                 </p>
                 <p>
-                  Today, as a double board-certified trauma surgeon and Trauma Medical
-                  Director at a busy Level II trauma center, she brings the same life-saving
-                  precision to aesthetics. She has personally developed the laser and RF
-                  microneedling techniques used at Rejuvenate & Refine, and hand-selected
-                  every member of her clinical team from her own trauma staff.
+                  A double board-certified trauma surgeon, she developed the
+                  laser and RF microneedling protocols used at Rejuvenate &amp;
+                  Refine herself. She handpicked every clinician on her team
+                  against one standard: skill, honest judgment, and the
+                  willingness to say no when a treatment isn&apos;t right.
                 </p>
               </div>
               <blockquote className="font-serif text-lead font-normal italic text-warm-dark/80 border-l-2 border-brass pl-5 mt-6 mb-6">
@@ -144,9 +148,9 @@ export default function AboutPage() {
                 <ul className="space-y-2">
                   {[
                     "Double Board-Certified Trauma Surgeon",
-                    "Trauma Medical Director, Level II Trauma Center",
-                    "Fellowship-Trained in Aesthetic Medicine",
+                    "Extensive Critical-Care & Operating-Room Practice",
                     "Developer of Proprietary Laser & RF Microneedling Protocols",
+                    "Founder & Medical Director, Rejuvenate & Refine",
                   ].map((item) => (
                     <li
                       key={item}
@@ -178,7 +182,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <SectionHeading
             title="Your Care Team"
-            subtitle="Handpicked from Dr. Robledo's hospital colleagues, each team member brings clinical expertise and a genuine commitment to your care."
+            subtitle="Every member of this team is someone Dr. Robledo has stood beside through the hardest moments in medicine. They bring that same clinical depth and calm to your care."
             centered={false}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-start">

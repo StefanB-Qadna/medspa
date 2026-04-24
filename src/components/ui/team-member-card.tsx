@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 interface TeamMemberCardProps {
@@ -62,7 +63,7 @@ export default function TeamMemberCard({
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative h-[28rem] w-full md:h-[31.25rem] md:w-[22.5rem] shrink-0 overflow-hidden rounded-sm',
+            'relative h-[28rem] w-full max-w-full md:h-[31.25rem] md:w-[22.5rem] md:max-w-none shrink-0 overflow-hidden rounded-sm',
             isPositionRight && 'md:order-1'
           )}
         >
@@ -82,7 +83,7 @@ export default function TeamMemberCard({
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            'relative z-[2] -mt-16 flex w-full flex-col gap-10 bg-cream/80 backdrop-blur-sm p-6 md:-mt-0 md:bg-transparent md:backdrop-blur-none md:p-0 md:ml-8 md:w-[calc(100%-22.5rem)]',
+            'relative z-[2] mt-6 flex w-full max-w-full box-border flex-col gap-8 md:mt-0 md:gap-10 md:ml-8 md:w-[calc(100%-22.5rem)] md:max-w-none',
             isPositionRight && 'md:ml-0 md:-mr-8 md:items-end'
           )}
         >
@@ -98,24 +99,28 @@ export default function TeamMemberCard({
           {/* Details row */}
           <div className={cn('flex flex-col-reverse md:flex-row gap-6 md:gap-8', isPositionRight && 'md:justify-end')}>
             {/* Circular CTA */}
-            <motion.a
+            <Link
               href={href || '#'}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
+              aria-label={`Learn more about ${firstName} ${lastName}`}
               className={cn(
                 'group flex h-16 w-16 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full border border-border transition-colors duration-300 hover:border-brass hover:bg-warm-dark',
                 isPositionRight && 'md:order-1'
               )}
-              aria-label={`Learn more about ${firstName} ${lastName}`}
             >
-              <ArrowRight
-                size={22}
-                className={cn(
-                  'text-warm-dark transition-all duration-300 group-hover:-rotate-45 group-hover:text-cream',
-                  isPositionRight && 'rotate-180 group-hover:rotate-[225deg]'
-                )}
-              />
-            </motion.a>
+              <motion.span
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center"
+              >
+                <ArrowRight
+                  size={22}
+                  className={cn(
+                    'text-warm-dark transition-all duration-300 group-hover:-rotate-45 group-hover:text-cream',
+                    isPositionRight && 'rotate-180 group-hover:rotate-[225deg]'
+                  )}
+                />
+              </motion.span>
+            </Link>
 
             {/* Bio copy */}
             <div className="md:w-[50%]">
