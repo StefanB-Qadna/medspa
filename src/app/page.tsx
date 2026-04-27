@@ -6,18 +6,18 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { HERO_REMOUNT_EVENT } from "@/components/BoulevardWidget";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Feature1 } from "@/components/ui/feature-1";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 import {
   BentoCell,
   BentoGrid,
   ContainerScale,
   ContainerScroll,
-} from "@/components/ui/hero-gallery-scroll-animation";
+} from "@/components/ui/bento-scroll-grid";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider";
-import { Feature73 } from "@/components/ui/feature-73";
-import { LocationMap } from "@/components/ui/expand-map";
-import { Gallery4 } from "@/components/ui/gallery4";
-import Cards from "@/components/ui/cards";
+import { FeatureClinicList } from "@/components/ui/feature-clinic-list";
+import { LocationMap } from "@/components/ui/location-map";
+import { BlogCarousel } from "@/components/ui/blog-carousel";
+import BlogCardGrid from "@/components/ui/blog-card-grid";
 import TeamMemberCard from "@/components/ui/team-member-card";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 
@@ -108,7 +108,7 @@ export default function HomePage() {
       {/* What we offer */}
       <section className="bg-cream">
         <div className="mx-auto max-w-[75rem]">
-          <Cards
+          <BlogCardGrid
             label="What we offer"
             heading="Results that go deeper than the surface."
             description="Every treatment is physician-guided and built around your biology, not a one-size protocol."
@@ -196,7 +196,7 @@ export default function HomePage() {
       {/* A space designed for you */}
       <section className="bg-linen">
         <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
-          <Feature73
+          <FeatureClinicList
             heading="A space designed for you"
             description="Rejuvenate & Refine was designed from the ground up to meet surgical-grade standards, while feeling like a place you genuinely want to spend time. Every detail was considered, from the warmth of the lighting to the quiet of the suites. Clean, modern, and built around your comfort."
             linkUrl="#book-now"
@@ -262,7 +262,7 @@ export default function HomePage() {
 
       {/* You asked. We'll answer honestly. */}
       <section className="bg-cream">
-        <Gallery4
+        <BlogCarousel
           title="From our blog"
           description="The Doctor's Journal."
           items={[
@@ -303,7 +303,7 @@ export default function HomePage() {
 
       {/* Booking CTA */}
       <div id="book-now" className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.jpg"

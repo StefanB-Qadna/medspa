@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Feature1 } from "@/components/ui/feature-1";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 
 export default function BlogPost() {
   return (
@@ -242,7 +242,7 @@ export default function BlogPost() {
 
       {/* Booking CTA */}
       <div className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.jpg"

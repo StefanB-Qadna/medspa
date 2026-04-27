@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { HeroSection } from "@/components/ui/hero-section-4";
-import { Feature1 } from "@/components/ui/feature-1";
+import { PageHero } from "@/components/ui/page-hero";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 import { Button } from "@/components/ui/button";
 
 const blogPosts = [
@@ -64,7 +64,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <HeroSection
+      <PageHero
         label="Blog"
         title="Honest answers from a surgeon."
         subtitle="No hype. No hidden agendas. Just medicine."
@@ -185,7 +185,7 @@ export default function BlogPage() {
 
       {/* Booking CTA */}
       <div className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"

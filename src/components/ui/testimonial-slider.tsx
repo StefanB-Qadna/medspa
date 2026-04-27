@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ImageComparisonSlider } from "@/components/ui/image-comparison-slider";
+import { BeforeAfterSlider } from "@/components/ui/before-after-slider";
 
 // Define the type for a single review
 type Review = {
@@ -151,7 +151,7 @@ export const TestimonialSlider = ({
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
               className="absolute inset-0 w-full h-full rounded-lg overflow-hidden"
             >
-              <ImageComparisonSlider
+              <BeforeAfterSlider
                 leftImage={activeReview.imageSrc}
                 rightImage={activeReview.afterImageSrc}
                 altLeft={`${activeReview.name} before`}

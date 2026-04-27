@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/ui/Logo";
+import { Logo } from "@/components/ui/logo";
 import { useLenis } from "@/components/SmoothScroll";
 
 interface NavItem {

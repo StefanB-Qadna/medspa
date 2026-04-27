@@ -10,7 +10,7 @@ interface Feature {
   image: string;
 }
 
-interface Feature73Props {
+interface FeatureClinicListProps {
   heading?: string;
   description?: string;
   linkUrl?: string;
@@ -18,13 +18,13 @@ interface Feature73Props {
   features?: Feature[];
 }
 
-export const Feature73 = ({
+export const FeatureClinicList = ({
   heading = "Powerful Features",
   description = "Discover the powerful features that make our platform stand out from the rest. Built with the latest technology and designed for maximum productivity.",
   linkUrl = "#",
   linkText = "Book a demo",
   features = [],
-}: Feature73Props) => {
+}: FeatureClinicListProps) => {
   return (
     <section>
       <div className="flex flex-col gap-16">

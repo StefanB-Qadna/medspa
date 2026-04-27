@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-interface Feature1Props {
+interface FeatureImageSplitProps {
   title: string;
   description?: string;
   imageSrc: string;
@@ -18,14 +18,14 @@ interface Feature1Props {
   };
 }
 
-export const Feature1 = ({
+export const FeatureImageSplit = ({
   title,
   description,
   imageSrc,
   imageAlt,
   buttonPrimary,
   buttonSecondary,
-}: Feature1Props) => {
+}: FeatureImageSplitProps) => {
   const handlePrimaryClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (buttonPrimary.href === "#book-now") {
       e.preventDefault();

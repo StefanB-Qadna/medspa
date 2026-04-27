@@ -5,29 +5,29 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface CardItem {
+interface BlogCardGridItem {
   image: string;
   title: string;
   tag: string;
 }
 
-interface CardsProps {
+interface BlogCardGridProps {
   heading?: string;
   description?: string;
   label?: string;
-  cards?: CardItem[];
+  cards?: BlogCardGridItem[];
   linkUrl?: string;
   linkText?: string;
 }
 
-export default function Cards({
+export default function BlogCardGrid({
   heading = "Latest Blog",
   description = "Stay ahead of the curve with fresh content on code, design, startups, and everything in between.",
   label,
   cards = [],
   linkUrl,
   linkText,
-}: CardsProps) {
+}: BlogCardGridProps) {
   return (
     <div className="flex flex-col items-center w-full py-16 md:py-20 px-6">
       {label && (

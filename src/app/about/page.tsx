@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
-import { HeroSection } from "@/components/ui/hero-section-4";
+import { PageHero } from "@/components/ui/page-hero";
 import { InteractiveSelector } from "@/components/ui/interactive-selector";
-import { Feature1 } from "@/components/ui/feature-1";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 
 const teamMembers = [
   {
@@ -94,7 +94,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <HeroSection
+      <PageHero
         label="About"
         title="The practice behind the work."
         subtitle="Board-certified surgeon. Aesthetic medicine specialist. Every plan is hers."
@@ -279,7 +279,7 @@ export default function AboutPage() {
 
       {/* Booking CTA */}
       <div className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"

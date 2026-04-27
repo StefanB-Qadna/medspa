@@ -1,9 +1,9 @@
 "use client";
 
-import { ServiceBlogCard } from "@/components/ui/card-18";
+import { ServiceBlogCard } from "@/components/ui/service-blog-card";
 import { SectionHeading } from "@/components/SectionHeading";
-import { HeroSection } from "@/components/ui/hero-section-4";
-import { Feature1 } from "@/components/ui/feature-1";
+import { PageHero } from "@/components/ui/page-hero";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 
 type ServiceItem = {
   title: string;
@@ -154,7 +154,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <HeroSection
+      <PageHero
         label="Services"
         title="Treatments built around your goals."
         subtitle="Physician-led from consultation to follow-up."
@@ -230,7 +230,7 @@ export default function ServicesPage() {
 
       {/* Booking CTA */}
       <div className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"

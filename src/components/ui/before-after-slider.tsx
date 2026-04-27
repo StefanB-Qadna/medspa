@@ -3,7 +3,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-interface ImageComparisonSliderProps extends React.HTMLAttributes<HTMLDivElement> {
+interface BeforeAfterSliderProps extends React.HTMLAttributes<HTMLDivElement> {
   leftImage: string;
   rightImage: string;
   altLeft?: string;
@@ -11,7 +11,7 @@ interface ImageComparisonSliderProps extends React.HTMLAttributes<HTMLDivElement
   initialPosition?: number;
 }
 
-export const ImageComparisonSlider = ({
+export const BeforeAfterSlider = ({
   className,
   leftImage,
   rightImage,
@@ -19,7 +19,7 @@ export const ImageComparisonSlider = ({
   altRight = "Right image",
   initialPosition = 50,
   ...props
-}: ImageComparisonSliderProps) => {
+}: BeforeAfterSliderProps) => {
     const [sliderPosition, setSliderPosition] = React.useState(initialPosition);
     const [isDragging, setIsDragging] = React.useState(false);
     const containerRef = React.useRef<HTMLDivElement>(null);
@@ -197,4 +197,4 @@ export const ImageComparisonSlider = ({
     );
 };
 
-ImageComparisonSlider.displayName = "ImageComparisonSlider";
+BeforeAfterSlider.displayName = "BeforeAfterSlider";

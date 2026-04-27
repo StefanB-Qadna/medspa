@@ -6,7 +6,7 @@ import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface PageHeroProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
   subtitle?: string;
   primaryButtonText?: string;
@@ -55,7 +55,7 @@ const sizeClasses = {
   compact: "min-h-[23.75rem] md:min-h-[45vh]",
 };
 
-const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
+const PageHero = React.forwardRef<HTMLDivElement, PageHeroProps>(
   (
     {
       className,
@@ -186,6 +186,6 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   }
 );
 
-HeroSection.displayName = "HeroSection";
+PageHero.displayName = "PageHero";
 
-export { HeroSection };
+export { PageHero };

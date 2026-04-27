@@ -20,7 +20,7 @@ export interface FooterSocialLink extends FooterLink {
   icon: ReactNode;
 }
 
-export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
+export interface FooterDisplayProps extends React.HTMLAttributes<HTMLElement> {
   logoSrc?: string;
   wordmarkSrc?: string;
   companyName?: string;
@@ -37,7 +37,7 @@ export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
   legalLinks?: FooterLink[];
 }
 
-export const Footer: FC<FooterProps> = ({
+export const FooterDisplay: FC<FooterDisplayProps> = ({
   logoSrc,
   wordmarkSrc,
   companyName = "Rejuvenate & Refine",

@@ -12,7 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-export interface Gallery4Item {
+export interface BlogCarouselItem {
   id: string;
   title: string;
   description: string;
@@ -20,17 +20,17 @@ export interface Gallery4Item {
   image: string;
 }
 
-export interface Gallery4Props {
+export interface BlogCarouselProps {
   title?: string;
   description?: string;
-  items: Gallery4Item[];
+  items: BlogCarouselItem[];
 }
 
-const Gallery4 = ({
+const BlogCarousel = ({
   title = "From Our Blog",
   description = "Honest answers to the questions we hear most, from a surgeon's perspective.",
   items,
-}: Gallery4Props) => {
+}: BlogCarouselProps) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -145,4 +145,4 @@ const Gallery4 = ({
   );
 };
 
-export { Gallery4 };
+export { BlogCarousel };
