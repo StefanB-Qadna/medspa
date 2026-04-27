@@ -350,7 +350,7 @@ function CinematicHero() {
       className="relative -mt-20 bg-cream"
       aria-label="Rejuvenate and Refine hero"
     >
-      <ContainerScroll key={remountKey} className="h-[350vh]">
+      <ContainerScroll key={remountKey} className="h-[180vh] md:h-[240vh]">
         <motion.div
           style={{ filter: gridFilter, willChange: "filter" }}
           className="sticky left-0 top-0 z-0 h-screen w-full p-4"
