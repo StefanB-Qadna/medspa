@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Feature1 } from "@/components/ui/feature-1";
 
 export default function BlogPost() {
@@ -20,11 +21,14 @@ export default function BlogPost() {
       {/* Thumbnail */}
       <div className="bg-cream">
         <div className="mx-auto max-w-[48.75rem] px-6 pb-10">
-          <div className="aspect-[16/9] overflow-hidden rounded-md">
-            <img
+          <div className="relative aspect-[16/9] overflow-hidden rounded-md">
+            <Image
               src="/images/blog 3.webp"
               alt="Why the Scale Is the Worst Way to Measure Your Body"
-              className="h-full w-full object-cover"
+              fill
+              priority
+              sizes="(min-width: 768px) 48.75rem, 100vw"
+              className="object-cover"
             />
           </div>
         </div>

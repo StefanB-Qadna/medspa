@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -48,11 +49,13 @@ export const Feature72 = ({
 
         {/* Hero image */}
         {imageSrc && (
-          <div className="relative mx-auto max-w-4xl">
-            <img
+          <div className="relative mx-auto max-w-4xl aspect-video max-h-[30rem]">
+            <Image
               src={imageSrc}
               alt={imageAlt}
-              className="aspect-video max-h-[30rem] w-full rounded-md object-cover"
+              fill
+              sizes="(min-width: 1024px) 56rem, 100vw"
+              className="rounded-md object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
           </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import type { FC, ReactNode } from "react";
 
@@ -92,9 +93,11 @@ export const Footer: FC<FooterProps> = ({
               ) : (
                 <span className="flex items-center gap-3 font-serif text-lg font-medium tracking-widest text-cream uppercase">
                   {logoSrc && (
-                    <img
+                    <Image
                       src={logoSrc}
                       alt={`${companyName} Logo`}
+                      width={40}
+                      height={40}
                       className="h-10 w-10 rounded-full object-cover"
                     />
                   )}
@@ -145,7 +148,7 @@ export const Footer: FC<FooterProps> = ({
                     {link.href === "#book-now" ? (
                       <button
                         type="button"
-                        onClick={() => (window as any).blvd?.openBookingWidget()}
+                        onClick={() => window.blvd?.openBookingWidget()}
                         className="block py-1.5 font-sans text-sm text-cream/70 hover:text-brass transition-colors text-left"
                       >
                         {link.label}

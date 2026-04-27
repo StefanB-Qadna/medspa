@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -121,13 +122,15 @@ export const TestimonialSlider = ({
                 <button
                   key={review.id}
                   onClick={() => handleThumbnailClick(originalIndex)}
-                  className="overflow-hidden rounded-md w-16 h-20 md:w-20 md:h-24 opacity-70 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+                  className="relative overflow-hidden rounded-md w-16 h-20 md:w-20 md:h-24 opacity-70 hover:opacity-100 transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
                   aria-label={`View review from ${review.name}`}
                 >
-                  <img
+                  <Image
                     src={review.thumbnailSrc}
                     alt={review.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(min-width: 768px) 5rem, 4rem"
+                    className="object-cover"
                   />
                 </button>
               );

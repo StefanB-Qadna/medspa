@@ -1,4 +1,5 @@
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -10,22 +11,15 @@ interface ImageComparisonSliderProps extends React.HTMLAttributes<HTMLDivElement
   initialPosition?: number;
 }
 
-export const ImageComparisonSlider = React.forwardRef<
-  HTMLDivElement,
-  ImageComparisonSliderProps
->(
-  (
-    {
-      className,
-      leftImage,
-      rightImage,
-      altLeft = "Left image",
-      altRight = "Right image",
-      initialPosition = 50,
-      ...props
-    },
-    ref
-  ) => {
+export const ImageComparisonSlider = ({
+  className,
+  leftImage,
+  rightImage,
+  altLeft = "Left image",
+  altRight = "Right image",
+  initialPosition = 50,
+  ...props
+}: ImageComparisonSliderProps) => {
     const [sliderPosition, setSliderPosition] = React.useState(initialPosition);
     const [isDragging, setIsDragging] = React.useState(false);
     const containerRef = React.useRef<HTMLDivElement>(null);
@@ -107,8 +101,8 @@ export const ImageComparisonSlider = React.forwardRef<
       };
     }, [isDragging]);
 
-    const imgClass =
-      "absolute inset-0 w-full h-full object-cover object-top pointer-events-none";
+    const imgClass = "object-cover object-top pointer-events-none";
+    const imgSizes = "(min-width: 768px) 28rem, 100vw";
 
     return (
       <div
@@ -124,11 +118,14 @@ export const ImageComparisonSlider = React.forwardRef<
         {...props}
       >
         {/* Right Image (After - bottom layer) */}
-        <img
+        <Image
           src={rightImage}
           alt={altRight}
+          fill
+          sizes={imgSizes}
           className={imgClass}
           draggable={false}
+          priority
         />
 
         {/* Left Image (Before - top layer, clipped) */}
@@ -138,11 +135,14 @@ export const ImageComparisonSlider = React.forwardRef<
             clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`,
           }}
         >
-          <img
+          <Image
             src={leftImage}
             alt={altLeft}
+            fill
+            sizes={imgSizes}
             className={imgClass}
             draggable={false}
+            priority
           />
         </div>
 
@@ -195,7 +195,6 @@ export const ImageComparisonSlider = React.forwardRef<
         </div>
       </div>
     );
-  }
-);
+};
 
 ImageComparisonSlider.displayName = "ImageComparisonSlider";

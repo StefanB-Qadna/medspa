@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
@@ -116,10 +117,13 @@ export default function BlogPage() {
                 <Link href={lead.href} className="group block mb-16 md:mb-24">
                   <article className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
                     <div className="md:col-span-7 relative aspect-[4/3] overflow-hidden rounded-md">
-                      <img
+                      <Image
                         src={lead.image}
                         alt={lead.title}
-                        className="absolute h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        fill
+                        priority
+                        sizes="(min-width: 768px) 42rem, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       />
                     </div>
                     <div className="md:col-span-5">
@@ -149,10 +153,12 @@ export default function BlogPage() {
                     {rest.map((post) => (
                       <Link key={post.href} href={post.href} className="group flex flex-col">
                         <div className="relative aspect-[4/3] overflow-hidden rounded-md mb-5">
-                          <img
+                          <Image
                             src={post.image}
                             alt={post.title}
-                            className="absolute h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                            fill
+                            sizes="(min-width: 1024px) 22rem, (min-width: 640px) 50vw, 100vw"
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                           />
                         </div>
                         <p className="label mb-2">{post.category}</p>

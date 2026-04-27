@@ -2,6 +2,7 @@
 
 import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
@@ -67,10 +68,12 @@ export default function TeamMemberCard({
             isPositionRight && 'md:order-1'
           )}
         >
-          <img
+          <Image
             src={imageUrl}
             alt={fullName}
-            className="h-full w-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
+            fill
+            sizes="(min-width: 768px) 22.5rem, 100vw"
+            className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
           />
         </motion.div>
 

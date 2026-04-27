@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
 import { HeroSection } from "@/components/ui/hero-section-4";
 import { InteractiveSelector } from "@/components/ui/interactive-selector";
@@ -108,11 +108,13 @@ export default function AboutPage() {
       <section className="bg-cream">
         <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div className="aspect-[3/4] rounded-md overflow-hidden bg-linen">
-              <img
+            <div className="relative aspect-[3/4] rounded-md overflow-hidden bg-linen">
+              <Image
                 src="/images/DrRobledo.webp"
                 alt="Dr. Rosemarie Robledo"
-                className="h-full w-full object-cover"
+                fill
+                sizes="(min-width: 768px) 36rem, 100vw"
+                className="object-cover"
               />
             </div>
             <div>
@@ -188,11 +190,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-start">
             {teamMembers.map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-48 h-48 md:w-52 md:h-52 rounded-full bg-cream mx-auto mb-5 overflow-hidden">
-                  <img
+                <div className="relative w-48 h-48 md:w-52 md:h-52 rounded-full bg-cream mx-auto mb-5 overflow-hidden">
+                  <Image
                     src={member.image}
                     alt={member.name}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="13rem"
+                    className="object-cover"
                     style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
                   />
                 </div>

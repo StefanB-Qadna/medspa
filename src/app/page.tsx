@@ -1,10 +1,10 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { HERO_REMOUNT_EVENT } from "@/components/BoulevardWidget";
-import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Feature1 } from "@/components/ui/feature-1";
 import {
@@ -20,17 +20,6 @@ import { Gallery4 } from "@/components/ui/gallery4";
 import Cards from "@/components/ui/cards";
 import TeamMemberCard from "@/components/ui/team-member-card";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
-
-const concerns = [
-  "Fine Lines & Wrinkles",
-  "Volume Loss",
-  "Skin Texture",
-  "Jawline & Chin",
-  "Under-Eye Concerns",
-  "Lip Enhancement",
-  "Hair Removal",
-  "Skin Tightening",
-];
 
 const surgeonPoints = [
   {
@@ -61,39 +50,6 @@ const heroImages = [
   "/images/space4.webp",
   "/images/laser.webp",
   "/images/space5.webp",
-];
-
-const featuredServices = [
-  {
-    title: "Botox & Neuromodulators",
-    description: "Smooth fine lines and wrinkles with precision-placed neurotoxin treatments.",
-    href: "/services/botox",
-  },
-  {
-    title: "Dermal Fillers",
-    description: "Restore volume and enhance contours with expertly administered dermal fillers.",
-    href: "/services#injectables",
-  },
-  {
-    title: "Lip Fillers",
-    description: "Achieve naturally fuller lips with our precision lip enhancement treatments.",
-    href: "/services#injectables",
-  },
-  {
-    title: "Laser Hair Removal",
-    description: "Permanent hair reduction for face and body with advanced laser technology.",
-    href: "/services#laser",
-  },
-  {
-    title: "Microneedling",
-    description: "Stimulate collagen production for improved skin texture and reduced scarring.",
-    href: "/services#laser",
-  },
-  {
-    title: "IV Therapy",
-    description: "Customized IV vitamin infusions for energy, immunity, and recovery.",
-    href: "/services#wellness",
-  },
 ];
 
 export default function HomePage() {
@@ -298,7 +254,6 @@ export default function HomePage() {
             <div className="flex items-center justify-center">
               <LocationMap
                 location="Prosper, TX"
-                coordinates="33.2362° N, 96.8011° W"
               />
             </div>
           </div>
@@ -404,12 +359,15 @@ function CinematicHero() {
             {heroImages.map((imageUrl, index) => (
               <BentoCell
                 key={index}
-                className="overflow-hidden rounded-lg shadow-xl"
+                className="relative overflow-hidden rounded-lg shadow-xl"
               >
-                <img
-                  className="size-full object-cover object-center"
+                <Image
+                  className="object-cover object-center"
                   src={imageUrl}
                   alt=""
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  priority={index < 3}
                 />
               </BentoCell>
             ))}

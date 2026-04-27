@@ -36,6 +36,8 @@ export function SmoothScrollProvider({
     });
 
     lenisRef.current = instance;
+    // Publish the Lenis instance to consumers via context.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLenis(instance);
 
     let rafId: number;

@@ -61,6 +61,7 @@ export const Feature73 = ({
           {features[0] && (
             <div className="flex flex-col overflow-clip rounded-md md:col-span-2 md:grid md:grid-cols-2 border border-border">
               <div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={features[0].image}
                   alt={features[0].title}
@@ -83,6 +84,7 @@ export const Feature73 = ({
               className="flex flex-col overflow-clip rounded-md border border-border"
             >
               <div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={feature.image}
                   alt={feature.title}

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface HeroEditorialRevealProps extends React.HTMLAttributes<HTMLElement> {
@@ -11,8 +12,6 @@ interface HeroEditorialRevealProps extends React.HTMLAttributes<HTMLElement> {
   headlineLine2?: string[];
   /** Index of the word in line2 to underline with gold (0-based) */
   underlineWordIndex?: number;
-  /** Index of the word in line2 to italicize (0-based) */
-  italicWordIndex?: number;
   /** Subheadline text */
   subtitle?: string;
   /** Primary CTA text */
@@ -33,7 +32,6 @@ export function HeroEditorialReveal({
   headlineLine1 = ["Results", "that", "go"],
   headlineLine2 = ["deeper", "than", "the", "surface."],
   underlineWordIndex = 0,
-  italicWordIndex = 0,
   subtitle = "Double board-certified care in the heart of the Frisco corridor.",
   ctaText = "Book a consultation",
   ctaHref = "#book-now",
@@ -42,8 +40,6 @@ export function HeroEditorialReveal({
   tileAlts = ["Skin texture", "Treatment detail", "Clinic interior"],
   ...props
 }: HeroEditorialRevealProps) {
-  const allWords = [...headlineLine1, ...headlineLine2];
-
   return (
     <section
       className={cn(
@@ -90,7 +86,6 @@ export function HeroEditorialReveal({
               {headlineLine2.map((word, i) => {
                 const globalIdx = headlineLine1.length + i;
                 const isUnderline = i === underlineWordIndex;
-                const isItalic = i === italicWordIndex;
                 const inner = isUnderline ? (
                   <em className="ed-underline relative inline-block not-italic font-normal">
                     {word}
@@ -144,7 +139,7 @@ export function HeroEditorialReveal({
           {/* Tile 1 — tall left */}
           <div className="ed-tile ed-tile-1 relative col-start-1 row-span-2 overflow-hidden rounded-sm bg-linen">
             {tileImages?.[0] ? (
-              <img src={tileImages[0]} alt={tileAlts[0]} className="absolute inset-0 h-full w-full object-cover" />
+              <Image src={tileImages[0]} alt={tileAlts[0]} fill priority sizes="(min-width: 768px) 18rem, 60vw" className="object-cover" />
             ) : (
               <EditorialPlaceholder kind="skin" label="Skin, natural light" />
             )}
@@ -158,7 +153,7 @@ export function HeroEditorialReveal({
           {/* Tile 2 — top right */}
           <div className="ed-tile ed-tile-2 relative col-start-2 row-start-1 overflow-hidden rounded-sm bg-linen">
             {tileImages?.[1] ? (
-              <img src={tileImages[1]} alt={tileAlts[1]} className="absolute inset-0 h-full w-full object-cover" />
+              <Image src={tileImages[1]} alt={tileAlts[1]} fill sizes="(min-width: 768px) 12rem, 40vw" className="object-cover" />
             ) : (
               <EditorialPlaceholder kind="dropper" label="Serum, held" />
             )}
@@ -167,7 +162,7 @@ export function HeroEditorialReveal({
           {/* Tile 3 — bottom right */}
           <div className="ed-tile ed-tile-3 relative col-start-2 row-start-2 overflow-hidden rounded-sm bg-linen">
             {tileImages?.[2] ? (
-              <img src={tileImages[2]} alt={tileAlts[2]} className="absolute inset-0 h-full w-full object-cover" />
+              <Image src={tileImages[2]} alt={tileAlts[2]} fill sizes="(min-width: 768px) 12rem, 40vw" className="object-cover" />
             ) : (
               <EditorialPlaceholder kind="interior" label="Clinic corner" />
             )}

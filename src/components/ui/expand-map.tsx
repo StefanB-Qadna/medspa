@@ -8,14 +8,12 @@ import { useLenis } from "@/components/SmoothScroll"
 
 interface LocationMapProps {
   location?: string
-  coordinates?: string
   address?: string
   className?: string
 }
 
 export function LocationMap({
   location = "Prosper, TX",
-  coordinates = "33.2362° N, 96.8011° W",
   address = "2120 Prairie Dr Suite 402, Prosper, TX 75078",
   className,
 }: LocationMapProps) {

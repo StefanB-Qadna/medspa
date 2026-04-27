@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -47,10 +48,13 @@ export default function Cards({
             key={index}
             className="max-w-72 w-full hover:-translate-y-0.5 transition duration-300"
           >
-            <img
-              className="rounded-xl aspect-[3/2] w-full object-cover"
+            <Image
+              className="rounded-xl aspect-[3/2] w-full object-cover h-auto"
               src={card.image}
               alt={card.title}
+              width={288}
+              height={192}
+              sizes="18rem"
             />
             <h3 className="font-serif text-xl text-warm-dark font-normal mt-4 leading-snug">
               {card.title}

@@ -32,7 +32,6 @@ export interface ServiceBlogCardProps
   description: string;
   imageUrl?: string;
   href: string;
-  ctaText?: string;
   consultRequired?: boolean;
 }
 
@@ -57,7 +56,6 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
       description,
       imageUrl,
       href,
-      ctaText = 'Learn More',
       consultRequired,
       ...props
     },
@@ -68,6 +66,7 @@ const ServiceBlogCard = React.forwardRef<HTMLDivElement, ServiceBlogCardProps>(
       <>
         {variant === 'featured' && imageUrl && (
           <div className="relative w-full overflow-hidden md:w-1/2 lg:w-3/5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imageUrl}
               alt={title}
