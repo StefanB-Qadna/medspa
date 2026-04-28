@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { HeroSection } from "@/components/ui/hero-section-4";
-import { Feature1 } from "@/components/ui/feature-1";
+import { PageHero } from "@/components/ui/page-hero";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 import { Button } from "@/components/ui/button";
 
 const blogPosts = [

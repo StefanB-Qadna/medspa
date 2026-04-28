@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { HERO_REMOUNT_EVENT } from "@/components/BoulevardWidget";
-import { ServiceCard } from "@/components/ServiceCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 import {

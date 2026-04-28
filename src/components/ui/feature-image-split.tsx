@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-interface Feature1Props {
+interface FeatureImageSplitProps {
   title: string;
   description?: string;
   imageSrc: string;
