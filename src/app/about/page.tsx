@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
-import { HeroSection } from "@/components/ui/hero-section-4";
+import { PageHero } from "@/components/ui/page-hero";
 import { InteractiveSelector } from "@/components/ui/interactive-selector";
-import { Feature1 } from "@/components/ui/feature-1";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 
 const teamMembers = [
   {
@@ -63,7 +63,16 @@ const differentiators = [
     title: "Surgeon-Led Precision",
     desc: "Every treatment plan is designed or overseen by Dr. Robledo, whose surgical training ensures anatomical precision most med spas simply can't offer.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         <path d="M9 12l2 2 4-4" />
       </svg>
@@ -73,7 +82,16 @@ const differentiators = [
     title: "Honest Recommendations",
     desc: "We'll tell you what will work for you, not what's the highest margin. If a treatment is not right, we will say so.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
@@ -82,7 +100,16 @@ const differentiators = [
     title: "Transparent Pricing",
     desc: "Starting prices published for every treatment. No hidden fees, 0% financing available through Cherry.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         <line x1="12" y1="1" x2="12" y2="23" />
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
@@ -94,7 +121,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <HeroSection
+      <PageHero
         label="About"
         title="The practice behind the work."
         subtitle="Board-certified surgeon. Aesthetic medicine specialist. Every plan is hers."
@@ -108,11 +135,13 @@ export default function AboutPage() {
       <section className="bg-cream">
         <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div className="aspect-[3/4] rounded-md overflow-hidden bg-linen">
-              <img
+            <div className="relative aspect-[3/4] rounded-md overflow-hidden bg-linen">
+              <Image
                 src="/images/DrRobledo.webp"
                 alt="Dr. Rosemarie Robledo"
-                className="h-full w-full object-cover"
+                fill
+                sizes="(min-width: 768px) 36rem, 100vw"
+                className="object-cover"
               />
             </div>
             <div>
@@ -124,9 +153,9 @@ export default function AboutPage() {
                 <p>
                   Rejuvenate &amp; Refine exists because too much of aesthetic
                   medicine is sold instead of practiced. Dr. Robledo built this
-                  practice the way she practices surgery: no retakes, no upsells,
-                  only the patient in front of you and the decision you have to
-                  get right.
+                  practice the way she practices surgery: no retakes, no
+                  upsells, only the patient in front of you and the decision you
+                  have to get right.
                 </p>
                 <p>
                   A double board-certified trauma surgeon, she developed the
@@ -188,12 +217,18 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mt-12 items-start">
             {teamMembers.map((member) => (
               <div key={member.name} className="text-center">
-                <div className="w-48 h-48 md:w-52 md:h-52 rounded-full bg-cream mx-auto mb-5 overflow-hidden">
-                  <img
+                <div className="relative w-48 h-48 md:w-52 md:h-52 rounded-full bg-cream mx-auto mb-5 overflow-hidden">
+                  <Image
                     src={member.image}
                     alt={member.name}
-                    className="h-full w-full object-cover"
-                    style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
+                    fill
+                    sizes="13rem"
+                    className="object-cover"
+                    style={
+                      member.imagePosition
+                        ? { objectPosition: member.imagePosition }
+                        : undefined
+                    }
                   />
                 </div>
                 <h3 className="font-serif text-xl font-normal text-warm-dark">
@@ -275,7 +310,7 @@ export default function AboutPage() {
 
       {/* Booking CTA */}
       <div className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"

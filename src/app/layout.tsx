@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { SmoothScrollProvider } from "@/components/SmoothScroll";
 import { BoulevardWidget } from "@/components/BoulevardWidget";
 
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Rejuvenate & Refine | Med Spa in Prosper, TX",
   description:
     "Board-certified surgeon-led med spa in Prosper, TX. Botox, fillers, laser treatments, and wellness services. Experience medical excellence with a personal touch.",
+  appleWebApp: {
+    title: "Rejuvenate & Refine",
+  },
 };
 
 export default function RootLayout({

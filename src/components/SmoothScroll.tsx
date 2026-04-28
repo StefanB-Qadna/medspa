@@ -36,6 +36,8 @@ export function SmoothScrollProvider({
     });
 
     lenisRef.current = instance;
+    // Publish the Lenis instance to consumers via context.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLenis(instance);
 
     let rafId: number;
@@ -55,7 +57,14 @@ export function SmoothScrollProvider({
   // Reset scroll position to top on every route change.
   // Lenis intercepts window.scrollTo, so Next.js's built-in scroll reset
   // never actually moves the page — we must tell Lenis explicitly.
+  // Skip the initial mount so a hard reload preserves the browser's
+  // restored scroll position instead of being snapped to the top.
+  const isFirstPathnameRender = useRef(true);
   useEffect(() => {
+    if (isFirstPathnameRender.current) {
+      isFirstPathnameRender.current = false;
+      return;
+    }
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
     } else {

@@ -48,7 +48,8 @@ export const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   loading?: boolean;
@@ -84,7 +85,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? (
           <>
-            <span className="invisible inline-flex items-center gap-2">{children}</span>
+            <span className="invisible inline-flex items-center gap-2">
+              {children}
+            </span>
             <span className="pointer-events-none absolute inset-0 flex items-center justify-center">
               <Loader2
                 className="size-4 animate-spin"

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/ui/Logo";
+import { Logo } from "@/components/ui/logo";
 import { useLenis } from "@/components/SmoothScroll";
 
 interface NavItem {
@@ -93,7 +93,12 @@ export function Header() {
         <div className="flex lg:grid lg:grid-cols-3 items-center justify-between h-20">
           {/* Logo — inline SVG, color inherits via currentColor */}
           <div className="flex-shrink-0 lg:justify-self-start">
-            <Link href="/" aria-label="Rejuvenate & Refine — Home" className="inline-flex items-center py-2">
+            <Link
+              href="/"
+              aria-label="Rejuvenate & Refine — Home"
+              className="inline-flex items-center py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               <Logo
                 className={`h-7 w-auto transition-colors duration-500 ${
                   isScrolled ? "text-warm-dark" : transparentTextClass

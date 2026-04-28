@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-interface HeroSectionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface PageHeroProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
   subtitle?: string;
   primaryButtonText?: string;
@@ -49,12 +50,12 @@ const itemVariants: Variants = {
 };
 
 const sizeClasses = {
-  full: "h-screen min-h-[700px]",
-  medium: "min-h-[500px] md:min-h-[60vh]",
-  compact: "min-h-[380px] md:min-h-[45vh]",
+  full: "min-h-[85svh] md:h-screen md:min-h-[43.75rem]",
+  medium: "min-h-[31.25rem] md:min-h-[60vh]",
+  compact: "min-h-[23.75rem] md:min-h-[45vh]",
 };
 
-const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
+const PageHero = React.forwardRef<HTMLDivElement, PageHeroProps>(
   (
     {
       className,
@@ -94,23 +95,29 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           aria-hidden="true"
         />
 
-        {/* Overlay */}
+        {/* Warm-dark overlay (tinted to brand neutral, not pure black) */}
         <div
           className="absolute inset-0 z-[1]"
-          style={{ backgroundColor: `rgba(0,0,0,${overlayOpacity / 100})` }}
+          style={{ backgroundColor: `rgba(61, 53, 48, ${overlayOpacity / 100})` }}
+          aria-hidden="true"
+        />
+
+        {/* Top scrim — guarantees WCAG AA contrast for fixed nav regardless of image */}
+        <div
+          className="absolute inset-x-0 top-0 z-[2] h-40 pointer-events-none bg-gradient-to-b from-warm-dark/50 to-transparent"
           aria-hidden="true"
         />
 
         {/* Content */}
         <motion.div
-          className="relative z-10 flex max-w-4xl flex-col items-center justify-center px-6 text-center"
+          className="relative z-10 mx-auto flex w-full max-w-[56rem] flex-col items-center px-4 text-center md:px-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {label && (
             <motion.p
-              className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-cream/70 mb-4"
+              className="font-sans text-[0.6875rem] md:text-xs font-medium uppercase tracking-extra text-cream/70 mb-5 md:mb-6"
               variants={itemVariants}
             >
               {label}
@@ -119,7 +126,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {title && (
             <motion.h1
-              className="font-serif text-3xl font-normal tracking-tight text-cream sm:text-4xl md:text-5xl lg:text-6xl text-balance"
+              className="max-w-[48rem] font-serif text-[2rem] sm:text-display font-normal tracking-tight text-cream text-balance leading-[1.1] sm:leading-[1.06]"
               variants={itemVariants}
             >
               {title}
@@ -128,7 +135,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {subtitle && (
             <motion.p
-              className="mt-5 max-w-2xl font-sans text-sm leading-relaxed text-cream/80 md:text-base"
+              className="mt-6 md:mt-7 max-w-[32rem] font-sans text-base sm:text-lead leading-[1.55] text-cream/80 text-pretty"
               variants={itemVariants}
             >
               {subtitle}
@@ -137,17 +144,36 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
           {(primaryButtonText || secondaryButtonText) && (
             <motion.div
-              className="mt-8 flex flex-wrap items-center justify-center gap-4"
+              className="mt-10 md:mt-12 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-4"
               variants={itemVariants}
             >
               {primaryButtonText && primaryButtonHref && (
-                <Button asChild size="lg" className="rounded-full bg-white text-warm-dark hover:bg-white/90 font-sans text-xs font-medium uppercase tracking-[0.1em] px-8 h-12">
-                  <a href={primaryButtonHref}>{primaryButtonText}</a>
-                </Button>
+                primaryButtonHref === "#book-now" ? (
+                  <Button
+                    size="xl"
+                    className="max-sm:h-10 max-sm:px-3.5 max-sm:text-base px-6 border-cream bg-cream text-warm-dark hover:bg-cream/90 active:bg-cream/90"
+                    onClick={() => window.blvd?.openBookingWidget()}
+                  >
+                    {primaryButtonText}
+                  </Button>
+                ) : (
+                  <Button
+                    asChild
+                    size="xl"
+                    className="max-sm:h-10 max-sm:px-3.5 max-sm:text-base px-6 border-cream bg-cream text-warm-dark hover:bg-cream/90 active:bg-cream/90"
+                  >
+                    <Link href={primaryButtonHref}>{primaryButtonText}</Link>
+                  </Button>
+                )
               )}
               {secondaryButtonText && secondaryButtonHref && (
-                <Button asChild variant="outline" size="lg" className="rounded-full border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white font-sans text-xs font-medium uppercase tracking-[0.1em] px-8 h-12">
-                  <a href={secondaryButtonHref}>{secondaryButtonText}</a>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="xl"
+                  className="max-sm:h-10 max-sm:px-3.5 max-sm:text-base px-6 border-cream/60 bg-transparent text-cream hover:bg-cream/10 hover:text-cream active:bg-cream/10"
+                >
+                  <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>
                 </Button>
               )}
             </motion.div>
@@ -160,6 +186,6 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
   }
 );
 
-HeroSection.displayName = "HeroSection";
+PageHero.displayName = "PageHero";
 
-export { HeroSection };
+export { PageHero };

@@ -1,6 +1,7 @@
 "use client";
 
-import { Feature1 } from "@/components/ui/feature-1";
+import Image from "next/image";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 
 export default function BlogPost() {
   return (
@@ -20,11 +21,14 @@ export default function BlogPost() {
       {/* Thumbnail */}
       <div className="bg-cream">
         <div className="mx-auto max-w-[48.75rem] px-6 pb-10">
-          <div className="aspect-[16/9] overflow-hidden rounded-md">
-            <img
+          <div className="relative aspect-[16/9] overflow-hidden rounded-md">
+            <Image
               src="/images/blog 2.webp"
               alt="Why Your Dark Spots Keep Coming Back"
-              className="h-full w-full object-cover"
+              fill
+              priority
+              sizes="(min-width: 768px) 48.75rem, 100vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -238,7 +242,7 @@ export default function BlogPost() {
 
       {/* Booking CTA */}
       <div className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.jpg"
