@@ -98,8 +98,8 @@ export default function AboutPage() {
         label="About"
         title="The practice behind the work."
         subtitle="Board-certified surgeon. Aesthetic medicine specialist. Every plan is hers."
-        imageUrl="/images/Team.webp"
-        imagePosition="center 25%"
+        imageUrl="/images/IVTherapy.webp"
+        imagePosition="center 45%"
         size="medium"
         overlayOpacity={55}
       />
