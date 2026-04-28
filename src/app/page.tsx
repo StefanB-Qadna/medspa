@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -57,7 +57,6 @@ export default function HomePage() {
     <>
       <CinematicHero />
 
-
       {/* The surgeon's difference — editorial split */}
       <section className="bg-linen">
         <div className="mx-auto max-w-[75rem] px-6 py-20 md:py-28">
@@ -71,7 +70,8 @@ export default function HomePage() {
                 difference.
               </h2>
               <p className="font-serif text-lead font-normal italic text-warm-dark/85 border-l-2 border-brass pl-5 max-w-sm">
-                &ldquo;In an operating room, there are no retries. We bring that standard to every injection.&rdquo;
+                &ldquo;In an operating room, there are no retries. We bring that
+                standard to every injection.&rdquo;
               </p>
             </div>
 
@@ -117,17 +117,20 @@ export default function HomePage() {
             cards={[
               {
                 image: "/images/laser.jpg",
-                title: "Multiple technologies, one physician. Every laser and skin treatment selected specifically for your skin type, tone, and concern.",
+                title:
+                  "Multiple technologies, one physician. Every laser and skin treatment selected specifically for your skin type, tone, and concern.",
                 tag: "Laser & Skin",
               },
               {
                 image: "/images/interventions.jpg",
-                title: "Precision placement guided by surgical anatomy. Botox, dermal fillers, lip fillers, PRP, and more, designed to move naturally and last.",
+                title:
+                  "Precision placement guided by surgical anatomy. Botox, dermal fillers, lip fillers, PRP, and more, designed to move naturally and last.",
                 tag: "Injectables & Fillers",
               },
               {
                 image: "/images/IVTherapy.jpg",
-                title: "IV therapy, hormone optimization, and medically supervised weight loss. The inside matters as much as the outside.",
+                title:
+                  "IV therapy, hormone optimization, and medically supervised weight loss. The inside matters as much as the outside.",
                 tag: "Wellness & Optimization",
               },
             ]}
@@ -153,9 +156,7 @@ export default function HomePage() {
       {/* What our patients say */}
       <section className="bg-cream">
         <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
-          <SectionHeading
-            title="What our patients say"
-          />
+          <SectionHeading title="What our patients say" />
           <div className="mt-12">
             <TestimonialSlider
               className="bg-cream"
@@ -164,16 +165,20 @@ export default function HomePage() {
                   id: 1,
                   name: "Verified Patient",
                   affiliation: "Melasma Patient",
-                  quote: "The dark patches I tried to cover for years have faded, and my skin finally looks even and clear in natural light. I feel comfortable going without makeup for the first time in ages.",
+                  quote:
+                    "The dark patches I tried to cover for years have faded, and my skin finally looks even and clear in natural light. I feel comfortable going without makeup for the first time in ages.",
                   imageSrc: "/images/Ariel one tx melasma side profile 2.webp",
-                  afterImageSrc: "/images/Ariel one tx melasma side profile.webp",
-                  thumbnailSrc: "/images/Ariel one tx melasma side profile.webp",
+                  afterImageSrc:
+                    "/images/Ariel one tx melasma side profile.webp",
+                  thumbnailSrc:
+                    "/images/Ariel one tx melasma side profile.webp",
                 },
                 {
                   id: 2,
                   name: "Verified Patient",
                   affiliation: "Redness & Contouring Patient",
-                  quote: "The redness I used to cover every day has settled, and my face looks more defined while still feeling like me. The team always takes the time to explain everything.",
+                  quote:
+                    "The redness I used to cover every day has settled, and my face looks more defined while still feeling like me. The team always takes the time to explain everything.",
                   imageSrc: "/images/Emily vector no arrow 2.webp",
                   afterImageSrc: "/images/Emily vector no arrow.webp",
                   thumbnailSrc: "/images/Emily vector no arrow.webp",
@@ -182,7 +187,8 @@ export default function HomePage() {
                   id: 3,
                   name: "Verified Patient",
                   affiliation: "Redness & Wellness Patient",
-                  quote: "The redness I used to hide has calmed completely, and paired with my health journey I finally feel like I look how I feel on the inside. The team made me feel supported the whole way.",
+                  quote:
+                    "The redness I used to hide has calmed completely, and paired with my health journey I finally feel like I look how I feel on the inside. The team made me feel supported the whole way.",
                   imageSrc: "/images/Kayla front view 2.webp",
                   afterImageSrc: "/images/Kayla front view.webp",
                   thumbnailSrc: "/images/Kayla front view.webp",
@@ -205,19 +211,22 @@ export default function HomePage() {
               {
                 id: "clinic-1",
                 title: "Private Treatment Suites",
-                description: "Step in, breathe out. Warm, quiet, and completely private. Designed so the only thing you need to think about is relaxing.",
+                description:
+                  "Step in, breathe out. Warm, quiet, and completely private. Designed so the only thing you need to think about is relaxing.",
                 image: "/images/space4.jpg",
               },
               {
                 id: "clinic-2",
                 title: "Recovery Lounge",
-                description: "A comfortable, welcoming space that is yours throughout your visit. Soft seating, complimentary refreshments, and a calm atmosphere that makes being here feel easy.",
+                description:
+                  "A comfortable, welcoming space that is yours throughout your visit. Soft seating, complimentary refreshments, and a calm atmosphere that makes being here feel easy.",
                 image: "/images/space1.jpg",
               },
               {
                 id: "clinic-3",
                 title: "Consultation Rooms",
-                description: "Private, relaxed, and completely pressure-free. A space where you and Dr. Robledo can talk openly, take your time, and build a plan around exactly what you want.",
+                description:
+                  "Private, relaxed, and completely pressure-free. A space where you and Dr. Robledo can talk openly, take your time, and build a plan around exactly what you want.",
                 image: "/images/spaceDR.webp",
               },
             ]}
@@ -235,10 +244,13 @@ export default function HomePage() {
                 Find us in Prosper.
               </h2>
               <p className="font-sans text-body text-warm-dark/70 leading-relaxed mb-6">
-                Easy to reach, with plenty of parking so your visit starts stress-free.
+                Easy to reach, with plenty of parking so your visit starts
+                stress-free.
               </p>
               <address className="not-italic font-sans text-body text-warm-dark/80 leading-relaxed mb-6 space-y-1">
-                <p className="font-medium text-warm-dark">2120 Prairie Dr Suite 402</p>
+                <p className="font-medium text-warm-dark">
+                  2120 Prairie Dr Suite 402
+                </p>
                 <p>Prosper, TX 75078</p>
                 <p>United States</p>
               </address>
@@ -252,9 +264,7 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="flex items-center justify-center">
-              <LocationMap
-                location="Prosper, TX"
-              />
+              <LocationMap location="Prosper, TX" />
             </div>
           </div>
         </div>
@@ -268,29 +278,35 @@ export default function HomePage() {
           items={[
             {
               id: "aging",
-              title: "Your Face Doesn't Age Evenly, and Most Treatments Miss the Point",
-              description: "Most patients focus on wrinkles. But wrinkles are the last stage of facial aging. Here is what is actually happening beneath the surface.",
+              title:
+                "Your Face Doesn't Age Evenly, and Most Treatments Miss the Point",
+              description:
+                "Most patients focus on wrinkles. But wrinkles are the last stage of facial aging. Here is what is actually happening beneath the surface.",
               href: "/blog/your-face-doesnt-age-evenly",
               image: "/images/blog 1.png",
             },
             {
               id: "melasma",
               title: "Why Your Dark Spots Keep Coming Back (The Melasma Truth)",
-              description: "Melasma is one of the most mismanaged skin conditions in aesthetics. If your dark spots keep returning, this is likely why.",
+              description:
+                "Melasma is one of the most mismanaged skin conditions in aesthetics. If your dark spots keep returning, this is likely why.",
               href: "/blog/dark-spots-melasma-truth",
               image: "/images/blog 2.png",
             },
             {
               id: "body-scale",
               title: "Why the Scale Is the Worst Way to Measure Your Body",
-              description: "Body weight tells you almost nothing about your health or how your body actually looks. Here is what actually matters.",
+              description:
+                "Body weight tells you almost nothing about your health or how your body actually looks. Here is what actually matters.",
               href: "/blog/scale-worst-way-measure-body",
               image: "/images/blog 3.png",
             },
             {
               id: "longevity-30s",
-              title: "What Starts Declining in Your 30s That Nobody Warns You About",
-              description: "The biology of aging starts well before most people expect it. Here is what is actually changing in your body.",
+              title:
+                "What Starts Declining in Your 30s That Nobody Warns You About",
+              description:
+                "The biology of aging starts well before most people expect it. Here is what is actually changing in your body.",
               href: "/blog/what-starts-declining-in-your-30s",
               image: "/images/blog 4.png",
             },
@@ -350,7 +366,7 @@ function CinematicHero() {
       className="relative -mt-20 bg-cream"
       aria-label="Rejuvenate and Refine hero"
     >
-      <ContainerScroll key={remountKey} className="h-[180vh] md:h-[240vh]">
+      <ContainerScroll key={remountKey} className="h-[350vh]">
         <motion.div
           style={{ filter: gridFilter, willChange: "filter" }}
           className="sticky left-0 top-0 z-0 h-screen w-full p-4"

@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { VariantProps, cva } from "class-variance-authority"
+import * as React from "react";
+import { VariantProps, cva } from "class-variance-authority";
 import {
   HTMLMotionProps,
   MotionValue,
   motion,
   useScroll,
   useTransform,
-} from "motion/react"
+} from "motion/react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const bentoGridVariants = cva(
   "relative grid gap-4 [&>*:first-child]:origin-top-right [&>*:nth-child(3)]:origin-bottom-right [&>*:nth-child(4)]:origin-top-right",
@@ -40,46 +40,46 @@ const bentoGridVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
-)
+  },
+);
 
 interface ContainerScrollContextValue {
-  scrollYProgress: MotionValue<number>
-  isInView: boolean
+  scrollYProgress: MotionValue<number>;
+  isInView: boolean;
 }
 const ContainerScrollContext = React.createContext<
   ContainerScrollContextValue | undefined
->(undefined)
+>(undefined);
 function useContainerScrollContext() {
-  const context = React.useContext(ContainerScrollContext)
+  const context = React.useContext(ContainerScrollContext);
   if (!context) {
     throw new Error(
-      "useContainerScrollContext must be used within a ContainerScroll Component"
-    )
+      "useContainerScrollContext must be used within a ContainerScroll Component",
+    );
   }
-  return context
+  return context;
 }
 const ContainerScroll = ({
   children,
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  const scrollRef = React.useRef<HTMLDivElement>(null)
+  const scrollRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
-  })
-  const [isInView, setIsInView] = React.useState(true)
+  });
+  const [isInView, setIsInView] = React.useState(true);
 
   React.useEffect(() => {
-    const el = scrollRef.current
-    if (!el) return
+    const el = scrollRef.current;
+    if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => setIsInView(entry.isIntersecting),
-      { threshold: 0 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
+      { threshold: 0 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <ContainerScrollContext.Provider value={{ scrollYProgress, isInView }}>
@@ -91,8 +91,8 @@ const ContainerScroll = ({
         {children}
       </div>
     </ContainerScrollContext.Provider>
-  )
-}
+  );
+};
 
 const BentoGrid = React.forwardRef<
   HTMLDivElement,
@@ -104,15 +104,15 @@ const BentoGrid = React.forwardRef<
       className={cn(bentoGridVariants({ variant }), className)}
       {...props}
     />
-  )
-})
-BentoGrid.displayName = "BentoGrid"
+  );
+});
+BentoGrid.displayName = "BentoGrid";
 
 const BentoCell = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   ({ className, style, ...props }, ref) => {
-    const { scrollYProgress } = useContainerScrollContext()
-    const translate = useTransform(scrollYProgress, [0.1, 0.9], ["-35%", "0%"])
-    const scale = useTransform(scrollYProgress, [0, 0.9], [0.5, 1])
+    const { scrollYProgress } = useContainerScrollContext();
+    const translate = useTransform(scrollYProgress, [0.1, 0.9], ["-35%", "0%"]);
+    const scale = useTransform(scrollYProgress, [0, 0.9], [0.5, 1]);
 
     return (
       <motion.div
@@ -121,30 +121,30 @@ const BentoCell = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
         style={{ translate, scale, ...style }}
         {...props}
       ></motion.div>
-    )
-  }
-)
-BentoCell.displayName = "BentoCell"
+    );
+  },
+);
+BentoCell.displayName = "BentoCell";
 
 const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
   ({ className, style, ...props }, ref) => {
-    const { scrollYProgress, isInView } = useContainerScrollContext()
-    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-    const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+    const { scrollYProgress, isInView } = useContainerScrollContext();
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     const position = useTransform(scrollYProgress, (pos) =>
-      pos >= 0.8 ? "absolute" : "fixed"
-    )
+      pos >= 0.8 ? "absolute" : "fixed",
+    );
 
     // useScroll initializes scrollYProgress at 0 and only measures the real
     // value after layout. On a reload at a non-zero scroll position that
     // causes a one-frame flash where the hero renders fully visible before
     // the motion values catch up. Hide until the first frame after mount.
-    const [measured, setMeasured] = React.useState(false)
+    const [measured, setMeasured] = React.useState(false);
     React.useEffect(() => {
-      const id = requestAnimationFrame(() => setMeasured(true))
-      return () => cancelAnimationFrame(id)
-    }, [])
+      const id = requestAnimationFrame(() => setMeasured(true));
+      return () => cancelAnimationFrame(id);
+    }, []);
 
     return (
       <motion.div
@@ -155,14 +155,13 @@ const ContainerScale = React.forwardRef<HTMLDivElement, HTMLMotionProps<"div">>(
           scale,
           position,
           opacity,
-          visibility: measured ? undefined : "hidden",
           display: isInView ? undefined : "none",
           ...style,
         }}
         {...props}
       />
-    )
-  }
-)
-ContainerScale.displayName = "ContainerScale"
-export { ContainerScroll, BentoGrid, BentoCell, ContainerScale }
+    );
+  },
+);
+ContainerScale.displayName = "ContainerScale";
+export { ContainerScroll, BentoGrid, BentoCell, ContainerScale };
