@@ -17,7 +17,7 @@ const defaultFaqs: FAQ[] = [
   {
     question: "What should I expect at my first consultation?",
     answer:
-      "Dr. Robledo will personally review your goals, assess your needs, and give you an honest recommendation. You will leave with a clear plan and zero pressure to book anything.",
+      "Your first consultation is comprehensive, not focused on a single item. Dr. Robledo reviews your overall goals, evaluates your skin and concerns as a whole, and builds a long-term plan rather than rushing to one treatment. Consultations are not complimentary, but the consultation fee is credited toward the package or service price when you move forward.",
   },
   {
     question: "Will my results look natural?",
@@ -42,12 +42,12 @@ const defaultFaqs: FAQ[] = [
   {
     question: "How do I book an appointment?",
     answer:
-      "You can book your consultation directly through our online booking system or call us at (469) 397-0434. All new patients start with a complimentary consultation.",
+      "You can book your consultation directly through our online booking system or call us at (469) 397-0434. All new patients start with a comprehensive consultation. The consultation fee is credited toward the package or service price when you move forward.",
   },
   {
     question: "How do I prepare for my appointment?",
     answer:
-      "Arrive with clean skin and no makeup if possible. Avoid blood thinners like aspirin or ibuprofen for 48 hours before injectable treatments. If you have specific medical conditions or are on medication, let us know when you book and we will guide you from there.",
+      "Arrive with clean skin and no makeup if possible. If you have specific medical conditions or are on medication, let us know when you book and we will guide you from there.",
   },
 ];
 

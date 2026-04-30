@@ -35,7 +35,7 @@ export const laserHairRemoval: ServiceData = {
   ],
 
   benefits: [
-    { icon: <Infinity size={24} strokeWidth={1.5} />, title: "Permanent reduction", body: "80 to 95 percent permanent hair reduction in treated areas." },
+    { icon: <Infinity size={24} strokeWidth={1.5} />, title: "Long-term hair reduction", body: "Significant, long-term reduction in treated areas. Laser hair removal is not permanent, but results last for years with periodic maintenance." },
     { icon: <Palette size={24} strokeWidth={1.5} />, title: "Every skin type", body: "Safe and effective for all skin tones, including deeper skin of color." },
     { icon: <Clock size={24} strokeWidth={1.5} />, title: "Quick sessions", body: "Small areas treated in under 10 minutes." },
     { icon: <Sparkles size={24} strokeWidth={1.5} />, title: "Major reduction in ingrown hairs", body: "Significantly reduces ingrown hairs and razor irritation over the course of treatment." },
@@ -63,9 +63,9 @@ export const laserHairRemoval: ServiceData = {
 
   faqs: [
     { q: "Does it work on dark skin?", a: "Yes. We use devices with wavelengths specifically designed for deeper skin tones. Older lasers were not safe on dark skin. Modern technology, when used correctly, is." },
-    { q: "How many sessions do I need?", a: "Most patients need 6 to 8 sessions spaced 4 to 8 weeks apart. Hair grows in cycles, so we need multiple passes to catch every follicle during its active growth phase." },
-    { q: "Does it hurt?", a: "Most patients describe it as a warm snap, similar to a rubber band. Our devices include built-in cooling to keep the skin comfortable." },
-    { q: "Is it truly permanent?", a: "Permanent hair reduction means the majority of hair never returns. A small percentage may grow back finer and lighter over years and can be maintained with an occasional touch-up session." },
+    { q: "How many sessions do I need?", a: "Most patients need 6 to 8 sessions spaced 4 to 8 weeks apart. Hair grows in cycles, so we need multiple passes to catch every follicle during its active growth phase. Hormonal changes can also affect hair growth, which is why some patients need additional maintenance sessions over time." },
+    { q: "Does it hurt?", a: "Most patients describe it as a warm snap, similar to a rubber band. Our devices include built-in cooling to keep the skin comfortable, and complimentary numbing is available if you want extra comfort." },
+    { q: "Is it truly permanent?", a: "Laser hair removal is not permanent. It is long-term hair reduction, meaning the majority of treated hair does not grow back, and what does return is typically finer and lighter. Periodic maintenance sessions keep results steady, especially with hormonal changes." },
   ],
 
   whyChooseHeading: "Why patients choose Rejuvenate & Refine for laser hair removal",
@@ -82,13 +82,13 @@ export const laserSkinRejuvenation: ServiceData = {
   slug: "laser-skin-rejuvenation",
   breadcrumb: "Services > Laser & Skin",
   h1: "Laser Skin Rejuvenation in Prosper, TX",
-  subtitle: "Sun damage, uneven tone, and fine lines corrected with no-pain, no-downtime laser protocols developed by Dr. Robledo.",
+  subtitle: "Sun damage, uneven tone, and fine lines corrected with virtually no downtime, using protocols developed by Dr. Robledo.",
   heroImage: "/images/laser.webp",
 
-  whatHeading: "Laser rejuvenation without the week of recovery",
+  whatHeading: "Laser rejuvenation with virtually no downtime",
   whatParagraphs: [
     "Laser skin rejuvenation addresses the visible signs of aging that live in the skin itself: sun damage, uneven tone, fine lines, enlarged pores, laxity, and the overall dullness that comes from years of cumulative exposure. Different lasers target different pigments at different depths, which is why the device matters as much as the protocol.",
-    "Traditional resurfacing lasers work, but they also require a week or more of visible recovery. Dr. Robledo has personally developed no-pain, no-downtime laser protocols that deliver meaningful rejuvenation without the recovery. For patients who need more aggressive correction, we also offer deeper resurfacing options with appropriate recovery. The right laser depends on your skin, your concern, and what you can commit to.",
+    "Traditional resurfacing lasers work, but they also require a week or more of visible recovery. Dr. Robledo has personally developed protocols that deliver meaningful rejuvenation with little to no discomfort and virtually no downtime. Downtime is measured in hours, not in days or weeks. For patients who need more aggressive correction, we also offer deeper resurfacing options with appropriate recovery. The right laser depends on your skin, your concern, and what you can commit to.",
   ],
 
   treatsHeading: "What it treats",
@@ -101,7 +101,7 @@ export const laserSkinRejuvenation: ServiceData = {
   ],
 
   benefits: [
-    { icon: <Feather size={24} strokeWidth={1.5} />, title: "No pain, no downtime", body: "Dr. Robledo's protocols deliver real results without the week of recovery." },
+    { icon: <Feather size={24} strokeWidth={1.5} />, title: "No pain, no downtime", body: "Little to no discomfort and virtually no downtime, designed around busy lives." },
     { icon: <Layers size={24} strokeWidth={1.5} />, title: "Treats multiple concerns", body: "Sun damage, tone, pores, and fine lines addressed at once." },
     { icon: <TrendingUp size={24} strokeWidth={1.5} />, title: "Progressive improvement", body: "Results build over weeks as new collagen forms." },
     { icon: <SlidersHorizontal size={24} strokeWidth={1.5} />, title: "Tailored to your skin", body: "Different lasers, different settings, based on your skin type and goals." },
@@ -109,9 +109,9 @@ export const laserSkinRejuvenation: ServiceData = {
 
   treatmentDetails: [
     { label: "Treatment Time", value: "30 to 60 min" },
-    { label: "Downtime", value: "None to minimal" },
+    { label: "Downtime", value: "Hours, not days or weeks" },
     { label: "Results In", value: "2 to 4 weeks" },
-    { label: "Lasts", value: "12+ months with SPF" },
+    { label: "Lasts", value: "12 months, then years with appropriate maintenance" },
     { label: "Sessions", value: "3 to 6 recommended" },
   ],
 
@@ -119,7 +119,7 @@ export const laserSkinRejuvenation: ServiceData = {
     "Sun damage, age spots, or uneven pigmentation",
     "Dullness and loss of skin glow with age",
     "Fine lines and early skin texture changes",
-    "Patients who cannot commit to visible recovery time",
+    "Busy patients seeking minimal life interruptions",
   ],
   notFor: [
     "You have a recent tan or are actively sun-exposed",
@@ -128,33 +128,34 @@ export const laserSkinRejuvenation: ServiceData = {
   ],
 
   faqs: [
-    { q: "Does it actually work without any pain or downtime?", a: "Yes, for the right protocol and the right patient. Dr. Robledo has spent years developing protocols that deliver real collagen stimulation and pigmentation correction without the aggressive surface disruption of traditional resurfacing." },
+    { q: "Does it actually work?", a: "Dr. Robledo has spent extensive time creating protocols that deliver real collagen stimulation and pigmentation correction with minimal discomfort and minimal downtime. Downtime is measured in hours, not in days or weeks." },
     { q: "How many sessions do I need?", a: "Most patients see meaningful improvement after 3 sessions and optimal results after 6. Spacing varies from 2 to 6 weeks apart depending on the specific laser being used." },
     { q: "Will it work on my melasma?", a: "Melasma is a complex condition and most lasers make it worse. We approach melasma carefully with specific protocols and are equally honest if laser is not the right path for you." },
     { q: "Can I do this on all skin types?", a: "Yes, but the device selection and settings change significantly for darker skin tones. We never run every patient through the same laser protocol." },
+    { q: "Can lasers treat other conditions?", a: "Yes. Our lasers can treat several skin concerns including melasma, rosacea, sun spots, broken capillaries, and more. Each condition is addressed under its own protocol on our Laser Other service page." },
   ],
 
   whyChooseHeading: "Why patients choose Rejuvenate & Refine for laser skin rejuvenation",
   whyChoose: [
-    { title: "Proprietary no-downtime protocols.", description: "Developed by Dr. Robledo specifically for patients who cannot take a week off to peel." },
+    { title: "Proprietary protocols.", description: "Developed by Dr. Robledo for the busy client that does not want interruptions in life. Real results with virtually no downtime." },
     { title: "Multiple devices, one physician.", description: "We select the right laser for your specific skin and goals, not the one laser we happen to have." },
     { title: "Every skin type treated safely.", description: "Fair, medium, and deep skin tones all get customized protocols." },
   ],
 
-  ctaSub: "Book your consultation and see what laser rejuvenation can actually do without the recovery.",
+  ctaSub: "Book your consultation and see what laser rejuvenation can actually do, without the recovery.",
 };
 
 export const laserVeinTreatment: ServiceData = {
   slug: "laser-vein-treatment",
   breadcrumb: "Services > Laser & Skin",
   h1: "Laser Vein Treatment in Prosper, TX",
-  subtitle: "Spider veins and small surface veins on the face and legs cleared with targeted laser energy. No needles, no compression stockings.",
+  subtitle: "Spider veins and small surface veins on the face and legs cleared with targeted laser energy. Quick treatments with minimal downtime.",
   heroImage: "/images/space6.webp",
 
   whatHeading: "Why we treat veins with lasers",
   whatParagraphs: [
-    "Spider veins and small surface veins are caused by weakened or damaged vein walls just below the skin. There are a few ways to treat them, but at R&R we do the majority of our vein work with lasers because the precision is better, the recovery is easier, and the results are excellent for the kind of small surface veins most patients want addressed.",
-    "The laser delivers a wavelength of light that is absorbed by hemoglobin in the vein. The vein heats, collapses, and is gradually reabsorbed by your body over the following weeks. There are no needles, no injections, and no compression stockings to wear afterward. Most patients see noticeable clearing within 4 to 8 weeks of a session.",
+    "Spider veins and small surface veins are caused by weakened or damaged vein walls just below the skin. There are a few ways to treat them. We will evaluate each patient to determine if you are a better candidate for laser vein treatment or sclerotherapy, and which option is right for you. For most small surface veins, lasers offer excellent precision, easy recovery, and quick treatment.",
+    "The laser delivers a wavelength of light that is absorbed by hemoglobin in the vein. The vein heats, collapses, and is gradually reabsorbed by your body over the following weeks. Treatments are quick with minimal downtime. Most patients see noticeable clearing within 4 to 8 weeks of a session.",
   ],
 
   treatsHeading: "What it treats",
@@ -166,7 +167,7 @@ export const laserVeinTreatment: ServiceData = {
   ],
 
   benefits: [
-    { icon: <ShieldCheck size={24} strokeWidth={1.5} />, title: "Laser precision", body: "No needles, no compression stockings, no waiting weeks to see results." },
+    { icon: <ShieldCheck size={24} strokeWidth={1.5} />, title: "Laser precision", body: "Quick treatments with minimal downtime, and results without waiting weeks to see change." },
     { icon: <Palette size={24} strokeWidth={1.5} />, title: "Multiple wavelengths", body: "The right laser for facial veins is different from the right laser for leg veins. We have both." },
     { icon: <Stethoscope size={24} strokeWidth={1.5} />, title: "Physician-supervised", body: "Vein work is medical work. Dr. Robledo evaluates every patient before treatment." },
     { icon: <TrendingDown size={24} strokeWidth={1.5} />, title: "Progressive clearance", body: "Treated veins fade and are reabsorbed over 4 to 8 weeks." },
@@ -184,7 +185,7 @@ export const laserVeinTreatment: ServiceData = {
     "Visible spider veins on the face or legs",
     "Broken capillaries from sun damage or rosacea",
     "Small surface veins that have not responded to other treatments",
-    "Patients who want to avoid needle-based vein treatment",
+    "Patients evaluated as better candidates for laser than sclerotherapy",
   ],
   notFor: [
     "You have larger varicose veins (we will refer you for vascular evaluation)",
@@ -196,13 +197,13 @@ export const laserVeinTreatment: ServiceData = {
     { q: "Does it hurt?", a: "Most patients describe a warm snapping sensation. No numbing is typically needed for facial veins. Leg veins may benefit from topical numbing for comfort." },
     { q: "Will the veins come back?", a: "Treated veins do not return. However, new veins can form over time, especially with genetic predisposition. Maintenance sessions address those." },
     { q: "How many sessions do I need?", a: "Most areas clear in 1 to 3 sessions spaced 4 to 6 weeks apart." },
-    { q: "Is this the same as sclerotherapy?", a: "No. Sclerotherapy uses injections. Our laser approach requires no needles and no compression stockings afterward." },
+    { q: "Is this the same as sclerotherapy?", a: "No. Sclerotherapy uses injections. We evaluate each patient to determine whether laser or sclerotherapy is the right option for you, based on the size, location, and behavior of the veins being treated." },
   ],
 
   whyChooseHeading: "Why patients choose Rejuvenate & Refine for vein treatment",
   whyChoose: [
-    { title: "Laser precision.", description: "No needles, no compression stockings, no waiting weeks to see results." },
-    { title: "Multiple wavelengths.", description: "The right laser for facial veins is different from the right laser for leg veins. We have both." },
+    { title: "Quick treatments, minimal downtime.", description: "Laser sessions are short and recovery is fast. Most patients return to normal activity right away." },
+    { title: "Laser or sclerotherapy, evaluated for you.", description: "Dr. Robledo evaluates each patient to determine which approach is right for the veins being treated." },
     { title: "Physician-supervised.", description: "Vein work is medical work. Dr. Robledo evaluates every patient before treatment." },
   ],
 
@@ -219,7 +220,7 @@ export const laserTattooRemoval: ServiceData = {
   whatHeading: "How tattoo removal actually works",
   whatParagraphs: [
     "Laser tattoo removal works by delivering pulses of light so short and so intense they shatter tattoo pigment into fragments small enough for your immune system to clear over the weeks following each session. Different ink colors absorb different wavelengths of light, which is why a laser that removes black ink well may struggle with reds, greens, and blues.",
-    "Full removal typically requires 6 to 12 sessions spaced 6 to 8 weeks apart. Fading for a cover-up needs fewer. Results depend on ink depth, color, age of the tattoo, location on the body, and your immune response. We assess all of these at consultation and set expectations clearly so you know what is realistic before you commit.",
+    "Visible change is often seen in two to three sessions, with significant fading thereafter. Fading for a cover-up needs fewer sessions. Results depend on ink depth, color, age of the tattoo, location on the body, and your immune response. Prices are set up front so you know exactly what to expect, and we set realistic expectations at consultation before you commit.",
   ],
 
   treatsHeading: "What it treats",
@@ -227,26 +228,26 @@ export const laserTattooRemoval: ServiceData = {
     { icon: <Circle size={32} strokeWidth={1.5} />, label: "Black & grey ink", micro: "The most responsive ink colors" },
     { icon: <Palette size={32} strokeWidth={1.5} />, label: "Color ink", micro: "Reds, blues, greens, and multi-color tattoos" },
     { icon: <Eraser size={32} strokeWidth={1.5} />, label: "Cover-up prep", micro: "Fading a tattoo for a cover-up" },
-    { icon: <X size={32} strokeWidth={1.5} />, label: "Complete removal", micro: "Full clearance of unwanted ink" },
+    { icon: <Layers size={32} strokeWidth={1.5} />, label: "Wide spectrum of inks", micro: "Significant fading across a broad range of ink types" },
   ],
 
   benefits: [
-    { icon: <Palette size={24} strokeWidth={1.5} />, title: "Any ink color", body: "Multiple wavelengths to address every tattoo color effectively." },
+    { icon: <Palette size={24} strokeWidth={1.5} />, title: "Wide spectrum of ink coverage", body: "Multiple wavelengths to address a broad range of tattoo colors and ink types." },
     { icon: <ShieldCheck size={24} strokeWidth={1.5} />, title: "Medical-grade safety", body: "Physician-supervised treatment to minimize scarring and pigmentation risk." },
-    { icon: <ClipboardCheck size={24} strokeWidth={1.5} />, title: "Honest expectations", body: "We tell you what is realistic for your specific tattoo up front." },
-    { icon: <TrendingDown size={24} strokeWidth={1.5} />, title: "Progressive clearance", body: "Each session fades the tattoo further until it disappears." },
+    { icon: <ClipboardCheck size={24} strokeWidth={1.5} />, title: "Transparent pricing", body: "Prices are set up front so you know exactly what to expect from your plan." },
+    { icon: <TrendingDown size={24} strokeWidth={1.5} />, title: "Progressive fading", body: "Each session fades the tattoo further. Visible change is often seen in two to three sessions." },
   ],
 
   treatmentDetails: [
     { label: "Treatment Time", value: "15 to 45 min" },
     { label: "Downtime", value: "5 to 7 days healing" },
-    { label: "Results In", value: "Visible per session" },
-    { label: "Lasts", value: "Permanent removal" },
+    { label: "Results In", value: "Visible change in 2 to 3 sessions" },
+    { label: "Lasts", value: "Significant fading is long-lasting" },
     { label: "Sessions", value: "6 to 12 sessions" },
   ],
 
   bestFor: [
-    "Any tattoo you want removed or significantly faded",
+    "Any body tattoo you want removed or significantly faded",
     "Fading a tattoo before a cover-up",
     "Patients with realistic expectations about timeline",
     "Patients willing to commit to the full session series",
@@ -254,18 +255,19 @@ export const laserTattooRemoval: ServiceData = {
   notFor: [
     "You have recent sun exposure or a tan",
     "You are pregnant or breastfeeding",
-    "You expect instant complete removal in one session",
+    "Cosmetic tattoos, or any facial or mucosal tattoos (we do not perform these)",
   ],
 
   faqs: [
     { q: "How many sessions will I need?", a: "Depends on the tattoo. Black ink tattoos typically need 6 to 8 sessions. Multi-color tattoos can need 10 to 12. Professional tattoos often take more sessions than amateur tattoos because the ink is deeper and more saturated." },
     { q: "Does it hurt more than getting the tattoo?", a: "Most patients describe it as similar to getting a tattoo, or slightly more intense in short bursts. Topical numbing is available." },
-    { q: "Will there be scarring?", a: "In most cases, no. Proper laser settings and attentive aftercare minimize this risk significantly." },
+    { q: "Will there be scarring?", a: "In most cases, no. Scarring depends on the underlying scar from the original tattoo. Proper laser settings and attentive aftercare keep this risk low." },
     { q: "How far apart are the sessions?", a: "Six to eight weeks is standard. Your immune system needs time between sessions to clear the shattered ink." },
   ],
 
   whyChooseHeading: "Why patients choose Rejuvenate & Refine for tattoo removal",
   whyChoose: [
+    { title: "Transparent pricing up front.", description: "Prices are set up front so you know what your plan costs before you commit." },
     { title: "Honest timeline at consultation.", description: "We will tell you realistically how many sessions your tattoo needs, not what you want to hear." },
     { title: "Multiple wavelengths available.", description: "Different colors need different lasers. We have them." },
     { title: "Physician-supervised aftercare.", description: "If any skin response happens, it is caught and managed by medical staff." },
@@ -278,13 +280,13 @@ export const rfMicroneedling: ServiceData = {
   slug: "rf-microneedling",
   breadcrumb: "Services > Laser & Skin",
   h1: "RF Microneedling in Prosper, TX",
-  subtitle: "Deep collagen remodeling and real skin tightening in one treatment, using protocols developed by Dr. Robledo.",
+  subtitle: "The Silfirm X technology offers safe, deep collagen remodeling and real skin tightening in one treatment, using safe protocols developed by Dr. Robledo.",
   heroImage: "/images/space1.webp",
 
   whatHeading: "Microneedling and radiofrequency, combined",
   whatParagraphs: [
     "RF microneedling combines traditional microneedling with radiofrequency energy delivered directly into the dermis through the needle tips. The needles create controlled micro-channels that trigger your skin's natural wound-healing response, which drives collagen and elastin production. The RF energy simultaneously heats the deeper dermis, tightening existing collagen and multiplying the regenerative response.",
-    "The result is skin tightening, pore refinement, scar remodeling, and texture improvement in a single treatment, with results continuing to build for 3 to 6 months after the final session. Dr. Robledo has personally developed the protocols used here to deliver dramatic remodeling with minimal downtime. Most patients are back to normal activity within 24 hours. This is one of our most powerful treatments for patients in their 30s and 40s looking to get ahead of structural aging.",
+    "The Silfirm X technology offers safe, deep collagen remodeling and real skin tightening in one treatment, using safe protocols developed by Dr. Robledo. Visible results can appear after just one treatment. Results typically last one to two years, with an average of three to six sessions for full effect. This is one of our most powerful treatments for patients looking to get ahead of structural aging without taking a week of recovery.",
   ],
 
   treatsHeading: "What it treats",
@@ -306,9 +308,9 @@ export const rfMicroneedling: ServiceData = {
   treatmentDetails: [
     { label: "Treatment Time", value: "60 to 90 min" },
     { label: "Downtime", value: "24 to 48 hours" },
-    { label: "Results In", value: "3 to 6 months" },
+    { label: "Results In", value: "Visible after just one treatment" },
     { label: "Lasts", value: "1 to 2 years" },
-    { label: "Sessions", value: "3 recommended" },
+    { label: "Sessions", value: "3 to 6 average" },
   ],
 
   bestFor: [
@@ -324,16 +326,16 @@ export const rfMicroneedling: ServiceData = {
   ],
 
   faqs: [
-    { q: "How is this different from regular microneedling?", a: "Regular microneedling works on the surface and into the superficial dermis. RF microneedling delivers radiofrequency heat deeper into the skin while creating the channels. The result is significantly more dramatic tightening and remodeling." },
-    { q: "How many sessions do I need?", a: "Most patients need 3 sessions spaced 4 to 6 weeks apart for optimal results." },
+    { q: "How is this different from regular microneedling?", a: "Regular microneedling works on the surface and into the superficial dermis. RF microneedling with Silfirm X delivers radiofrequency heat deeper into the skin while creating the channels. The result is significantly more dramatic tightening and remodeling." },
+    { q: "How many sessions do I need?", a: "Three to six sessions based on your needs, spaced four to six weeks apart." },
     { q: "Is it painful?", a: "Topical numbing is applied for 30 minutes before the treatment. Most patients tolerate it well. Expect some warmth and pressure during the session and redness similar to a sunburn for 24 to 48 hours after." },
-    { q: "When will I see results?", a: "You may see texture and pore improvement within 2 weeks. Real tightening and collagen remodeling builds over 3 to 6 months as the tissue rebuilds itself." },
+    { q: "When will I see results?", a: "Visible results can appear after just one treatment. Real tightening and collagen remodeling builds over 3 to 6 months as the tissue rebuilds itself." },
   ],
 
   whyChooseHeading: "Why patients choose Rejuvenate & Refine for RF microneedling",
   whyChoose: [
     { title: "Developer-level protocols.", description: "Dr. Robledo has personally refined the settings, depths, and pass patterns used here." },
-    { title: "Medical-grade device.", description: "Not all RF microneedling devices are equal. Ours is chosen for energy precision and consistent results." },
+    { title: "FDA-cleared device.", description: "Silfirm X is an FDA-cleared device chosen for energy precision and consistent, safe results." },
     { title: "Minimal downtime philosophy.", description: "Real remodeling should not require a week of recovery. Our protocols are built around that." },
   ],
 
@@ -349,58 +351,59 @@ export const microneedling: ServiceData = {
 
   whatHeading: "How microneedling stimulates your skin's own renewal",
   whatParagraphs: [
-    "Microneedling uses fine, medical-grade needles to create controlled micro-injuries in the skin. These micro-channels trigger your body's natural wound-healing response, which drives new collagen and elastin production. The result is improved texture, finer lines, smaller pores, and gradual softening of acne scars, all from your own regenerative biology.",
-    "Microneedling can be performed on its own or combined with PRP or PRF (sometimes called the \"vampire facial\") to amplify the regenerative response. A series of 3 to 6 sessions spaced 4 weeks apart produces the most noticeable results. Downtime is minimal, usually 24 to 48 hours of pink flushed skin similar to a mild sunburn.",
+    "Microneedling uses fine, medical-grade needles to create controlled micro-injuries in the skin. These micro-channels trigger your body's natural wound-healing response, which drives new collagen and elastin production. The result is improved texture, finer lines, smaller pores, softer pigmentation, and gradual softening of acne scars, all from your own regenerative biology.",
+    "Microneedling can be performed on its own or paired with exosomes, PRP, or PRF as an adjunct to amplify the regenerative response. A series of 3 to 6 sessions spaced 4 weeks apart produces the most noticeable results. Downtime is typically around 72 hours of pink flushed skin similar to a mild sunburn.",
   ],
 
   treatsHeading: "What it treats",
   treats: [
-    { icon: <Waves size={32} strokeWidth={1.5} />, label: "Texture", micro: "Rough or uneven skin surface" },
+    { icon: <Waves size={32} strokeWidth={1.5} />, label: "Texture & acne scars", micro: "Rough or uneven skin surface and superficial scarring" },
+    { icon: <Palette size={32} strokeWidth={1.5} />, label: "Pigmentation", micro: "Uneven tone and surface pigment" },
     { icon: <CircleDot size={32} strokeWidth={1.5} />, label: "Pore size", micro: "Visible pores and congestion" },
     { icon: <Minus size={32} strokeWidth={1.5} />, label: "Fine lines", micro: "Surface lines and early wrinkles" },
-    { icon: <Sparkles size={32} strokeWidth={1.5} />, label: "Acne scars", micro: "Softens superficial scarring" },
     { icon: <Sun size={32} strokeWidth={1.5} />, label: "Skin glow", micro: "Dull, tired-looking skin" },
   ],
 
   benefits: [
+    { icon: <Clock size={24} strokeWidth={1.5} />, title: "72-hour downtime", body: "Around three days of mild pink flushing, then back to normal." },
+    { icon: <Layers size={24} strokeWidth={1.5} />, title: "Treats pigment and more", body: "Pigmentation, texture, pores, fine lines, and acne scars addressed together." },
+    { icon: <Combine size={24} strokeWidth={1.5} />, title: "Exosomes can be paired", body: "Exosomes can be used as an adjunct to amplify the regenerative response." },
     { icon: <Zap size={24} strokeWidth={1.5} />, title: "Natural collagen stimulation", body: "Your own body rebuilds the skin from within." },
-    { icon: <Layers size={24} strokeWidth={1.5} />, title: "Multiple skin concerns", body: "Texture, tone, pores, and fine lines addressed together." },
-    { icon: <Clock size={24} strokeWidth={1.5} />, title: "Low downtime", body: "24 to 48 hours of mild redness, then glowing skin." },
-    { icon: <Combine size={24} strokeWidth={1.5} />, title: "Pairs with PRP/PRF", body: "Adding growth factors amplifies the regenerative response." },
   ],
 
   treatmentDetails: [
     { label: "Treatment Time", value: "45 to 60 min" },
-    { label: "Downtime", value: "24 to 48 hours" },
-    { label: "Results In", value: "4 to 6 weeks" },
-    { label: "Lasts", value: "6 to 12 months" },
+    { label: "Downtime", value: "72 hours" },
+    { label: "Results In", value: "As soon as 1 week" },
+    { label: "Lasts", value: "Up to 12 months" },
     { label: "Sessions", value: "3 to 6 sessions" },
   ],
 
   bestFor: [
-    "General skin texture, tone, and pore concerns",
+    "Patients concerned with pigmentation, texture, and scars",
     "Superficial acne scarring",
     "Patients who want a natural, regenerative approach",
     "Skin maintenance alongside other treatments",
   ],
   notFor: [
+    "You are currently on Accutane",
     "You have active acne or open skin breakouts",
     "You have very deep acne scarring (RF microneedling better suited)",
     "You are pregnant or breastfeeding",
   ],
 
   faqs: [
-    { q: "Should I do microneedling or RF microneedling?", a: "Microneedling works well for surface concerns: texture, pores, fine lines, and mild scarring. RF microneedling reaches deeper and is better for skin laxity, deep scarring, and structural tightening. During consultation we help you choose the right one." },
+    { q: "Should I do microneedling or RF microneedling?", a: "Microneedling works well for surface concerns including pigment, texture, pores, fine lines, and mild scarring. Exosomes can be paired with this therapy to amplify results. RF microneedling reaches deeper and is better for skin laxity, deep scarring, and structural tightening. During consultation we help you choose the right one." },
     { q: "How many sessions do I need?", a: "Most patients need 3 to 6 sessions spaced 4 weeks apart for optimal results." },
-    { q: "Can I combine it with PRP or PRF?", a: "Yes, and we often recommend it. Applying your own growth factors during microneedling amplifies the collagen-stimulating response and can speed up results." },
+    { q: "Can I combine it with exosomes, PRP, or PRF?", a: "Yes, and we often recommend it. Exosomes can be used as an adjunct, and your own growth factors from PRP or PRF amplify the collagen-stimulating response." },
     { q: "Does it hurt?", a: "Topical numbing is applied for 20 to 30 minutes before the treatment. Most patients tolerate it well." },
   ],
 
   whyChooseHeading: "Why patients choose Rejuvenate & Refine for microneedling",
   whyChoose: [
-    { title: "Medical-grade devices only.", description: "We do not use at-home derma rollers or spa-level devices. Medical-grade equipment delivers real results." },
+    { title: "FDA-cleared device.", description: "We use an FDA-cleared, medical-grade device, not at-home rollers or spa-level tools." },
+    { title: "Exosome integration available.", description: "Exosomes can be paired with treatment as an adjunct to amplify the regenerative response." },
     { title: "Surgeon-led protocols.", description: "Depth and technique calibrated to your specific skin concern and type." },
-    { title: "PRP/PRF integration available.", description: "When it makes sense, adding growth factors meaningfully improves outcomes." },
   ],
 
   ctaSub: "Book your consultation and unlock your skin's natural regenerative response.",

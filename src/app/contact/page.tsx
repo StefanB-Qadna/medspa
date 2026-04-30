@@ -79,8 +79,10 @@ export default function ContactPage() {
                   <div>
                     <p className="font-sans text-sm font-medium text-warm-dark mb-1">Hours</p>
                     <ul className="font-sans text-sm text-warm-dark/70 leading-relaxed space-y-1">
-                      <li>Tuesday to Saturday: 9:00 AM to 5:00 PM</li>
-                      <li>Sunday and Monday: Closed</li>
+                      <li>Monday, Tuesday: By Appointment</li>
+                      <li>Wednesday to Friday: 9:00 AM to 5:00 PM</li>
+                      <li>Saturday: 9:00 AM to 3:00 PM</li>
+                      <li>Sunday: Closed</li>
                     </ul>
                   </div>
                 </div>
@@ -106,7 +108,7 @@ export default function ContactPage() {
       <div id="book-now" className="bg-linen pt-16 md:pt-20">
         <FeatureImageSplit
           title="The best version of you is closer than you think."
-          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          description="Start with a comprehensive consultation. The fee is credited toward your treatment, and Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{

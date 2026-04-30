@@ -137,11 +137,10 @@ export function BookingForm() {
             Reserve Your Visit
           </p>
           <h2 className="font-serif text-section font-normal text-cream mb-3">
-            Book a complimentary consultation.
+            Book your consultation.
           </h2>
           <p className="font-sans text-base text-cream/65 mb-12">
-            No commitment, no pressure. Dr. Robledo will personally review your
-            goals before your visit.
+            Comprehensive, never rushed. The consultation fee is credited toward your treatment when you move forward.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">

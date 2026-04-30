@@ -232,7 +232,7 @@ export default function ServicesPage() {
       <div className="bg-linen pt-16 md:pt-20">
         <FeatureImageSplit
           title="The best version of you is closer than you think."
-          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          description="Start with a comprehensive consultation. The fee is credited toward your treatment, and Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{

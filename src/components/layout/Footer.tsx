@@ -33,8 +33,9 @@ const socialLinks = [
 ];
 
 const hours = [
-  { day: "Mon – Fri", time: "9:00 AM – 5:00 PM" },
-  { day: "Saturday", time: "By Appointment" },
+  { day: "Mon, Tue", time: "By Appointment" },
+  { day: "Wed to Fri", time: "9:00 AM to 5:00 PM" },
+  { day: "Saturday", time: "9:00 AM to 3:00 PM" },
   { day: "Sunday", time: "Closed" },
 ];
 
