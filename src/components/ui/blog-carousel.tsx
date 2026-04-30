@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -11,7 +12,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-export interface Gallery4Item {
+export interface BlogCarouselItem {
   id: string;
   title: string;
   description: string;
@@ -19,17 +20,17 @@ export interface Gallery4Item {
   image: string;
 }
 
-export interface Gallery4Props {
+export interface BlogCarouselProps {
   title?: string;
   description?: string;
-  items: Gallery4Item[];
+  items: BlogCarouselItem[];
 }
 
-const Gallery4 = ({
+const BlogCarousel = ({
   title = "From Our Blog",
   description = "Honest answers to the questions we hear most, from a surgeon's perspective.",
   items,
-}: Gallery4Props) => {
+}: BlogCarouselProps) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -104,10 +105,12 @@ const Gallery4 = ({
               >
                 <Link href={item.href} className="group block">
                   <div className="relative aspect-[3/4] w-full overflow-hidden rounded-md">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
-                      className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      sizes="(min-width: 768px) 20rem, 75vw"
+                      className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-warm-dark/90 via-warm-dark/20 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-5 md:p-6 text-cream">
@@ -142,4 +145,4 @@ const Gallery4 = ({
   );
 };
 
-export { Gallery4 };
+export { BlogCarousel };

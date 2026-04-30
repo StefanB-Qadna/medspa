@@ -10,7 +10,7 @@ import {
   EmptyDescription,
   EmptyHeader,
   EmptyTitle,
-} from "@/components/ui/empty";
+} from "@/components/ui/empty-state";
 
 const PRIMARY_ORB_HORIZONTAL_OFFSET = 40;
 const PRIMARY_ORB_VERTICAL_OFFSET = 20;

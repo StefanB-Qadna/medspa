@@ -7,7 +7,7 @@ import {
   Zap, Combine,
   VolumeX, Moon, BatteryLow, ArrowDown, Calendar,
   Target, Ellipsis, ArrowLeftRight, Columns2, ChevronDown,
-  CircleOff, Droplet, Minus as MinusIcon,
+  CircleOff, Droplet,
   GitBranch, Stethoscope
 } from "lucide-react";
 import type { ServiceData } from "@/lib/service-types";

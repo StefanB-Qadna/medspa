@@ -1,11 +1,11 @@
-import { HeroSection } from "@/components/ui/hero-section-4";
-import { Feature1 } from "@/components/ui/feature-1";
+import { PageHero } from "@/components/ui/page-hero";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
     <>
-      <HeroSection
+      <PageHero
         label="Contact"
         title="Come see us."
         subtitle="Consultation, questions, or just hello."
@@ -106,7 +106,7 @@ export default function ContactPage() {
 
       {/* Booking CTA */}
       <div id="book-now" className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a comprehensive consultation. The fee is credited toward your treatment, and Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"

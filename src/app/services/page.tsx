@@ -1,9 +1,9 @@
 "use client";
 
-import { ServiceBlogCard } from "@/components/ui/card-18";
+import { ServiceBlogCard } from "@/components/ui/service-blog-card";
 import { SectionHeading } from "@/components/SectionHeading";
-import { HeroSection } from "@/components/ui/hero-section-4";
-import { Feature1 } from "@/components/ui/feature-1";
+import { PageHero } from "@/components/ui/page-hero";
+import { FeatureImageSplit } from "@/components/ui/feature-image-split";
 
 type ServiceItem = {
   title: string;
@@ -154,9 +154,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <HeroSection
+      <PageHero
         label="Services"
-        title="Treatments built around your anatomy, not a trend."
+        title="Treatments built around your goals."
         subtitle="Physician-led from consultation to follow-up."
         imageUrl="/images/spaceDR.webp"
         size="medium"
@@ -204,20 +204,20 @@ export default function ServicesPage() {
       })}
 
       {/* Included with Every Plan */}
-      <section className="bg-linen">
-        <div className="mx-auto max-w-[75rem] px-6 py-16 md:py-20">
+      <section className="bg-cream">
+        <div className="mx-auto max-w-[75rem] px-6 py-20 md:py-16">
           <SectionHeading title="Included with Every Plan" centered={false} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-            <div className="bg-cream rounded-md p-8">
-              <h3 className="font-serif text-lg font-medium text-warm-dark mb-2">
+            <div className="bg-linen rounded-md p-8">
+              <h3 className="font-serif text-lg font-medium text-warm-dark mb-4">
                 AI Facial & Body Analysis
               </h3>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
                 Technology-guided skin and body mapping included in every consultation.
               </p>
             </div>
-            <div className="bg-cream rounded-md p-8">
-              <h3 className="font-serif text-lg font-medium text-warm-dark mb-2">
+            <div className="bg-linen rounded-md p-8">
+              <h3 className="font-serif text-lg font-medium text-warm-dark mb-4">
                 Preliminary Skin Cancer Screening
               </h3>
               <p className="font-sans text-sm text-warm-dark/70 leading-relaxed">
@@ -230,7 +230,7 @@ export default function ServicesPage() {
 
       {/* Booking CTA */}
       <div className="bg-linen pt-16 md:pt-20">
-        <Feature1
+        <FeatureImageSplit
           title="The best version of you is closer than you think."
           description="Start with a comprehensive consultation. The fee is credited toward your treatment, and Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.webp"

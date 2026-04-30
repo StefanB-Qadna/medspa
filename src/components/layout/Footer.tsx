@@ -1,4 +1,4 @@
-import { Footer as FooterUI } from "@/components/ui/footer";
+import { FooterDisplay } from "@/components/ui/footer-display";
 
 const InstagramIcon = () => (
   <svg role="img" viewBox="0 0 24 24" fill="currentColor" width={18} height={18} aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +46,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <FooterUI
+    <FooterDisplay
       companyName="Rejuvenate & Refine"
       wordmarkSrc="/icons/wordmarkfull.svg"
       companySubtitle=""

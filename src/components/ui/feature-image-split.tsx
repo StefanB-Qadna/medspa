@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-interface Feature1Props {
+interface FeatureImageSplitProps {
   title: string;
   description?: string;
   imageSrc: string;
@@ -17,14 +18,14 @@ interface Feature1Props {
   };
 }
 
-export const Feature1 = ({
+export const FeatureImageSplit = ({
   title,
   description,
   imageSrc,
   imageAlt,
   buttonPrimary,
   buttonSecondary,
-}: Feature1Props) => {
+}: FeatureImageSplitProps) => {
   const handlePrimaryClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (buttonPrimary.href === "#book-now") {
       e.preventDefault();
@@ -66,11 +67,15 @@ export const Feature1 = ({
               </Button>
             </div>
           </div>
-          <img
-            src={imageSrc}
-            alt={imageAlt}
-            className="max-h-96 w-full rounded-md object-cover"
-          />
+          <div className="relative h-96 w-full overflow-hidden rounded-md">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              sizes="(min-width: 1024px) 36rem, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
