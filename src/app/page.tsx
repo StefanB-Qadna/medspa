@@ -76,7 +76,7 @@ const featuredServices = [
   },
   {
     title: "Lip Fillers",
-    description: "Achieve naturally fuller lips with our precision lip enhancement treatments.",
+    description: "Biostimulatory and traditional lip fillers, placed with precision for naturally fuller lips that move the way they should.",
     href: "/services#injectables",
   },
   {
@@ -260,7 +260,7 @@ export default function HomePage() {
               },
               {
                 id: "clinic-3",
-                title: "Consultation Rooms",
+                title: "Consultation Room",
                 description: "Private, relaxed, and completely pressure-free. A space where you and Dr. Robledo can talk openly, take your time, and build a plan around exactly what you want.",
                 image: "/images/spaceDR.webp",
               },
@@ -350,7 +350,7 @@ export default function HomePage() {
       <div id="book-now" className="bg-linen pt-16 md:pt-20">
         <Feature1
           title="The best version of you is closer than you think."
-          description="Start with a complimentary consultation. Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
+          description="Start with a comprehensive consultation. The fee is credited toward your treatment, and Dr. Robledo will build a plan around your goals, your timeline, and nothing else."
           imageSrc="/images/space2.jpg"
           imageAlt="Rejuvenate and Refine clinic interior"
           buttonPrimary={{
